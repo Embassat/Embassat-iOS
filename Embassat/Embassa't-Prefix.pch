@@ -1,0 +1,44 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import <OBConnection/OBConnection.h>
+
+    #import <RACEXTScope.h>
+    #import "UIFont+EMAdditions.h"
+
+    #import <DDLog.h>
+
+    #ifdef DEBUG
+        static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+    #else
+        static const int ddLogLevel = LOG_LEVEL_WARN;
+    #endif
+
+
+    #ifdef DEBUG
+        #define DLog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+        #define ALog(...) [[NSAssertionHandler currentHandler] handleFailureInFunction:[NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding] file:[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lineNumber:__LINE__ description:__VA_ARGS__]
+    #else
+        #define DLog(...) do { } while (0)
+        #define ALog(...) [TestFlight passCheckpoint:[NSString stringWithFormat:__VA_ARGS__]]
+        #ifndef NS_BLOCK_ASSERTIONS
+            #define NS_BLOCK_ASSERTIONS
+        #endif
+    #endif
+
+    #define ZAssert(condition, ...) do { if (!(condition)) { ALog(__VA_ARGS__); }} while(0)
+#endif

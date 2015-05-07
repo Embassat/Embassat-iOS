@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMInfoHeaderView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YkI-hd-sJb" customClass="CADEMInfoHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_cover.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-9n-dCU">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="175" id="i8q-8M-6rl"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQi-h3-w5D">
+                    <rect key="frame" x="0.0" y="175" width="320" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUÈ ÉS L'EMBASSAT?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFk-Tb-wky">
+                            <rect key="frame" x="74" y="13" width="172" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vg-tr-aBq">
+                            <rect key="frame" x="0.0" y="44" width="320" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Rjo-yc-yyv"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="FFk-Tb-wky" secondAttribute="centerX" constant="-0.5" id="CWt-hy-OyO"/>
+                        <constraint firstAttribute="bottom" secondItem="6vg-tr-aBq" secondAttribute="bottom" id="HDy-0x-hmd"/>
+                        <constraint firstAttribute="height" constant="45" id="RUw-XF-l7Q"/>
+                        <constraint firstItem="6vg-tr-aBq" firstAttribute="leading" secondItem="KQi-h3-w5D" secondAttribute="leading" id="bs0-FZ-2uQ"/>
+                        <constraint firstAttribute="centerY" secondItem="FFk-Tb-wky" secondAttribute="centerY" constant="-0.5" id="eig-IF-98t"/>
+                        <constraint firstAttribute="trailing" secondItem="6vg-tr-aBq" secondAttribute="trailing" id="jxT-74-4dW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="KQi-h3-w5D" firstAttribute="top" secondItem="Lps-9n-dCU" secondAttribute="bottom" id="3c8-au-VSf"/>
+                <constraint firstAttribute="trailing" secondItem="Lps-9n-dCU" secondAttribute="trailing" id="4Wy-fz-eap"/>
+                <constraint firstItem="Lps-9n-dCU" firstAttribute="top" secondItem="YkI-hd-sJb" secondAttribute="top" id="7j9-gz-Qz3"/>
+                <constraint firstItem="Lps-9n-dCU" firstAttribute="leading" secondItem="YkI-hd-sJb" secondAttribute="leading" id="FT1-PZ-9L1"/>
+                <constraint firstAttribute="trailing" secondItem="KQi-h3-w5D" secondAttribute="trailing" id="Lhv-0R-1Z5"/>
+                <constraint firstAttribute="bottom" secondItem="KQi-h3-w5D" secondAttribute="bottom" id="gj5-Pc-tl8"/>
+                <constraint firstItem="KQi-h3-w5D" firstAttribute="leading" secondItem="YkI-hd-sJb" secondAttribute="leading" id="n6W-Ye-WHU"/>
+            </constraints>
+            <connections>
+                <outlet property="coverImage" destination="Lps-9n-dCU" id="c2x-ua-Z3i"/>
+                <outlet property="titleLabel" destination="FFk-Tb-wky" id="GKE-xn-EuH"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="info_cover.png" width="320" height="176"/>
+    </resources>
+</document>

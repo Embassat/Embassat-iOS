@@ -1,0 +1,48 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - CocoaLumberjack (1.8.1):
+    - CocoaLumberjack/Extensions (= 1.8.1)
+  - CocoaLumberjack/Core (1.8.1)
+  - CocoaLumberjack/Extensions (1.8.1):
+    - CocoaLumberjack/Core
+  - EGOCache (0.0.1)
+  - Mantle (1.5.4):
+    - Mantle/extobjc (= 1.5.4)
+  - Mantle/extobjc (1.5.4)
+  - OBConnection (2.2.2):
+    - AFNetworking (~> 1.3.0)
+    - EGOCache (= 0.0.1)
+  - ReactiveCocoa (2.2.4):
+    - ReactiveCocoa/Core (= 2.2.4)
+    - ReactiveCocoa/no-arc (= 2.2.4)
+  - ReactiveCocoa/Core (2.2.4):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.2.4)
+  - ReactiveViewModel (0.2):
+    - ReactiveCocoa (~> 2.1)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+  - SVProgressHUD (1.1.3)
+
+DEPENDENCIES:
+  - CocoaLumberjack (~> 1.8.1)
+  - Mantle (~> 1.4)
+  - OBConnection (~> 2.2.2)
+  - ReactiveCocoa (~> 2.2.4)
+  - ReactiveViewModel (~> 0.2)
+  - SDWebImage (~> 3.7.2)
+  - SVProgressHUD (~> 1.0)
+
+SPEC CHECKSUMS:
+  AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  CocoaLumberjack: 555162681b9c20a271909b235c43f6bbd5d512e1
+  EGOCache: 30996917b2b1661204c3644c5ddc484bd0a237ac
+  Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
+  OBConnection: 64e501533bf7e0f5e3639e77edd5978571434670
+  ReactiveCocoa: 78d9d1057f6e2595a67285b5adb0c90d0fc2237c
+  ReactiveViewModel: 3b25ab68711944b1706b9dd6d1b37f37cbe6b094
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+
+COCOAPODS: 0.37.1
