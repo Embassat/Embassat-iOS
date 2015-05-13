@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Crows And Dogs. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public class CADArtistService: NSObject {
     
@@ -24,8 +24,8 @@ public class CADArtistService: NSObject {
                     for (index: String, subJson: JSON) in JSON(json!) {
                         let artist = CADEMArtistSwift(
                             name: subJson["title"].stringValue,
-                            largeDescription: subJson["content"].stringValue,
-                            imageURLString: subJson["featured_image"]["attachment_meta"]["sizes"]["sizes"]["large"]["url"].stringValue)
+                            longDescription: subJson["content"].stringValue,
+                            imageURL: NSURL(string: subJson["featured_image"]["attachment_meta"]["sizes"]["large"]["url"].stringValue)!)
                         artists.append(artist)
                     }
                     success(artists)

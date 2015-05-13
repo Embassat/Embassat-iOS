@@ -11,8 +11,6 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "UIView+CADAdditions.h"
 
-#import "Embassat-Swift.h"
-
 @interface CADRootViewController ()
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureToResign;
@@ -26,13 +24,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    CADArtistService *service = [[CADArtistService alloc] init];
-    [service artists:^void(NSError *error){
-        
-    } success:^void(id artists){
-        NSLog(@"HOLA K ASE %@", artists);
-    }];
     
     [self.view addGestureRecognizer:self.tapGestureToResign];
 }

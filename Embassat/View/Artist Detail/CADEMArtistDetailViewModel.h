@@ -13,7 +13,7 @@
 @interface CADEMArtistDetailViewModel : RVMViewModel
 
 // The model which the view model is adapting for the UI.
-@property (nonatomic, readonly, strong) CADEMArtist *model;
+@property (nonatomic, readonly, strong) CADEMArtistSwift *model;
 
 @property (nonatomic, copy, readonly) NSString *artistName, *artistDescription, *artistStartHour, *artistStartMinute, *artistDay, *artistStage;
 @property (nonatomic, strong, readonly) NSURL *artistImageURL;

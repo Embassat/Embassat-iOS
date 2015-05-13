@@ -8,18 +8,18 @@
 
 import Foundation
 
-public class CADEMArtistSwift : Printable {
+public class CADEMArtistSwift : NSObject {
     let name: String
-    let largeDescription: String
-    let imageURLString: String
+    let longDescription: String
+    let imageURL: NSURL
     
-    init(name: String, largeDescription: String, imageURLString: String) {
+    init(name: String, longDescription: String, imageURL: NSURL) {
         self.name = name
-        self.largeDescription = largeDescription
-        self.imageURLString = imageURLString
+        self.longDescription = longDescription
+        self.imageURL = imageURL
     }
     
-    public var description: String {
+    override public var description: String {
         return "Artist: \(name)"
     }
 }
