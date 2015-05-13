@@ -13,8 +13,6 @@
 #import "CADEMRootNavigationController.h"
 #import "CADEMMenuViewController.h"
 
-#import "CADEMMenuViewModel.h"
-
 @interface CADAppDelegate ()
 
 @property (nonatomic, copy) CADEMRootNavigationController *rootNavigationController;

@@ -10,10 +10,8 @@
 
 #import "CADEMMenuCollectionViewCell.h"
 #import "CADEMArtistsViewController.h"
-#import "CADArrayDataSource.h"
 #import "CADEMScheduleViewController.h"
 #import "CADEMScheduleViewModel.h"
-#import "CADEMMenuViewModel.h"
 #import "CADEMArtistsViewModel.h"
 #import "CADEMInfoViewController.h"
 #import "CADEMInfoViewModel.h"
@@ -26,7 +24,7 @@
 
 @property (nonatomic, weak) IBOutlet UICollectionView *menuCollectionView;
 
-@property (nonatomic, strong) CADArrayDataSource *dataSource;
+@property (nonatomic, strong) CADArrayDataSourceSwift *dataSource;
 
 @end
 
@@ -37,7 +35,7 @@
     [super viewDidLoad];
 
     self.menuCollectionView.dataSource = self.dataSource;
-    [self.menuCollectionView registerNib:[UINib nibWithNibName:@"CADEMMenuCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:CADCellIdentifier];
+    [self.menuCollectionView registerNib:[UINib nibWithNibName:@"CADEMMenuCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:CADArrayDataSourceSwift.CADCellIdentifier];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -95,14 +93,14 @@
 
 #pragma mark - Lazy
 
-- (CADArrayDataSource *)dataSource
+- (CADArrayDataSourceSwift *)dataSource
 {
     if (!_dataSource)
     {
-        _dataSource = [[CADArrayDataSource alloc] initWithViewModel:self.viewModel configureCellBlock:^(CADEMMenuCollectionViewCell *cell, NSIndexPath *indexPath) {
+        _dataSource = [[CADArrayDataSourceSwift alloc] initWithViewModel:self.viewModel configureCellBlock:^(CADEMMenuCollectionViewCell *cell, NSIndexPath *indexPath) {
             cell.optionName = [self.viewModel titleAtIndexPath:indexPath];
             cell.hidesTopSeparator = indexPath.row == 0;
-        }];
+        } configureHeaderBlock:nil];
     }
     
     return _dataSource;

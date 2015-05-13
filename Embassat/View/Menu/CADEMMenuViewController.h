@@ -8,8 +8,6 @@
 
 #import "CADEMRootViewController.h"
 
-@class CADEMMenuViewModel;
-
 @interface CADEMMenuViewController : CADEMRootViewController
 
 @property (nonatomic, strong) CADEMMenuViewModel *viewModel;
