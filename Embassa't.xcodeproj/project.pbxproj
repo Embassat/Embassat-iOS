@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F5541500D614C49BDA58B1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F64DE5B8828476488622A90 /* libPods.a */; };
+		7EF383E88B1795BBAB4F22B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A16C10B0399F8FF5C50C3F /* libPods.a */; };
 		8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4818CB8F09008FBC9B /* Foundation.framework */; };
 		8C04EF4B18CB8F09008FBC9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */; };
 		8C04EF4D18CB8F09008FBC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4C18CB8F09008FBC9B /* UIKit.framework */; };
@@ -23,6 +23,15 @@
 		8C04EF9718CBCF50008FBC9B /* CADBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF9618CBCF50008FBC9B /* CADBaseModel.m */; };
 		8C04EF9A18CBD051008FBC9B /* CADEMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF9918CBD051008FBC9B /* CADEMArtist.m */; };
 		8C04EF9D18CBD3EF008FBC9B /* CADEMArtistsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF9C18CBD3EF008FBC9B /* CADEMArtistsViewModel.m */; };
+		8C1FF3141B03990A00078E15 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */; };
+		8C1FF3351B03AAFC00078E15 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF32D1B03AAFC00078E15 /* Alamofire.swift */; };
+		8C1FF3361B03AAFC00078E15 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF32E1B03AAFC00078E15 /* Download.swift */; };
+		8C1FF3371B03AAFC00078E15 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF32F1B03AAFC00078E15 /* Manager.swift */; };
+		8C1FF3381B03AAFC00078E15 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3301B03AAFC00078E15 /* ParameterEncoding.swift */; };
+		8C1FF3391B03AAFC00078E15 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3311B03AAFC00078E15 /* Request.swift */; };
+		8C1FF33A1B03AAFC00078E15 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3321B03AAFC00078E15 /* ResponseSerialization.swift */; };
+		8C1FF33B1B03AAFC00078E15 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3331B03AAFC00078E15 /* Upload.swift */; };
+		8C1FF33C1B03AAFC00078E15 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3341B03AAFC00078E15 /* Validation.swift */; };
 		8C23D60918FAD6FC00B3C106 /* info1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D60518FAD6FC00B3C106 /* info1.jpg */; };
 		8C23D60A18FAD6FC00B3C106 /* info2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D60618FAD6FC00B3C106 /* info2.jpg */; };
 		8C23D60B18FAD6FC00B3C106 /* info3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D60718FAD6FC00B3C106 /* info3.jpg */; };
@@ -36,6 +45,7 @@
 		8C23D62618FB001F00B3C106 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D61E18FB001F00B3C106 /* 58x58.png */; };
 		8C23D62818FB001F00B3C106 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62018FB001F00B3C106 /* 80x80.png */; };
 		8C23D62918FB001F00B3C106 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62118FB001F00B3C106 /* 120x120.png */; };
+		8C35AE081B0105C30014331F /* CADArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35AE071B0105C30014331F /* CADArtistService.swift */; };
 		8C4BC4431AFBC48700215DED /* Embassa_t_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BC4421AFBC48700215DED /* Embassa_t_Tests.m */; };
 		8C774F5D192D680D000D5062 /* CADEMTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C774F5C192D680D000D5062 /* CADEMTicketsViewController.m */; };
 		8C774F5F192D682B000D5062 /* CADEMTicketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F5E192D682B000D5062 /* CADEMTicketsViewController.xib */; };
@@ -44,6 +54,7 @@
 		8C774F74192EC39A000D5062 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F73192EC39A000D5062 /* Default.png */; };
 		8C774F7719309A22000D5062 /* UIColor+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C774F7619309A22000D5062 /* UIColor+EMAdditions.m */; };
 		8C774F7A1930DF8E000D5062 /* NSDate+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C774F791930DF8E000D5062 /* NSDate+EMAdditions.m */; };
+		8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */; };
 		8CA1D4131947CC0B0095067C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA1D4121947CC0B0095067C /* EventKit.framework */; };
 		8CA1D4161947D0AD0095067C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D4141947D0AD0095067C /* star.png */; };
 		8CA1D4171947D0AD0095067C /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D4151947D0AD0095067C /* star@2x.png */; };
@@ -98,7 +109,7 @@
 
 /* Begin PBXFileReference section */
 		277C6F1D0A9003401A9C907C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6F64DE5B8828476488622A90 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A16C10B0399F8FF5C50C3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04EF4518CB8F09008FBC9B /* Embassa't.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Embassa't.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04EF4818CB8F09008FBC9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +141,15 @@
 		8C04EF9918CBD051008FBC9B /* CADEMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMArtist.m; path = Model/CADEMArtist.m; sourceTree = "<group>"; };
 		8C04EF9B18CBD3EF008FBC9B /* CADEMArtistsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADEMArtistsViewModel.h; sourceTree = "<group>"; };
 		8C04EF9C18CBD3EF008FBC9B /* CADEMArtistsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADEMArtistsViewModel.m; sourceTree = "<group>"; };
+		8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Services/SwiftyJSON.swift; sourceTree = "<group>"; };
+		8C1FF32D1B03AAFC00078E15 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Services/Alamofire/Alamofire.swift; sourceTree = "<group>"; };
+		8C1FF32E1B03AAFC00078E15 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Services/Alamofire/Download.swift; sourceTree = "<group>"; };
+		8C1FF32F1B03AAFC00078E15 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Services/Alamofire/Manager.swift; sourceTree = "<group>"; };
+		8C1FF3301B03AAFC00078E15 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Services/Alamofire/ParameterEncoding.swift; sourceTree = "<group>"; };
+		8C1FF3311B03AAFC00078E15 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Services/Alamofire/Request.swift; sourceTree = "<group>"; };
+		8C1FF3321B03AAFC00078E15 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Services/Alamofire/ResponseSerialization.swift; sourceTree = "<group>"; };
+		8C1FF3331B03AAFC00078E15 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Services/Alamofire/Upload.swift; sourceTree = "<group>"; };
+		8C1FF3341B03AAFC00078E15 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Services/Alamofire/Validation.swift; sourceTree = "<group>"; };
 		8C23D60518FAD6FC00B3C106 /* info1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = info1.jpg; sourceTree = "<group>"; };
 		8C23D60618FAD6FC00B3C106 /* info2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = info2.jpg; sourceTree = "<group>"; };
 		8C23D60718FAD6FC00B3C106 /* info3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = info3.jpg; sourceTree = "<group>"; };
@@ -146,9 +166,11 @@
 		8C23D61E18FB001F00B3C106 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
 		8C23D62018FB001F00B3C106 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
 		8C23D62118FB001F00B3C106 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
+		8C35AE071B0105C30014331F /* CADArtistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADArtistService.swift; path = Services/CADArtistService.swift; sourceTree = "<group>"; };
 		8C4BC43E1AFBC48700215DED /* Embassa't Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Embassa't Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4BC4411AFBC48700215DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C4BC4421AFBC48700215DED /* Embassa_t_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Embassa_t_Tests.m; sourceTree = "<group>"; };
+		8C4BC4491AFBC83B00215DED /* Embassa't-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Embassa't-Bridging-Header.h"; path = "Base/Embassa't-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C774F5B192D680D000D5062 /* CADEMTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMTicketsViewController.h; path = Tickets/CADEMTicketsViewController.h; sourceTree = "<group>"; };
 		8C774F5C192D680D000D5062 /* CADEMTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMTicketsViewController.m; path = Tickets/CADEMTicketsViewController.m; sourceTree = "<group>"; };
 		8C774F5E192D682B000D5062 /* CADEMTicketsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMTicketsViewController.xib; path = Tickets/CADEMTicketsViewController.xib; sourceTree = "<group>"; };
@@ -159,6 +181,7 @@
 		8C774F7619309A22000D5062 /* UIColor+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EMAdditions.m"; sourceTree = "<group>"; };
 		8C774F781930DF8E000D5062 /* NSDate+EMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EMAdditions.h"; sourceTree = "<group>"; };
 		8C774F791930DF8E000D5062 /* NSDate+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EMAdditions.m"; sourceTree = "<group>"; };
+		8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistSwift.swift; path = Model/CADEMArtistSwift.swift; sourceTree = "<group>"; };
 		8CA1D4121947CC0B0095067C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		8CA1D4141947D0AD0095067C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		8CA1D4151947D0AD0095067C /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
@@ -176,6 +199,9 @@
 		8CAABD5818E37162005431B9 /* CADEMArtistDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMArtistDetailViewController.xib; path = "Artist Detail/CADEMArtistDetailViewController.xib"; sourceTree = "<group>"; };
 		8CAABD5B18E3718F005431B9 /* CADEMArtistDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMArtistDetailViewModel.h; path = "Artist Detail/CADEMArtistDetailViewModel.h"; sourceTree = "<group>"; };
 		8CAABD5C18E3718F005431B9 /* CADEMArtistDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMArtistDetailViewModel.m; path = "Artist Detail/CADEMArtistDetailViewModel.m"; sourceTree = "<group>"; };
+		8CAB95731B0106A3008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
+		8CAB95751B01084A008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
+		8CAB95771B010917008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		8CABA0CE18E4DE9A00118FFA /* NewBaskervilleStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewBaskervilleStd-Roman.otf"; sourceTree = "<group>"; };
 		8CABA0D118E4DF5200118FFA /* UIFont+EMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+EMAdditions.h"; sourceTree = "<group>"; };
 		8CABA0D218E4DF5200118FFA /* UIFont+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+EMAdditions.m"; sourceTree = "<group>"; };
@@ -234,7 +260,7 @@
 				8C04EF4B18CB8F09008FBC9B /* CoreGraphics.framework in Frameworks */,
 				8C04EF4D18CB8F09008FBC9B /* UIKit.framework in Frameworks */,
 				8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */,
-				1F5541500D614C49BDA58B1F /* libPods.a in Frameworks */,
+				7EF383E88B1795BBAB4F22B6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,12 +298,15 @@
 		8C04EF4718CB8F09008FBC9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CAB95771B010917008BE43E /* Alamofire.framework */,
+				8CAB95751B01084A008BE43E /* Alamofire.framework */,
+				8CAB95731B0106A3008BE43E /* Alamofire.framework */,
 				8CA1D4121947CC0B0095067C /* EventKit.framework */,
 				8C04EF4818CB8F09008FBC9B /* Foundation.framework */,
 				8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */,
 				8C04EF4C18CB8F09008FBC9B /* UIKit.framework */,
 				8C04EF6118CB8F09008FBC9B /* XCTest.framework */,
-				6F64DE5B8828476488622A90 /* libPods.a */,
+				84A16C10B0399F8FF5C50C3F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -285,15 +314,16 @@
 		8C04EF4E18CB8F09008FBC9B /* Embassat */ = {
 			isa = PBXGroup;
 			children = (
+				8C04EF7918CB9341008FBC9B /* Base */,
 				8C04EF5718CB8F09008FBC9B /* CADAppDelegate.h */,
 				8C04EF5818CB8F09008FBC9B /* CADAppDelegate.m */,
-				8C04EF7918CB9341008FBC9B /* Base */,
 				8C04EF7D18CB9353008FBC9B /* Categories */,
-				8C04EF9418CBCF19008FBC9B /* Model */,
-				8C04EF7718CB91D2008FBC9B /* View */,
 				8C04EF5A18CB8F09008FBC9B /* Images.xcassets */,
+				8C04EF9418CBCF19008FBC9B /* Model */,
 				8CDBF19518DDB9D9002C6E50 /* Resources */,
+				8C35AE061B0105A20014331F /* Services */,
 				8C04EF4F18CB8F09008FBC9B /* Supporting Files */,
+				8C04EF7718CB91D2008FBC9B /* View */,
 			);
 			path = Embassat;
 			sourceTree = "<group>";
@@ -301,10 +331,11 @@
 		8C04EF4F18CB8F09008FBC9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C4BC4491AFBC83B00215DED /* Embassa't-Bridging-Header.h */,
 				8C04EF5018CB8F09008FBC9B /* Embassa't-Info.plist */,
+				8C04EF5618CB8F09008FBC9B /* Embassa't-Prefix.pch */,
 				8C04EF5118CB8F09008FBC9B /* InfoPlist.strings */,
 				8C04EF5418CB8F09008FBC9B /* main.m */,
-				8C04EF5618CB8F09008FBC9B /* Embassa't-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -405,8 +436,34 @@
 				8C04EF9618CBCF50008FBC9B /* CADBaseModel.m */,
 				8C04EF9818CBD051008FBC9B /* CADEMArtist.h */,
 				8C04EF9918CBD051008FBC9B /* CADEMArtist.m */,
+				8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		8C1FF32C1B03AAEE00078E15 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				8C1FF32D1B03AAFC00078E15 /* Alamofire.swift */,
+				8C1FF32E1B03AAFC00078E15 /* Download.swift */,
+				8C1FF32F1B03AAFC00078E15 /* Manager.swift */,
+				8C1FF3301B03AAFC00078E15 /* ParameterEncoding.swift */,
+				8C1FF3311B03AAFC00078E15 /* Request.swift */,
+				8C1FF3321B03AAFC00078E15 /* ResponseSerialization.swift */,
+				8C1FF3331B03AAFC00078E15 /* Upload.swift */,
+				8C1FF3341B03AAFC00078E15 /* Validation.swift */,
+			);
+			name = Alamofire;
+			sourceTree = "<group>";
+		};
+		8C35AE061B0105A20014331F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8C1FF32C1B03AAEE00078E15 /* Alamofire */,
+				8C35AE071B0105C30014331F /* CADArtistService.swift */,
+				8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		8C4BC43F1AFBC48700215DED /* Embassa't Tests */ = {
@@ -747,6 +804,7 @@
 				8C04EF8A18CB9408008FBC9B /* CADEMArtistsViewController.m in Sources */,
 				8CAEB34D192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m in Sources */,
 				8CB6C69718E8B5CD008D19FE /* CADEMInfoViewModel.m in Sources */,
+				8C1FF3141B03990A00078E15 /* SwiftyJSON.swift in Sources */,
 				8CAEB340192BF7F00017CF29 /* CADEMScheduleViewModel.m in Sources */,
 				8C23D61418FAD95600B3C106 /* CADEMInfoHeaderView.m in Sources */,
 				8CCA1B8918FC71A400B0C60C /* CADEMMapViewModel.m in Sources */,
@@ -756,7 +814,10 @@
 				8CB6C69318E8B3D6008D19FE /* CADEMInfoViewController.m in Sources */,
 				8CDBF19B18DDBE96002C6E50 /* CADEMRootNavigationController.m in Sources */,
 				8C04EF9A18CBD051008FBC9B /* CADEMArtist.m in Sources */,
+				8C1FF33A1B03AAFC00078E15 /* ResponseSerialization.swift in Sources */,
+				8C1FF3361B03AAFC00078E15 /* Download.swift in Sources */,
 				8CAEB348192BFF180017CF29 /* CADEMScheduleHeaderView.m in Sources */,
+				8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */,
 				8CABA0D618E4E49800118FFA /* NSString+EMAdditions.m in Sources */,
 				8C23D60F18FAD7EB00B3C106 /* CADEMInfoCollectionViewCell.m in Sources */,
 				8CDBF19F18DDC3DB002C6E50 /* CADEMMenuViewController.m in Sources */,
@@ -766,8 +827,12 @@
 				8CCA1B8518FC718900B0C60C /* CADEMMapViewController.m in Sources */,
 				8CABA0D318E4DF5200118FFA /* UIFont+EMAdditions.m in Sources */,
 				8C04EF8518CB9353008FBC9B /* UIView+CADAdditions.m in Sources */,
+				8C1FF33B1B03AAFC00078E15 /* Upload.swift in Sources */,
+				8C1FF3371B03AAFC00078E15 /* Manager.swift in Sources */,
 				8C04EF7C18CB9341008FBC9B /* CADRootViewController.m in Sources */,
 				8CA1D41C1948FAAE0095067C /* CADEMExtrasViewController.m in Sources */,
+				8C1FF3351B03AAFC00078E15 /* Alamofire.swift in Sources */,
+				8C1FF33C1B03AAFC00078E15 /* Validation.swift in Sources */,
 				8C04EF5918CB8F09008FBC9B /* CADAppDelegate.m in Sources */,
 				8C774F7A1930DF8E000D5062 /* NSDate+EMAdditions.m in Sources */,
 				8CDBF1A418DDC57D002C6E50 /* CADEMMenuViewModel.m in Sources */,
@@ -775,11 +840,14 @@
 				8CA8703D18CC83A800A845DD /* CADEMMenuCollectionViewCell.m in Sources */,
 				8C04EF9718CBCF50008FBC9B /* CADBaseModel.m in Sources */,
 				8CA8703A18CC835300A845DD /* CADRootCollectionViewCell.m in Sources */,
+				8C1FF3381B03AAFC00078E15 /* ParameterEncoding.swift in Sources */,
+				8C1FF3391B03AAFC00078E15 /* Request.swift in Sources */,
 				8CAABD5D18E3718F005431B9 /* CADEMArtistDetailViewModel.m in Sources */,
 				8CAEB33C192BF7AB0017CF29 /* CADEMScheduleViewController.m in Sources */,
 				8CAEB343192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.m in Sources */,
 				8C23D61918FAE46C00B3C106 /* CADEMInfoFlowLayout.m in Sources */,
 				8C774F7719309A22000D5062 /* UIColor+EMAdditions.m in Sources */,
+				8C35AE081B0105C30014331F /* CADArtistService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,6 +907,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -855,6 +925,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = Embassat;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -877,6 +948,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -886,6 +959,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_MODULE_NAME = Embassat;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -895,11 +969,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 277C6F1D0A9003401A9C907C /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Embassat/Embassa't-Prefix.pch";
 				INFOPLIST_FILE = "Embassat/Embassa't-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Embassa't";
+				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Base/Embassa't-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -908,11 +987,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D16AF894416306787E8EA880 /* Pods.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Pol Solsona (32S972F3NM)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Embassat/Embassa't-Prefix.pch";
 				INFOPLIST_FILE = "Embassat/Embassa't-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Embassa't";
+				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Base/Embassa't-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -994,6 +1077,7 @@
 				8C4BC4481AFBC48700215DED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

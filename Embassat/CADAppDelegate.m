@@ -43,9 +43,9 @@
 
 - (void)setupAppearance
 {
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont em_boldFontOfSize:16.0f]}];
+    UINavigationBar.appearance.tintColor = [UIColor whiteColor];
+    UINavigationBar.appearance.barTintColor = [UIColor blackColor];
+    UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont em_boldFontOfSize:16.0f]};
 }
 
 #pragma mark - Lazy
