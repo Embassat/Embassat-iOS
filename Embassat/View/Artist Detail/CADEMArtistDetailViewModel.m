@@ -40,9 +40,9 @@
 
             return [[[NSAttributedString alloc] initWithData:data options:options documentAttributes:nil error:nil] string];
         }];
-//        RAC(self, artistStage) = [RACObserve(self.model, stage) map:^id(NSString *stage) {
-//            return [stage isEqualToString:@"Amfiteatre Yeearphone"] ? @"AMFITEATRE" : [stage uppercaseString];
-//        }];
+        RAC(self, artistStage) = [RACObserve(self.model, stage) map:^id(NSString *stage) {
+            return [stage isEqualToString:@"Amfiteatre Yeearphone"] ? @"AMFITEATRE" : [stage uppercaseString];
+        }];
         RAC(self, artistImageURL) = RACObserve(self.model, imageURL);
 //        RAC(self, artistStartHour) = RACObserve(self.model, initialHour);
 //        RAC(self, artistStartMinute) = RACObserve(self.model, initialMinute);

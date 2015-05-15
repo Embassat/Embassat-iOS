@@ -115,12 +115,14 @@
 
 - (void)keyboardWillBecomeHidden:(BOOL)keyboardHidden withNotificationInfo:(NSDictionary *)notificationInfo
 {
-    UIViewAnimationCurve animationCurve; [[notificationInfo valueForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    UIViewAnimationCurve animationCurve;
+    [[notificationInfo valueForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
     
-    CGRect keyboardFrameAtEndOfAnimation; [[notificationInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrameAtEndOfAnimation];
-    CGFloat keyboardHeight = keyboardFrameAtEndOfAnimation.size.height;
+    CGRect keyboardFrameAtEndOfAnimation;
+    [notificationInfo[UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrameAtEndOfAnimation];
+    CGFloat keyboardHeight = CGRectGetHeight(keyboardFrameAtEndOfAnimation);
     
-    NSTimeInterval animationDuration = [[notificationInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    NSTimeInterval animationDuration = [notificationInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     [self keyboardWillBecomeHidden:keyboardHidden withAnimationDuration:animationDuration curve:animationCurve keyboardHeight:keyboardHeight];
 }
