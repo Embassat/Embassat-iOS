@@ -12,11 +12,6 @@
 #import "CADEMArtistDetailViewModel.h"
 #import "NSDate+EMAdditions.h"
 
-#import "CADEMArtist.h"
-
-static NSString *const kArtistsCacheKey = @"ArtistsCacheKey";
-static NSString *const kArtistsResource = @"get_posts/?post_type=artista&count=100";
-
 @interface CADEMScheduleViewModel ()
 
 @property (nonatomic, strong) id model;
@@ -44,16 +39,9 @@ static NSString *const kArtistsResource = @"get_posts/?post_type=artista&count=1
                             flattenMap:^RACStream *(id value) {
                                 return [self artists];
                             }] map:^id(id value) {
-                                NSArray *firstDayByHoursOrderedArray = [self filteredArrayFromArray:value
-                                                                                     withDateString:@"26/06/2014"],
-                                        *secondDayByHoursOrderedArray = [self filteredArrayFromArray:value
-                                                                                      withDateString:@"27/06/2014"],
-                                        *thirdDayByHoursOrderedArray = [self filteredArrayFromArray:value
-                                                                                     withDateString:@"28/06/2014"];
-                                
-                                return @[[self filteredFixingHoursArrayFromArray:firstDayByHoursOrderedArray],
-                                         [self filteredFixingHoursArrayFromArray:secondDayByHoursOrderedArray],
-                                         [self filteredFixingHoursArrayFromArray:thirdDayByHoursOrderedArray]];
+                                return @[value,
+                                         value,
+                                         value];
                             }];
     }
     
@@ -87,22 +75,22 @@ static NSString *const kArtistsResource = @"get_posts/?post_type=artista&count=1
 
 - (NSString *)initialMinuteAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self artistAtIndexPath:indexPath].initialMinute;
+    return [@([self artistAtIndexPath:indexPath].date.minute) stringValue];
 }
 
 - (NSString *)initialHourAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self artistAtIndexPath:indexPath].initialHour;
+    return [@([self artistAtIndexPath:indexPath].date.hour) stringValue];
 }
 
 - (NSString *)finalMinuteAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self artistAtIndexPath:indexPath].finalMinute;
+    return [@([self artistAtIndexPath:indexPath].date.minute) stringValue];
 }
 
 - (NSString *)finalHourAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self artistAtIndexPath:indexPath].finalHour;
+    return [@([self artistAtIndexPath:indexPath].date.hour) stringValue];
 }
 
 - (id)artistViewModelForIndexPath:(NSIndexPath *)indexPath
@@ -127,7 +115,7 @@ static NSString *const kArtistsResource = @"get_posts/?post_type=artista&count=1
 
 - (UIColor *)backgroundColorAtIndexPath:(NSIndexPath *)indexPath
 {
-    CADEMArtist *artist = [self artistAtIndexPath:indexPath];
+    CADEMArtistSwift *artist = [self artistAtIndexPath:indexPath];
     NSDate * now = [NSDate date];
     static NSDictionary *mapping = nil;
     if(!mapping)
@@ -139,7 +127,7 @@ static NSString *const kArtistsResource = @"get_posts/?post_type=artista&count=1
                     };
     }
     
-    return [now isLaterThanDate:artist.initialDate] && [now isEarlierThanDate:artist.finalDate] ?
+    return [now isLaterThanDate:artist.date] && [now isEarlierThanDate:artist.date] ?
         mapping[[self stageNameAtIndexPath:indexPath]] ?: [UIColor whiteColor] : [UIColor whiteColor];
 }
 
@@ -147,21 +135,21 @@ static NSString *const kArtistsResource = @"get_posts/?post_type=artista&count=1
 
 - (NSArray *)filteredArrayFromArray:(NSArray *)array withDateString:(NSString *)dateString
 {
-    return [[array filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"date == %@", dateString]] sortedArrayUsingComparator:^NSComparisonResult(CADEMArtist *artist1, CADEMArtist *artist2) {
-        return [artist1.initialHour caseInsensitiveCompare:artist2.initialHour];
+    return [[array filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"date == %@", dateString]] sortedArrayUsingComparator:^NSComparisonResult(CADEMArtistSwift *artist1, CADEMArtistSwift *artist2) {
+        return [artist1.date isEarlierThanDate:artist2.date];
     }];
 }
 
-- (NSArray *)filteredFixingHoursArrayFromArray:(NSArray *)array
-{
-    return [[[array rac_sequence] filter:^BOOL(CADEMArtist *artist) {
-        return ![[artist.initialHour substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"0"];
-    }] concat:[[array rac_sequence] filter:^BOOL(CADEMArtist *artist) {
-        return [[artist.initialHour substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"0"];
-    }]].array;
-}
+//- (NSArray *)filteredFixingHoursArrayFromArray:(NSArray *)array
+//{
+//    return [[[array rac_sequence] filter:^BOOL(CADEMArtistSwift *artist) {
+//        return ![[artist.initialHour substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"0"];
+//    }] concat:[[array rac_sequence] filter:^BOOL(CADEMArtistSwift *artist) {
+//        return [[artist.initialHour substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"0"];
+//    }]].array;
+//}
 
-- (CADEMArtist *)artistAtIndexPath:(NSIndexPath *)indexPath
+- (CADEMArtistSwift *)artistAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.model[self.dayIndex][indexPath.row];
 }
@@ -169,13 +157,12 @@ static NSString *const kArtistsResource = @"get_posts/?post_type=artista&count=1
 - (RACSignal *)artists
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [OBConnection makeRequest:[OBRequest requestWithType:OBRequestMethodTypeMethodGET resource:kArtistsResource parameters:[OBRequestParameters emptyRequestParameters]] withCacheKey:kArtistsCacheKey parseBlock:^id(NSDictionary *data) {
-            return [[NSValueTransformer mtl_JSONArrayTransformerWithModelClass:CADEMArtist.class] transformedValue:data[@"posts"]];
-        } success:^(id data, BOOL cached) {
-            [subscriber sendNext:data];
-            cached ? : [subscriber sendCompleted];
-        } error:^(id data, NSError *error) {
+        CADArtistService *service = [[CADArtistService alloc] init];
+        [service artists:^void(NSError *error){
             [subscriber sendError:error];
+        } success:^void(id artists){
+            [subscriber sendNext:artists];
+            [subscriber sendCompleted];
         }];
         
         return nil;
