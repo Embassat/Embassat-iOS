@@ -9,6 +9,7 @@
 #import "CADEMArtistDetailViewModel.h"
 
 #import "NSString+EMAdditions.h"
+#import "NSDate+EMAdditions.h"
 #import <EventKit/EventKit.h>
 
 @interface CADEMArtistDetailViewModel ()
@@ -44,11 +45,15 @@
             return [stage isEqualToString:@"Amfiteatre Yeearphone"] ? @"AMFITEATRE" : [stage uppercaseString];
         }];
         RAC(self, artistImageURL) = RACObserve(self.model, imageURL);
-//        RAC(self, artistStartHour) = RACObserve(self.model, initialHour);
-//        RAC(self, artistStartMinute) = RACObserve(self.model, initialMinute);
-//        RAC(self, artistDay) = [RACObserve(self.model, date) map:^id(NSString *dateString) {
-//            return [dateString isEqualToString:@"25/06/2014"] ? @"DIM" : [dateString isEqualToString:@"26/06/2014"] ? @"DIJ" : [dateString isEqualToString:@"27/06/2014"] ? @"DIV" : @"DIS";
-//        }];
+        RAC(self, artistStartHour) = [RACObserve(self.model, date.hour) map:^id(id value) {
+            return [value stringValue];
+        }];
+        RAC(self, artistStartMinute) = [RACObserve(self.model, date.minute) map:^id(id value) {
+            return [value stringValue];
+        }];
+        RAC(self, artistDay) = [RACObserve(self.model, date) map:^id(NSString *dateString) {
+            return @"DIS";
+        }];
     }
     
 	return self;
@@ -63,8 +68,8 @@
         if (!granted) { return; }
         EKEvent *event = [EKEvent eventWithEventStore:store];
         event.title = [NSString stringWithFormat:@"%@ @ %@", self.artistName, self.artistStage];
-//        event.startDate = self.model.initialDate;
-//        event.endDate = self.model.finalDate;
+        event.startDate = self.model.date;
+        event.endDate = self.model.date;
         [event setCalendar:[store defaultCalendarForNewEvents]];
         NSError *err = nil;
         BOOL success = [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];

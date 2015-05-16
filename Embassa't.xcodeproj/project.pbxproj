@@ -59,6 +59,7 @@
 		8C774F74192EC39A000D5062 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F73192EC39A000D5062 /* Default.png */; };
 		8C774F7719309A22000D5062 /* UIColor+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C774F7619309A22000D5062 /* UIColor+EMAdditions.m */; };
 		8C774F7A1930DF8E000D5062 /* NSDate+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C774F791930DF8E000D5062 /* NSDate+EMAdditions.m */; };
+		8C8BA6CF1B06758000896D11 /* CADArtistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6CE1B06758000896D11 /* CADArtistParser.swift */; };
 		8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */; };
 		8CA1D4131947CC0B0095067C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA1D4121947CC0B0095067C /* EventKit.framework */; };
 		8CA1D4161947D0AD0095067C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D4141947D0AD0095067C /* star.png */; };
@@ -190,6 +191,7 @@
 		8C774F7619309A22000D5062 /* UIColor+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EMAdditions.m"; sourceTree = "<group>"; };
 		8C774F781930DF8E000D5062 /* NSDate+EMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EMAdditions.h"; sourceTree = "<group>"; };
 		8C774F791930DF8E000D5062 /* NSDate+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EMAdditions.m"; sourceTree = "<group>"; };
+		8C8BA6CE1B06758000896D11 /* CADArtistParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADArtistParser.swift; path = Services/CADArtistParser.swift; sourceTree = "<group>"; };
 		8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistSwift.swift; path = Model/CADEMArtistSwift.swift; sourceTree = "<group>"; };
 		8CA1D4121947CC0B0095067C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		8CA1D4141947D0AD0095067C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				8C1FF32C1B03AAEE00078E15 /* Alamofire */,
+				8C8BA6CE1B06758000896D11 /* CADArtistParser.swift */,
 				8C35AE071B0105C30014331F /* CADArtistService.swift */,
 				8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */,
 			);
@@ -855,6 +858,7 @@
 				8CA8703A18CC835300A845DD /* CADRootCollectionViewCell.m in Sources */,
 				8C1FF3381B03AAFC00078E15 /* ParameterEncoding.swift in Sources */,
 				8C1FF3391B03AAFC00078E15 /* Request.swift in Sources */,
+				8C8BA6CF1B06758000896D11 /* CADArtistParser.swift in Sources */,
 				8CAABD5D18E3718F005431B9 /* CADEMArtistDetailViewModel.m in Sources */,
 				8CAEB33C192BF7AB0017CF29 /* CADEMScheduleViewController.m in Sources */,
 				8C1FF34C1B04CD1D00078E15 /* CADEMTicketsViewControllerSwift.swift in Sources */,

@@ -43,8 +43,9 @@ public class CADRootViewControllerSwift: UIViewController {
                 parentScrollView.scrollIndicatorInsets = insets
             }, completion: { (finished Bool) -> Void in
                 if !keyboardHidden {
-                    let superView: UIView! = firstResponder.superview
-                    parentScrollView.scrollRectToVisible(superView.convertRect(firstResponder.frame, toView: parentScrollView), animated: true)
+                    if let superView = firstResponder.superview {
+                        parentScrollView.scrollRectToVisible(superView.convertRect(firstResponder.frame, toView: parentScrollView), animated: true)
+                    }
                 }
             })
         }

@@ -11,4 +11,7 @@
 - (BOOL)isEarlierThanDate:(NSDate *)aDate;
 - (BOOL)isLaterThanDate:(NSDate *)aDate;
 
+@property (readonly) NSInteger hour;
+@property (readonly) NSInteger minute;
+
 @end

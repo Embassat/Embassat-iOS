@@ -20,21 +20,7 @@ public class CADArtistService: NSObject {
                     failure(error!)
                 }
                 else {
-                    var artists: [CADEMArtistSwift] = []
-                    for (index: String, subJson: JSON) in JSON(json!) {
-
-                        var dateFormatter: NSDateFormatter = NSDateFormatter()
-                        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-                        
-                        let artist = CADEMArtistSwift(
-                            name: subJson["title"].stringValue,
-                            longDescription: subJson["content"].stringValue,
-                            imageURL: NSURL(string: subJson["featured_image"]["attachment_meta"]["sizes"]["large"]["url"].stringValue)!,
-                            date: dateFormatter.dateFromString(subJson["date"].stringValue)!,
-                            stage: subJson["terms"]["portfolio_category"][0]["name"].stringValue
-                            )
-                        artists.append(artist)
-                    }
+                    let artists = CADArtistParser().parseArtists(fromJson: json!)
                     success(artists)
                 }
         }
