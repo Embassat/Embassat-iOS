@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMExtrasViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMExtrasViewControllerSwift" customModule="Embassat" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="bodyLabels" destination="muL-gJ-rvP" id="kMg-fF-EtO"/>
-                <outletCollection property="bodyLabels" destination="rdj-gX-GTR" id="OZf-QH-Rrm"/>
-                <outletCollection property="titleLabels" destination="avQ-X2-tue" id="9NT-If-XKE"/>
-                <outletCollection property="titleLabels" destination="Civ-tU-MX0" id="cWd-nC-TWD"/>
-                <outletCollection property="titleLabels" destination="B0U-qi-cfK" id="KuI-hd-aXe"/>
-                <outletCollection property="titleLabels" destination="MDM-iG-fwO" id="cIR-uj-BdR"/>
-                <outletCollection property="titleLabels" destination="sSq-mM-M4B" id="BhD-2p-sua"/>
-                <outletCollection property="titleLabels" destination="PqV-TK-G40" id="rW5-TJ-kBr"/>
+                <outletCollection property="bodyLabels" destination="muL-gJ-rvP" collectionClass="NSMutableArray" id="kMg-fF-EtO"/>
+                <outletCollection property="bodyLabels" destination="rdj-gX-GTR" collectionClass="NSMutableArray" id="OZf-QH-Rrm"/>
+                <outletCollection property="titleLabels" destination="avQ-X2-tue" collectionClass="NSMutableArray" id="9NT-If-XKE"/>
+                <outletCollection property="titleLabels" destination="Civ-tU-MX0" collectionClass="NSMutableArray" id="cWd-nC-TWD"/>
+                <outletCollection property="titleLabels" destination="B0U-qi-cfK" collectionClass="NSMutableArray" id="KuI-hd-aXe"/>
+                <outletCollection property="titleLabels" destination="MDM-iG-fwO" collectionClass="NSMutableArray" id="cIR-uj-BdR"/>
+                <outletCollection property="titleLabels" destination="sSq-mM-M4B" collectionClass="NSMutableArray" id="BhD-2p-sua"/>
+                <outletCollection property="titleLabels" destination="PqV-TK-G40" collectionClass="NSMutableArray" id="rW5-TJ-kBr"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,51 +25,42 @@
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3t-T4-m8X">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-27-jZu">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1EO-HC-S01">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIRA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0U-qi-cfK">
                                     <rect key="frame" x="0.0" y="12" width="160" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-7A-gTK">
                                     <rect key="frame" x="159" y="0.0" width="1" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DIS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-X2-tue">
                                     <rect key="frame" x="159" y="12" width="82" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nFi-bb-FAe">
                                     <rect key="frame" x="240" y="0.0" width="1" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Civ-tU-MX0">
                                     <rect key="frame" x="240" y="12" width="80" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSh-B9-0Bk">
                                     <rect key="frame" x="0.0" y="43" width="320" height="1"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="Whh-T2-6Hb"/>
@@ -85,57 +77,48 @@
                         </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="muL-gJ-rvP">
                             <rect key="frame" x="22" y="64" width="276" height="406"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="276" id="48w-u4-D5v"/>
                             </constraints>
-                            <mutableString key="text">La jornada del dissabte 28 de juny, la Plaça del Gas serà l’àgora de la primera mostra de discogràfiques independents i entitats locals relacionades amb l’àmbit cultural. La fira FEM EMBASSA’T es convertirà en un aparador de totes aquelles novetats i propostes alternatives i fresques que no tenen cabuda al circuït habitual i on primarà el producte gestat a la comarca del Vallès. La Fira vol ser una plataforma d’exposició que les entitats poden utilitzar per tal de donar-se a conèixer a tota la ciutat. És per això que de 12.00 a 20.00 hores, la Fira tindrà un accés gratuït a tot el públic, amb programació oberta, composada per concerts en format reduït.</mutableString>
+                            <string key="text">La jornada del dissabte 28 de juny, la Plaça del Gas serà l’àgora de la primera mostra de discogràfiques independents i entitats locals relacionades amb l’àmbit cultural. La fira FEM EMBASSA’T es convertirà en un aparador de totes aquelles novetats i propostes alternatives i fresques que no tenen cabuda al circuït habitual i on primarà el producte gestat a la comarca del Vallès. La Fira vol ser una plataforma d’exposició que les entitats poden utilitzar per tal de donar-se a conèixer a tota la ciutat. És per això que de 12.00 a 20.00 hores, la Fira tindrà un accés gratuït a tot el públic, amb programació oberta, composada per concerts en format reduït.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8U-zv-10y">
                             <rect key="frame" x="0.0" y="490" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0R-qA-g37">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PETIT EM’" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-TK-G40">
                                     <rect key="frame" x="0.0" y="12" width="160" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxF-Ke-fCh">
                                     <rect key="frame" x="159" y="0.0" width="1" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DIS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSq-mM-M4B">
                                     <rect key="frame" x="159" y="12" width="82" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-GB-rQG">
                                     <rect key="frame" x="240" y="0.0" width="1" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDM-iG-fwO">
                                     <rect key="frame" x="240" y="12" width="80" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gj-MI-tyF">
                                     <rect key="frame" x="0.0" y="43" width="320" height="1"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="sRr-HD-9Wl"/>
@@ -152,7 +135,6 @@
                         </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-gX-GTR">
                             <rect key="frame" x="22" y="554" width="276" height="305"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="276" id="9fJ-fm-tvl"/>
                             </constraints>
@@ -186,8 +168,11 @@
                 <constraint firstItem="m3t-T4-m8X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YP8-bm-uk6"/>
                 <constraint firstAttribute="trailing" secondItem="m3t-T4-m8X" secondAttribute="trailing" id="xHK-xV-2Wd"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

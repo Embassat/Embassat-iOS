@@ -17,7 +17,6 @@
 #import "CADEMInfoViewModel.h"
 #import "CADEMMapViewController.h"
 #import "CADEMMapViewModel.h"
-#import "CADEMExtrasViewController.h"
 
 @interface CADEMMenuViewController ()
 
@@ -77,7 +76,7 @@
             break;
             
         case 5:
-            viewController = [[CADEMExtrasViewController alloc] init];
+            viewController = [[CADEMExtrasViewController alloc] initWithNibName:@"CADEMExtrasViewController" bundle:nil];
             break;
             
         default:
