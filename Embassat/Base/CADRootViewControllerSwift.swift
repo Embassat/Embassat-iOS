@@ -10,20 +10,41 @@ import UIKit
 
 public class CADRootViewControllerSwift: UIViewController {
     
-    var tapGestureToResign: UITapGestureRecognizer
+    let tapGestureToResign: UITapGestureRecognizer
     
-    convenience init() {
-        self.init()
-        
+    override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
         tapGestureToResign = UITapGestureRecognizer()
         tapGestureToResign.cancelsTouchesInView = false
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundle)
+        
         tapGestureToResign.addTarget(self, action: "tapRecognizerToResignFieldsDidTrigger")
         self.view.addGestureRecognizer(tapGestureToResign)
     }
-
+    
     required public init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        tapGestureToResign = UITapGestureRecognizer()
+        tapGestureToResign.cancelsTouchesInView = false
+        
+        super.init(coder: aDecoder)
+        
+        tapGestureToResign.addTarget(self, action: "tapRecognizerToResignFieldsDidTrigger")
+        self.view.addGestureRecognizer(tapGestureToResign)
     }
+    
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.addGestureRecognizer(tapGestureToResign)
+    }
+    
+    override public func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.loadData()
+    }
+    
+    func loadData() {}
     
     func registerForKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardShowOrHideNotification:", name: UIKeyboardWillShowNotification, object: nil)
