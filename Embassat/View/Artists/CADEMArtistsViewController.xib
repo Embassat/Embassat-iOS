@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMArtistsViewControllerSwift" customModule="Embassat" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMArtistsViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="ACl-9w-5i9" id="gKh-BV-rod"/>
                 <outlet property="artistsCollectionView" destination="ocL-i3-F9O" id="qGe-iH-xxr"/>

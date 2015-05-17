@@ -5,8 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMArtistDetailViewControllerSwift" customModule="Embassat" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMArtistDetailViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="8Gu-OD-Usm" id="YlB-Lo-BcY"/>
                 <outlet property="addButton" destination="Tjh-Ua-SXf" id="se3-bP-OEP"/>
                 <outlet property="coverImage" destination="eJu-qj-M8f" id="Ea0-iZ-Mc0"/>
                 <outlet property="dayLabel" destination="jOZ-Yp-FmG" id="vaa-Ve-hG6"/>
@@ -27,6 +28,9 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwk-7q-zbY">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Gu-OD-Usm">
+                            <rect key="frame" x="150" y="421" width="20" height="20"/>
+                        </activityIndicatorView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="eLD-gh-93E">
                             <rect key="frame" x="20" y="230" width="280" height="401"/>
                             <string key="text">La darrera incorporaci\U00f3 de El Segell del Primavera ens arriba de Vic i ha crescut entre vinils de Roy Orbison, Neil Young, Woody Guthrie i Bob Dylan, entre d\U2019altres. Amb aquestes arrels \U2018familiars\U2019 era d\U2019esperar que Joana Serrat es sent\U00eds atreta des de bon comen\U00e7ament per la m\U00fasica folk i rock d\U2019arrels americanes. Joana Serrat ha gravat aquest hivern el seu tercer disc sota la producci\U00f3 de Howard Bilerman, que tamb\U00e9 ha treballat amb Godspeed You! Black Emperor i Arcade Fire. La sonoritat folk pop, l\U2019indie rock dels 90, el country i picades d\U2019ull al jazz seran protagonistes en el reportori que Joana Serrat prepara per l\U2019EMBASSA\U2019T.</string>
@@ -38,6 +42,8 @@
                         <constraint firstItem="eLD-gh-93E" firstAttribute="leading" secondItem="rwk-7q-zbY" secondAttribute="leading" constant="20" id="FEf-LK-5NA"/>
                         <constraint firstAttribute="trailing" secondItem="eLD-gh-93E" secondAttribute="trailing" constant="20" id="Mth-Ak-D27"/>
                         <constraint firstAttribute="bottom" secondItem="eLD-gh-93E" secondAttribute="bottom" constant="45" id="mNT-oK-ypx"/>
+                        <constraint firstAttribute="centerX" secondItem="8Gu-OD-Usm" secondAttribute="centerX" id="mvR-EH-eJ1"/>
+                        <constraint firstItem="8Gu-OD-Usm" firstAttribute="centerY" secondItem="eLD-gh-93E" secondAttribute="centerY" id="wMr-fW-zSR"/>
                         <constraint firstItem="eLD-gh-93E" firstAttribute="top" secondItem="rwk-7q-zbY" secondAttribute="top" constant="230" id="woh-L7-ccO"/>
                     </constraints>
                 </scrollView>

@@ -382,8 +382,8 @@
 		8C04EF7818CB91D2008FBC9B /* Artists */ = {
 			isa = PBXGroup;
 			children = (
-				8C04EF8918CB9408008FBC9B /* CADEMArtistsViewController.xib */,
 				8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewController.swift */,
+				8C04EF8918CB9408008FBC9B /* CADEMArtistsViewController.xib */,
 				8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModel.swift */,
 			);
 			path = Artists;

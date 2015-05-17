@@ -12,12 +12,14 @@ public class CADEMArtistSwift : NSObject {
     let name: String
     let longDescription: String
     let stage: String
+    let artistURL: NSURL
     let imageURL: NSURL
     let date: NSDate
     
-    init(name: String, longDescription: String, imageURL: NSURL, date: NSDate, stage: String) {
+    init(name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, date: NSDate, stage: String) {
         self.name = name
         self.longDescription = longDescription
+        self.artistURL = artistURL
         self.imageURL = imageURL
         self.date = date
         self.stage = stage

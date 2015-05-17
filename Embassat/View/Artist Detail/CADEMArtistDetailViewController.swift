@@ -13,6 +13,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     @IBOutlet weak var scrollView: UIScrollView?
     @IBOutlet weak var coverImage: UIImageView?
     @IBOutlet weak var infoView: UIView?
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     @IBOutlet weak var descriptionLabel: UILabel?
     @IBOutlet weak var dayLabel: UILabel?
     @IBOutlet weak var timeLabel: UILabel?
@@ -26,9 +27,14 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
             coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "placeholder.jpg"))
             stageLabel?.text = viewModel?.artistStage
             dayLabel?.text = viewModel?.artistDay
-            if let description = viewModel?.artistDescription {
-                descriptionLabel?.text = description
-            }
+            descriptionLabel?.textColor = UIColor.whiteColor()
+            
+            viewModel?.artistDescriptionSignal.subscribeNext({ [unowned self] (description: AnyObject!) -> Void in
+                let descriptionText: String = description as! String
+                self.descriptionLabel?.text = descriptionText
+                self.descriptionLabel?.textColor = UIColor.blackColor()
+                self.activityIndicator?.stopAnimating()
+            })
         }
     }
 
