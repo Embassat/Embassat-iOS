@@ -5,6 +5,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <ShareKit/ShareKit.h>
 
 #import "UIView+CADAdditions.h"
 #import "UIFont+EMAdditions.h"

@@ -13,6 +13,11 @@
 #import "CADEMRootNavigationController.h"
 #import "CADEMMenuViewController.h"
 
+#import <ShareKit/ShareKit.h>
+#import <ShareKit/SHKConfiguration.h>
+#import <ShareKit/SHKFacebook.h>
+#import "CADEMShareKitConfigurator.h"
+
 @interface CADAppDelegate ()
 
 @property (nonatomic, copy) CADEMRootNavigationController *rootNavigationController;
@@ -24,15 +29,37 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-
-    // OBConnection setup
-    [OBConnection registerWithBaseUrl:[NSURL URLWithString:@"http://embassat.com/api/"]];
+    
+    [SHKConfiguration sharedInstanceWithConfigurator:[[CADEMShareKitConfigurator alloc] init]];
     
     [self setupAppearance];
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = self.rootNavigationController;
     [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [SHKFacebook handleDidBecomeActive];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    [SHKFacebook handleWillTerminate];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    if ([[url scheme] hasPrefix:[NSString stringWithFormat:@"fb%@", SHKCONFIG(facebookAppId)]])
+    {
+        return [SHKFacebook handleOpenURL:url sourceApplication:sourceApplication];
+    }
     
     return YES;
 }

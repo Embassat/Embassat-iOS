@@ -16,7 +16,6 @@
     #import <Foundation/Foundation.h>
     #import <QuartzCore/QuartzCore.h>
     #import <ReactiveCocoa/ReactiveCocoa.h>
-    #import <OBConnection/OBConnection.h>
 
     #import <RACEXTScope.h>
     #import "UIFont+EMAdditions.h"

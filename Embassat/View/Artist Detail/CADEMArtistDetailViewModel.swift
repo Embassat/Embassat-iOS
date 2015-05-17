@@ -34,6 +34,14 @@ public class CADEMArtistDetailViewModel: NSObject {
         }
     }
     
+    public func shareAction(forViewController viewController: UIViewController) {
+        let item: AnyObject! = SHKItem.URL(model.imageURL, title: "", contentType: SHKURLContentTypeUndefined)
+        let actionSheet = SHKActionSheet(forItem: item as! SHKItem)
+        SHK.setRootViewController(viewController)
+        
+        actionSheet.showFromToolbar(viewController.navigationController?.toolbar)
+    }
+    
     public func addEventOnCalendar() {
         
         let store = EKEventStore()

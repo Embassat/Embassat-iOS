@@ -44,6 +44,10 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
         addButton?.titleLabel?.font = UIFont.em_boldFontOfSize(16.0)
         view.backgroundColor = UIColor.whiteColor()
         
+        shareButton?.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ [unowned self] (_) -> Void in
+            viewModel?.shareAction(forViewController: self)
+        })
+        
         addButton?.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ (_) -> Void in
             viewModel?.addEventOnCalendar()
         })
