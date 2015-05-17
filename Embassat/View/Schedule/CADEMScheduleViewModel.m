@@ -9,7 +9,6 @@
 #import "CADEMScheduleViewModel.h"
 
 #import "UIColor+EMAdditions.h"
-#import "CADEMArtistDetailViewModel.h"
 #import "NSDate+EMAdditions.h"
 
 @interface CADEMScheduleViewModel ()

@@ -4,11 +4,11 @@
 
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #import "UIView+CADAdditions.h"
 #import "UIFont+EMAdditions.h"
 #import "NSDate+EMAdditions.h"
 
-#import "CADEMArtistsViewModel.h"
 #import "CADArrayDataSource.h"
 #import "CADEMMenuCollectionViewCell.h"

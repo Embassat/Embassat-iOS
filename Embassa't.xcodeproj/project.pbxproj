@@ -18,11 +18,9 @@
 		8C04EF7C18CB9341008FBC9B /* CADRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF7B18CB9341008FBC9B /* CADRootViewController.m */; };
 		8C04EF8418CB9353008FBC9B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF7F18CB9353008FBC9B /* UIView+AutoLayout.m */; };
 		8C04EF8518CB9353008FBC9B /* UIView+CADAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF8118CB9353008FBC9B /* UIView+CADAdditions.m */; };
-		8C04EF8A18CB9408008FBC9B /* CADEMArtistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF8818CB9408008FBC9B /* CADEMArtistsViewController.m */; };
 		8C04EF8B18CB9408008FBC9B /* CADEMArtistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C04EF8918CB9408008FBC9B /* CADEMArtistsViewController.xib */; };
 		8C04EF9718CBCF50008FBC9B /* CADBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF9618CBCF50008FBC9B /* CADBaseModel.m */; };
 		8C04EF9A18CBD051008FBC9B /* CADEMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF9918CBD051008FBC9B /* CADEMArtist.m */; };
-		8C04EF9D18CBD3EF008FBC9B /* CADEMArtistsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF9C18CBD3EF008FBC9B /* CADEMArtistsViewModel.m */; };
 		8C1FF3141B03990A00078E15 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */; };
 		8C1FF3351B03AAFC00078E15 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF32D1B03AAFC00078E15 /* Alamofire.swift */; };
 		8C1FF3361B03AAFC00078E15 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF32E1B03AAFC00078E15 /* Download.swift */; };
@@ -61,9 +59,10 @@
 		8C8BA6CF1B06758000896D11 /* CADArtistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6CE1B06758000896D11 /* CADArtistParser.swift */; };
 		8C8BA6D11B07800600896D11 /* CADEMRootViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D01B07800600896D11 /* CADEMRootViewControllerSwift.swift */; };
 		8C8BA6D71B07AE0400896D11 /* CADEMExtrasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D61B07AE0400896D11 /* CADEMExtrasViewController.swift */; };
-		8C8BA6E91B07BE1600896D11 /* CADEMArtistsViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewControllerSwift.swift */; };
-		8C8BA6EB1B08C33900896D11 /* CADEMArtistsViewModelSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModelSwift.swift */; };
-		8C8BA6ED1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift */; };
+		8C8BA6E91B07BE1600896D11 /* CADEMArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewController.swift */; };
+		8C8BA6EB1B08C33900896D11 /* CADEMArtistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModel.swift */; };
+		8C8BA6ED1B08D41100896D11 /* CADEMArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModel.swift */; };
+		8C8BA6EF1B08DF8E00896D11 /* CADEMArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EE1B08DF8E00896D11 /* CADEMArtistDetailViewController.swift */; };
 		8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */; };
 		8CA1D4131947CC0B0095067C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA1D4121947CC0B0095067C /* EventKit.framework */; };
 		8CA1D4161947D0AD0095067C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D4141947D0AD0095067C /* star.png */; };
@@ -72,9 +71,7 @@
 		8CA8703A18CC835300A845DD /* CADRootCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8703918CC835300A845DD /* CADRootCollectionViewCell.m */; };
 		8CA8703D18CC83A800A845DD /* CADEMMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8703C18CC83A800A845DD /* CADEMMenuCollectionViewCell.m */; };
 		8CA8703F18CC845000A845DD /* CADEMMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA8703E18CC845000A845DD /* CADEMMenuCollectionViewCell.xib */; };
-		8CAABD5918E37162005431B9 /* CADEMArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAABD5718E37162005431B9 /* CADEMArtistDetailViewController.m */; };
 		8CAABD5A18E37162005431B9 /* CADEMArtistDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAABD5818E37162005431B9 /* CADEMArtistDetailViewController.xib */; };
-		8CAABD5D18E3718F005431B9 /* CADEMArtistDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAABD5C18E3718F005431B9 /* CADEMArtistDetailViewModel.m */; };
 		8CABA0D018E4DE9A00118FFA /* NewBaskervilleStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CABA0CE18E4DE9A00118FFA /* NewBaskervilleStd-Roman.otf */; };
 		8CABA0D318E4DF5200118FFA /* UIFont+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABA0D218E4DF5200118FFA /* UIFont+EMAdditions.m */; };
 		8CABA0D618E4E49800118FFA /* NSString+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABA0D518E4E49800118FFA /* NSString+EMAdditions.m */; };
@@ -140,15 +137,11 @@
 		8C04EF8018CB9353008FBC9B /* UIView+CADAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CADAdditions.h"; sourceTree = "<group>"; };
 		8C04EF8118CB9353008FBC9B /* UIView+CADAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CADAdditions.m"; sourceTree = "<group>"; };
 		8C04EF8218CB9353008FBC9B /* UIViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Private.h"; sourceTree = "<group>"; };
-		8C04EF8718CB9408008FBC9B /* CADEMArtistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADEMArtistsViewController.h; sourceTree = "<group>"; };
-		8C04EF8818CB9408008FBC9B /* CADEMArtistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADEMArtistsViewController.m; sourceTree = "<group>"; };
 		8C04EF8918CB9408008FBC9B /* CADEMArtistsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CADEMArtistsViewController.xib; sourceTree = "<group>"; };
 		8C04EF9518CBCF50008FBC9B /* CADBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADBaseModel.h; path = Model/CADBaseModel.h; sourceTree = "<group>"; };
 		8C04EF9618CBCF50008FBC9B /* CADBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADBaseModel.m; path = Model/CADBaseModel.m; sourceTree = "<group>"; };
 		8C04EF9818CBD051008FBC9B /* CADEMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMArtist.h; path = Model/CADEMArtist.h; sourceTree = "<group>"; };
 		8C04EF9918CBD051008FBC9B /* CADEMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMArtist.m; path = Model/CADEMArtist.m; sourceTree = "<group>"; };
-		8C04EF9B18CBD3EF008FBC9B /* CADEMArtistsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADEMArtistsViewModel.h; sourceTree = "<group>"; };
-		8C04EF9C18CBD3EF008FBC9B /* CADEMArtistsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADEMArtistsViewModel.m; sourceTree = "<group>"; };
 		8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Services/SwiftyJSON.swift; sourceTree = "<group>"; };
 		8C1FF32D1B03AAFC00078E15 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Services/Alamofire/Alamofire.swift; sourceTree = "<group>"; };
 		8C1FF32E1B03AAFC00078E15 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Services/Alamofire/Download.swift; sourceTree = "<group>"; };
@@ -195,9 +188,10 @@
 		8C8BA6CE1B06758000896D11 /* CADArtistParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADArtistParser.swift; path = Services/CADArtistParser.swift; sourceTree = "<group>"; };
 		8C8BA6D01B07800600896D11 /* CADEMRootViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMRootViewControllerSwift.swift; sourceTree = "<group>"; };
 		8C8BA6D61B07AE0400896D11 /* CADEMExtrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMExtrasViewController.swift; path = Extras/CADEMExtrasViewController.swift; sourceTree = "<group>"; };
-		8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMArtistsViewControllerSwift.swift; sourceTree = "<group>"; };
-		8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModelSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMArtistsViewModelSwift.swift; sourceTree = "<group>"; };
-		8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistDetailViewModelSwift.swift; path = "Artist Detail/CADEMArtistDetailViewModelSwift.swift"; sourceTree = "<group>"; };
+		8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMArtistsViewController.swift; sourceTree = "<group>"; };
+		8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMArtistsViewModel.swift; sourceTree = "<group>"; };
+		8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistDetailViewModel.swift; path = "Artist Detail/CADEMArtistDetailViewModel.swift"; sourceTree = "<group>"; };
+		8C8BA6EE1B08DF8E00896D11 /* CADEMArtistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistDetailViewController.swift; path = "Artist Detail/CADEMArtistDetailViewController.swift"; sourceTree = "<group>"; };
 		8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistSwift.swift; path = Model/CADEMArtistSwift.swift; sourceTree = "<group>"; };
 		8CA1D4121947CC0B0095067C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		8CA1D4141947D0AD0095067C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -209,11 +203,7 @@
 		8CA8703B18CC83A800A845DD /* CADEMMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMMenuCollectionViewCell.h; path = ../View/Artists/CADEMMenuCollectionViewCell.h; sourceTree = "<group>"; };
 		8CA8703C18CC83A800A845DD /* CADEMMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMMenuCollectionViewCell.m; path = ../View/Artists/CADEMMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		8CA8703E18CC845000A845DD /* CADEMMenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMMenuCollectionViewCell.xib; path = ../View/Artists/CADEMMenuCollectionViewCell.xib; sourceTree = "<group>"; };
-		8CAABD5618E37162005431B9 /* CADEMArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMArtistDetailViewController.h; path = "Artist Detail/CADEMArtistDetailViewController.h"; sourceTree = "<group>"; };
-		8CAABD5718E37162005431B9 /* CADEMArtistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMArtistDetailViewController.m; path = "Artist Detail/CADEMArtistDetailViewController.m"; sourceTree = "<group>"; };
 		8CAABD5818E37162005431B9 /* CADEMArtistDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMArtistDetailViewController.xib; path = "Artist Detail/CADEMArtistDetailViewController.xib"; sourceTree = "<group>"; };
-		8CAABD5B18E3718F005431B9 /* CADEMArtistDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMArtistDetailViewModel.h; path = "Artist Detail/CADEMArtistDetailViewModel.h"; sourceTree = "<group>"; };
-		8CAABD5C18E3718F005431B9 /* CADEMArtistDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMArtistDetailViewModel.m; path = "Artist Detail/CADEMArtistDetailViewModel.m"; sourceTree = "<group>"; };
 		8CAB95731B0106A3008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		8CAB95751B01084A008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		8CAB95771B010917008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
@@ -389,13 +379,9 @@
 		8C04EF7818CB91D2008FBC9B /* Artists */ = {
 			isa = PBXGroup;
 			children = (
-				8C04EF8718CB9408008FBC9B /* CADEMArtistsViewController.h */,
-				8C04EF8818CB9408008FBC9B /* CADEMArtistsViewController.m */,
 				8C04EF8918CB9408008FBC9B /* CADEMArtistsViewController.xib */,
-				8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewControllerSwift.swift */,
-				8C04EF9B18CBD3EF008FBC9B /* CADEMArtistsViewModel.h */,
-				8C04EF9C18CBD3EF008FBC9B /* CADEMArtistsViewModel.m */,
-				8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModelSwift.swift */,
+				8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewController.swift */,
+				8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModel.swift */,
 			);
 			path = Artists;
 			sourceTree = "<group>";
@@ -534,12 +520,9 @@
 		8CAABD5518E36AE1005431B9 /* Artist Detail */ = {
 			isa = PBXGroup;
 			children = (
-				8CAABD5618E37162005431B9 /* CADEMArtistDetailViewController.h */,
-				8CAABD5718E37162005431B9 /* CADEMArtistDetailViewController.m */,
+				8C8BA6EE1B08DF8E00896D11 /* CADEMArtistDetailViewController.swift */,
 				8CAABD5818E37162005431B9 /* CADEMArtistDetailViewController.xib */,
-				8CAABD5B18E3718F005431B9 /* CADEMArtistDetailViewModel.h */,
-				8CAABD5C18E3718F005431B9 /* CADEMArtistDetailViewModel.m */,
-				8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift */,
+				8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModel.swift */,
 			);
 			name = "Artist Detail";
 			sourceTree = "<group>";
@@ -819,15 +802,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C04EF8A18CB9408008FBC9B /* CADEMArtistsViewController.m in Sources */,
 				8CAEB34D192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m in Sources */,
-				8C8BA6E91B07BE1600896D11 /* CADEMArtistsViewControllerSwift.swift in Sources */,
+				8C8BA6E91B07BE1600896D11 /* CADEMArtistsViewController.swift in Sources */,
 				8CB6C69718E8B5CD008D19FE /* CADEMInfoViewModel.m in Sources */,
 				8C8BA6D11B07800600896D11 /* CADEMRootViewControllerSwift.swift in Sources */,
 				8C1FF3141B03990A00078E15 /* SwiftyJSON.swift in Sources */,
 				8CAEB340192BF7F00017CF29 /* CADEMScheduleViewModel.m in Sources */,
 				8C23D61418FAD95600B3C106 /* CADEMInfoHeaderView.m in Sources */,
-				8C8BA6ED1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift in Sources */,
+				8C8BA6ED1B08D41100896D11 /* CADEMArtistDetailViewModel.swift in Sources */,
 				8CCA1B8918FC71A400B0C60C /* CADEMMapViewModel.m in Sources */,
 				8CAE0F6E18DE0D46009F110C /* CADArrayDataSource.m in Sources */,
 				8C1FF3461B03F7C400078E15 /* CADArrayDataSourceSwift.swift in Sources */,
@@ -840,11 +822,11 @@
 				8C1FF3361B03AAFC00078E15 /* Download.swift in Sources */,
 				8C1FF3421B03CC2900078E15 /* CADEMViewModelCollectionDelegateSwift.swift in Sources */,
 				8CAEB348192BFF180017CF29 /* CADEMScheduleHeaderView.m in Sources */,
+				8C8BA6EF1B08DF8E00896D11 /* CADEMArtistDetailViewController.swift in Sources */,
 				8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */,
 				8CABA0D618E4E49800118FFA /* NSString+EMAdditions.m in Sources */,
 				8C23D60F18FAD7EB00B3C106 /* CADEMInfoCollectionViewCell.m in Sources */,
 				8CDBF19F18DDC3DB002C6E50 /* CADEMMenuViewController.m in Sources */,
-				8C04EF9D18CBD3EF008FBC9B /* CADEMArtistsViewModel.m in Sources */,
 				8C04EF5518CB8F09008FBC9B /* main.m in Sources */,
 				8C04EF8418CB9353008FBC9B /* UIView+AutoLayout.m in Sources */,
 				8C8BA6D71B07AE0400896D11 /* CADEMExtrasViewController.swift in Sources */,
@@ -858,16 +840,14 @@
 				8C1FF33C1B03AAFC00078E15 /* Validation.swift in Sources */,
 				8C1FF3401B03C9EF00078E15 /* CADEMMenuViewModel.swift in Sources */,
 				8C04EF5918CB8F09008FBC9B /* CADAppDelegate.m in Sources */,
-				8C8BA6EB1B08C33900896D11 /* CADEMArtistsViewModelSwift.swift in Sources */,
+				8C8BA6EB1B08C33900896D11 /* CADEMArtistsViewModel.swift in Sources */,
 				8C774F7A1930DF8E000D5062 /* NSDate+EMAdditions.m in Sources */,
-				8CAABD5918E37162005431B9 /* CADEMArtistDetailViewController.m in Sources */,
 				8CA8703D18CC83A800A845DD /* CADEMMenuCollectionViewCell.m in Sources */,
 				8C04EF9718CBCF50008FBC9B /* CADBaseModel.m in Sources */,
 				8CA8703A18CC835300A845DD /* CADRootCollectionViewCell.m in Sources */,
 				8C1FF3381B03AAFC00078E15 /* ParameterEncoding.swift in Sources */,
 				8C1FF3391B03AAFC00078E15 /* Request.swift in Sources */,
 				8C8BA6CF1B06758000896D11 /* CADArtistParser.swift in Sources */,
-				8CAABD5D18E3718F005431B9 /* CADEMArtistDetailViewModel.m in Sources */,
 				8CAEB33C192BF7AB0017CF29 /* CADEMScheduleViewController.m in Sources */,
 				8C1FF34C1B04CD1D00078E15 /* CADEMTicketsViewController.swift in Sources */,
 				8CAEB343192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.m in Sources */,

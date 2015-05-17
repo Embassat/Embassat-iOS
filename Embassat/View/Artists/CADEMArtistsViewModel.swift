@@ -1,5 +1,5 @@
 //
-//  CADEMArtistsViewModelSwift.swift
+//  CADEMArtistsViewModel.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 17/05/15.
@@ -8,11 +8,14 @@
 
 import Foundation
 
-public class CADEMArtistsViewModelSwift: NSObject, CADEMViewModelCollectionDelegateSwift {
+public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSwift {
     
-    let model: Array<CADEMArtistSwift> = []
+    var model: Array<CADEMArtistSwift> = []
+    public let activeSubject: RACSubject
     
     override init() {
+        activeSubject = RACSubject()
+        
         super.init()
         
         self.artists().map
@@ -21,10 +24,14 @@ public class CADEMArtistsViewModelSwift: NSObject, CADEMViewModelCollectionDeleg
                 return sorted(artistsArray) { (artist1, artist2) in
                     return artist1.name < artist2.name
                 }
-            }.subscribeNext
-            { (artists: AnyObject!) -> Void in
-//                self.model = artists as Array<CADEMArtistSwift>
-        }
+            }.subscribeNext(
+                { [unowned self] (artists: AnyObject!) -> Void in
+                    self.model = artists as! Array<CADEMArtistSwift>
+                    self.activeSubject.sendNext(true)
+            }, error:
+                { [unowned self] (error: NSError!) -> Void in
+                    self.activeSubject.sendError(error)
+            })
     }
     
     func numberOfItemsInSection(section : Int) -> Int {
@@ -35,8 +42,8 @@ public class CADEMArtistsViewModelSwift: NSObject, CADEMViewModelCollectionDeleg
         return self.model[indexPath.row].name.uppercaseString
     }
     
-    public func artistViewModel(forIndexPath indexPath: NSIndexPath) -> CADEMArtistDetailViewModelSwift {
-        return CADEMArtistDetailViewModelSwift(model: self.model[indexPath.row])
+    public func artistViewModel(forIndexPath indexPath: NSIndexPath) -> CADEMArtistDetailViewModel {
+        return CADEMArtistDetailViewModel(model: self.model[indexPath.row])
     }
     
     func artists() -> RACSignal {

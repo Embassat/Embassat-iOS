@@ -9,10 +9,8 @@
 #import "CADEMMenuViewController.h"
 
 #import "CADEMMenuCollectionViewCell.h"
-#import "CADEMArtistsViewController.h"
 #import "CADEMScheduleViewController.h"
 #import "CADEMScheduleViewModel.h"
-#import "CADEMArtistsViewModel.h"
 #import "CADEMInfoViewController.h"
 #import "CADEMInfoViewModel.h"
 #import "CADEMMapViewController.h"
@@ -57,7 +55,7 @@
             break;
             
         case 1:
-            viewController = [[CADEMArtistsViewControllerSwift alloc] initWithNibName:@"CADEMArtistsViewController" bundle:nil];
+            viewController = [[CADEMArtistsViewController alloc] initWithNibName:@"CADEMArtistsViewController" bundle:nil];
             break;
             
         case 2:

@@ -1,5 +1,5 @@
 //
-//  CADEMArtistsViewControllerSwift.swift
+//  CADEMArtistsViewController.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 16/05/15.
@@ -8,23 +8,22 @@
 
 import UIKit
 
-public class CADEMArtistsViewControllerSwift: CADEMRootViewControllerSwift {
+public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
     
     @IBOutlet weak var artistsCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-    let dataSource: CADArrayDataSource
+    let dataSource: CADArrayDataSourceSwift
     let viewModel: CADEMArtistsViewModel
     
     override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
 
         let theViewModel = CADEMArtistsViewModel()
-        dataSource = CADArrayDataSource(viewModel: theViewModel, configureCellBlock: { (cell: AnyObject!, indexPath: AnyObject!) -> Void in
+        dataSource = CADArrayDataSourceSwift(viewModel: theViewModel, configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
             let theCell = cell as! CADEMMenuCollectionViewCell
-            let theIndexPath = indexPath as! NSIndexPath
             
-            theCell.optionName = theViewModel.titleAtIndexPath(theIndexPath)
-            theCell.hidesTopSeparator = theIndexPath.row == 0
-        })
+            theCell.optionName = theViewModel.titleAtIndexPath(indexPath)
+            theCell.hidesTopSeparator = indexPath.row == 0
+        }, configureHeaderBlock: nil)
         viewModel = theViewModel
         
         super.init(nibName: nibNameOrNil, bundle: nibBundle)
@@ -41,19 +40,19 @@ public class CADEMArtistsViewControllerSwift: CADEMRootViewControllerSwift {
         artistsCollectionView?.dataSource = self.dataSource
         artistsCollectionView?.registerNib(UINib(nibName: "CADEMMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSourceSwift.CADCellIdentifier)
         
-        self.viewModel.updatedContentSignal.subscribeNext { [unowned self] (_) -> Void in
+        viewModel.activeSubject.subscribeNext({ [unowned self] (_) -> Void in
             self.activityIndicator?.stopAnimating()
             self.artistsCollectionView?.reloadData()
-        }
-    }
-    
-    override public func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.viewModel.active = true
+        }, error: { (_) -> Void in
+            self.activityIndicator?.stopAnimating()
+            self.artistsCollectionView?.reloadData()
+        })
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.navigationController?.pushViewController(UIViewController(), animated: true)
+        let artistViewController = CADEMArtistDetailViewController(nibName: "CADEMArtistDetailViewController", bundle: nil)
+        artistViewController.viewModel = viewModel.artistViewModel(forIndexPath: indexPath)
+        
+        self.navigationController?.pushViewController(artistViewController, animated: true)
     }
 }

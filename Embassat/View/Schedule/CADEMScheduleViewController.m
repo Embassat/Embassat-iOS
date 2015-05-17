@@ -11,7 +11,6 @@
 #import "CADArrayDataSource.h"
 #import "CADEMScheduleViewModel.h"
 #import "CADEMScheduleHeaderView.h"
-#import "CADEMArtistDetailViewController.h"
 #import "CADEMScheduleCollectionViewCell.h"
 
 @interface CADEMScheduleViewController ()

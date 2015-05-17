@@ -1,5 +1,5 @@
 //
-//  CADEMArtistDetailViewModelSwift.swift
+//  CADEMArtistDetailViewModel.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 17/05/15.
@@ -9,11 +9,11 @@
 import Foundation
 import EventKit
 
-public class CADEMArtistDetailViewModelSwift: NSObject {
+public class CADEMArtistDetailViewModel: NSObject {
     
     let model: CADEMArtistSwift
     let artistName, artistStartHour, artistStartMinute, artistDay, artistStage: String
-    let artistDescription: NSString?
+    let artistDescription: String?
     let artistImageURL: NSURL
     
     init(model: CADEMArtistSwift) {
