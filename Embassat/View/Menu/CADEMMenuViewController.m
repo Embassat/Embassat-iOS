@@ -57,8 +57,7 @@
             break;
             
         case 1:
-            viewController = [[CADEMArtistsViewController alloc] init];
-            ((CADEMArtistsViewController *)viewController).viewModel = [[CADEMArtistsViewModel alloc] initWithModel:nil];
+            viewController = [[CADEMArtistsViewControllerSwift alloc] initWithNibName:@"CADEMArtistsViewController" bundle:nil];
             break;
             
         case 2:
