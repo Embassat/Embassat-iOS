@@ -63,6 +63,7 @@
 		8C8BA6D71B07AE0400896D11 /* CADEMExtrasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D61B07AE0400896D11 /* CADEMExtrasViewController.swift */; };
 		8C8BA6E91B07BE1600896D11 /* CADEMArtistsViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewControllerSwift.swift */; };
 		8C8BA6EB1B08C33900896D11 /* CADEMArtistsViewModelSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModelSwift.swift */; };
+		8C8BA6ED1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift */; };
 		8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */; };
 		8CA1D4131947CC0B0095067C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA1D4121947CC0B0095067C /* EventKit.framework */; };
 		8CA1D4161947D0AD0095067C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D4141947D0AD0095067C /* star.png */; };
@@ -196,6 +197,7 @@
 		8C8BA6D61B07AE0400896D11 /* CADEMExtrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMExtrasViewController.swift; path = Extras/CADEMExtrasViewController.swift; sourceTree = "<group>"; };
 		8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMArtistsViewControllerSwift.swift; sourceTree = "<group>"; };
 		8C8BA6EA1B08C33900896D11 /* CADEMArtistsViewModelSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMArtistsViewModelSwift.swift; sourceTree = "<group>"; };
+		8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistDetailViewModelSwift.swift; path = "Artist Detail/CADEMArtistDetailViewModelSwift.swift"; sourceTree = "<group>"; };
 		8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistSwift.swift; path = Model/CADEMArtistSwift.swift; sourceTree = "<group>"; };
 		8CA1D4121947CC0B0095067C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		8CA1D4141947D0AD0095067C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 				8CAABD5818E37162005431B9 /* CADEMArtistDetailViewController.xib */,
 				8CAABD5B18E3718F005431B9 /* CADEMArtistDetailViewModel.h */,
 				8CAABD5C18E3718F005431B9 /* CADEMArtistDetailViewModel.m */,
+				8C8BA6EC1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift */,
 			);
 			name = "Artist Detail";
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				8C1FF3141B03990A00078E15 /* SwiftyJSON.swift in Sources */,
 				8CAEB340192BF7F00017CF29 /* CADEMScheduleViewModel.m in Sources */,
 				8C23D61418FAD95600B3C106 /* CADEMInfoHeaderView.m in Sources */,
+				8C8BA6ED1B08D41100896D11 /* CADEMArtistDetailViewModelSwift.swift in Sources */,
 				8CCA1B8918FC71A400B0C60C /* CADEMMapViewModel.m in Sources */,
 				8CAE0F6E18DE0D46009F110C /* CADArrayDataSource.m in Sources */,
 				8C1FF3461B03F7C400078E15 /* CADArrayDataSourceSwift.swift in Sources */,

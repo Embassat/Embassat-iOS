@@ -7,6 +7,7 @@
 
 #import "UIView+CADAdditions.h"
 #import "UIFont+EMAdditions.h"
+#import "NSDate+EMAdditions.h"
 
 #import "CADEMArtistsViewModel.h"
 #import "CADArrayDataSource.h"

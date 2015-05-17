@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Crows And Dogs. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public class CADEMMenuViewModel: NSObject, CADEMViewModelCollectionDelegateSwift {
     

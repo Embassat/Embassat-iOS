@@ -41,7 +41,7 @@ public class CADEMArtistsViewControllerSwift: CADEMRootViewControllerSwift {
         artistsCollectionView?.dataSource = self.dataSource
         artistsCollectionView?.registerNib(UINib(nibName: "CADEMMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSourceSwift.CADCellIdentifier)
         
-        self.viewModel.updatedContentSignal.subscribeNext { (_) -> Void in
+        self.viewModel.updatedContentSignal.subscribeNext { [unowned self] (_) -> Void in
             self.activityIndicator?.stopAnimating()
             self.artistsCollectionView?.reloadData()
         }
@@ -54,6 +54,6 @@ public class CADEMArtistsViewControllerSwift: CADEMRootViewControllerSwift {
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        self.navigationController?.pushViewController(UIViewController(), animated: true)
     }
 }

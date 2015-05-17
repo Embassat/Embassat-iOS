@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Crows And Dogs. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public class CADEMArtistsViewModelSwift: NSObject, CADEMViewModelCollectionDelegateSwift {
     
@@ -15,11 +15,15 @@ public class CADEMArtistsViewModelSwift: NSObject, CADEMViewModelCollectionDeleg
     override init() {
         super.init()
         
-        self.artists().map { (artists: AnyObject!) -> AnyObject! in
-            let artistsArray = artists as! Array<CADEMArtistSwift>
-            return sorted(artistsArray) { (artist1, artist2) in
-                return artist1.name < artist2.name
-            }
+        self.artists().map
+            { (artists: AnyObject!) -> AnyObject! in
+                let artistsArray = artists as! Array<CADEMArtistSwift>
+                return sorted(artistsArray) { (artist1, artist2) in
+                    return artist1.name < artist2.name
+                }
+            }.subscribeNext
+            { (artists: AnyObject!) -> Void in
+//                self.model = artists as Array<CADEMArtistSwift>
         }
     }
     
@@ -29,6 +33,10 @@ public class CADEMArtistsViewModelSwift: NSObject, CADEMViewModelCollectionDeleg
     
     public func titleAtIndexPath(indexPath: NSIndexPath) -> String {
         return self.model[indexPath.row].name.uppercaseString
+    }
+    
+    public func artistViewModel(forIndexPath indexPath: NSIndexPath) -> CADEMArtistDetailViewModelSwift {
+        return CADEMArtistDetailViewModelSwift(model: self.model[indexPath.row])
     }
     
     func artists() -> RACSignal {
