@@ -94,7 +94,6 @@
     {
         _dataSource = [[CADArrayDataSourceSwift alloc] initWithViewModel:self.viewModel configureCellBlock:^(CADEMMenuCollectionViewCell *cell, NSIndexPath *indexPath) {
             cell.optionName = [self.viewModel titleAtIndexPath:indexPath];
-            cell.hidesTopSeparator = indexPath.row == 0;
         } configureHeaderBlock:nil];
     }
     

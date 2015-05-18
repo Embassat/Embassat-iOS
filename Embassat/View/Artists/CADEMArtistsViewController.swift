@@ -22,7 +22,6 @@ public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
             let theCell = cell as! CADEMMenuCollectionViewCell
             
             theCell.optionName = theViewModel.titleAtIndexPath(indexPath)
-            theCell.hidesTopSeparator = indexPath.row == 0
         }, configureHeaderBlock: nil)
         viewModel = theViewModel
         

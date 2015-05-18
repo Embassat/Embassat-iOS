@@ -11,6 +11,5 @@
 @interface CADEMMenuCollectionViewCell : CADRootCollectionViewCell
 
 @property (nonatomic, copy) NSString *optionName;
-@property (nonatomic) BOOL hidesTopSeparator;
 
 @end

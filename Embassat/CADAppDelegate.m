@@ -81,7 +81,7 @@
     if (!_rootNavigationController)
     {
         CADEMMenuViewController *menuViewController = [[CADEMMenuViewController alloc] init];
-        menuViewController.viewModel = [[CADEMMenuViewModel alloc] initWithModel:@[@"INFORMACIÓ", @"ARTISTES", @"HORARIS", @"MAPA", @"ENTRADES", @"EXTRES"]];
+        menuViewController.viewModel = [[CADEMMenuViewModel alloc] initWithModel:@[@"Info", @"Artistes", @"Horaris", @"Mapa", @"Entrades", @"Extres"]];
         
         _rootNavigationController = [[CADEMRootNavigationController alloc] initWithRootViewController:menuViewController];
     }

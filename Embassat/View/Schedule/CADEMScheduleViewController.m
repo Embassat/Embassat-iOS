@@ -60,7 +60,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CADEMArtistDetailViewController *artistDetailViewController = [[CADEMArtistDetailViewController alloc] init];
+    CADEMArtistDetailViewController *artistDetailViewController = [[CADEMArtistDetailViewController alloc] initWithNibName:@"CADEMArtistDetailViewController" bundle:nil];
     artistDetailViewController.viewModel = [self.viewModel artistViewModelForIndexPath:indexPath];
     
     [self.navigationController pushViewController:artistDetailViewController animated:YES];

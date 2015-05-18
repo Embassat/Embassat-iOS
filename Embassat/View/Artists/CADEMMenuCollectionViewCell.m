@@ -10,7 +10,6 @@
 
 @interface CADEMMenuCollectionViewCell ()
 
-@property (nonatomic, weak) IBOutlet UIView *topSeparator;
 @property (nonatomic, weak) IBOutlet UILabel *optionNameLabel;
 
 @end
@@ -19,7 +18,6 @@
 
 - (void)setupView
 {
-    RAC(self.topSeparator, hidden) = RACObserve(self, hidesTopSeparator);
     RAC(self.optionNameLabel, text) = RACObserve(self, optionName);
     
     self.optionNameLabel.font = [UIFont em_titleFontOfSize:16.0f];
