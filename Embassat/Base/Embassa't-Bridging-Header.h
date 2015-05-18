@@ -9,6 +9,7 @@
 
 #import "UIView+CADAdditions.h"
 #import "UIFont+EMAdditions.h"
+#import "UIColor+EMAdditions.h"
 #import "NSDate+EMAdditions.h"
 
 #import "CADArrayDataSource.h"

@@ -8,6 +8,8 @@
 
 #import "CADEMRootViewController.h"
 
+#import "UIColor+EMAdditions.h"
+
 @interface CADEMRootViewController ()
 
 @end
@@ -18,7 +20,7 @@
 {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = [UIColor em_backgroundColor];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem:backButton];
 }

@@ -10,6 +10,16 @@
 
 @implementation UIColor (EMAdditions)
 
++ (UIColor *)em_barTintColor
+{
+    return [UIColor colorWithRed:240.0/255.0 green:81.0/255.0 blue:88.0/255.0 alpha:1.0];
+}
+
++ (UIColor *)em_backgroundColor
+{
+    return [UIColor colorWithRed:0.0 green:5.0/255.0 blue:67.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)em_stageBlueColor
 {
     return [UIColor colorWithRed:17.0/255.0 green:73.0/255.0 blue:160.0/255.0 alpha:1.0];

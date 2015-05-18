@@ -8,6 +8,9 @@
 
 @interface UIColor (EMAdditions)
 
++ (UIColor *)em_barTintColor;
++ (UIColor *)em_backgroundColor;
+
 + (UIColor *)em_stageBlueColor;
 + (UIColor *)em_stageYellowColor;
 + (UIColor *)em_stageRedColor;

@@ -12,6 +12,7 @@
 
 #import "CADEMRootNavigationController.h"
 #import "CADEMMenuViewController.h"
+#import "UIColor+EMAdditions.h"
 
 #import <ShareKit/ShareKit.h>
 #import <ShareKit/SHKConfiguration.h>
@@ -69,7 +70,7 @@
 - (void)setupAppearance
 {
     UINavigationBar.appearance.tintColor = [UIColor whiteColor];
-    UINavigationBar.appearance.barTintColor = [UIColor blackColor];
+    UINavigationBar.appearance.barTintColor = [UIColor em_barTintColor];
     UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont em_titleFontOfSize:16.0f]};
 }
 
