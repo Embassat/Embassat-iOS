@@ -35,8 +35,8 @@
     RAC(self.artistNameLabel, text) = [RACObserve(self, artistName) ignore:nil];
     RAC(self.stageLabel, text) = [RACObserve(self, stageName) ignore:nil];
     
-    self.startTimeLabel.font = self.endTimeLabel.font = self.artistNameLabel.font = [UIFont em_boldFontOfSize:16.0f];
-    self.stageLabel.font = [UIFont em_romanFontOfSize:16.0f];
+    self.startTimeLabel.font = self.endTimeLabel.font = self.artistNameLabel.font = [UIFont em_titleFontOfSize:16.0f];
+    self.stageLabel.font = [UIFont em_detailFontOfSize:16.0f];
     self.artistNameLabel.adjustsFontSizeToFitWidth = YES;
 }
 

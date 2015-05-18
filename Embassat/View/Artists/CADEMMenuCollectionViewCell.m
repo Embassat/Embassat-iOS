@@ -22,7 +22,7 @@
     RAC(self.topSeparator, hidden) = RACObserve(self, hidesTopSeparator);
     RAC(self.optionNameLabel, text) = RACObserve(self, optionName);
     
-    self.optionNameLabel.font = [UIFont em_boldFontOfSize:16.0f];
+    self.optionNameLabel.font = [UIFont em_titleFontOfSize:16.0f];
     self.optionNameLabel.adjustsFontSizeToFitWidth = YES;
 }
 

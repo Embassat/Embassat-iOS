@@ -50,6 +50,8 @@
 		8C23D62918FB001F00B3C106 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62118FB001F00B3C106 /* 120x120.png */; };
 		8C35AE081B0105C30014331F /* CADArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35AE071B0105C30014331F /* CADArtistService.swift */; };
 		8C4BC4431AFBC48700215DED /* Embassa_t_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BC4421AFBC48700215DED /* Embassa_t_Tests.m */; };
+		8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB381B0A8F80000E019F /* apercu_medium.otf */; };
+		8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */; };
 		8C774F5F192D682B000D5062 /* CADEMTicketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F5E192D682B000D5062 /* CADEMTicketsViewController.xib */; };
 		8C774F71192EC0B9000D5062 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F6F192EC0B9000D5062 /* Default-568h@2x.png */; };
 		8C774F72192EC0B9000D5062 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F70192EC0B9000D5062 /* Default@2x.png */; };
@@ -73,7 +75,6 @@
 		8CA8703D18CC83A800A845DD /* CADEMMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8703C18CC83A800A845DD /* CADEMMenuCollectionViewCell.m */; };
 		8CA8703F18CC845000A845DD /* CADEMMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA8703E18CC845000A845DD /* CADEMMenuCollectionViewCell.xib */; };
 		8CAABD5A18E37162005431B9 /* CADEMArtistDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAABD5818E37162005431B9 /* CADEMArtistDetailViewController.xib */; };
-		8CABA0D018E4DE9A00118FFA /* NewBaskervilleStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CABA0CE18E4DE9A00118FFA /* NewBaskervilleStd-Roman.otf */; };
 		8CABA0D318E4DF5200118FFA /* UIFont+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABA0D218E4DF5200118FFA /* UIFont+EMAdditions.m */; };
 		8CABA0D618E4E49800118FFA /* NSString+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABA0D518E4E49800118FFA /* NSString+EMAdditions.m */; };
 		8CAE0F6E18DE0D46009F110C /* CADArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE0F6D18DE0D46009F110C /* CADArrayDataSource.m */; };
@@ -85,7 +86,6 @@
 		8CAEB348192BFF180017CF29 /* CADEMScheduleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEB347192BFF180017CF29 /* CADEMScheduleHeaderView.m */; };
 		8CAEB34A192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAEB349192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib */; };
 		8CAEB34D192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEB34C192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m */; };
-		8CB6C68E18E8B230008D19FE /* NewBaskervilleStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CB6C68D18E8B230008D19FE /* NewBaskervilleStd-Bold.otf */; };
 		8CB6C69318E8B3D6008D19FE /* CADEMInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB6C69118E8B3D6008D19FE /* CADEMInfoViewController.m */; };
 		8CB6C69418E8B3D6008D19FE /* CADEMInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB6C69218E8B3D6008D19FE /* CADEMInfoViewController.xib */; };
 		8CB6C69718E8B5CD008D19FE /* CADEMInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB6C69618E8B5CD008D19FE /* CADEMInfoViewModel.m */; };
@@ -178,6 +178,8 @@
 		8C4BC4411AFBC48700215DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C4BC4421AFBC48700215DED /* Embassa_t_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Embassa_t_Tests.m; sourceTree = "<group>"; };
 		8C4BC4491AFBC83B00215DED /* Embassa't-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Embassa't-Bridging-Header.h"; path = "Base/Embassa't-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C6BCB381B0A8F80000E019F /* apercu_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apercu_medium.otf; sourceTree = "<group>"; };
+		8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "noe-display-bold.otf"; sourceTree = "<group>"; };
 		8C774F5E192D682B000D5062 /* CADEMTicketsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMTicketsViewController.xib; path = Tickets/CADEMTicketsViewController.xib; sourceTree = "<group>"; };
 		8C774F6F192EC0B9000D5062 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8C774F70192EC0B9000D5062 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -210,7 +212,6 @@
 		8CAB95731B0106A3008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		8CAB95751B01084A008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		8CAB95771B010917008BE43E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
-		8CABA0CE18E4DE9A00118FFA /* NewBaskervilleStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewBaskervilleStd-Roman.otf"; sourceTree = "<group>"; };
 		8CABA0D118E4DF5200118FFA /* UIFont+EMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+EMAdditions.h"; sourceTree = "<group>"; };
 		8CABA0D218E4DF5200118FFA /* UIFont+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+EMAdditions.m"; sourceTree = "<group>"; };
 		8CABA0D418E4E49800118FFA /* NSString+EMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EMAdditions.h"; sourceTree = "<group>"; };
@@ -231,7 +232,6 @@
 		8CAEB349192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMScheduleHeaderView.xib; path = Schedule/CADEMScheduleHeaderView.xib; sourceTree = "<group>"; };
 		8CAEB34B192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+ConstraintMatching.h"; sourceTree = "<group>"; };
 		8CAEB34C192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+ConstraintMatching.m"; sourceTree = "<group>"; };
-		8CB6C68D18E8B230008D19FE /* NewBaskervilleStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewBaskervilleStd-Bold.otf"; sourceTree = "<group>"; };
 		8CB6C69018E8B3D6008D19FE /* CADEMInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMInfoViewController.h; path = Info/CADEMInfoViewController.h; sourceTree = "<group>"; };
 		8CB6C69118E8B3D6008D19FE /* CADEMInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMInfoViewController.m; path = Info/CADEMInfoViewController.m; sourceTree = "<group>"; };
 		8CB6C69218E8B3D6008D19FE /* CADEMInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMInfoViewController.xib; path = Info/CADEMInfoViewController.xib; sourceTree = "<group>"; };
@@ -535,8 +535,8 @@
 		8CABA0CC18E4DE9A00118FFA /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				8CB6C68D18E8B230008D19FE /* NewBaskervilleStd-Bold.otf */,
-				8CABA0CE18E4DE9A00118FFA /* NewBaskervilleStd-Roman.otf */,
+				8C6BCB381B0A8F80000E019F /* apercu_medium.otf */,
+				8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -733,9 +733,7 @@
 				8CB6C69B18E8B919008D19FE /* info_cover@2x.png in Resources */,
 				8CA1D41D1948FAAE0095067C /* CADEMExtrasViewController.xib in Resources */,
 				8CDBF19818DDB9D9002C6E50 /* background@2x.png in Resources */,
-				8CB6C68E18E8B230008D19FE /* NewBaskervilleStd-Bold.otf in Resources */,
 				8C23D60C18FAD6FC00B3C106 /* info4.jpg in Resources */,
-				8CABA0D018E4DE9A00118FFA /* NewBaskervilleStd-Roman.otf in Resources */,
 				8CAEB345192BFA060017CF29 /* CADEMScheduleCollectionViewCell.xib in Resources */,
 				8CA1D4171947D0AD0095067C /* star@2x.png in Resources */,
 				8CB6C69A18E8B919008D19FE /* info_cover.png in Resources */,
@@ -750,10 +748,12 @@
 				8C23D61B18FAE92800B3C106 /* placeholder.jpg in Resources */,
 				8C23D60A18FAD6FC00B3C106 /* info2.jpg in Resources */,
 				8C23D61618FAD96600B3C106 /* CADEMInfoHeaderView.xib in Resources */,
+				8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */,
 				8C23D62618FB001F00B3C106 /* 58x58.png in Resources */,
 				8CB6C69418E8B3D6008D19FE /* CADEMInfoViewController.xib in Resources */,
 				8CEF6825193BDD120001B801 /* chevron.png in Resources */,
 				8C23D60B18FAD6FC00B3C106 /* info3.jpg in Resources */,
+				8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */,
 				8C774F72192EC0B9000D5062 /* Default@2x.png in Resources */,
 				8CAEB33D192BF7AB0017CF29 /* CADEMScheduleViewController.xib in Resources */,
 				8C23D61118FAD7FE00B3C106 /* CADEMInfoCollectionViewCell.xib in Resources */,

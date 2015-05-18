@@ -32,7 +32,7 @@
         [subview addGestureRecognizer:tapGesture];
     }];
     
-    self.thursdayLabel.font = self.fridayLabel.font = self.saturdayLabel.font = [UIFont em_boldFontOfSize:16.0f];
+    self.thursdayLabel.font = self.fridayLabel.font = self.saturdayLabel.font = [UIFont em_titleFontOfSize:16.0f];
 }
 
 - (void)containerTapped:(UITapGestureRecognizer *)sender

@@ -42,12 +42,12 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
         super.viewDidLoad()
         
         scrollView?.scrollIndicatorInsets = UIEdgeInsetsMake((coverImage?.bounds.height)! + (infoView?.bounds.height)!, 0, (addButton?.bounds.height)!, 0)
-        descriptionLabel?.font = UIFont.em_romanFontOfSize(16.0)
-        stageLabel?.font = UIFont.em_boldFontOfSize(16.0)
-        dayLabel?.font = UIFont.em_boldFontOfSize(16.0)
-        timeLabel?.font = UIFont.em_boldFontOfSize(16.0)
-        shareButton?.titleLabel?.font = UIFont.em_boldFontOfSize(16.0)
-        addButton?.titleLabel?.font = UIFont.em_boldFontOfSize(16.0)
+        descriptionLabel?.font = UIFont.em_detailFontOfSize(16.0)
+        stageLabel?.font = UIFont.em_titleFontOfSize(16.0)
+        dayLabel?.font = UIFont.em_titleFontOfSize(16.0)
+        timeLabel?.font = UIFont.em_titleFontOfSize(16.0)
+        shareButton?.titleLabel?.font = UIFont.em_titleFontOfSize(16.0)
+        addButton?.titleLabel?.font = UIFont.em_titleFontOfSize(16.0)
         view.backgroundColor = UIColor.whiteColor()
         
         shareButton?.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ [unowned self] (_) -> Void in

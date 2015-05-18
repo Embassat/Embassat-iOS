@@ -38,8 +38,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NewBaskervilleStd-Roman.otf</string>
-		<string>NewBaskervilleStd-Bold.otf</string>
+		<string>apercu_medium.otf</string>
+		<string>noe-display-bold.otf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

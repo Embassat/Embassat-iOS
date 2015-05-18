@@ -24,7 +24,7 @@
     RAC(self.titleLabel, text) = RACObserve(self, title);
     RAC(self.coverImage, image) = RACObserve(self, cover);
     
-    self.titleLabel.font = [UIFont em_boldFontOfSize:16.0f];
+    self.titleLabel.font = [UIFont em_titleFontOfSize:16.0f];
 }
 
 @end

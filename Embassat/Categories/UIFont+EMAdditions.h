@@ -10,7 +10,7 @@
 
 @interface UIFont (EMAdditions)
 
-+ (UIFont *)em_romanFontOfSize:(CGFloat)size;
-+ (UIFont *)em_boldFontOfSize:(CGFloat)size;
++ (UIFont *)em_detailFontOfSize:(CGFloat)size;
++ (UIFont *)em_titleFontOfSize:(CGFloat)size;
 
 @end

@@ -22,7 +22,7 @@
     
     RAC(self.bodyLabel, text) = RACObserve(self, body);
     
-    self.bodyLabel.font = [UIFont em_romanFontOfSize:16.0f];
+    self.bodyLabel.font = [UIFont em_detailFontOfSize:16.0f];
 }
 
 @end
