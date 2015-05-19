@@ -64,7 +64,7 @@
 
 - (NSString *)artistNameAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [[self artistAtIndexPath:indexPath].name uppercaseString];
+    return [self artistAtIndexPath:indexPath].name;
 }
 
 - (NSString *)stageNameAtIndexPath:(NSIndexPath *)indexPath
@@ -116,18 +116,9 @@
 {
     CADEMArtistSwift *artist = [self artistAtIndexPath:indexPath];
     NSDate * now = [NSDate date];
-    static NSDictionary *mapping = nil;
-    if(!mapping)
-    {
-        mapping = @{
-                    @"Amfiteatre Yeearphone" : [UIColor em_stageRedBackgroundColor],
-                    @"Escenari Gran" : [UIColor em_stageYellowBackgroundColor],
-                    @"Mirador" : [UIColor em_stageBlueBackgroundColor],
-                    };
-    }
     
     return [now isLaterThanDate:artist.date] && [now isEarlierThanDate:artist.date] ?
-        mapping[[self stageNameAtIndexPath:indexPath]] ?: [UIColor whiteColor] : [UIColor whiteColor];
+        [UIColor em_backgroundColor] : [UIColor em_backgroundDeselectedColor];
 }
 
 #pragma mark - Private

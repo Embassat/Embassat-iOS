@@ -1,92 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="apercu_medium.otf">
+            <string>Apercu-Medium</string>
+            <string>Apercu-Medium</string>
+            <string>Apercu-Medium</string>
+            <string>Apercu-Medium</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="82j-GB-B8T" customClass="CADEMScheduleCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+        <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="82j-GB-B8T" customClass="CADEMScheduleCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-ou-Yak">
-                        <rect key="frame" x="0.0" y="0.0" width="11" height="61"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="11" id="1h7-8C-EHh"/>
-                        </constraints>
-                    </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy9-eY-NOJ">
-                        <rect key="frame" x="22" y="13" width="41" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="22" y="12" width="37" height="18"/>
+                        <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSW-gK-g8o">
-                        <rect key="frame" x="22" y="37" width="41" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="22" y="34" width="37" height="18"/>
+                        <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuR-ct-rA6">
-                        <rect key="frame" x="106" y="13" width="41" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="95" y="12" width="37" height="18"/>
+                        <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn1-4i-fwW">
-                        <rect key="frame" x="106" y="37" width="40" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="95" y="34" width="37" height="18"/>
+                        <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="15"/>
+                        <color key="textColor" red="0.94117647058823528" green="0.31764705882352939" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPJ-BM-zam">
-                        <rect key="frame" x="0.0" y="60" width="320" height="1"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="TAd-K2-JSW"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0078431372549019607" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="dSW-gK-g8o" firstAttribute="top" secondItem="Sy9-eY-NOJ" secondAttribute="bottom" constant="4" id="2Ef-tz-lX3"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mn1-4i-fwW" secondAttribute="trailing" id="4Uq-XS-2dp"/>
-                <constraint firstItem="dsg-ou-Yak" firstAttribute="leading" secondItem="82j-GB-B8T" secondAttribute="leading" id="80l-ou-fo9"/>
-                <constraint firstItem="qPJ-BM-zam" firstAttribute="leading" secondItem="82j-GB-B8T" secondAttribute="leading" id="L8Y-pA-yBa"/>
+                <constraint firstAttribute="bottom" secondItem="dSW-gK-g8o" secondAttribute="bottom" constant="11" id="Dgs-dY-as9"/>
                 <constraint firstItem="dSW-gK-g8o" firstAttribute="centerY" secondItem="mn1-4i-fwW" secondAttribute="centerY" id="ObF-ee-5JR"/>
-                <constraint firstAttribute="bottom" secondItem="dsg-ou-Yak" secondAttribute="bottom" id="SEU-dV-lSZ"/>
+                <constraint firstItem="Sy9-eY-NOJ" firstAttribute="top" secondItem="82j-GB-B8T" secondAttribute="top" constant="12" id="SNx-uY-diS"/>
                 <constraint firstItem="Sy9-eY-NOJ" firstAttribute="leading" secondItem="dSW-gK-g8o" secondAttribute="leading" id="UrW-Om-i0j"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tuR-ct-rA6" secondAttribute="trailing" id="Wrg-aY-hcd"/>
-                <constraint firstItem="Sy9-eY-NOJ" firstAttribute="top" secondItem="82j-GB-B8T" secondAttribute="top" constant="13" id="XjG-QO-Nti"/>
-                <constraint firstItem="tuR-ct-rA6" firstAttribute="leading" secondItem="82j-GB-B8T" secondAttribute="leading" constant="106" id="Y9w-tl-RC0"/>
-                <constraint firstItem="Sy9-eY-NOJ" firstAttribute="leading" secondItem="dsg-ou-Yak" secondAttribute="trailing" constant="11" id="Z8R-tJ-dLF"/>
+                <constraint firstItem="tuR-ct-rA6" firstAttribute="leading" secondItem="82j-GB-B8T" secondAttribute="leading" constant="95" id="Y9w-tl-RC0"/>
                 <constraint firstItem="tuR-ct-rA6" firstAttribute="leading" secondItem="mn1-4i-fwW" secondAttribute="leading" id="bw3-UZ-8Tl"/>
-                <constraint firstAttribute="bottom" secondItem="qPJ-BM-zam" secondAttribute="bottom" id="gVT-Py-34j"/>
-                <constraint firstItem="mn1-4i-fwW" firstAttribute="top" secondItem="tuR-ct-rA6" secondAttribute="bottom" constant="4" id="wLE-tC-dOB"/>
+                <constraint firstItem="Sy9-eY-NOJ" firstAttribute="leading" secondItem="82j-GB-B8T" secondAttribute="leading" constant="22" id="fVN-Hd-k9H"/>
                 <constraint firstItem="tuR-ct-rA6" firstAttribute="centerY" secondItem="Sy9-eY-NOJ" secondAttribute="centerY" id="wS2-gN-rDC"/>
-                <constraint firstItem="dsg-ou-Yak" firstAttribute="top" secondItem="82j-GB-B8T" secondAttribute="top" id="wkp-EX-0bt"/>
-                <constraint firstAttribute="trailing" secondItem="qPJ-BM-zam" secondAttribute="trailing" id="yKJ-Go-qdV"/>
             </constraints>
             <connections>
                 <outlet property="artistNameLabel" destination="tuR-ct-rA6" id="eNt-M8-Ug9"/>
                 <outlet property="endTimeLabel" destination="dSW-gK-g8o" id="nkX-Za-GL6"/>
-                <outlet property="leftSeparatorView" destination="dsg-ou-Yak" id="qst-bE-Rqp"/>
                 <outlet property="stageLabel" destination="mn1-4i-fwW" id="cn3-hg-08S"/>
                 <outlet property="startTimeLabel" destination="Sy9-eY-NOJ" id="fCI-yX-OOu"/>
             </connections>
         </collectionViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

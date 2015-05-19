@@ -20,6 +20,26 @@
     return [UIColor colorWithRed:0.0 green:5.0/255.0 blue:67.0/255.0 alpha:1.0];
 }
 
++ (UIColor *)em_backgroundDeselectedColor
+{
+    return [UIColor colorWithRed:0.0 green:2.0/255.0 blue:33.0/255.0 alpha:1.0];
+}
+
++ (UIColor *)em_scheduleHeaderBackgroundColor
+{
+    return [UIColor colorWithRed:255.0/255.0 green:140.0/255.0 blue:140.0/255.0 alpha:1.0];
+}
+
++ (UIColor *)em_scheduleHeaderDeselectedBackgroundColor
+{
+    return [UIColor colorWithRed:253.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
+}
+
++ (UIColor *)em_scheduleHeaderDeselectedTextColor
+{
+    return [UIColor colorWithRed:240.0/255.0 green:81.0/255.0 blue:80.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)em_stageBlueColor
 {
     return [UIColor colorWithRed:17.0/255.0 green:73.0/255.0 blue:160.0/255.0 alpha:1.0];

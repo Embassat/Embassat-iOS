@@ -79,7 +79,6 @@
             cell.finalMinute = [self.viewModel finalMinuteAtIndexPath:indexPath];
             cell.artistName = [self.viewModel artistNameAtIndexPath:indexPath];
             cell.stageName = [self.viewModel stageNameAtIndexPath:indexPath];
-            cell.leftColor = [self.viewModel colorAtIndexPath:indexPath];
             cell.backgroundColor = [self.viewModel backgroundColorAtIndexPath:indexPath];
         } configureHeaderBlock:^(CADEMScheduleHeaderView *headerView, id indexPath) {
             [headerView.daySelectedSignal subscribeNext:^(id x) {

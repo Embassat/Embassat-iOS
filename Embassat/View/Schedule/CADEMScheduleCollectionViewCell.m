@@ -12,7 +12,6 @@
 
 @interface CADEMScheduleCollectionViewCell ()
 
-@property (nonatomic, weak) IBOutlet UIView *leftSeparatorView;
 @property (nonatomic, weak) IBOutlet UILabel *startTimeLabel, *endTimeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *artistNameLabel, *stageLabel;
 
@@ -24,8 +23,6 @@
 {
     [super setupView];
     
-    RAC(self.leftSeparatorView, backgroundColor) = [RACObserve(self, leftColor) ignore:nil];
-    
     RAC(self.startTimeLabel, text) = [[RACSignal combineLatest:@[RACObserve(self, initialHour), RACObserve(self, initialMinute)]] map:^id(RACTuple *tuple) {
         return [NSString stringWithFormat:@"%@:%@", tuple.first, tuple.second];
     }];
@@ -35,8 +32,7 @@
     RAC(self.artistNameLabel, text) = [RACObserve(self, artistName) ignore:nil];
     RAC(self.stageLabel, text) = [RACObserve(self, stageName) ignore:nil];
     
-    self.startTimeLabel.font = self.endTimeLabel.font = self.artistNameLabel.font = [UIFont em_titleFontOfSize:16.0f];
-    self.stageLabel.font = [UIFont em_detailFontOfSize:16.0f];
+    self.startTimeLabel.font = self.endTimeLabel.font = self.artistNameLabel.font = self.stageLabel.font = [UIFont em_detailFontOfSize:15.0f];
     self.artistNameLabel.adjustsFontSizeToFitWidth = YES;
 }
 

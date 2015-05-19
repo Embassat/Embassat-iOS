@@ -10,6 +10,10 @@
 
 + (UIColor *)em_barTintColor;
 + (UIColor *)em_backgroundColor;
++ (UIColor *)em_backgroundDeselectedColor;
++ (UIColor *)em_scheduleHeaderBackgroundColor;
++ (UIColor *)em_scheduleHeaderDeselectedBackgroundColor;
++ (UIColor *)em_scheduleHeaderDeselectedTextColor;
 
 + (UIColor *)em_stageBlueColor;
 + (UIColor *)em_stageYellowColor;

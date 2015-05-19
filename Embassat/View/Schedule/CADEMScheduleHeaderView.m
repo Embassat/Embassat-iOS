@@ -8,6 +8,8 @@
 
 #import "CADEMScheduleHeaderView.h"
 
+#import "UIColor+EMAdditions.h"
+
 @interface CADEMScheduleHeaderView ()
 
 @property (nonatomic, weak) IBOutlet UIView *thursdayContainer, *fridayContainer, *saturdayContainer;
@@ -24,7 +26,7 @@
     [super awakeFromNib];
 
     self.thursdayLabel.textColor = [UIColor whiteColor];
-    self.thursdayContainer.backgroundColor = [UIColor blackColor];
+    self.thursdayContainer.backgroundColor = [UIColor em_scheduleHeaderBackgroundColor];
     self.daySelectedSignal = [RACSubject subject];
     
     [@[self.thursdayContainer, self.fridayContainer, self.saturdayContainer] enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
@@ -32,7 +34,7 @@
         [subview addGestureRecognizer:tapGesture];
     }];
     
-    self.thursdayLabel.font = self.fridayLabel.font = self.saturdayLabel.font = [UIFont em_titleFontOfSize:16.0f];
+    self.thursdayLabel.font = self.fridayLabel.font = self.saturdayLabel.font = [UIFont em_detailFontOfSize:15.0f];
 }
 
 - (void)containerTapped:(UITapGestureRecognizer *)sender
@@ -42,15 +44,15 @@
     [[containers.rac_sequence filter:^BOOL(UIView *view) {
         return view.tag == sender.view.tag;
     }].array enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
-        subview.backgroundColor = [UIColor blackColor];
+        subview.backgroundColor = [UIColor em_scheduleHeaderBackgroundColor];
         ((UILabel *)[subview.subviews firstObject]).textColor = [UIColor whiteColor];
     }];
     
     [[containers.rac_sequence filter:^BOOL(UIView *view) {
         return view.tag != sender.view.tag;
     }].array enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
-        subview.backgroundColor = [UIColor whiteColor];
-        ((UILabel *)[subview.subviews firstObject]).textColor = [UIColor blackColor];
+        subview.backgroundColor = [UIColor em_scheduleHeaderDeselectedBackgroundColor];
+        ((UILabel *)[subview.subviews firstObject]).textColor = [UIColor em_scheduleHeaderDeselectedTextColor];
     }];
     
     [(RACSubject *)self.daySelectedSignal sendNext:@(sender.view.tag)];

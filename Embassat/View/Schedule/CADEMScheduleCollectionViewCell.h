@@ -14,6 +14,4 @@
 @property (nonatomic, copy) NSString *finalHour, *finalMinute;
 @property (nonatomic, copy) NSString *artistName, *stageName;
 
-@property (nonatomic, strong) UIColor *leftColor;
-
 @end
