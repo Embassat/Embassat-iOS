@@ -29,7 +29,7 @@ static NSString *const kEMMapPinIdentifier = @"EMMapPinIdentifier";
 {
     if (self = [super init])
     {
-        self.title = @"MAPA";
+        self.title = @"Mapa";
     }
     
     return self;

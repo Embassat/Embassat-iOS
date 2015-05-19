@@ -16,7 +16,7 @@ public class CADEMExtrasViewController: CADEMRootViewControllerSwift {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "EXTRES"
+        title = "Extres"
         
         view.backgroundColor = UIColor.whiteColor()
         

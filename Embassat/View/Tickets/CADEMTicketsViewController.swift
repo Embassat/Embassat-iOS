@@ -20,7 +20,7 @@ public class CADEMTicketsViewController: CADEMRootViewControllerSwift {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "ENTRADES"
+        title = "Entrades"
         
         for view in [seasonContainer, dayTicketContainer, hotelContainer, tresCContainer] {
             let tapGesture = UITapGestureRecognizer()

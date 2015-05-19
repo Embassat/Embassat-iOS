@@ -23,7 +23,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     
     public var viewModel: CADEMArtistDetailViewModel? {
         didSet {
-            title = viewModel?.artistName.uppercaseString
+            title = viewModel?.artistName
             coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "placeholder.jpg"))
             stageLabel?.text = viewModel?.artistStage
             dayLabel?.text = viewModel?.artistDay

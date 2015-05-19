@@ -29,7 +29,7 @@
 {
     if (self = [super init])
     {
-        self.title = @"INFORMACIÓ";
+        self.title = @"Info";
     }
     
     return self;

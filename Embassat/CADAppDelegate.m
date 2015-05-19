@@ -71,7 +71,7 @@
 {
     UINavigationBar.appearance.tintColor = [UIColor whiteColor];
     UINavigationBar.appearance.barTintColor = [UIColor em_barTintColor];
-    UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont em_titleFontOfSize:16.0f]};
+    UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont em_titleFontOfSize:30.0f]};
 }
 
 #pragma mark - Lazy

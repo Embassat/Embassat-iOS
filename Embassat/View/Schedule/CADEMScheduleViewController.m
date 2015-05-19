@@ -27,7 +27,7 @@
 {
     if (self = [super init])
     {
-        self.title = @"HORARIS";
+        self.title = @"Horaris";
     }
     
     return self;

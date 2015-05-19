@@ -35,7 +35,7 @@ public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "ARTISTES"
+        title = "Artistes"
         artistsCollectionView?.dataSource = self.dataSource
         artistsCollectionView?.registerNib(UINib(nibName: "CADEMMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSourceSwift.CADCellIdentifier)
         
