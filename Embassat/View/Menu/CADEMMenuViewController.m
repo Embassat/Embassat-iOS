@@ -16,6 +16,8 @@
 #import "CADEMMapViewController.h"
 #import "CADEMMapViewModel.h"
 
+#import "UICollectionViewFlowLayout+EMAdditions.h"
+
 @interface CADEMMenuViewController ()
 
 @property (nonatomic, weak) IBOutlet UICollectionView *menuCollectionView;
@@ -39,6 +41,16 @@
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    for (NSIndexPath *indexPath in self.menuCollectionView.indexPathsForSelectedItems)
+    {
+        [self.menuCollectionView deselectItemAtIndexPath:indexPath animated:NO];
+    }
 }
 
 #pragma mark - Collection View
@@ -84,6 +96,15 @@
     {
         [self.navigationController pushViewController:viewController animated:YES];
     }
+}
+
+#pragma mark - UICollectionViewFlowLayout Delegate
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)collectionViewLayout;
+    
+    return [flowLayout insetsForVerticallyCenteredSectionInScreenWithRows:[self.dataSource.viewModel numberOfItemsInSection:0] andColumns:[self.dataSource.viewModel numberOfSections]];
 }
 
 #pragma mark - Lazy

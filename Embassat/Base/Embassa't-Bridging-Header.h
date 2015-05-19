@@ -13,4 +13,5 @@
 #import "NSDate+EMAdditions.h"
 
 #import "CADArrayDataSource.h"
+#import "CADEMArtistCollectionViewCell.h"
 #import "CADEMMenuCollectionViewCell.h"

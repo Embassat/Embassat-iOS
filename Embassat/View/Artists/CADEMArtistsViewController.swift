@@ -19,7 +19,7 @@ public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
 
         let theViewModel = CADEMArtistsViewModel()
         dataSource = CADArrayDataSourceSwift(viewModel: theViewModel, configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
-            let theCell = cell as! CADEMMenuCollectionViewCell
+            let theCell = cell as! CADEMArtistCollectionViewCell
             
             theCell.optionName = theViewModel.titleAtIndexPath(indexPath)
         }, configureHeaderBlock: nil)
@@ -37,7 +37,7 @@ public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
 
         title = "Artistes"
         artistsCollectionView?.dataSource = self.dataSource
-        artistsCollectionView?.registerNib(UINib(nibName: "CADEMMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSourceSwift.CADCellIdentifier)
+        artistsCollectionView?.registerNib(UINib(nibName: "CADEMArtistCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSourceSwift.CADCellIdentifier)
         
         viewModel.activeSubject.subscribeNext({ [unowned self] (_) -> Void in
             self.activityIndicator?.stopAnimating()
