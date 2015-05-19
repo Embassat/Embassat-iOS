@@ -11,6 +11,7 @@
 @interface CADEMArtistCollectionViewCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *optionNameLabel;
+@property (nonatomic, weak) IBOutlet UIView *bottomSeparator;
 
 @end
 
@@ -19,8 +20,9 @@
 - (void)setupView
 {
     RAC(self.optionNameLabel, text) = RACObserve(self, optionName);
+    RAC(self.bottomSeparator, hidden) = RACObserve(self, hidesBottomSeparator);
     
-    self.optionNameLabel.font = [UIFont em_titleFontOfSize:16.0f];
+    self.optionNameLabel.font = [UIFont em_detailFontOfSize:15.0f];
     self.optionNameLabel.adjustsFontSizeToFitWidth = YES;
 }
 

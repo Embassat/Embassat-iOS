@@ -20,17 +20,28 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-V6-6Mx" userLabel="Separator">
+                        <rect key="frame" x="0.0" y="43" width="276" height="2"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.31764705882352939" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="25T-dd-ld9"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="RoG-bb-Phh" secondAttribute="centerX" id="3nP-eA-GJn"/>
+                <constraint firstAttribute="bottom" secondItem="Dbc-V6-6Mx" secondAttribute="bottom" id="7PG-sh-34h"/>
                 <constraint firstItem="RoG-bb-Phh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PSx-Q4-GVV" secondAttribute="leading" constant="2" id="ZOI-Ea-4mC"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RoG-bb-Phh" secondAttribute="trailing" constant="2" id="gVU-lY-rf0"/>
+                <constraint firstItem="Dbc-V6-6Mx" firstAttribute="leading" secondItem="PSx-Q4-GVV" secondAttribute="leading" id="hTm-1z-qDJ"/>
+                <constraint firstAttribute="trailing" secondItem="Dbc-V6-6Mx" secondAttribute="trailing" id="ihA-mx-fSQ"/>
                 <constraint firstAttribute="centerY" secondItem="RoG-bb-Phh" secondAttribute="centerY" id="iji-g1-uDc"/>
             </constraints>
             <connections>
+                <outlet property="bottomSeparator" destination="Dbc-V6-6Mx" id="8Zh-kv-E5c"/>
                 <outlet property="optionNameLabel" destination="RoG-bb-Phh" id="aOO-HK-Okk"/>
             </connections>
         </collectionViewCell>

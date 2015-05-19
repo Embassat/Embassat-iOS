@@ -22,6 +22,7 @@ public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
             let theCell = cell as! CADEMArtistCollectionViewCell
             
             theCell.optionName = theViewModel.titleAtIndexPath(indexPath)
+            theCell.hidesBottomSeparator = indexPath.row == theViewModel.numberOfItemsInSection(0) - 1
         }, configureHeaderBlock: nil)
         viewModel = theViewModel
         

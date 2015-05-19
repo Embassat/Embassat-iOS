@@ -11,5 +11,6 @@
 @interface CADEMArtistCollectionViewCell : CADRootCollectionViewCell
 
 @property (nonatomic, copy) NSString *optionName;
+@property (nonatomic) BOOL hidesBottomSeparator;
 
 @end
