@@ -24,7 +24,7 @@ public class CADEMArtistDetailViewModel: NSObject {
         artistImageURL = model.imageURL
         artistStartHour = String(model.date.hour)
         artistStartMinute = String(model.date.minute)
-        artistDay = "DIS"
+        artistDay = "Dissabte"
         
         let dataConversionSignal = RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             if let data = model.longDescription.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
