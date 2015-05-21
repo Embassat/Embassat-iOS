@@ -43,7 +43,7 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSw
     }
     
     public func artistViewModel(forIndexPath indexPath: NSIndexPath) -> CADEMArtistDetailViewModel {
-        return CADEMArtistDetailViewModel(model: self.model[indexPath.row])
+        return CADEMArtistDetailViewModel(model: model, currentIndex: indexPath.item)
     }
     
     func artists() -> RACSignal {

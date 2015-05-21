@@ -94,7 +94,7 @@
 
 - (id)artistViewModelForIndexPath:(NSIndexPath *)indexPath
 {
-    return [[CADEMArtistDetailViewModel alloc] initWithModel:self.model[self.dayIndex][indexPath.row]];
+    return [[CADEMArtistDetailViewModel alloc] initWithModel:self.model[self.dayIndex] currentIndex:indexPath.item];
 }
 
 - (UIColor *)colorAtIndexPath:(NSIndexPath *)indexPath
@@ -141,7 +141,7 @@
 
 - (CADEMArtistSwift *)artistAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.model[self.dayIndex][indexPath.row];
+    return self.model[self.dayIndex][indexPath.item];
 }
 
 - (RACSignal *)artists

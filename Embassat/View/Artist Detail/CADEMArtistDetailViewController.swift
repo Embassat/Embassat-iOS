@@ -23,16 +23,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     
     public var viewModel: CADEMArtistDetailViewModel? {
         didSet {
-            artistNameLabel?.text = viewModel?.artistName
-            coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
-            stageLabel?.text = viewModel?.artistStage
-            dayLabel?.text = viewModel?.artistDay
-            
-            viewModel?.artistDescriptionSignal.subscribeNext({ [unowned self] (description: AnyObject!) -> Void in
-                let descriptionText: String = description as! String
-                self.descriptionLabel?.text = descriptionText
-                self.activityIndicator?.stopAnimating()
-            })
+            self.updateSubviewDetails()
         }
     }
 
@@ -50,6 +41,29 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
         let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "favoritePressed")
         
         self.navigationItem.rightBarButtonItems = [favItem, shareItem]
+    }
+    
+    @IBAction func nextPressed(sender: UIButton) {
+        viewModel?.currentIndex++
+        self.updateSubviewDetails()
+    }
+    
+    @IBAction func previousPressed(sender: UIButton) {
+        viewModel?.currentIndex--
+        self.updateSubviewDetails()
+    }
+    
+    func updateSubviewDetails() {
+        artistNameLabel?.text = viewModel?.artistName
+        coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
+        stageLabel?.text = viewModel?.artistStage
+        dayLabel?.text = viewModel?.artistDay
+        
+        viewModel?.artistDescriptionSignal?.subscribeNext({ [unowned self] (description: AnyObject!) -> Void in
+            let descriptionText: String = description as! String
+            self.descriptionLabel?.text = descriptionText
+            self.activityIndicator?.stopAnimating()
+            })
     }
     
     func sharePressed() {
