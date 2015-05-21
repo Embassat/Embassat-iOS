@@ -20,8 +20,6 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     @IBOutlet weak var dayLabel: UILabel?
     @IBOutlet weak var timeLabel: UILabel?
     @IBOutlet weak var stageLabel: UILabel?
-    @IBOutlet weak var shareButton: UIButton?
-    @IBOutlet weak var addButton: UIButton?
     
     public var viewModel: CADEMArtistDetailViewModel? {
         didSet {
@@ -46,16 +44,19 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
         stageLabel?.font = UIFont.em_detailFontOfSize(15.0)
         dayLabel?.font = UIFont.em_detailFontOfSize(15.0)
         timeLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        shareButton?.titleLabel?.font = UIFont.em_titleFontOfSize(16.0)
-        addButton?.titleLabel?.font = UIFont.em_titleFontOfSize(16.0)
         view.backgroundColor = UIColor.whiteColor()
         
-        shareButton?.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ [unowned self] (_) -> Void in
-            viewModel?.shareAction(forViewController: self)
-        })
+        let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "sharePressed")
+        let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "favoritePressed")
         
-        addButton?.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ (_) -> Void in
-            viewModel?.addEventOnCalendar()
-        })
+        self.navigationItem.rightBarButtonItems = [favItem, shareItem]
+    }
+    
+    func sharePressed() {
+        viewModel?.shareAction(forViewController: self)
+    }
+    
+    func favoritePressed() {
+        viewModel?.addEventOnCalendar()
     }
 }

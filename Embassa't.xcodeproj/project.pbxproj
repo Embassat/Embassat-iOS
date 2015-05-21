@@ -73,7 +73,8 @@
 		8C8D83C81B0E2E2000CD8CA4 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C41B0E2E2000CD8CA4 /* left@2x.png */; };
 		8C8D83C91B0E2E2000CD8CA4 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C51B0E2E2000CD8CA4 /* loading.jpg */; };
 		8C8D83CA1B0E2E2000CD8CA4 /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C61B0E2E2000CD8CA4 /* right@2x.png */; };
-		8C8D83CB1B0E2E2000CD8CA4 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C71B0E2E2000CD8CA4 /* share.png */; };
+		8C8D83CB1B0E2E2000CD8CA4 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C71B0E2E2000CD8CA4 /* share@2x.png */; };
+		8C8D83CD1B0E482C00CD8CA4 /* fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83CC1B0E482C00CD8CA4 /* fav@2x.png */; };
 		8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */; };
 		8CA1D4131947CC0B0095067C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA1D4121947CC0B0095067C /* EventKit.framework */; };
 		8CA1D41D1948FAAE0095067C /* CADEMExtrasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D41B1948FAAE0095067C /* CADEMExtrasViewController.xib */; };
@@ -210,7 +211,8 @@
 		8C8D83C41B0E2E2000CD8CA4 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
 		8C8D83C51B0E2E2000CD8CA4 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
 		8C8D83C61B0E2E2000CD8CA4 /* right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right@2x.png"; sourceTree = "<group>"; };
-		8C8D83C71B0E2E2000CD8CA4 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		8C8D83C71B0E2E2000CD8CA4 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
+		8C8D83CC1B0E482C00CD8CA4 /* fav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav@2x.png"; sourceTree = "<group>"; };
 		8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistSwift.swift; path = Model/CADEMArtistSwift.swift; sourceTree = "<group>"; };
 		8CA1D4121947CC0B0095067C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		8CA1D41B1948FAAE0095067C /* CADEMExtrasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMExtrasViewController.xib; path = Extras/CADEMExtrasViewController.xib; sourceTree = "<group>"; };
@@ -619,6 +621,7 @@
 				8CEF6823193BDD120001B801 /* chevron.png */,
 				8CEF6824193BDD120001B801 /* chevron@2x.png */,
 				8C774F60192EBF30000D5062 /* Default */,
+				8C8D83CC1B0E482C00CD8CA4 /* fav@2x.png */,
 				8CB6C69818E8B919008D19FE /* info_cover.png */,
 				8CB6C69918E8B919008D19FE /* info_cover@2x.png */,
 				8C23D60518FAD6FC00B3C106 /* info1.jpg */,
@@ -628,7 +631,7 @@
 				8C8D83C41B0E2E2000CD8CA4 /* left@2x.png */,
 				8C8D83C51B0E2E2000CD8CA4 /* loading.jpg */,
 				8C8D83C61B0E2E2000CD8CA4 /* right@2x.png */,
-				8C8D83C71B0E2E2000CD8CA4 /* share.png */,
+				8C8D83C71B0E2E2000CD8CA4 /* share@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CEF6826193BDD120001B801 /* chevron@2x.png in Resources */,
+				8C8D83CD1B0E482C00CD8CA4 /* fav@2x.png in Resources */,
 				8CDBF1A018DDC3DB002C6E50 /* CADEMMenuViewController.xib in Resources */,
 				8C04EF8B18CB9408008FBC9B /* CADEMArtistsViewController.xib in Resources */,
 				8C04EF5318CB8F09008FBC9B /* InfoPlist.strings in Resources */,
@@ -754,7 +758,7 @@
 				8C23D62918FB001F00B3C106 /* 120x120.png in Resources */,
 				8C23D62818FB001F00B3C106 /* 80x80.png in Resources */,
 				8C04EF5B18CB8F09008FBC9B /* Images.xcassets in Resources */,
-				8C8D83CB1B0E2E2000CD8CA4 /* share.png in Resources */,
+				8C8D83CB1B0E2E2000CD8CA4 /* share@2x.png in Resources */,
 				8CAEB34A192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib in Resources */,
 				8C8D83CA1B0E2E2000CD8CA4 /* right@2x.png in Resources */,
 				8C774F74192EC39A000D5062 /* Default.png in Resources */,
