@@ -13,6 +13,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     @IBOutlet weak var scrollView: UIScrollView?
     @IBOutlet weak var coverImage: UIImageView?
     @IBOutlet weak var infoView: UIView?
+    @IBOutlet weak var bottomView: UIView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     @IBOutlet weak var descriptionLabel: UILabel?
     @IBOutlet weak var dayLabel: UILabel?
@@ -24,15 +25,15 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     public var viewModel: CADEMArtistDetailViewModel? {
         didSet {
             title = viewModel?.artistName
-            coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "placeholder.jpg"))
+            coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
             stageLabel?.text = viewModel?.artistStage
             dayLabel?.text = viewModel?.artistDay
-            descriptionLabel?.textColor = UIColor.whiteColor()
+            descriptionLabel?.textColor = UIColor.em_backgroundColor()
             
             viewModel?.artistDescriptionSignal.subscribeNext({ [unowned self] (description: AnyObject!) -> Void in
                 let descriptionText: String = description as! String
                 self.descriptionLabel?.text = descriptionText
-                self.descriptionLabel?.textColor = UIColor.blackColor()
+                self.descriptionLabel?.textColor = UIColor.whiteColor()
                 self.activityIndicator?.stopAnimating()
             })
         }
@@ -41,7 +42,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView?.scrollIndicatorInsets = UIEdgeInsetsMake((coverImage?.bounds.height)! + (infoView?.bounds.height)!, 0, (addButton?.bounds.height)!, 0)
+        scrollView?.scrollIndicatorInsets = UIEdgeInsetsMake((coverImage?.bounds.height)! + (infoView?.bounds.height)!, 0, (bottomView?.bounds.height)!, 0)
         descriptionLabel?.font = UIFont.em_detailFontOfSize(15.0)
         stageLabel?.font = UIFont.em_detailFontOfSize(15.0)
         dayLabel?.font = UIFont.em_detailFontOfSize(15.0)

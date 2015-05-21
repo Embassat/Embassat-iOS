@@ -44,7 +44,6 @@
 		8C23D61418FAD95600B3C106 /* CADEMInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23D61318FAD95600B3C106 /* CADEMInfoHeaderView.m */; };
 		8C23D61618FAD96600B3C106 /* CADEMInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D61518FAD96600B3C106 /* CADEMInfoHeaderView.xib */; };
 		8C23D61918FAE46C00B3C106 /* CADEMInfoFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23D61818FAE46C00B3C106 /* CADEMInfoFlowLayout.m */; };
-		8C23D61B18FAE92800B3C106 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D61A18FAE92800B3C106 /* placeholder.jpg */; };
 		8C23D62618FB001F00B3C106 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D61E18FB001F00B3C106 /* 58x58.png */; };
 		8C23D62818FB001F00B3C106 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62018FB001F00B3C106 /* 80x80.png */; };
 		8C23D62918FB001F00B3C106 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62118FB001F00B3C106 /* 120x120.png */; };
@@ -71,10 +70,12 @@
 		8C8D83B81B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83B61B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.xib */; };
 		8C8D83BC1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D83BA1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.m */; };
 		8C8D83BD1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83BB1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib */; };
+		8C8D83C81B0E2E2000CD8CA4 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C41B0E2E2000CD8CA4 /* left@2x.png */; };
+		8C8D83C91B0E2E2000CD8CA4 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C51B0E2E2000CD8CA4 /* loading.jpg */; };
+		8C8D83CA1B0E2E2000CD8CA4 /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C61B0E2E2000CD8CA4 /* right@2x.png */; };
+		8C8D83CB1B0E2E2000CD8CA4 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C71B0E2E2000CD8CA4 /* share.png */; };
 		8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */; };
 		8CA1D4131947CC0B0095067C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA1D4121947CC0B0095067C /* EventKit.framework */; };
-		8CA1D4161947D0AD0095067C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D4141947D0AD0095067C /* star.png */; };
-		8CA1D4171947D0AD0095067C /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D4151947D0AD0095067C /* star@2x.png */; };
 		8CA1D41D1948FAAE0095067C /* CADEMExtrasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1D41B1948FAAE0095067C /* CADEMExtrasViewController.xib */; };
 		8CA8703A18CC835300A845DD /* CADRootCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8703918CC835300A845DD /* CADRootCollectionViewCell.m */; };
 		8CAABD5A18E37162005431B9 /* CADEMArtistDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAABD5818E37162005431B9 /* CADEMArtistDetailViewController.xib */; };
@@ -171,7 +172,6 @@
 		8C23D61518FAD96600B3C106 /* CADEMInfoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMInfoHeaderView.xib; path = Info/CADEMInfoHeaderView.xib; sourceTree = "<group>"; };
 		8C23D61718FAE46C00B3C106 /* CADEMInfoFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMInfoFlowLayout.h; path = Info/CADEMInfoFlowLayout.h; sourceTree = "<group>"; };
 		8C23D61818FAE46C00B3C106 /* CADEMInfoFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMInfoFlowLayout.m; path = Info/CADEMInfoFlowLayout.m; sourceTree = "<group>"; };
-		8C23D61A18FAE92800B3C106 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		8C23D61E18FB001F00B3C106 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
 		8C23D62018FB001F00B3C106 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
 		8C23D62118FB001F00B3C106 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
@@ -207,10 +207,12 @@
 		8C8D83B91B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADEMArtistCollectionViewCell.h; sourceTree = "<group>"; };
 		8C8D83BA1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADEMArtistCollectionViewCell.m; sourceTree = "<group>"; };
 		8C8D83BB1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CADEMArtistCollectionViewCell.xib; sourceTree = "<group>"; };
+		8C8D83C41B0E2E2000CD8CA4 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
+		8C8D83C51B0E2E2000CD8CA4 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
+		8C8D83C61B0E2E2000CD8CA4 /* right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right@2x.png"; sourceTree = "<group>"; };
+		8C8D83C71B0E2E2000CD8CA4 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		8CA0CE811B038E3E00BC04B0 /* CADEMArtistSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistSwift.swift; path = Model/CADEMArtistSwift.swift; sourceTree = "<group>"; };
 		8CA1D4121947CC0B0095067C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		8CA1D4141947D0AD0095067C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		8CA1D4151947D0AD0095067C /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		8CA1D41B1948FAAE0095067C /* CADEMExtrasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMExtrasViewController.xib; path = Extras/CADEMExtrasViewController.xib; sourceTree = "<group>"; };
 		8CA8703718CC834300A845DD /* UIView+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Private.h"; sourceTree = "<group>"; };
 		8CA8703818CC835300A845DD /* CADRootCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADRootCollectionViewCell.h; sourceTree = "<group>"; };
@@ -617,15 +619,16 @@
 				8CEF6823193BDD120001B801 /* chevron.png */,
 				8CEF6824193BDD120001B801 /* chevron@2x.png */,
 				8C774F60192EBF30000D5062 /* Default */,
+				8CB6C69818E8B919008D19FE /* info_cover.png */,
+				8CB6C69918E8B919008D19FE /* info_cover@2x.png */,
 				8C23D60518FAD6FC00B3C106 /* info1.jpg */,
 				8C23D60618FAD6FC00B3C106 /* info2.jpg */,
 				8C23D60718FAD6FC00B3C106 /* info3.jpg */,
 				8C23D60818FAD6FC00B3C106 /* info4.jpg */,
-				8CB6C69818E8B919008D19FE /* info_cover.png */,
-				8CB6C69918E8B919008D19FE /* info_cover@2x.png */,
-				8C23D61A18FAE92800B3C106 /* placeholder.jpg */,
-				8CA1D4141947D0AD0095067C /* star.png */,
-				8CA1D4151947D0AD0095067C /* star@2x.png */,
+				8C8D83C41B0E2E2000CD8CA4 /* left@2x.png */,
+				8C8D83C51B0E2E2000CD8CA4 /* loading.jpg */,
+				8C8D83C61B0E2E2000CD8CA4 /* right@2x.png */,
+				8C8D83C71B0E2E2000CD8CA4 /* share.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -743,19 +746,19 @@
 				8C8D83BD1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib in Resources */,
 				8CA1D41D1948FAAE0095067C /* CADEMExtrasViewController.xib in Resources */,
 				8C23D60C18FAD6FC00B3C106 /* info4.jpg in Resources */,
+				8C8D83C81B0E2E2000CD8CA4 /* left@2x.png in Resources */,
 				8CAEB345192BFA060017CF29 /* CADEMScheduleCollectionViewCell.xib in Resources */,
-				8CA1D4171947D0AD0095067C /* star@2x.png in Resources */,
 				8C8D83B81B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.xib in Resources */,
 				8CB6C69A18E8B919008D19FE /* info_cover.png in Resources */,
 				8CAABD5A18E37162005431B9 /* CADEMArtistDetailViewController.xib in Resources */,
 				8C23D62918FB001F00B3C106 /* 120x120.png in Resources */,
 				8C23D62818FB001F00B3C106 /* 80x80.png in Resources */,
 				8C04EF5B18CB8F09008FBC9B /* Images.xcassets in Resources */,
+				8C8D83CB1B0E2E2000CD8CA4 /* share.png in Resources */,
 				8CAEB34A192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib in Resources */,
-				8CA1D4161947D0AD0095067C /* star.png in Resources */,
+				8C8D83CA1B0E2E2000CD8CA4 /* right@2x.png in Resources */,
 				8C774F74192EC39A000D5062 /* Default.png in Resources */,
 				8C774F5F192D682B000D5062 /* CADEMTicketsViewController.xib in Resources */,
-				8C23D61B18FAE92800B3C106 /* placeholder.jpg in Resources */,
 				8C23D60A18FAD6FC00B3C106 /* info2.jpg in Resources */,
 				8C23D61618FAD96600B3C106 /* CADEMInfoHeaderView.xib in Resources */,
 				8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */,
@@ -766,6 +769,7 @@
 				8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */,
 				8C774F72192EC0B9000D5062 /* Default@2x.png in Resources */,
 				8CAEB33D192BF7AB0017CF29 /* CADEMScheduleViewController.xib in Resources */,
+				8C8D83C91B0E2E2000CD8CA4 /* loading.jpg in Resources */,
 				8C23D61118FAD7FE00B3C106 /* CADEMInfoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
