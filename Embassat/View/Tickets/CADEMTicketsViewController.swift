@@ -14,15 +14,13 @@ public class CADEMTicketsViewController: CADEMRootViewControllerSwift {
     @IBOutlet var bodyLabels: [UILabel]?
     @IBOutlet weak var seasonContainer: UIView?
     @IBOutlet weak var dayTicketContainer: UIView?
-    @IBOutlet weak var hotelContainer: UIView?
-    @IBOutlet weak var tresCContainer: UIView?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Entrades"
         
-        for view in [seasonContainer, dayTicketContainer, hotelContainer, tresCContainer] {
+        for view in [seasonContainer, dayTicketContainer] {
             let tapGesture = UITapGestureRecognizer()
             tapGesture.rac_gestureSignal()?.subscribeNext({ [unowned self] (_) -> Void in
                 self.linkPressed(view!)
@@ -33,13 +31,13 @@ public class CADEMTicketsViewController: CADEMRootViewControllerSwift {
         
         if let labels = titleLabels {
             for label in labels {
-                label.font = UIFont.em_titleFontOfSize(16.0)
+                label.font = UIFont.em_detailFontOfSize(20.0)
             }
         }
         
         if let labels = bodyLabels {
             for label in labels {
-                label.font = UIFont.em_detailFontOfSize(16.0)
+                label.font = UIFont.em_detailFontOfSize(15.0)
             }
         }
     }
