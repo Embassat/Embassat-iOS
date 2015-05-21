@@ -27,7 +27,7 @@ static NSString *const kInfoResource = @"get_post/?post_type=page&post_id=2";
 {
 	if (self = [super init])
     {
-        _titles = @[@"Què és l’EMBASSA’T?", @"Escenari Principal", @"Amfiteatre", @"Mirador Electrònic"];
+        _titles = @[@"Què és l’Embassa't?", @"Escenari Principal", @"Amfiteatre", @"Mirador Electrònic"];
         _bodies = @[
                     @"L’EMBASSA’T és el teu festival. Et portem ben a prop els millors artistes d’aquí i d’allà, les bandes més potents de l’emergent panorama i els noms que trepitgen amb més ganes l’escena del moment.\n\nAmb tu volem continuar sent el motor perquè un cop més s’accelerin els fets, compartim els millors directes amb els teus amics en racons que mai els haguessis vist d’aquesta manera, i d’una forma única i privilegiada.\n\n3 escenaris de luxe. Un ventall musical envejable. Apte per tots: des del Petit Embassa’t,  els més tranquils, folks, pels que canten pop, criden punk o ballen rock, fins als que vulguin tancar les portes a ritme de hits més electrònics.\n\nAjuda’ns a fer-nos més sostenibles, tu també pots fer-nos millors i més grans. Suma’t a l’EMBASSA’T, El Festival Independent del Vallès. El festival que fa falta a Catalunya.",
                     @"Dins dels magnífics Jardins de l’Espai Cultura de la Fundació Sabadell 1859 pugen a l’escenari les propostes més fermes de l’escena del moment. Bandes que fa anys que criden un nom i un lloc, fins a grups més joves amb un insultant descaro, és aquí i ara on juguen les millors cartes. Sens dubte on es viu l’esclat del festival i on sempre podràs dir que hauràs vist els millors grups del demà.  Aforament 1.000 persones.",
@@ -55,7 +55,7 @@ static NSString *const kInfoResource = @"get_post/?post_type=page&post_id=2";
 
 - (NSString *)titleAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.titles[indexPath.section] uppercaseString];
+    return self.titles[indexPath.section];
 }
 
 - (NSString *)bodyAtIndexPath:(NSIndexPath *)indexPath

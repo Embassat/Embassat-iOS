@@ -1,50 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMInfoHeaderView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YkI-hd-sJb" customClass="CADEMInfoHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_cover.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-9n-dCU">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="175" id="i8q-8M-6rl"/>
+                        <constraint firstAttribute="height" constant="184" id="i8q-8M-6rl"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQi-h3-w5D">
-                    <rect key="frame" x="0.0" y="175" width="320" height="45"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="184" width="320" height="45"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUÈ ÉS L'EMBASSAT?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFk-Tb-wky">
-                            <rect key="frame" x="74" y="13" width="172" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Què és l'Embassa't?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFk-Tb-wky">
+                            <rect key="frame" x="22" y="13" width="153" height="20"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vg-tr-aBq">
-                            <rect key="frame" x="0.0" y="44" width="320" height="1"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="Rjo-yc-yyv"/>
-                            </constraints>
-                        </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.019607843140000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="centerX" secondItem="FFk-Tb-wky" secondAttribute="centerX" constant="-0.5" id="CWt-hy-OyO"/>
-                        <constraint firstAttribute="bottom" secondItem="6vg-tr-aBq" secondAttribute="bottom" id="HDy-0x-hmd"/>
                         <constraint firstAttribute="height" constant="45" id="RUw-XF-l7Q"/>
-                        <constraint firstItem="6vg-tr-aBq" firstAttribute="leading" secondItem="KQi-h3-w5D" secondAttribute="leading" id="bs0-FZ-2uQ"/>
-                        <constraint firstAttribute="centerY" secondItem="FFk-Tb-wky" secondAttribute="centerY" constant="-0.5" id="eig-IF-98t"/>
-                        <constraint firstAttribute="trailing" secondItem="6vg-tr-aBq" secondAttribute="trailing" id="jxT-74-4dW"/>
+                        <constraint firstAttribute="centerY" secondItem="FFk-Tb-wky" secondAttribute="centerY" id="eig-IF-98t"/>
+                        <constraint firstItem="FFk-Tb-wky" firstAttribute="leading" secondItem="KQi-h3-w5D" secondAttribute="leading" constant="22" id="uxe-uu-gZa"/>
                     </constraints>
                 </view>
             </subviews>
@@ -66,4 +53,9 @@
     <resources>
         <image name="info_cover.png" width="320" height="176"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
