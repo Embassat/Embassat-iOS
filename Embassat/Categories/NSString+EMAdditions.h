@@ -10,6 +10,8 @@
 
 @interface NSString (EMAdditions)
 
-- (NSString*)stringByRemovingTags;
+- (NSString *)stringByRemovingTags;
+
+- (NSString *)scanStringWithStartTag:(NSString *)startTag endTag:(NSString *)endTag;
 
 @end

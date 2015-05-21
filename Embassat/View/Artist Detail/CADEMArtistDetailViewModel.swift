@@ -26,8 +26,9 @@ public class CADEMArtistDetailViewModel: NSObject {
         artistStartMinute = String(model.date.minute)
         artistDay = "Dissabte"
         
-        let dataConversionSignal = RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
-            if let data = model.longDescription.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+        artistDescriptionSignal = RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+            let descriptionString = model.longDescription as NSString
+            if let data = descriptionString.scanStringWithStartTag("<p>", endTag: "</p>")?.stringByRemovingTags() {
                 subscriber.sendNext(data)
                 subscriber.sendCompleted()
             } else {
@@ -36,16 +37,7 @@ public class CADEMArtistDetailViewModel: NSObject {
             }
             
             return nil
-        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityBackground))
-        
-        artistDescriptionSignal = dataConversionSignal.deliverOn(RACScheduler.mainThreadScheduler()).map({ (data: AnyObject!) -> AnyObject! in
-            let options: [NSObject : AnyObject] = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding]
-            if let theData: NSData = data as? NSData {
-                return NSAttributedString(data: theData, options: options, documentAttributes: nil, error: nil)?.string
-            } else {
-                return ""
-            }
-        })
+        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityBackground)).deliverOn(RACScheduler.mainThreadScheduler())
     }
     
     public func shareAction(forViewController viewController: UIViewController) {

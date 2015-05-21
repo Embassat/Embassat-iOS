@@ -31,4 +31,30 @@
     return modifiedString;
 }
 
+- (NSString *)scanStringWithStartTag:(NSString *)startTag endTag:(NSString *)endTag
+{
+    
+    NSString* scanString = @"";
+    
+    if (self.length > 0)
+    {
+        NSScanner* scanner = [[NSScanner alloc] initWithString:self];
+        
+        @try {
+            [scanner scanUpToString:startTag intoString:nil];
+            scanner.scanLocation += [startTag length];
+            [scanner scanUpToString:endTag intoString:&scanString];
+        }
+        @catch (NSException *exception) {
+            return nil;
+        }
+        @finally {
+            return scanString;
+        }
+        
+    }
+    
+    return scanString;
+}
+
 @end

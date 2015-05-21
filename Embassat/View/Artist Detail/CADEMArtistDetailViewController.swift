@@ -28,12 +28,10 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
             coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
             stageLabel?.text = viewModel?.artistStage
             dayLabel?.text = viewModel?.artistDay
-            descriptionLabel?.textColor = UIColor.em_backgroundColor()
             
             viewModel?.artistDescriptionSignal.subscribeNext({ [unowned self] (description: AnyObject!) -> Void in
                 let descriptionText: String = description as! String
                 self.descriptionLabel?.text = descriptionText
-                self.descriptionLabel?.textColor = UIColor.whiteColor()
                 self.activityIndicator?.stopAnimating()
             })
         }
@@ -42,7 +40,6 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView?.scrollIndicatorInsets = UIEdgeInsetsMake((coverImage?.bounds.height)! + (infoView?.bounds.height)!, 0, (bottomView?.bounds.height)!, 0)
         descriptionLabel?.font = UIFont.em_detailFontOfSize(15.0)
         stageLabel?.font = UIFont.em_detailFontOfSize(15.0)
         dayLabel?.font = UIFont.em_detailFontOfSize(15.0)
