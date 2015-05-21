@@ -15,6 +15,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     @IBOutlet weak var infoView: UIView?
     @IBOutlet weak var bottomView: UIView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
+    @IBOutlet weak var artistNameLabel: UILabel?
     @IBOutlet weak var descriptionLabel: UILabel?
     @IBOutlet weak var dayLabel: UILabel?
     @IBOutlet weak var timeLabel: UILabel?
@@ -24,7 +25,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     
     public var viewModel: CADEMArtistDetailViewModel? {
         didSet {
-            title = viewModel?.artistName
+            artistNameLabel?.text = viewModel?.artistName
             coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
             stageLabel?.text = viewModel?.artistStage
             dayLabel?.text = viewModel?.artistDay
@@ -40,6 +41,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Artista"
         descriptionLabel?.font = UIFont.em_detailFontOfSize(15.0)
         stageLabel?.font = UIFont.em_detailFontOfSize(15.0)
         dayLabel?.font = UIFont.em_detailFontOfSize(15.0)

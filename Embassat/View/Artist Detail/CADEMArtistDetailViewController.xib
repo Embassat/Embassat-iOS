@@ -4,10 +4,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="apercu_medium.otf">
+            <string>Apercu-Medium</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMArtistDetailViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="3ch-ej-GhK" id="4ND-BX-IhO"/>
+                <outlet property="artistNameLabel" destination="bfQ-nj-bzD" id="NlC-Tl-VJ4"/>
                 <outlet property="bottomView" destination="npP-KU-93P" id="KlY-56-89V"/>
                 <outlet property="coverImage" destination="eJu-qj-M8f" id="Ea0-iZ-Mc0"/>
                 <outlet property="dayLabel" destination="jOZ-Yp-FmG" id="vaa-Ve-hG6"/>
@@ -69,10 +75,16 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWf-T6-3gf">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="246"/>
                             <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfQ-nj-bzD">
+                                    <rect key="frame" x="20" y="20" width="49" height="24"/>
+                                    <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="20"/>
+                                    <color key="textColor" red="0.94117647058823528" green="0.31764705882352939" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="lte-RV-GmL">
-                                    <rect key="frame" x="20" y="20" width="280" height="206"/>
+                                    <rect key="frame" x="20" y="64" width="280" height="162"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="206" placeholder="YES" id="eTT-qt-iuM"/>
+                                        <constraint firstAttribute="height" constant="162" placeholder="YES" id="eTT-qt-iuM"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,9 +98,11 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="lte-RV-GmL" secondAttribute="trailing" constant="20" id="7Fp-JC-WG5"/>
+                                <constraint firstItem="lte-RV-GmL" firstAttribute="top" secondItem="bfQ-nj-bzD" secondAttribute="bottom" constant="20" id="CII-P7-0GA"/>
                                 <constraint firstAttribute="centerX" secondItem="3ch-ej-GhK" secondAttribute="centerX" id="H9i-J9-MpA"/>
+                                <constraint firstItem="bfQ-nj-bzD" firstAttribute="leading" secondItem="vWf-T6-3gf" secondAttribute="leading" constant="20" id="UcC-7i-OJp"/>
                                 <constraint firstItem="lte-RV-GmL" firstAttribute="leading" secondItem="vWf-T6-3gf" secondAttribute="leading" constant="20" id="cbL-oB-fhv"/>
-                                <constraint firstItem="lte-RV-GmL" firstAttribute="top" secondItem="vWf-T6-3gf" secondAttribute="top" constant="20" id="pT2-jn-NUe"/>
+                                <constraint firstItem="bfQ-nj-bzD" firstAttribute="top" secondItem="vWf-T6-3gf" secondAttribute="top" constant="20" id="mWk-7s-uUK"/>
                                 <constraint firstAttribute="centerY" secondItem="3ch-ej-GhK" secondAttribute="centerY" id="srC-FF-TAE"/>
                                 <constraint firstAttribute="bottom" secondItem="lte-RV-GmL" secondAttribute="bottom" constant="20" id="ueJ-9n-unD"/>
                             </constraints>
