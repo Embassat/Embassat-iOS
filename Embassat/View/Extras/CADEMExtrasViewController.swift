@@ -22,13 +22,13 @@ public class CADEMExtrasViewController: CADEMRootViewControllerSwift {
         
         if let labels = titleLabels {
             for label in labels {
-                label.font = UIFont.em_titleFontOfSize(16.0)
+                label.font = UIFont.em_detailFontOfSize(15.0)
             }
         }
         
         if let labels = bodyLabels {
             for label in labels {
-                label.font = UIFont.em_detailFontOfSize(16.0)
+                label.font = UIFont.em_detailFontOfSize(15.0)
             }
         }
     }

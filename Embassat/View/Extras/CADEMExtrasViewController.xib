@@ -29,50 +29,34 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-27-jZu">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1EO-HC-S01">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIRA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0U-qi-cfK">
-                                    <rect key="frame" x="0.0" y="12" width="160" height="20"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0U-qi-cfK">
+                                    <rect key="frame" x="22" y="12" width="28" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-7A-gTK">
-                                    <rect key="frame" x="159" y="0.0" width="1" height="44"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DIS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-X2-tue">
-                                    <rect key="frame" x="159" y="12" width="82" height="20"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissabte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-X2-tue">
+                                    <rect key="frame" x="128" y="12" width="66" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nFi-bb-FAe">
-                                    <rect key="frame" x="240" y="0.0" width="1" height="44"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Civ-tU-MX0">
-                                    <rect key="frame" x="240" y="12" width="80" height="20"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Civ-tU-MX0">
+                                    <rect key="frame" x="257" y="12" width="41" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSh-B9-0Bk">
-                                    <rect key="frame" x="0.0" y="43" width="320" height="1"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="Whh-T2-6Hb"/>
-                                    </constraints>
-                                </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="lSh-B9-0Bk" secondAttribute="trailing" id="8vV-Zn-fys"/>
                                 <constraint firstAttribute="height" constant="44" id="D5r-My-TNQ"/>
-                                <constraint firstItem="lSh-B9-0Bk" firstAttribute="leading" secondItem="LmZ-27-jZu" secondAttribute="leading" id="ItY-rF-C8p"/>
-                                <constraint firstAttribute="bottom" secondItem="lSh-B9-0Bk" secondAttribute="bottom" id="d5W-Cb-8ba"/>
+                                <constraint firstItem="B0U-qi-cfK" firstAttribute="leading" secondItem="LmZ-27-jZu" secondAttribute="leading" constant="22" id="I5q-Pz-u2M"/>
+                                <constraint firstAttribute="trailing" secondItem="Civ-tU-MX0" secondAttribute="trailing" constant="22" id="JaQ-rj-BIi"/>
+                                <constraint firstAttribute="centerY" secondItem="Civ-tU-MX0" secondAttribute="centerY" id="McQ-MP-XhG"/>
+                                <constraint firstAttribute="centerX" secondItem="avQ-X2-tue" secondAttribute="centerX" id="jDY-h1-cZo"/>
+                                <constraint firstAttribute="centerY" secondItem="avQ-X2-tue" secondAttribute="centerY" id="mVY-Qz-hPF"/>
+                                <constraint firstAttribute="centerY" secondItem="B0U-qi-cfK" secondAttribute="centerY" id="zOw-Mi-vhM"/>
                             </constraints>
                         </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="muL-gJ-rvP">
@@ -82,55 +66,40 @@
                             </constraints>
                             <string key="text">La jornada del dissabte 28 de juny, la Plaça del Gas serà l’àgora de la primera mostra de discogràfiques independents i entitats locals relacionades amb l’àmbit cultural. La fira FEM EMBASSA’T es convertirà en un aparador de totes aquelles novetats i propostes alternatives i fresques que no tenen cabuda al circuït habitual i on primarà el producte gestat a la comarca del Vallès. La Fira vol ser una plataforma d’exposició que les entitats poden utilitzar per tal de donar-se a conèixer a tota la ciutat. És per això que de 12.00 a 20.00 hores, la Fira tindrà un accés gratuït a tot el públic, amb programació oberta, composada per concerts en format reduït.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8U-zv-10y">
                             <rect key="frame" x="0.0" y="490" width="320" height="44"/>
                             <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0R-qA-g37">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PETIT EM’" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-TK-G40">
-                                    <rect key="frame" x="0.0" y="12" width="160" height="20"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petit EM’" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-TK-G40">
+                                    <rect key="frame" x="22" y="12" width="68" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxF-Ke-fCh">
-                                    <rect key="frame" x="159" y="0.0" width="1" height="44"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DIS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSq-mM-M4B">
-                                    <rect key="frame" x="159" y="12" width="82" height="20"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissabte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSq-mM-M4B">
+                                    <rect key="frame" x="128" y="12" width="66" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-GB-rQG">
-                                    <rect key="frame" x="240" y="0.0" width="1" height="44"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDM-iG-fwO">
-                                    <rect key="frame" x="240" y="12" width="80" height="20"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDM-iG-fwO">
+                                    <rect key="frame" x="257" y="12" width="41" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gj-MI-tyF">
-                                    <rect key="frame" x="0.0" y="43" width="320" height="1"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="sRr-HD-9Wl"/>
-                                    </constraints>
-                                </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="0gj-MI-tyF" secondAttribute="bottom" id="BAG-Vs-e42"/>
-                                <constraint firstAttribute="trailing" secondItem="0gj-MI-tyF" secondAttribute="trailing" id="CiK-Fa-TA0"/>
+                                <constraint firstAttribute="centerX" secondItem="sSq-mM-M4B" secondAttribute="centerX" constant="-0.5" id="B5R-nw-fnE"/>
+                                <constraint firstItem="PqV-TK-G40" firstAttribute="leading" secondItem="b8U-zv-10y" secondAttribute="leading" constant="22" id="BvT-tF-nIT"/>
+                                <constraint firstAttribute="centerY" secondItem="sSq-mM-M4B" secondAttribute="centerY" id="Dpb-MW-fBB"/>
                                 <constraint firstAttribute="height" constant="44" id="H1W-Bd-vfn"/>
-                                <constraint firstItem="0gj-MI-tyF" firstAttribute="leading" secondItem="b8U-zv-10y" secondAttribute="leading" id="a9I-0H-xLs"/>
+                                <constraint firstAttribute="centerY" secondItem="PqV-TK-G40" secondAttribute="centerY" id="btn-h5-8b8"/>
+                                <constraint firstAttribute="trailing" secondItem="MDM-iG-fwO" secondAttribute="trailing" constant="22" id="u8c-ck-PqR"/>
+                                <constraint firstAttribute="centerY" secondItem="MDM-iG-fwO" secondAttribute="centerY" id="uSf-PB-Kn5"/>
                             </constraints>
                         </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-gX-GTR">
@@ -140,10 +109,11 @@
                             </constraints>
                             <string key="text">Concebut per donar un servei d’oci al públic més petit, el Petit EMBASSA’T torna a obrir un any més la programació dels Jardins de l’Espai Cultura amb una programació variada i pensada pels més menuts que busca acostar la cultura a les futures generacions. Eina per transmetre de pares a fills la passió per la música, la cultura i les activitats de lleure. L’oferta d’enguany es composa pel taller d’iniciació al “Fingerboards” o “Skate de dits” a càrrec del campió sa</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.019607843137254902" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="muL-gJ-rvP" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" constant="22" id="5Nl-co-mjx"/>
                         <constraint firstAttribute="bottom" secondItem="rdj-gX-GTR" secondAttribute="bottom" constant="20" id="Cp7-oR-ySo"/>
@@ -161,7 +131,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.019607843140000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="m3t-T4-m8X" secondAttribute="bottom" id="2hr-aX-cA1"/>
                 <constraint firstItem="m3t-T4-m8X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GJQ-75-f6a"/>
