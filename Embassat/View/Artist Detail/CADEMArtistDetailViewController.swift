@@ -14,7 +14,6 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     @IBOutlet weak var coverImage: UIImageView?
     @IBOutlet weak var infoView: UIView?
     @IBOutlet weak var bottomView: UIView?
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     @IBOutlet weak var artistNameLabel: UILabel?
     @IBOutlet weak var descriptionLabel: UILabel?
     @IBOutlet weak var dayLabel: UILabel?
@@ -55,15 +54,10 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     
     func updateSubviewDetails() {
         artistNameLabel?.text = viewModel?.artistName
+        descriptionLabel?.text = viewModel?.artistDescription
         coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
         stageLabel?.text = viewModel?.artistStage
         dayLabel?.text = viewModel?.artistDay
-        
-        viewModel?.artistDescriptionSignal?.subscribeNext({ [unowned self] (description: AnyObject!) -> Void in
-            let descriptionText: String = description as! String
-            self.descriptionLabel?.text = descriptionText
-            self.activityIndicator?.stopAnimating()
-            })
     }
     
     func sharePressed() {

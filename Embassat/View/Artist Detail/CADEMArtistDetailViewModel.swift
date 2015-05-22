@@ -15,6 +15,7 @@ public class CADEMArtistDetailViewModel: NSObject {
     
     var currentArtist: CADEMArtistSwift
     var artistName: String = ""
+    var artistDescription: String = ""
     var artistStartHour: String = ""
     var artistStartMinute: String = ""
     var artistDay: String = ""
@@ -44,19 +45,6 @@ public class CADEMArtistDetailViewModel: NSObject {
         currentArtist = model[currentIndex]
         
         super.init()
-        
-        artistDescriptionSignal = RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
-            let descriptionString = self.currentArtist.longDescription as NSString
-            if let data = descriptionString.scanStringWithStartTag("<p>", endTag: "</p>")?.stringByRemovingTags() {
-                subscriber.sendNext(data)
-                subscriber.sendCompleted()
-            } else {
-                subscriber.sendNext(nil)
-                subscriber.sendCompleted()
-            }
-            
-            return nil
-        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityBackground)).deliverOn(RACScheduler.mainThreadScheduler())
         
         self.updateCurrentArtistData()
     }
@@ -93,6 +81,7 @@ public class CADEMArtistDetailViewModel: NSObject {
     
     func updateCurrentArtistData() {
         artistName = currentArtist.name
+        artistDescription = currentArtist.longDescription
         artistStage = currentArtist.stage
         artistImageURL = currentArtist.imageURL
         artistStartHour = String(currentArtist.date.hour)

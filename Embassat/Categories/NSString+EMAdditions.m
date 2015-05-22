@@ -49,12 +49,12 @@
             return nil;
         }
         @finally {
-            return scanString;
+            return [scanString stringByRemovingTags];
         }
         
     }
     
-    return scanString;
+    return [scanString stringByRemovingTags];
 }
 
 @end
