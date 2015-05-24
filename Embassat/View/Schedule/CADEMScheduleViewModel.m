@@ -92,6 +92,11 @@
     return [@([self artistAtIndexPath:indexPath].date.hour) stringValue];
 }
 
+- (BOOL)favoritedStatusAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self artistAtIndexPath:indexPath].favorite;
+}
+
 - (id)artistViewModelForIndexPath:(NSIndexPath *)indexPath
 {
     return [[CADEMArtistDetailViewModel alloc] initWithModel:self.model[self.dayIndex] currentIndex:indexPath.item];

@@ -18,7 +18,10 @@ public class CADEMArtistService: NSObject {
     public func artists() -> RACSignal
     {
         return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
-            if let cachedArtists: Array<CADEMArtistSwift> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
+            var cachedArtists: Array<CADEMArtistSwift> = []
+            
+            if let cached = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
+                cachedArtists = cached
                 subscriber?.sendNext(cachedArtists)
             }
             
@@ -29,7 +32,7 @@ public class CADEMArtistService: NSObject {
                     }
                     else {
                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                            let artists = CADEMArtistParser().parseArtists(fromJson: json!)
+                            let artists = CADEMArtistParser().parseArtists(fromJson: json!, cached: cachedArtists)
 
                             dispatch_async(dispatch_get_main_queue()) {
                                 subscriber?.sendNext(artists)
@@ -39,6 +42,34 @@ public class CADEMArtistService: NSObject {
                             self.store.store(artists, forKey: CADEMArtistService.kArtistsStoreKey)
                         }
                     }
+            }
+            
+            return nil
+        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
+    }
+    
+    public func toggleFavorite(forArtist artist: CADEMArtistSwift) -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
+            if var cachedArtists: Array<CADEMArtistSwift> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
+                
+                var index = NSNotFound
+                
+                for var i = 0; i < cachedArtists.count; i++
+                {
+                    if cachedArtists[i].artistId == artist.artistId {
+                        index = i
+                        break
+                    }
+                }
+                
+                if index != NSNotFound {
+                    cachedArtists[index].favorite = !cachedArtists[index].favorite
+                    self.store.store(cachedArtists, forKey: CADEMArtistService.kArtistsStoreKey)
+                    subscriber?.sendNext(true)
+                    subscriber?.sendCompleted()
+                } else {
+                    subscriber?.sendError(nil)
+                }
             }
             
             return nil

@@ -13,5 +13,6 @@
 @property (nonatomic, copy) NSString *initialHour, *initialMinute;
 @property (nonatomic, copy) NSString *finalHour, *finalMinute;
 @property (nonatomic, copy) NSString *artistName, *stageName;
+@property (nonatomic) BOOL shouldShowFavorite;
 
 @end

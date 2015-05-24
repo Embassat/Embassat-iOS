@@ -33,6 +33,7 @@
 - (NSString *)initialHourAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)finalMinuteAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)finalHourAtIndexPath:(NSIndexPath *)indexPath;
+- (BOOL)favoritedStatusAtIndexPath:(NSIndexPath *)indexPath;
 - (id)artistViewModelForIndexPath:(NSIndexPath *)indexPath;
 - (UIColor *)colorAtIndexPath:(NSIndexPath *)indexPath;
 - (UIColor *)backgroundColorAtIndexPath:(NSIndexPath *)indexPath;

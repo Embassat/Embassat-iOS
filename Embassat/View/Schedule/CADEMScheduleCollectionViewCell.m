@@ -14,6 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *startTimeLabel, *endTimeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *artistNameLabel, *stageLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *favoriteImageView;
 
 @end
 
@@ -31,6 +32,7 @@
     }];
     RAC(self.artistNameLabel, text) = [RACObserve(self, artistName) ignore:nil];
     RAC(self.stageLabel, text) = [RACObserve(self, stageName) ignore:nil];
+    RAC(self.favoriteImageView, hidden) = [RACObserve(self, shouldShowFavorite) not];
     
     self.startTimeLabel.font = self.endTimeLabel.font = self.artistNameLabel.font = self.stageLabel.font = [UIFont em_detailFontOfSize:15.0f];
     self.artistNameLabel.adjustsFontSizeToFitWidth = YES;

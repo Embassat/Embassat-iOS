@@ -46,12 +46,17 @@
                         <color key="textColor" red="0.94117647058823528" green="0.31764705882352939" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fav.png" translatesAutoresizingMaskIntoConstraints="NO" id="d5E-pr-fnc">
+                        <rect key="frame" x="278" y="22" width="20" height="20"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="0.0" green="0.0078431372549019607" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="d5E-pr-fnc" secondAttribute="trailing" constant="22" id="1Hn-n9-sZj"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mn1-4i-fwW" secondAttribute="trailing" id="4Uq-XS-2dp"/>
+                <constraint firstAttribute="centerY" secondItem="d5E-pr-fnc" secondAttribute="centerY" constant="-0.5" id="Cps-JB-e2b"/>
                 <constraint firstAttribute="bottom" secondItem="dSW-gK-g8o" secondAttribute="bottom" constant="11" id="Dgs-dY-as9"/>
                 <constraint firstItem="dSW-gK-g8o" firstAttribute="centerY" secondItem="mn1-4i-fwW" secondAttribute="centerY" id="ObF-ee-5JR"/>
                 <constraint firstItem="Sy9-eY-NOJ" firstAttribute="top" secondItem="82j-GB-B8T" secondAttribute="top" constant="12" id="SNx-uY-diS"/>
@@ -65,11 +70,15 @@
             <connections>
                 <outlet property="artistNameLabel" destination="tuR-ct-rA6" id="eNt-M8-Ug9"/>
                 <outlet property="endTimeLabel" destination="dSW-gK-g8o" id="nkX-Za-GL6"/>
+                <outlet property="favoriteImageView" destination="d5E-pr-fnc" id="mb5-tP-JvP"/>
                 <outlet property="stageLabel" destination="mn1-4i-fwW" id="cn3-hg-08S"/>
                 <outlet property="startTimeLabel" destination="Sy9-eY-NOJ" id="fCI-yX-OOu"/>
             </connections>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="fav.png" width="20" height="20"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

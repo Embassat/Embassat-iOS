@@ -65,6 +65,9 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     }
     
     func favoritePressed() {
-        viewModel?.addEventOnCalendar()
+        viewModel?.toggleFavorite(){ () -> () in
+            let favItem: UIBarButtonItem = self.navigationItem.rightBarButtonItems?.first as! UIBarButtonItem
+            favItem.tintColor = favItem.tintColor == nil ? UIColor.em_backgroundColor() : nil
+        }
     }
 }

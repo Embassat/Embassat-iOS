@@ -57,26 +57,10 @@ public class CADEMArtistDetailViewModel: NSObject {
         actionSheet.showFromToolbar(viewController.navigationController?.toolbar)
     }
     
-    public func addEventOnCalendar() {
-        
-        let store = EKEventStore()
-        
-        store.requestAccessToEntityType(EKEntityTypeEvent, completion: { (granted: Bool, error: NSError!) -> Void in
-            if granted {
-               let event = EKEvent(eventStore: store)
-                event.title = String(format: "%@ @ %@", self.artistName, self.artistStage)
-                event.startDate = self.model[0].date
-                event.endDate = self.model[0].date
-                event.calendar = store.defaultCalendarForNewEvents
-                let success: Bool = store.saveEvent(event, span: EKSpanThisEvent, commit: true, error: nil)
-                if success {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        let alertView = UIAlertView(title: "Embassa't", message: "Afegit al calendari correctament", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "D'acord", "")
-                        alertView.show()
-                    }
-                }
-            }
-        })
+    public func toggleFavorite(completion: () -> ()) {        
+        CADEMArtistService().toggleFavorite(forArtist: currentArtist).subscribeNext { (_) -> Void in
+            completion()   
+        }
     }
     
     func updateCurrentArtistData() {
