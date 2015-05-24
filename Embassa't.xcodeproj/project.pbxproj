@@ -65,7 +65,6 @@
 		8C8D83B31B0BBFB600CD8CA4 /* UICollectionViewFlowLayout+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D83B21B0BBFB600CD8CA4 /* UICollectionViewFlowLayout+EMAdditions.m */; };
 		8C8D83B71B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D83B51B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.m */; };
 		8C8D83B81B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83B61B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.xib */; };
-		8C8D83BC1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D83BA1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.m */; };
 		8C8D83BD1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83BB1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib */; };
 		8C8D83C81B0E2E2000CD8CA4 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C41B0E2E2000CD8CA4 /* left@2x.png */; };
 		8C8D83C91B0E2E2000CD8CA4 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D83C51B0E2E2000CD8CA4 /* loading.jpg */; };
@@ -97,6 +96,7 @@
 		8CC682E61B12585F00FD2216 /* CADEMInfoFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682E51B12585F00FD2216 /* CADEMInfoFlowLayout.swift */; };
 		8CC682E81B125DFA00FD2216 /* CADEMInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682E71B125DFA00FD2216 /* CADEMInfoViewModel.swift */; };
 		8CC682EA1B12613100FD2216 /* CADEMInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682E91B12613100FD2216 /* CADEMInfoViewController.swift */; };
+		8CC682EC1B126F1F00FD2216 /* CADEMArtistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682EB1B126F1F00FD2216 /* CADEMArtistCollectionViewCell.swift */; };
 		8CCA1B8518FC718900B0C60C /* CADEMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA1B8318FC718900B0C60C /* CADEMMapViewController.m */; };
 		8CCA1B8618FC718900B0C60C /* CADEMMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCA1B8418FC718900B0C60C /* CADEMMapViewController.xib */; };
 		8CCA1B8918FC71A400B0C60C /* CADEMMapViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA1B8818FC71A400B0C60C /* CADEMMapViewModel.m */; };
@@ -200,8 +200,6 @@
 		8C8D83B41B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMMenuCollectionViewCell.h; path = Menu/CADEMMenuCollectionViewCell.h; sourceTree = "<group>"; };
 		8C8D83B51B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMMenuCollectionViewCell.m; path = Menu/CADEMMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		8C8D83B61B0BC40300CD8CA4 /* CADEMMenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMMenuCollectionViewCell.xib; path = Menu/CADEMMenuCollectionViewCell.xib; sourceTree = "<group>"; };
-		8C8D83B91B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADEMArtistCollectionViewCell.h; sourceTree = "<group>"; };
-		8C8D83BA1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADEMArtistCollectionViewCell.m; sourceTree = "<group>"; };
 		8C8D83BB1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CADEMArtistCollectionViewCell.xib; sourceTree = "<group>"; };
 		8C8D83C41B0E2E2000CD8CA4 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
 		8C8D83C51B0E2E2000CD8CA4 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
@@ -247,6 +245,7 @@
 		8CC682E51B12585F00FD2216 /* CADEMInfoFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMInfoFlowLayout.swift; path = Info/CADEMInfoFlowLayout.swift; sourceTree = "<group>"; };
 		8CC682E71B125DFA00FD2216 /* CADEMInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMInfoViewModel.swift; path = Info/CADEMInfoViewModel.swift; sourceTree = "<group>"; };
 		8CC682E91B12613100FD2216 /* CADEMInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMInfoViewController.swift; path = Info/CADEMInfoViewController.swift; sourceTree = "<group>"; };
+		8CC682EB1B126F1F00FD2216 /* CADEMArtistCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMArtistCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CCA1B8218FC718900B0C60C /* CADEMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMMapViewController.h; path = Map/CADEMMapViewController.h; sourceTree = "<group>"; };
 		8CCA1B8318FC718900B0C60C /* CADEMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMMapViewController.m; path = Map/CADEMMapViewController.m; sourceTree = "<group>"; };
 		8CCA1B8418FC718900B0C60C /* CADEMMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMMapViewController.xib; path = Map/CADEMMapViewController.xib; sourceTree = "<group>"; };
@@ -389,8 +388,7 @@
 		8C04EF7818CB91D2008FBC9B /* Artists */ = {
 			isa = PBXGroup;
 			children = (
-				8C8D83B91B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.h */,
-				8C8D83BA1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.m */,
+				8CC682EB1B126F1F00FD2216 /* CADEMArtistCollectionViewCell.swift */,
 				8C8D83BB1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib */,
 				8C8BA6E81B07BE1600896D11 /* CADEMArtistsViewController.swift */,
 				8C04EF8918CB9408008FBC9B /* CADEMArtistsViewController.xib */,
@@ -845,7 +843,6 @@
 				8CDBF19F18DDC3DB002C6E50 /* CADEMMenuViewController.m in Sources */,
 				8C04EF5518CB8F09008FBC9B /* main.m in Sources */,
 				8C04EF8418CB9353008FBC9B /* UIView+AutoLayout.m in Sources */,
-				8C8D83BC1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.m in Sources */,
 				8C8BA6D71B07AE0400896D11 /* CADEMExtrasViewController.swift in Sources */,
 				8CCA1B8518FC718900B0C60C /* CADEMMapViewController.m in Sources */,
 				8CABA0D318E4DF5200118FFA /* UIFont+EMAdditions.m in Sources */,
@@ -873,6 +870,7 @@
 				8C774F7719309A22000D5062 /* UIColor+EMAdditions.m in Sources */,
 				8CC682E61B12585F00FD2216 /* CADEMInfoFlowLayout.swift in Sources */,
 				8CC682EA1B12613100FD2216 /* CADEMInfoViewController.swift in Sources */,
+				8CC682EC1B126F1F00FD2216 /* CADEMArtistCollectionViewCell.swift in Sources */,
 				8C35AE081B0105C30014331F /* CADEMArtistService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

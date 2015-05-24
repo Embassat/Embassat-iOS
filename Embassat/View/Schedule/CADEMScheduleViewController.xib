@@ -20,7 +20,7 @@
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4ZG-M8-6WX">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jCq-Tu-JXc" customClass="CADEMInfoFlowLayout">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jCq-Tu-JXc" customClass="CADEMInfoFlowLayout" customModule="Embassat" customModuleProvider="target">
                         <size key="itemSize" width="320" height="63"/>
                         <size key="headerReferenceSize" width="320" height="38"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
