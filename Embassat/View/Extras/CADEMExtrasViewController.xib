@@ -36,7 +36,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissabte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-X2-tue">
-                                    <rect key="frame" x="128" y="12" width="66" height="20"/>
+                                    <rect key="frame" x="127" y="12" width="66" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>

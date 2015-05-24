@@ -14,5 +14,6 @@
 #import "NSString+EMAdditions.h"
 
 #import "CADArrayDataSource.h"
+#import "CADRootCollectionViewCell.h"
 #import "CADEMArtistCollectionViewCell.h"
 #import "CADEMMenuCollectionViewCell.h"

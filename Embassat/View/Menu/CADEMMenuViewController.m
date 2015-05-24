@@ -11,8 +11,6 @@
 #import "CADEMMenuCollectionViewCell.h"
 #import "CADEMScheduleViewController.h"
 #import "CADEMScheduleViewModel.h"
-#import "CADEMInfoViewController.h"
-#import "CADEMInfoViewModel.h"
 #import "CADEMMapViewController.h"
 #import "CADEMMapViewModel.h"
 
@@ -62,8 +60,7 @@
     switch (indexPath.row)
     {
         case 0:
-            viewController = [[CADEMInfoViewController alloc] init];
-            ((CADEMInfoViewController *)viewController).viewModel = [[CADEMInfoViewModel alloc] init];
+            viewController = [[CADEMInfoViewController alloc] initWithNibName:@"CADEMInfoViewController" bundle:nil];
             break;
             
         case 1:

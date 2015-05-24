@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMInfoHeaderView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YkI-hd-sJb" customClass="CADEMInfoHeaderView">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YkI-hd-sJb" customClass="CADEMInfoHeaderView" customModule="Embassat" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -45,8 +45,8 @@
                 <constraint firstItem="KQi-h3-w5D" firstAttribute="leading" secondItem="YkI-hd-sJb" secondAttribute="leading" id="n6W-Ye-WHU"/>
             </constraints>
             <connections>
-                <outlet property="coverImage" destination="Lps-9n-dCU" id="c2x-ua-Z3i"/>
-                <outlet property="titleLabel" destination="FFk-Tb-wky" id="GKE-xn-EuH"/>
+                <outlet property="coverImage" destination="Lps-9n-dCU" id="Bx7-eS-fGu"/>
+                <outlet property="titleLabel" destination="FFk-Tb-wky" id="y0h-bl-zEj"/>
             </connections>
         </collectionReusableView>
     </objects>
