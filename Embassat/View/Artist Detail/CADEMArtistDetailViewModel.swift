@@ -12,6 +12,7 @@ import EventKit
 public class CADEMArtistDetailViewModel: NSObject {
     
     let model: Array<CADEMArtistSwift>
+    let service: CADEMArtistService = CADEMArtistService()
     
     var currentArtist: CADEMArtistSwift
     var artistName: String = ""
@@ -58,7 +59,7 @@ public class CADEMArtistDetailViewModel: NSObject {
     }
     
     public func toggleFavorite(completion: () -> ()) {
-        CADEMArtistService().toggleFavorite(forArtist: currentArtist).subscribeNext { (_) -> Void in
+        service.toggleFavorite(forArtist: currentArtist).subscribeNext { (favorited: AnyObject!) -> Void in
             completion()
         }
     }

@@ -14,6 +14,8 @@ public class CADEMArtistService: NSObject {
     static let kArtistsStoreKey : String = "/artists.db"
     
     let store: CADEMStore = CADEMStore()
+    let parser: CADEMArtistParser = CADEMArtistParser()
+    let notificationService: CADEMNotificationService = CADEMNotificationService()
     
     public func artists() -> RACSignal
     {
@@ -32,7 +34,7 @@ public class CADEMArtistService: NSObject {
                     }
                     else {
                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                            let artists = CADEMArtistParser().parseArtists(fromJson: json!, cached: cachedArtists)
+                            let artists = self.parser.parseArtists(fromJson: json!, cached: cachedArtists)
 
                             dispatch_async(dispatch_get_main_queue()) {
                                 subscriber?.sendNext(artists)
@@ -79,8 +81,9 @@ public class CADEMArtistService: NSObject {
                 if index != NSNotFound {
                     cachedArtists[index].favorite = !cachedArtists[index].favorite
                     self.store.store(cachedArtists, forKey: CADEMArtistService.kArtistsStoreKey)
-                    subscriber?.sendNext(true)
+                    subscriber?.sendNext(cachedArtists[index].favorite)
                     subscriber?.sendCompleted()
+                    self.notificationService.toggleLocalNotification(forArtist: artist, favorited: cachedArtists[index].favorite)
                 } else {
                     subscriber?.sendError(nil)
                 }

@@ -31,6 +31,7 @@
 {
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
+    [[[CADEMNotificationService alloc] init] registerForLocalNotifications];
     [SHKConfiguration sharedInstanceWithConfigurator:[[CADEMShareKitConfigurator alloc] init]];
     
     [self setupAppearance];
