@@ -147,7 +147,7 @@
 - (RACSignal *)artists
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        CADArtistService *service = [[CADArtistService alloc] init];
+        CADEMArtistService *service = [[CADEMArtistService alloc] init];
         [service artists:^void(NSError *error){
             [subscriber sendError:error];
         } success:^void(id artists){

@@ -40,6 +40,10 @@ public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
         artistsCollectionView?.dataSource = self.dataSource
         artistsCollectionView?.registerNib(UINib(nibName: "CADEMArtistCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSourceSwift.CADCellIdentifier)
         
+        if viewModel.numberOfItemsInSection(0) > 0 {
+            self.activityIndicator?.stopAnimating()
+        }
+        
         viewModel.activeSubject.subscribeNext({ [unowned self] (_) -> Void in
             self.activityIndicator?.stopAnimating()
             self.artistsCollectionView?.reloadData()

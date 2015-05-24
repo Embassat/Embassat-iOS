@@ -1,5 +1,5 @@
 //
-//  CADArtistParser.swift
+//  CADEMArtistParser.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 15/05/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CADArtistParser: NSObject {
+public class CADEMArtistParser: NSObject {
     
     let dateFormatter: NSDateFormatter
     

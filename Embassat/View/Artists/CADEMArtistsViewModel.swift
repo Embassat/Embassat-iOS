@@ -49,7 +49,7 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSw
     func artists() -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
             
-            let service: CADArtistService = CADArtistService()
+            let service: CADEMArtistService = CADEMArtistService()
             service.artists(
                 { (error: NSError) -> () in
                     subscriber?.sendError(error)
