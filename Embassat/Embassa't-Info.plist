@@ -51,5 +51,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Utilitzem la teva ubicació per mostrar-te millor els punts de l&apos;Embassa&apos;t</string>
 </dict>
 </plist>

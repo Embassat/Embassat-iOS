@@ -20,6 +20,7 @@ static NSString *const kEMMapPinIdentifier = @"EMMapPinIdentifier";
 
 @property (nonatomic, copy) NSArray *coordinates;
 @property (nonatomic) BOOL userLocationTracked;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -39,6 +40,12 @@ static NSString *const kEMMapPinIdentifier = @"EMMapPinIdentifier";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
     
     for (int i = 0; i < [self.viewModel nunmberOfPoints]; i++)
     {
