@@ -27,7 +27,7 @@ public class CADEMArtistParser: NSObject {
                 longDescr = longDesc
             }
             if let existingArtist = cachedArtists.filter({ (artist: CADEMArtistSwift) -> Bool in
-            return artist.artistId == subJson["ID"].intValue
+                return artist.artistId == subJson["ID"].intValue
             }).first {
                 favorited = existingArtist.favorite
             }

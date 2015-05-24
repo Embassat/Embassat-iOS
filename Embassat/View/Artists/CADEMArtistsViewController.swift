@@ -56,6 +56,9 @@ public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let artistViewController = CADEMArtistDetailViewController(nibName: "CADEMArtistDetailViewController", bundle: nil)
         artistViewController.viewModel = viewModel.artistViewModel(forIndexPath: indexPath)
+        artistViewController.updateSignal.subscribeNext { [unowned self] (_) -> Void in
+            self.viewModel.shouldRefreshModel()
+        }
         
         self.navigationController?.pushViewController(artistViewController, animated: true)
     }

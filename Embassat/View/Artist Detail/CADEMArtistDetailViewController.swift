@@ -20,6 +20,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     @IBOutlet weak var timeLabel: UILabel?
     @IBOutlet weak var stageLabel: UILabel?
     
+    public var updateSignal: RACSubject = RACSubject()
     public var viewModel: CADEMArtistDetailViewModel? {
         didSet {
             self.updateSubviewDetails()
@@ -58,6 +59,9 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
         coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
         stageLabel?.text = viewModel?.artistStage
         dayLabel?.text = viewModel?.artistDay
+        
+        let favItem: UIBarButtonItem = self.navigationItem.rightBarButtonItems?.first as! UIBarButtonItem
+        favItem.tintColor = viewModel?.artistIsFavorite == true ? UIColor.em_backgroundColor() : nil
     }
     
     func sharePressed() {
@@ -65,9 +69,12 @@ public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
     }
     
     func favoritePressed() {
-        viewModel?.toggleFavorite(){ () -> () in
+        viewModel?.toggleFavorite(){ [unowned self] () -> () in
+
             let favItem: UIBarButtonItem = self.navigationItem.rightBarButtonItems?.first as! UIBarButtonItem
             favItem.tintColor = favItem.tintColor == nil ? UIColor.em_backgroundColor() : nil
+            
+            self.updateSignal.sendNext(true)
         }
     }
 }

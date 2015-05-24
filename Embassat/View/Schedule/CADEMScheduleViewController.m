@@ -60,8 +60,14 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    @weakify(self)
+    
     CADEMArtistDetailViewController *artistDetailViewController = [[CADEMArtistDetailViewController alloc] initWithNibName:@"CADEMArtistDetailViewController" bundle:nil];
     artistDetailViewController.viewModel = [self.viewModel artistViewModelForIndexPath:indexPath];
+    [artistDetailViewController.updateSignal subscribeNext:^(id x) {
+        @strongify(self)
+        [self.viewModel shouldRefreshModel];
+    }];
     
     [self.navigationController pushViewController:artistDetailViewController animated:YES];
 }

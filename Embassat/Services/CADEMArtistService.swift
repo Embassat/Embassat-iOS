@@ -48,6 +48,20 @@ public class CADEMArtistService: NSObject {
         }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
     }
     
+    public func cachedArtists() -> RACSignal
+    {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
+            if let cachedArtists: Array<CADEMArtistSwift> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
+                subscriber?.sendNext(cachedArtists)
+                subscriber?.sendCompleted()
+            } else {
+                subscriber?.sendCompleted()
+            }
+            
+            return nil
+        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
+    }
+    
     public func toggleFavorite(forArtist artist: CADEMArtistSwift) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
             if var cachedArtists: Array<CADEMArtistSwift> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {

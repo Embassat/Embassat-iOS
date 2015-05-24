@@ -11,6 +11,7 @@ import Foundation
 public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSwift {
     
     var model: Array<CADEMArtistSwift> = []
+    public let service: CADEMArtistService = CADEMArtistService()
     public let activeSubject: RACSubject
     
     override init() {
@@ -18,7 +19,7 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSw
         
         super.init()
         
-        CADEMArtistService().artists().map
+        service.artists().map
             { (artists: AnyObject!) -> AnyObject! in
                 let artistsArray = artists as! Array<CADEMArtistSwift>
                 return sorted(artistsArray) { (artist1, artist2) in
@@ -36,6 +37,17 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSw
     
     func numberOfItemsInSection(section : Int) -> Int {
         return self.model.count
+    }
+    
+    public func shouldRefreshModel() {
+        service.cachedArtists().map{ (artists: AnyObject!) -> AnyObject! in
+            let artistsArray = artists as! Array<CADEMArtistSwift>
+            return sorted(artistsArray) { (artist1, artist2) in
+                return artist1.name < artist2.name
+            }
+        }.subscribeNext { [unowned self] (artists: AnyObject!) -> Void in
+            self.model = artists as! Array<CADEMArtistSwift>
+        }
     }
     
     public func titleAtIndexPath(indexPath: NSIndexPath) -> String {

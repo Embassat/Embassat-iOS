@@ -26,6 +26,8 @@
 // Returns an initialized view model, or nil if an error occurs.
 - (instancetype)initWithModel:(id)model;
 
+- (void)shouldRefreshModel;
+
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 - (NSString *)artistNameAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)stageNameAtIndexPath:(NSIndexPath *)indexPath;

@@ -20,8 +20,8 @@ public class CADEMArtistDetailViewModel: NSObject {
     var artistStartMinute: String = ""
     var artistDay: String = ""
     var artistStage: String = ""
+    var artistIsFavorite: Bool = false
     var artistImageURL: NSURL? = nil
-    var artistDescriptionSignal: RACSignal?
     
     public var currentIndex: Int = 0 {
         didSet {
@@ -57,9 +57,9 @@ public class CADEMArtistDetailViewModel: NSObject {
         actionSheet.showFromToolbar(viewController.navigationController?.toolbar)
     }
     
-    public func toggleFavorite(completion: () -> ()) {        
+    public func toggleFavorite(completion: () -> ()) {
         CADEMArtistService().toggleFavorite(forArtist: currentArtist).subscribeNext { (_) -> Void in
-            completion()   
+            completion()
         }
     }
     
@@ -70,6 +70,7 @@ public class CADEMArtistDetailViewModel: NSObject {
         artistImageURL = currentArtist.imageURL
         artistStartHour = String(currentArtist.date.hour)
         artistStartMinute = String(currentArtist.date.minute)
+        artistIsFavorite = currentArtist.favorite
         artistDay = "Dissabte"
     }
    

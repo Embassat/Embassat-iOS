@@ -14,6 +14,7 @@
 @interface CADEMScheduleViewModel ()
 
 @property (nonatomic, strong) id model;
+@property (nonatomic, strong) CADEMArtistService *service;
 
 @end
 
@@ -31,12 +32,13 @@
 	if (self = [super init])
     {
         _model = model;
+        _service = [[CADEMArtistService alloc] init];
         
         _updatedContentSignal = [RACObserve(self, model) ignore:nil];
         
         RAC(self, model) = [[self.didBecomeActiveSignal
                             flattenMap:^RACStream *(id value) {
-                                return [[[CADEMArtistService alloc] init] artists];
+                                return [_service artists];
                             }] map:^id(id value) {
                                 return @[value,
                                          value,
@@ -48,6 +50,18 @@
 }
 
 #pragma mark - Public
+
+- (void)shouldRefreshModel
+{
+    @weakify(self)
+    
+    [[self.service.cachedArtists map:^id(id value) {
+        return @[value, value, value];
+    }] subscribeNext:^(id x) {
+        @strongify(self)
+        self.model = x;
+    }];
+}
 
 - (void)setDayIndex:(NSInteger)dayIndex
 {
