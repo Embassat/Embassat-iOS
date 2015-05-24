@@ -18,7 +18,7 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSw
         
         super.init()
         
-        self.artists().map
+        CADEMArtistService().artists().map
             { (artists: AnyObject!) -> AnyObject! in
                 let artistsArray = artists as! Array<CADEMArtistSwift>
                 return sorted(artistsArray) { (artist1, artist2) in
@@ -44,21 +44,5 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSw
     
     public func artistViewModel(forIndexPath indexPath: NSIndexPath) -> CADEMArtistDetailViewModel {
         return CADEMArtistDetailViewModel(model: model, currentIndex: indexPath.item)
-    }
-    
-    func artists() -> RACSignal {
-        return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
-            
-            let service: CADEMArtistService = CADEMArtistService()
-            service.artists(
-                { (error: NSError) -> () in
-                    subscriber?.sendError(error)
-                }, success: { (artists: Array<CADEMArtistSwift>) -> () in
-                    subscriber?.sendNext(artists)
-                    subscriber?.sendCompleted()
-            })
-            
-            return nil
-        }).replayLazily()
     }
 }

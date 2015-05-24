@@ -36,7 +36,7 @@
         
         RAC(self, model) = [[self.didBecomeActiveSignal
                             flattenMap:^RACStream *(id value) {
-                                return [self artists];
+                                return [[[CADEMArtistService alloc] init] artists];
                             }] map:^id(id value) {
                                 return @[value,
                                          value,
@@ -142,21 +142,6 @@
 - (CADEMArtistSwift *)artistAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.model[self.dayIndex][indexPath.item];
-}
-
-- (RACSignal *)artists
-{
-    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        CADEMArtistService *service = [[CADEMArtistService alloc] init];
-        [service artists:^void(NSError *error){
-            [subscriber sendError:error];
-        } success:^void(id artists){
-            [subscriber sendNext:artists];
-            [subscriber sendCompleted];
-        }];
-        
-        return nil;
-    }] replayLazily];
 }
 
 @end

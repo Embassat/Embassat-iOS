@@ -15,22 +15,33 @@ public class CADEMArtistService: NSObject {
     
     let store: CADEMStore = CADEMStore()
     
-    public func artists (failure : (NSError) -> (), success : (Array<CADEMArtistSwift>) -> ())
+    public func artists() -> RACSignal
     {
-        if let cachedArtists: Array<CADEMArtistSwift> = store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
-            success(cachedArtists)
-        }
-        
-        Manager.sharedInstance.request(.GET, CADEMArtistService.kArtistsEndpoint)
-            .responseJSON { (req, res, json, error) in
-                if(error != nil) {
-                    failure(error!)
-                }
-                else {
-                    let artists = CADEMArtistParser().parseArtists(fromJson: json!)
-                    success(artists)
-                    self.store.store(artists, forKey: CADEMArtistService.kArtistsStoreKey)
-                }
-        }
+        return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
+            if let cachedArtists: Array<CADEMArtistSwift> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
+                subscriber?.sendNext(cachedArtists)
+            }
+            
+            Manager.sharedInstance.request(.GET, CADEMArtistService.kArtistsEndpoint)
+                .responseJSON { (req, res, json, error) in
+                    if(error != nil) {
+                        subscriber?.sendError(error)
+                    }
+                    else {
+                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                            let artists = CADEMArtistParser().parseArtists(fromJson: json!)
+
+                            dispatch_async(dispatch_get_main_queue()) {
+                                subscriber?.sendNext(artists)
+                                subscriber?.sendCompleted()
+                            }
+                            
+                            self.store.store(artists, forKey: CADEMArtistService.kArtistsStoreKey)
+                        }
+                    }
+            }
+            
+            return nil
+        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
     }
 }
