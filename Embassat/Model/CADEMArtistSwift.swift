@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CADEMArtistSwift : NSObject {
+public class CADEMArtistSwift : NSObject, NSCoding {
     let name: String
     let longDescription: String
     let stage: String
@@ -23,6 +23,24 @@ public class CADEMArtistSwift : NSObject {
         self.imageURL = imageURL
         self.date = date
         self.stage = stage
+    }
+    
+    required convenience public init(coder decoder: NSCoder) {
+        self.init(name: decoder.decodeObjectForKey("name") as! String,
+                  longDescription: decoder.decodeObjectForKey("longDescription") as! String,
+                  artistURL: decoder.decodeObjectForKey("artistURL") as! NSURL,
+                  imageURL: decoder.decodeObjectForKey("imageURL") as! NSURL,
+                  date: decoder.decodeObjectForKey("date") as! NSDate,
+                  stage: decoder.decodeObjectForKey("stage") as! String)
+    }
+    
+    public func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(name, forKey: "name")
+        coder.encodeObject(longDescription, forKey: "longDescription")
+        coder.encodeObject(stage, forKey: "stage")
+        coder.encodeObject(artistURL, forKey: "artistURL")
+        coder.encodeObject(imageURL, forKey: "imageURL")
+        coder.encodeObject(date, forKey: "date")
     }
     
     override public var description: String {
