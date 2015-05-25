@@ -8,6 +8,7 @@
 #import <ShareKit/ShareKit.h>
 
 #import "UIView+CADAdditions.h"
+#import "UICollectionViewFlowLayout+EMAdditions.h"
 #import "UIFont+EMAdditions.h"
 #import "UIColor+EMAdditions.h"
 #import "NSDate+EMAdditions.h"
@@ -15,4 +16,3 @@
 
 #import "CADArrayDataSource.h"
 #import "CADRootCollectionViewCell.h"
-#import "CADEMMenuCollectionViewCell.h"

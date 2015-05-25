@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMMenuViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMMenuViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
                 <outlet property="menuCollectionView" destination="Jmv-0r-Udt" id="C8U-oY-aVx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -38,6 +38,7 @@
                 <constraint firstAttribute="bottom" secondItem="Jmv-0r-Udt" secondAttribute="bottom" id="cEZ-Br-a7g"/>
                 <constraint firstItem="Jmv-0r-Udt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cqw-Pq-8wa"/>
             </constraints>
+            <point key="canvasLocation" x="226" y="233"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -33,6 +33,8 @@ public class CADEMMapViewController: CADEMRootViewControllerSwift, MKMapViewDele
     }
     
     public override func viewDidLoad() {
+        super.viewDidLoad()
+        
         title = "Mapa"
         
         if locationManager.respondsToSelector("requestWhenInUseAuthorization") {

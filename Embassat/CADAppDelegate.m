@@ -11,7 +11,6 @@
 #import <DDTTYLogger.h>
 
 #import "CADEMRootNavigationController.h"
-#import "CADEMMenuViewController.h"
 #import "UIColor+EMAdditions.h"
 
 #import <ShareKit/ShareKit.h>
@@ -81,8 +80,7 @@
 {
     if (!_rootNavigationController)
     {
-        CADEMMenuViewController *menuViewController = [[CADEMMenuViewController alloc] init];
-        menuViewController.viewModel = [[CADEMMenuViewModel alloc] initWithModel:@[@"Info", @"Artistes", @"Horaris", @"Mapa", @"Entrades", @"Extres"]];
+        CADEMMenuViewController *menuViewController = [[CADEMMenuViewController alloc] initWithNibName:@"CADEMMenuViewController" bundle:nil];
         
         _rootNavigationController = [[CADEMRootNavigationController alloc] initWithRootViewController:menuViewController];
     }
