@@ -102,6 +102,7 @@
 		8CE72FEE1B13864800698D4A /* CADEMScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FED1B13864800698D4A /* CADEMScheduleHeaderView.swift */; };
 		8CE72FF21B138A0100698D4A /* CADEMScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF11B138A0100698D4A /* CADEMScheduleViewModel.swift */; };
 		8CE72FF41B138F2700698D4A /* CADEMScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF31B138F2700698D4A /* CADEMScheduleViewController.swift */; };
+		8CE72FF71B13C70F00698D4A /* chevron-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE72FF61B13C70F00698D4A /* chevron-red@2x.png */; };
 		8CEF6825193BDD120001B801 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF6823193BDD120001B801 /* chevron.png */; };
 		8CEF6826193BDD120001B801 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF6824193BDD120001B801 /* chevron@2x.png */; };
 /* End PBXBuildFile section */
@@ -240,6 +241,7 @@
 		8CE72FF11B138A0100698D4A /* CADEMScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMScheduleViewModel.swift; path = Schedule/CADEMScheduleViewModel.swift; sourceTree = "<group>"; };
 		8CE72FF31B138F2700698D4A /* CADEMScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMScheduleViewController.swift; path = Schedule/CADEMScheduleViewController.swift; sourceTree = "<group>"; };
 		8CE72FF51B139C2800698D4A /* Embassa't-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Embassa't-Bridging-Header.h"; sourceTree = "<group>"; };
+		8CE72FF61B13C70F00698D4A /* chevron-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron-red@2x.png"; sourceTree = "<group>"; };
 		8CEF6823193BDD120001B801 /* chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chevron.png; sourceTree = "<group>"; };
 		8CEF6824193BDD120001B801 /* chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@2x.png"; sourceTree = "<group>"; };
 		D16AF894416306787E8EA880 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 				8C23D61E18FB001F00B3C106 /* 58x58.png */,
 				8C23D62018FB001F00B3C106 /* 80x80.png */,
 				8C23D62118FB001F00B3C106 /* 120x120.png */,
+				8CE72FF61B13C70F00698D4A /* chevron-red@2x.png */,
 				8CEF6823193BDD120001B801 /* chevron.png */,
 				8CEF6824193BDD120001B801 /* chevron@2x.png */,
 				8C774F60192EBF30000D5062 /* Default */,
@@ -723,6 +726,7 @@
 				8C774F5F192D682B000D5062 /* CADEMTicketsViewController.xib in Resources */,
 				8C23D60A18FAD6FC00B3C106 /* info2.jpg in Resources */,
 				8C23D61618FAD96600B3C106 /* CADEMInfoHeaderView.xib in Resources */,
+				8CE72FF71B13C70F00698D4A /* chevron-red@2x.png in Resources */,
 				8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */,
 				8C23D62618FB001F00B3C106 /* 58x58.png in Resources */,
 				8CB6C69418E8B3D6008D19FE /* CADEMInfoViewController.xib in Resources */,

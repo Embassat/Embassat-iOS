@@ -35,8 +35,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPh-04-Fjn">
-                            <rect key="frame" x="290" y="21" width="8" height="22"/>
-                            <state key="normal" image="chevron.png">
+                            <rect key="frame" x="276" y="21" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="0x3-xE-xUl"/>
+                                <constraint firstAttribute="width" constant="22" id="Idq-H0-2nC"/>
+                            </constraints>
+                            <state key="normal" image="chevron-red.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -90,8 +94,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9j-ir-ODE">
-                            <rect key="frame" x="290" y="21" width="8" height="22"/>
-                            <state key="normal" image="chevron.png">
+                            <rect key="frame" x="276" y="21" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="dzM-3u-SCq"/>
+                                <constraint firstAttribute="width" constant="22" id="ke6-5m-nNT"/>
+                            </constraints>
+                            <state key="normal" image="chevron-red.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -171,7 +179,7 @@
         </view>
     </objects>
     <resources>
-        <image name="chevron.png" width="8" height="14"/>
+        <image name="chevron-red.png" width="48" height="48"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
