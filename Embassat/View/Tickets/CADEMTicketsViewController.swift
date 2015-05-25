@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CADEMTicketsViewController: CADEMRootViewControllerSwift {
+public class CADEMTicketsViewController: CADEMRootViewController {
     
     @IBOutlet var titleLabels: [UILabel]?
     @IBOutlet var bodyLabels: [UILabel]?

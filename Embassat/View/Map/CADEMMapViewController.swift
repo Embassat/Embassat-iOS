@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-public class CADEMMapViewController: CADEMRootViewControllerSwift, MKMapViewDelegate {
+public class CADEMMapViewController: CADEMRootViewController, MKMapViewDelegate {
     
     static let kEMMapPinIdentifier : String = "EMMapPinIdentifier"
     

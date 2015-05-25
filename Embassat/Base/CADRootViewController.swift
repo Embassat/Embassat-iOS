@@ -1,5 +1,5 @@
 //
-//  CADRootViewControllerSwift.swift
+//  CADRootViewController.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 14/05/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CADRootViewControllerSwift: UIViewController {
+public class CADRootViewController: UIViewController {
     
     let tapGestureToResign: UITapGestureRecognizer
     

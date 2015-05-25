@@ -8,17 +8,17 @@
 
 import UIKit
 
-public class CADEMScheduleViewController: CADEMRootViewControllerSwift {
+public class CADEMScheduleViewController: CADEMRootViewController {
     
     @IBOutlet weak var scheduleCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-    let dataSource: CADArrayDataSourceSwift
+    let dataSource: CADArrayDataSource
     let viewModel: CADEMScheduleViewModel
     
     override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
         
         let theViewModel = CADEMScheduleViewModel()
-        dataSource = CADArrayDataSourceSwift(viewModel: theViewModel,
+        dataSource = CADArrayDataSource(viewModel: theViewModel,
             configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
                 let theCell = cell as! CADEMScheduleCollectionViewCell
             
@@ -52,8 +52,8 @@ public class CADEMScheduleViewController: CADEMRootViewControllerSwift {
         
         title = "Horaris"
         scheduleCollectionView?.dataSource = self.dataSource
-        scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADCellIdentifier)
-        scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CADHeaderIdentifier)
+        scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSource.CADCellIdentifier)
+        scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CADArrayDataSource.CADHeaderIdentifier)
         
         if viewModel.numberOfItemsInSection(0) > 0 {
             self.activityIndicator?.stopAnimating()

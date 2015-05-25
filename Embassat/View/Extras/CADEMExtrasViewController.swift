@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CADEMExtrasViewController: CADEMRootViewControllerSwift {
+public class CADEMExtrasViewController: CADEMRootViewController {
     
     @IBOutlet var titleLabels: [UILabel]?
     @IBOutlet var bodyLabels: [UILabel]?

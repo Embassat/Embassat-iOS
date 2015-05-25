@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CADEMInfoViewModel: NSObject, CADEMViewModelCollectionDelegateSwift {
+public class CADEMInfoViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
     let titles: Array<String> = ["Què és l’Embassa't?", "Escenari Principal", "Amfiteatre", "Mirador Electrònic"]
     let bodies: Array<String> = [

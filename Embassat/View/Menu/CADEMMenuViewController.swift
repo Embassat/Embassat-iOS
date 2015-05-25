@@ -8,17 +8,17 @@
 
 import Foundation
 
-public class CADEMMenuViewController: CADEMRootViewControllerSwift {
+public class CADEMMenuViewController: CADEMRootViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView?
-    let dataSource: CADArrayDataSourceSwift
+    let dataSource: CADArrayDataSource
     let viewModel: CADEMMenuViewModel
     
     override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
         
         let theViewModel = CADEMMenuViewModel(model: ["Info", "Artistes", "Horaris", "Mapa", "Entrades", "Extres"])
         dataSource =
-            CADArrayDataSourceSwift(viewModel: theViewModel,
+            CADArrayDataSource(viewModel: theViewModel,
                 configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
                     let theCell = cell as! CADEMMenuCollectionViewCell
                     
@@ -38,7 +38,7 @@ public class CADEMMenuViewController: CADEMRootViewControllerSwift {
         super.viewDidLoad()
 
         menuCollectionView?.dataSource = dataSource
-        menuCollectionView?.registerNib(UINib(nibName: "CADEMMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADCellIdentifier)
+        menuCollectionView?.registerNib(UINib(nibName: "CADEMMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSource.CADCellIdentifier)
     }
     
     public override func viewWillAppear(animated: Bool) {
@@ -97,7 +97,7 @@ public class CADEMMenuViewController: CADEMRootViewControllerSwift {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         
-        return flowLayout.insetsForVerticallyCenteredSectionInScreenWithRows(dataSource.viewModel.numberOfItemsInSection(0), andColumns: dataSource.viewModel.numberOfSections!())
+        return flowLayout.insetsForVerticallyCenteredSectionInScreenWithRows(dataSource.viewModel.numberOfItemsInSection(0), andColumns: 1)
     }
     
 }

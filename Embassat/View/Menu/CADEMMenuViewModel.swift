@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CADEMMenuViewModel: NSObject, CADEMViewModelCollectionDelegateSwift {
+public class CADEMMenuViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
     let model: Array<String>
     

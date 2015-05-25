@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class CADEMInfoViewController: CADEMRootViewControllerSwift {
+public class CADEMInfoViewController: CADEMRootViewController {
     
     @IBOutlet weak var infoCollectionView: UICollectionView?
     let prototypeCell: CADEMInfoCollectionViewCell
-    let dataSource: CADArrayDataSourceSwift
+    let dataSource: CADArrayDataSource
     let viewModel: CADEMInfoViewModel
     
     override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
@@ -20,7 +20,7 @@ public class CADEMInfoViewController: CADEMRootViewControllerSwift {
         let theViewModel = CADEMInfoViewModel()
         prototypeCell = UINib(nibName: "CADEMInfoCollectionViewCell", bundle: nil).instantiateWithOwner(nil, options: nil).first as! CADEMInfoCollectionViewCell
         dataSource =
-            CADArrayDataSourceSwift(viewModel: theViewModel,
+            CADArrayDataSource(viewModel: theViewModel,
                 configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
                     let theCell = cell as! CADEMInfoCollectionViewCell
             
@@ -47,8 +47,8 @@ public class CADEMInfoViewController: CADEMRootViewControllerSwift {
         title = "Info"
         
         infoCollectionView?.dataSource = dataSource
-        infoCollectionView?.registerNib(UINib(nibName: "CADEMInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADCellIdentifier)
-        infoCollectionView?.registerNib(UINib(nibName: "CADEMInfoHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CADHeaderIdentifier)
+        infoCollectionView?.registerNib(UINib(nibName: "CADEMInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSource.CADCellIdentifier)
+        infoCollectionView?.registerNib(UINib(nibName: "CADEMInfoHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CADArrayDataSource.CADHeaderIdentifier)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

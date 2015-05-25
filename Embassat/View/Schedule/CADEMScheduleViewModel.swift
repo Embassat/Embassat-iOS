@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegateSwift {
+public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
     var model: Array<Array<CADEMArtistSwift>> = [[], [], []]
     public var dayIndex: Int = 0 {

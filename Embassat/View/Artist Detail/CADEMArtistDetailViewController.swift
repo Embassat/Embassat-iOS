@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CADEMArtistDetailViewController: CADEMRootViewControllerSwift {
+public class CADEMArtistDetailViewController: CADEMRootViewController {
     
     @IBOutlet weak var scrollView: UIScrollView?
     @IBOutlet weak var coverImage: UIImageView?

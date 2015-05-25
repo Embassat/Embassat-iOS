@@ -14,5 +14,4 @@
 #import "NSDate+EMAdditions.h"
 #import "NSString+EMAdditions.h"
 
-#import "CADArrayDataSource.h"
 #import "CADRootCollectionViewCell.h"

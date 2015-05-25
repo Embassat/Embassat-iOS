@@ -1,5 +1,5 @@
 //
-//  CADEMRootViewControllerSwift.swift
+//  CADEMRootViewController.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 16/05/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CADEMRootViewControllerSwift: CADRootViewControllerSwift {
+public class CADEMRootViewController: CADRootViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  CADEMViewModelCollectionDelegateSwift.swift
+//  CADEMViewModelCollectionDelegate.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 13/05/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol CADEMViewModelCollectionDelegateSwift {
+@objc protocol CADEMViewModelCollectionDelegate {
     
     optional func numberOfSections() -> Int
     func numberOfItemsInSection(section: Int) -> Int

@@ -8,17 +8,17 @@
 
 import UIKit
 
-public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
+public class CADEMArtistsViewController: CADEMRootViewController {
     
     @IBOutlet weak var artistsCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-    let dataSource: CADArrayDataSourceSwift
+    let dataSource: CADArrayDataSource
     let viewModel: CADEMArtistsViewModel
     
     override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
 
         let theViewModel = CADEMArtistsViewModel()
-        dataSource = CADArrayDataSourceSwift(viewModel: theViewModel, configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
+        dataSource = CADArrayDataSource(viewModel: theViewModel, configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
             let theCell = cell as! CADEMArtistCollectionViewCell
             
             theCell.optionName = theViewModel.titleAtIndexPath(indexPath)
@@ -38,7 +38,7 @@ public class CADEMArtistsViewController: CADEMRootViewControllerSwift {
 
         title = "Artistes"
         artistsCollectionView?.dataSource = self.dataSource
-        artistsCollectionView?.registerNib(UINib(nibName: "CADEMArtistCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSourceSwift.CADCellIdentifier)
+        artistsCollectionView?.registerNib(UINib(nibName: "CADEMArtistCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSource.CADCellIdentifier)
         
         if viewModel.numberOfItemsInSection(0) > 0 {
             self.activityIndicator?.stopAnimating()

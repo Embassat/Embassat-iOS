@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegateSwift {
+public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
     var model: Array<CADEMArtistSwift> = []
     public let service: CADEMArtistService = CADEMArtistService()
