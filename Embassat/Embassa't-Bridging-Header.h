@@ -6,6 +6,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <ShareKit/ShareKit.h>
+#import <ShareKit/DefaultSHKConfigurator.h>
 
 #import "UIView+CADAdditions.h"
 #import "UICollectionViewFlowLayout+EMAdditions.h"
@@ -13,5 +14,3 @@
 #import "UIColor+EMAdditions.h"
 #import "NSDate+EMAdditions.h"
 #import "NSString+EMAdditions.h"
-
-#import "CADRootCollectionViewCell.h"

@@ -10,13 +10,11 @@
 
 #import <DDTTYLogger.h>
 
-#import "CADEMRootNavigationController.h"
 #import "UIColor+EMAdditions.h"
 
 #import <ShareKit/ShareKit.h>
 #import <ShareKit/SHKConfiguration.h>
 #import <ShareKit/SHKFacebook.h>
-#import "CADEMShareKitConfigurator.h"
 
 @interface CADAppDelegate ()
 
