@@ -29,5 +29,4 @@ public class CADEMInfoHeaderView: UICollectionReusableView {
         
         titleLabel?.font = UIFont.em_detailFontOfSize(20.0)
     }
-    
 }

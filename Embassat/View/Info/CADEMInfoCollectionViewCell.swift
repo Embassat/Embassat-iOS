@@ -20,7 +20,7 @@ public class CADEMInfoCollectionViewCell: CADRootCollectionViewCell {
     public override func setupView() {
         super.setupView()
         
-        bodyLabel!.font = UIFont.em_detailFontOfSize(15.0)
+        bodyLabel?.font = UIFont.em_detailFontOfSize(15.0)
     }
 
 }

@@ -70,8 +70,7 @@ public class CADEMMenuViewController: CADEMRootViewControllerSwift {
             break;
             
         case 2:
-//            viewController = [[CADEMScheduleViewController alloc] init];
-//            ((CADEMScheduleViewController *)viewController).viewModel = [[CADEMScheduleViewModel alloc] init];
+            viewController = CADEMScheduleViewController(nibName: "CADEMScheduleViewController", bundle: nil)
             break;
             
         case 3:

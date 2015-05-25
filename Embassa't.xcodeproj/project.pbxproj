@@ -78,12 +78,8 @@
 		8CABA0D318E4DF5200118FFA /* UIFont+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABA0D218E4DF5200118FFA /* UIFont+EMAdditions.m */; };
 		8CABA0D618E4E49800118FFA /* NSString+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABA0D518E4E49800118FFA /* NSString+EMAdditions.m */; };
 		8CAE0F6E18DE0D46009F110C /* CADArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE0F6D18DE0D46009F110C /* CADArrayDataSource.m */; };
-		8CAEB33C192BF7AB0017CF29 /* CADEMScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEB33A192BF7AB0017CF29 /* CADEMScheduleViewController.m */; };
 		8CAEB33D192BF7AB0017CF29 /* CADEMScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAEB33B192BF7AB0017CF29 /* CADEMScheduleViewController.xib */; };
-		8CAEB340192BF7F00017CF29 /* CADEMScheduleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEB33F192BF7F00017CF29 /* CADEMScheduleViewModel.m */; };
-		8CAEB343192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEB342192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.m */; };
 		8CAEB345192BFA060017CF29 /* CADEMScheduleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAEB344192BFA060017CF29 /* CADEMScheduleCollectionViewCell.xib */; };
-		8CAEB348192BFF180017CF29 /* CADEMScheduleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEB347192BFF180017CF29 /* CADEMScheduleHeaderView.m */; };
 		8CAEB34A192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAEB349192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib */; };
 		8CAEB34D192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEB34C192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m */; };
 		8CB1B5C71B11FDDD00D1A477 /* CADEMStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1B5C61B11FDDD00D1A477 /* CADEMStore.swift */; };
@@ -107,6 +103,10 @@
 		8CE72FE61B1372D800698D4A /* CADEMMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE51B1372D800698D4A /* CADEMMapViewController.swift */; };
 		8CE72FE81B137AD800698D4A /* CADEMMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE71B137AD800698D4A /* CADEMMenuCollectionViewCell.swift */; };
 		8CE72FEA1B137C6D00698D4A /* CADEMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE91B137C6D00698D4A /* CADEMMenuViewController.swift */; };
+		8CE72FEC1B13839500698D4A /* CADEMScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FEB1B13839500698D4A /* CADEMScheduleCollectionViewCell.swift */; };
+		8CE72FEE1B13864800698D4A /* CADEMScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FED1B13864800698D4A /* CADEMScheduleHeaderView.swift */; };
+		8CE72FF21B138A0100698D4A /* CADEMScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF11B138A0100698D4A /* CADEMScheduleViewModel.swift */; };
+		8CE72FF41B138F2700698D4A /* CADEMScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF31B138F2700698D4A /* CADEMScheduleViewController.swift */; };
 		8CEF6825193BDD120001B801 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF6823193BDD120001B801 /* chevron.png */; };
 		8CEF6826193BDD120001B801 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF6824193BDD120001B801 /* chevron@2x.png */; };
 /* End PBXBuildFile section */
@@ -224,16 +224,8 @@
 		8CAE0F6C18DE0D46009F110C /* CADArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADArrayDataSource.h; sourceTree = "<group>"; };
 		8CAE0F6D18DE0D46009F110C /* CADArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADArrayDataSource.m; sourceTree = "<group>"; };
 		8CAE0F6F18DE130E009F110C /* CADEMViewModelCollectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CADEMViewModelCollectionDelegate.h; sourceTree = "<group>"; };
-		8CAEB339192BF7AB0017CF29 /* CADEMScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMScheduleViewController.h; path = Schedule/CADEMScheduleViewController.h; sourceTree = "<group>"; };
-		8CAEB33A192BF7AB0017CF29 /* CADEMScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMScheduleViewController.m; path = Schedule/CADEMScheduleViewController.m; sourceTree = "<group>"; };
 		8CAEB33B192BF7AB0017CF29 /* CADEMScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMScheduleViewController.xib; path = Schedule/CADEMScheduleViewController.xib; sourceTree = "<group>"; };
-		8CAEB33E192BF7F00017CF29 /* CADEMScheduleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMScheduleViewModel.h; path = Schedule/CADEMScheduleViewModel.h; sourceTree = "<group>"; };
-		8CAEB33F192BF7F00017CF29 /* CADEMScheduleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMScheduleViewModel.m; path = Schedule/CADEMScheduleViewModel.m; sourceTree = "<group>"; };
-		8CAEB341192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMScheduleCollectionViewCell.h; path = Schedule/CADEMScheduleCollectionViewCell.h; sourceTree = "<group>"; };
-		8CAEB342192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMScheduleCollectionViewCell.m; path = Schedule/CADEMScheduleCollectionViewCell.m; sourceTree = "<group>"; };
 		8CAEB344192BFA060017CF29 /* CADEMScheduleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMScheduleCollectionViewCell.xib; path = Schedule/CADEMScheduleCollectionViewCell.xib; sourceTree = "<group>"; };
-		8CAEB346192BFF180017CF29 /* CADEMScheduleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMScheduleHeaderView.h; path = Schedule/CADEMScheduleHeaderView.h; sourceTree = "<group>"; };
-		8CAEB347192BFF180017CF29 /* CADEMScheduleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMScheduleHeaderView.m; path = Schedule/CADEMScheduleHeaderView.m; sourceTree = "<group>"; };
 		8CAEB349192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMScheduleHeaderView.xib; path = Schedule/CADEMScheduleHeaderView.xib; sourceTree = "<group>"; };
 		8CAEB34B192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+ConstraintMatching.h"; sourceTree = "<group>"; };
 		8CAEB34C192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+ConstraintMatching.m"; sourceTree = "<group>"; };
@@ -260,6 +252,10 @@
 		8CE72FE51B1372D800698D4A /* CADEMMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMMapViewController.swift; path = Map/CADEMMapViewController.swift; sourceTree = "<group>"; };
 		8CE72FE71B137AD800698D4A /* CADEMMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMMenuCollectionViewCell.swift; path = Menu/CADEMMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CE72FE91B137C6D00698D4A /* CADEMMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMMenuViewController.swift; path = Menu/CADEMMenuViewController.swift; sourceTree = "<group>"; };
+		8CE72FEB1B13839500698D4A /* CADEMScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMScheduleCollectionViewCell.swift; path = Schedule/CADEMScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
+		8CE72FED1B13864800698D4A /* CADEMScheduleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMScheduleHeaderView.swift; path = Schedule/CADEMScheduleHeaderView.swift; sourceTree = "<group>"; };
+		8CE72FF11B138A0100698D4A /* CADEMScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMScheduleViewModel.swift; path = Schedule/CADEMScheduleViewModel.swift; sourceTree = "<group>"; };
+		8CE72FF31B138F2700698D4A /* CADEMScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMScheduleViewController.swift; path = Schedule/CADEMScheduleViewController.swift; sourceTree = "<group>"; };
 		8CEF6823193BDD120001B801 /* chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chevron.png; sourceTree = "<group>"; };
 		8CEF6824193BDD120001B801 /* chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@2x.png"; sourceTree = "<group>"; };
 		D16AF894416306787E8EA880 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -557,17 +553,13 @@
 		8CAEB338192BF77B0017CF29 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				8CAEB341192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.h */,
-				8CAEB342192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.m */,
+				8CE72FEB1B13839500698D4A /* CADEMScheduleCollectionViewCell.swift */,
 				8CAEB344192BFA060017CF29 /* CADEMScheduleCollectionViewCell.xib */,
-				8CAEB346192BFF180017CF29 /* CADEMScheduleHeaderView.h */,
-				8CAEB347192BFF180017CF29 /* CADEMScheduleHeaderView.m */,
+				8CE72FED1B13864800698D4A /* CADEMScheduleHeaderView.swift */,
 				8CAEB349192BFF2A0017CF29 /* CADEMScheduleHeaderView.xib */,
-				8CAEB339192BF7AB0017CF29 /* CADEMScheduleViewController.h */,
-				8CAEB33A192BF7AB0017CF29 /* CADEMScheduleViewController.m */,
+				8CE72FF31B138F2700698D4A /* CADEMScheduleViewController.swift */,
 				8CAEB33B192BF7AB0017CF29 /* CADEMScheduleViewController.xib */,
-				8CAEB33E192BF7F00017CF29 /* CADEMScheduleViewModel.h */,
-				8CAEB33F192BF7F00017CF29 /* CADEMScheduleViewModel.m */,
+				8CE72FF11B138A0100698D4A /* CADEMScheduleViewModel.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -822,8 +814,8 @@
 				8CAEB34D192C0C630017CF29 /* NSLayoutConstraint+ConstraintMatching.m in Sources */,
 				8C8BA6E91B07BE1600896D11 /* CADEMArtistsViewController.swift in Sources */,
 				8C8BA6D11B07800600896D11 /* CADEMRootViewControllerSwift.swift in Sources */,
+				8CE72FEE1B13864800698D4A /* CADEMScheduleHeaderView.swift in Sources */,
 				8C1FF3141B03990A00078E15 /* SwiftyJSON.swift in Sources */,
-				8CAEB340192BF7F00017CF29 /* CADEMScheduleViewModel.m in Sources */,
 				8C8BA6ED1B08D41100896D11 /* CADEMArtistDetailViewModel.swift in Sources */,
 				8CAE0F6E18DE0D46009F110C /* CADArrayDataSource.m in Sources */,
 				8C1FF3461B03F7C400078E15 /* CADArrayDataSourceSwift.swift in Sources */,
@@ -837,7 +829,6 @@
 				8C1FF3361B03AAFC00078E15 /* Download.swift in Sources */,
 				8CE72FEA1B137C6D00698D4A /* CADEMMenuViewController.swift in Sources */,
 				8C1FF3421B03CC2900078E15 /* CADEMViewModelCollectionDelegateSwift.swift in Sources */,
-				8CAEB348192BFF180017CF29 /* CADEMScheduleHeaderView.m in Sources */,
 				8C8BA6EF1B08DF8E00896D11 /* CADEMArtistDetailViewController.swift in Sources */,
 				8CA0CE821B038E3E00BC04B0 /* CADEMArtistSwift.swift in Sources */,
 				8CE72FE41B13707100698D4A /* CADEMMapViewModel.swift in Sources */,
@@ -850,9 +841,11 @@
 				8CABA0D318E4DF5200118FFA /* UIFont+EMAdditions.m in Sources */,
 				8C04EF8518CB9353008FBC9B /* UIView+CADAdditions.m in Sources */,
 				8C1FF33B1B03AAFC00078E15 /* Upload.swift in Sources */,
+				8CE72FF41B138F2700698D4A /* CADEMScheduleViewController.swift in Sources */,
 				8C1FF3371B03AAFC00078E15 /* Manager.swift in Sources */,
 				8CB1B5C71B11FDDD00D1A477 /* CADEMStore.swift in Sources */,
 				8CE72FE81B137AD800698D4A /* CADEMMenuCollectionViewCell.swift in Sources */,
+				8CE72FEC1B13839500698D4A /* CADEMScheduleCollectionViewCell.swift in Sources */,
 				8C04EF7C18CB9341008FBC9B /* CADRootViewController.m in Sources */,
 				8C1FF3351B03AAFC00078E15 /* Alamofire.swift in Sources */,
 				8C1FF33C1B03AAFC00078E15 /* Validation.swift in Sources */,
@@ -862,14 +855,13 @@
 				8C774F7A1930DF8E000D5062 /* NSDate+EMAdditions.m in Sources */,
 				8C04EF9718CBCF50008FBC9B /* CADBaseModel.m in Sources */,
 				8CA8703A18CC835300A845DD /* CADRootCollectionViewCell.m in Sources */,
+				8CE72FF21B138A0100698D4A /* CADEMScheduleViewModel.swift in Sources */,
 				8C1FF3381B03AAFC00078E15 /* ParameterEncoding.swift in Sources */,
 				8C1FF3391B03AAFC00078E15 /* Request.swift in Sources */,
 				8C8BA6CF1B06758000896D11 /* CADEMArtistParser.swift in Sources */,
-				8CAEB33C192BF7AB0017CF29 /* CADEMScheduleViewController.m in Sources */,
 				8CC682E21B12550400FD2216 /* CADEMInfoCollectionViewCell.swift in Sources */,
 				8C1FF34C1B04CD1D00078E15 /* CADEMTicketsViewController.swift in Sources */,
 				8CC682E81B125DFA00FD2216 /* CADEMInfoViewModel.swift in Sources */,
-				8CAEB343192BF9F20017CF29 /* CADEMScheduleCollectionViewCell.m in Sources */,
 				8C774F7719309A22000D5062 /* UIColor+EMAdditions.m in Sources */,
 				8CC682E61B12585F00FD2216 /* CADEMInfoFlowLayout.swift in Sources */,
 				8CC682EA1B12613100FD2216 /* CADEMInfoViewController.swift in Sources */,

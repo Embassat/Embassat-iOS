@@ -40,7 +40,7 @@ public class CADEMMenuCollectionViewCell: CADRootCollectionViewCell {
     public override func setupView() {
         super.setupView()
         
-        optionNameLabel!.font = UIFont.em_titleFontOfSize(30.0)
+        optionNameLabel?.font = UIFont.em_titleFontOfSize(30.0)
         optionNameLabel?.adjustsFontSizeToFitWidth = true
     }
 }
