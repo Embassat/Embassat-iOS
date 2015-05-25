@@ -105,6 +105,8 @@
 		8CDBF19B18DDBE96002C6E50 /* CADEMRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBF19A18DDBE96002C6E50 /* CADEMRootNavigationController.m */; };
 		8CDBF19F18DDC3DB002C6E50 /* CADEMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBF19D18DDC3DB002C6E50 /* CADEMMenuViewController.m */; };
 		8CDBF1A018DDC3DB002C6E50 /* CADEMMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CDBF19E18DDC3DB002C6E50 /* CADEMMenuViewController.xib */; };
+		8CE72FE11B136FEC00698D4A /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE72FDF1B136FEC00698D4A /* Default-667h@2x.png */; };
+		8CE72FE21B136FEC00698D4A /* Default-736@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE72FE01B136FEC00698D4A /* Default-736@2x.png */; };
 		8CEF6825193BDD120001B801 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF6823193BDD120001B801 /* chevron.png */; };
 		8CEF6826193BDD120001B801 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF6824193BDD120001B801 /* chevron@2x.png */; };
 /* End PBXBuildFile section */
@@ -260,6 +262,8 @@
 		8CDBF19C18DDC3DB002C6E50 /* CADEMMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADEMMenuViewController.h; path = Menu/CADEMMenuViewController.h; sourceTree = "<group>"; };
 		8CDBF19D18DDC3DB002C6E50 /* CADEMMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CADEMMenuViewController.m; path = Menu/CADEMMenuViewController.m; sourceTree = "<group>"; };
 		8CDBF19E18DDC3DB002C6E50 /* CADEMMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMMenuViewController.xib; path = Menu/CADEMMenuViewController.xib; sourceTree = "<group>"; };
+		8CE72FDF1B136FEC00698D4A /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
+		8CE72FE01B136FEC00698D4A /* Default-736@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736@2x.png"; sourceTree = "<group>"; };
 		8CEF6823193BDD120001B801 /* chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chevron.png; sourceTree = "<group>"; };
 		8CEF6824193BDD120001B801 /* chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@2x.png"; sourceTree = "<group>"; };
 		D16AF894416306787E8EA880 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -518,6 +522,8 @@
 			isa = PBXGroup;
 			children = (
 				8C774F6F192EC0B9000D5062 /* Default-568h@2x.png */,
+				8CE72FDF1B136FEC00698D4A /* Default-667h@2x.png */,
+				8CE72FE01B136FEC00698D4A /* Default-736@2x.png */,
 				8C774F73192EC39A000D5062 /* Default.png */,
 				8C774F70192EC0B9000D5062 /* Default@2x.png */,
 			);
@@ -739,6 +745,7 @@
 				8C04EF5318CB8F09008FBC9B /* InfoPlist.strings in Resources */,
 				8CCA1B8618FC718900B0C60C /* CADEMMapViewController.xib in Resources */,
 				8C774F71192EC0B9000D5062 /* Default-568h@2x.png in Resources */,
+				8CE72FE11B136FEC00698D4A /* Default-667h@2x.png in Resources */,
 				8C23D60918FAD6FC00B3C106 /* info1.jpg in Resources */,
 				8CB6C69B18E8B919008D19FE /* info_cover@2x.png in Resources */,
 				8C8D83BD1B0BC45D00CD8CA4 /* CADEMArtistCollectionViewCell.xib in Resources */,
@@ -768,6 +775,7 @@
 				8C774F72192EC0B9000D5062 /* Default@2x.png in Resources */,
 				8CAEB33D192BF7AB0017CF29 /* CADEMScheduleViewController.xib in Resources */,
 				8C8D83C91B0E2E2000CD8CA4 /* loading.jpg in Resources */,
+				8CE72FE21B136FEC00698D4A /* Default-736@2x.png in Resources */,
 				8C23D61118FAD7FE00B3C106 /* CADEMInfoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
