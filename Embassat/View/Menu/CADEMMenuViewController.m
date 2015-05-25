@@ -11,8 +11,6 @@
 #import "CADEMMenuCollectionViewCell.h"
 #import "CADEMScheduleViewController.h"
 #import "CADEMScheduleViewModel.h"
-#import "CADEMMapViewController.h"
-#import "CADEMMapViewModel.h"
 
 #import "UICollectionViewFlowLayout+EMAdditions.h"
 
@@ -73,8 +71,7 @@
             break;
             
         case 3:
-            viewController = [[CADEMMapViewController alloc] init];
-            ((CADEMMapViewController *)viewController).viewModel = [[CADEMMapViewModel alloc] init];
+            viewController = [[CADEMMapViewController alloc] initWithNibName:@"CADEMMapViewController" bundle:nil];
             break;
             
         case 4:

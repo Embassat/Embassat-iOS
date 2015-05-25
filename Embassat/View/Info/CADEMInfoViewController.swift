@@ -10,7 +10,7 @@ import UIKit
 
 public class CADEMInfoViewController: CADEMRootViewControllerSwift {
     
-    @IBOutlet var infoCollectionView: UICollectionView?
+    @IBOutlet weak var infoCollectionView: UICollectionView?
     let prototypeCell: CADEMInfoCollectionViewCell
     let dataSource: CADArrayDataSourceSwift
     let viewModel: CADEMInfoViewModel

@@ -10,8 +10,8 @@ import UIKit
 
 public class CADEMArtistCollectionViewCell: CADRootCollectionViewCell {
     
-    @IBOutlet var optionNameLabel: UILabel?
-    @IBOutlet var bottomSeparator: UIView?
+    @IBOutlet weak var optionNameLabel: UILabel?
+    @IBOutlet weak var bottomSeparator: UIView?
     
     public var optionName: String = "" {
         didSet {

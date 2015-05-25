@@ -10,7 +10,7 @@ import UIKit
 
 public class CADEMInfoCollectionViewCell: CADRootCollectionViewCell {
     
-    @IBOutlet var bodyLabel: UILabel?
+    @IBOutlet weak var bodyLabel: UILabel?
     public var body: String = "" {
         didSet {
             bodyLabel?.text = body

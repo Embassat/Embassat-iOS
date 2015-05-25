@@ -10,8 +10,8 @@ import UIKit
 
 public class CADEMInfoHeaderView: UICollectionReusableView {
     
-    @IBOutlet var titleLabel: UILabel?
-    @IBOutlet var coverImage: UIImageView?
+    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var coverImage: UIImageView?
     
     public var title: String = "" {
         didSet {
