@@ -17,8 +17,8 @@ public class CADEMArtistParser: NSObject {
         self.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     }
     
-    public func parseArtists(fromJson json: AnyObject, cached cachedArtists: Array<CADEMArtistSwift> = []) -> Array<CADEMArtistSwift> {
-        var artists: [CADEMArtistSwift] = []
+    public func parseArtists(fromJson json: AnyObject, cached cachedArtists: Array<CADEMArtist> = []) -> Array<CADEMArtist> {
+        var artists: [CADEMArtist] = []
         for (index: String, subJson: JSON) in JSON(json) {
             var longDescr = ""
             var favorited = false
@@ -26,13 +26,13 @@ public class CADEMArtistParser: NSObject {
             if let longDesc = subJson["content"].stringValue.scanStringWithStartTag("<p>", endTag: "</p>") {
                 longDescr = longDesc
             }
-            if let existingArtist = cachedArtists.filter({ (artist: CADEMArtistSwift) -> Bool in
+            if let existingArtist = cachedArtists.filter({ (artist: CADEMArtist) -> Bool in
                 return artist.artistId == subJson["ID"].intValue
             }).first {
                 favorited = existingArtist.favorite
             }
 
-            let artist = CADEMArtistSwift(
+            let artist = CADEMArtist(
                 artistId: subJson["ID"].intValue,
                 name: subJson["title"].stringValue,
                 longDescription: longDescr,

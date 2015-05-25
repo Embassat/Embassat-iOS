@@ -20,9 +20,9 @@ public class CADEMArtistService: NSObject {
     public func artists() -> RACSignal
     {
         return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
-            var cachedArtists: Array<CADEMArtistSwift> = []
+            var cachedArtists: Array<CADEMArtist> = []
             
-            if let cached = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
+            if let cached = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtist> {
                 cachedArtists = cached
                 subscriber?.sendNext(cachedArtists)
             }
@@ -53,7 +53,7 @@ public class CADEMArtistService: NSObject {
     public func cachedArtists() -> RACSignal
     {
         return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
-            if let cachedArtists: Array<CADEMArtistSwift> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
+            if let cachedArtists: Array<CADEMArtist> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtist> {
                 subscriber?.sendNext(cachedArtists)
                 subscriber?.sendCompleted()
             } else {
@@ -64,9 +64,9 @@ public class CADEMArtistService: NSObject {
         }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
     }
     
-    public func toggleFavorite(forArtist artist: CADEMArtistSwift) -> RACSignal {
+    public func toggleFavorite(forArtist artist: CADEMArtist) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
-            if var cachedArtists: Array<CADEMArtistSwift> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtistSwift> {
+            if var cachedArtists: Array<CADEMArtist> = self.store.object(forKey: CADEMArtistService.kArtistsStoreKey) as? Array<CADEMArtist> {
                 
                 var index = NSNotFound
                 

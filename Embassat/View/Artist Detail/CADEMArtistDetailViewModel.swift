@@ -11,10 +11,10 @@ import EventKit
 
 public class CADEMArtistDetailViewModel: NSObject {
     
-    let model: Array<CADEMArtistSwift>
+    let model: Array<CADEMArtist>
     let service: CADEMArtistService = CADEMArtistService()
     
-    var currentArtist: CADEMArtistSwift
+    var currentArtist: CADEMArtist
     var artistName: String = ""
     var artistDescription: String = ""
     var artistStartHour: String = ""
@@ -39,7 +39,7 @@ public class CADEMArtistDetailViewModel: NSObject {
         }
     }
     
-    init(model: Array<CADEMArtistSwift>, currentIndex: Int) {
+    init(model: Array<CADEMArtist>, currentIndex: Int) {
         self.model = model
         self.currentIndex = currentIndex
         

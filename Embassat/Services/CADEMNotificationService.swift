@@ -18,7 +18,7 @@ public class CADEMNotificationService: NSObject {
         
     }
 
-    public func toggleLocalNotification(forArtist artist: CADEMArtistSwift, favorited: Bool) {
+    public func toggleLocalNotification(forArtist artist: CADEMArtist, favorited: Bool) {
         var localNotif = UILocalNotification()
         
         localNotif.fireDate = NSDate().dateByAddingTimeInterval(10)

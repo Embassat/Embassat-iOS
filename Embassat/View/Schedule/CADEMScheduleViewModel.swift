@@ -10,7 +10,7 @@ import Foundation
 
 public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
-    var model: Array<Array<CADEMArtistSwift>> = [[], [], []]
+    var model: Array<Array<CADEMArtist>> = [[], [], []]
     public var dayIndex: Int = 0 {
         didSet {
             if dayIndex > 2 {
@@ -32,11 +32,11 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
         
         service.artists().map
             { (artists: AnyObject!) -> AnyObject! in
-                let artistsArray = artists as! Array<CADEMArtistSwift>
+                let artistsArray = artists as! Array<CADEMArtist>
                 return [artistsArray, artistsArray, artistsArray]
             }.subscribeNext(
                 { [unowned self] (artists: AnyObject!) -> Void in
-                    self.model = artists as! Array<Array<CADEMArtistSwift>>
+                    self.model = artists as! Array<Array<CADEMArtist>>
                     self.activeSubject.sendNext(true)
                 }, error:
                 { [unowned self] (error: NSError!) -> Void in
@@ -47,11 +47,11 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     public func shouldRefreshModel() {
         service.cachedArtists().map
             { (artists: AnyObject!) -> AnyObject! in
-                let artistsArray = artists as! Array<CADEMArtistSwift>
+                let artistsArray = artists as! Array<CADEMArtist>
                 return [artistsArray, artistsArray, artistsArray]
             }.subscribeNext
             { [unowned self] (artists: AnyObject!) -> Void in
-                self.model = artists as! Array<Array<CADEMArtistSwift>>
+                self.model = artists as! Array<Array<CADEMArtist>>
         }
     }
     
@@ -109,7 +109,7 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     }
     
     public func backgroundColor(forIndexPath indexPath : NSIndexPath) -> UIColor {
-        let artist: CADEMArtistSwift = self.artist(forIndexPath: indexPath)
+        let artist: CADEMArtist = self.artist(forIndexPath: indexPath)
         let now: NSDate = NSDate()
         
         return now.isLaterThanDate(artist.date) && now.isEarlierThanDate(artist.date) ? UIColor.em_backgroundColor() : UIColor.em_backgroundDeselectedColor()
@@ -131,7 +131,7 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     //    }]].array;
     //}
     
-    func artist(forIndexPath indexPath: NSIndexPath) -> CADEMArtistSwift {
+    func artist(forIndexPath indexPath: NSIndexPath) -> CADEMArtist {
         return model[dayIndex][indexPath.item]
     }
 }

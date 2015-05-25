@@ -1,1 +1,0 @@
-../../../ShareKit/Classes/ShareKit/Core NoARC/Helpers/OAuth/OAHMAC_SHA1SignatureProvider.h

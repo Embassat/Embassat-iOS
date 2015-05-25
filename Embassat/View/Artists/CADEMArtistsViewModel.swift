@@ -10,7 +10,7 @@ import Foundation
 
 public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
-    var model: Array<CADEMArtistSwift> = []
+    var model: Array<CADEMArtist> = []
     public let service: CADEMArtistService = CADEMArtistService()
     public let activeSubject: RACSubject
     
@@ -21,13 +21,13 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegate {
         
         service.artists().map
             { (artists: AnyObject!) -> AnyObject! in
-                let artistsArray = artists as! Array<CADEMArtistSwift>
+                let artistsArray = artists as! Array<CADEMArtist>
                 return sorted(artistsArray) { (artist1, artist2) in
                     return artist1.name < artist2.name
                 }
             }.subscribeNext(
                 { [unowned self] (artists: AnyObject!) -> Void in
-                    self.model = artists as! Array<CADEMArtistSwift>
+                    self.model = artists as! Array<CADEMArtist>
                     self.activeSubject.sendNext(true)
             }, error:
                 { [unowned self] (error: NSError!) -> Void in
@@ -41,12 +41,12 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
     public func shouldRefreshModel() {
         service.cachedArtists().map{ (artists: AnyObject!) -> AnyObject! in
-            let artistsArray = artists as! Array<CADEMArtistSwift>
+            let artistsArray = artists as! Array<CADEMArtist>
             return sorted(artistsArray) { (artist1, artist2) in
                 return artist1.name < artist2.name
             }
         }.subscribeNext { [unowned self] (artists: AnyObject!) -> Void in
-            self.model = artists as! Array<CADEMArtistSwift>
+            self.model = artists as! Array<CADEMArtist>
         }
     }
     
