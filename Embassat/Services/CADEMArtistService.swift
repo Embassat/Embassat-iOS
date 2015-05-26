@@ -27,24 +27,23 @@ public class CADEMArtistService: NSObject {
                 subscriber?.sendNext(cachedArtists)
             }
             
-            Manager.sharedInstance.request(.GET, CADEMArtistService.kArtistsEndpoint)
-                .responseJSON { (req, res, json, error) in
-                    if(error != nil) {
-                        subscriber?.sendError(error)
-                    }
-                    else {
-                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                            let artists = self.parser.parseArtists(fromJson: json!, cached: cachedArtists)
-
-                            dispatch_async(dispatch_get_main_queue()) {
-                                subscriber?.sendNext(artists)
-                                subscriber?.sendCompleted()
-                            }
-                            
-                            self.store.store(artists, forKey: CADEMArtistService.kArtistsStoreKey)
+            let fireBaseRoot = Firebase(url: "https://scorching-torch-2707.firebaseio.com/artists")
+            fireBaseRoot.observeSingleEventOfType(FEventType.Value, withBlock: { (snapshot: FDataSnapshot!) -> Void in
+                if snapshot.exists() {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                        let artists = self.parser.parseArtists(fromJson: snapshot.value, cached: cachedArtists)
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            subscriber?.sendNext(artists)
+                            subscriber?.sendCompleted()
                         }
+                        
+                        self.store.store(artists, forKey: CADEMArtistService.kArtistsStoreKey)
                     }
-            }
+                } else {
+                    subscriber?.sendError(nil)
+                }
+            })
             
             return nil
         }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())

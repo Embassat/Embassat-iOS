@@ -13,19 +13,16 @@ public class CADEMArtistParser: NSObject {
     let dateFormatter: NSDateFormatter
     
     override init() {
-        self.dateFormatter = NSDateFormatter()
-        self.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.locale = NSLocale(localeIdentifier: "ca_ES")
     }
     
     public func parseArtists(fromJson json: AnyObject, cached cachedArtists: Array<CADEMArtist> = []) -> Array<CADEMArtist> {
         var artists: [CADEMArtist] = []
         for (index: String, subJson: JSON) in JSON(json) {
-            var longDescr = ""
             var favorited = false
             
-            if let longDesc = subJson["content"].stringValue.scanStringWithStartTag("<p>", endTag: "</p>") {
-                longDescr = longDesc
-            }
             if let existingArtist = cachedArtists.filter({ (artist: CADEMArtist) -> Bool in
                 return artist.artistId == subJson["ID"].intValue
             }).first {
@@ -33,13 +30,14 @@ public class CADEMArtistParser: NSObject {
             }
 
             let artist = CADEMArtist(
-                artistId: subJson["ID"].intValue,
-                name: subJson["title"].stringValue,
-                longDescription: longDescr,
-                artistURL: NSURL(string: subJson["e"].stringValue)!,
-                imageURL: NSURL(string: subJson["featured_image"]["attachment_meta"]["sizes"]["large"]["url"].stringValue)!,
-                date: self.dateFormatter.dateFromString(subJson["date"].stringValue)!,
-                stage: subJson["terms"]["portfolio_category"][0]["name"].stringValue,
+                artistId: subJson["id"].intValue,
+                name: subJson["name"].stringValue,
+                longDescription: subJson["description"].stringValue,
+                artistURL: NSURL(string: subJson["share_url"].stringValue)!,
+                imageURL: NSURL(string: subJson["image_url"].stringValue)!,
+                startDate: dateFormatter.dateFromString(subJson["start_date"].stringValue)!,
+                endDate: dateFormatter.dateFromString(subJson["end_date"].stringValue)!,
+                stage: subJson["stage"].stringValue,
                 favorite: favorited
             )
             artists.append(artist)

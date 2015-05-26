@@ -17,8 +17,7 @@ public class CADEMArtistDetailViewModel: NSObject {
     var currentArtist: CADEMArtist
     var artistName: String = ""
     var artistDescription: String = ""
-    var artistStartHour: String = ""
-    var artistStartMinute: String = ""
+    var artistStartText: String = ""
     var artistDay: String = ""
     var artistStage: String = ""
     var artistIsFavorite: Bool = false
@@ -69,8 +68,7 @@ public class CADEMArtistDetailViewModel: NSObject {
         artistDescription = currentArtist.longDescription
         artistStage = currentArtist.stage
         artistImageURL = currentArtist.imageURL
-        artistStartHour = String(currentArtist.date.hour)
-        artistStartMinute = String(currentArtist.date.minute)
+        artistStartText = String(format: "%@:%@", String(currentArtist.startDate.hour), String(currentArtist.startDate.minute))
         artistIsFavorite = currentArtist.favorite
         artistDay = "Dissabte"
     }

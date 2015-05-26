@@ -15,16 +15,18 @@ public class CADEMArtist : NSObject, NSCoding {
     let stage: String
     let artistURL: NSURL
     let imageURL: NSURL
-    let date: NSDate
+    let startDate: NSDate
+    let endDate: NSDate
     var favorite: Bool
     
-    init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, date: NSDate, stage: String, favorite: Bool = false) {
+    init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, startDate: NSDate, endDate: NSDate, stage: String, favorite: Bool = false) {
         self.artistId = artistId
         self.name = name
         self.longDescription = longDescription
         self.artistURL = artistURL
         self.imageURL = imageURL
-        self.date = date
+        self.startDate = startDate
+        self.endDate = endDate
         self.stage = stage
         self.favorite = favorite
     }
@@ -35,7 +37,8 @@ public class CADEMArtist : NSObject, NSCoding {
                   longDescription: decoder.decodeObjectForKey("longDescription") as! String,
                   artistURL: decoder.decodeObjectForKey("artistURL") as! NSURL,
                   imageURL: decoder.decodeObjectForKey("imageURL") as! NSURL,
-                  date: decoder.decodeObjectForKey("date") as! NSDate,
+                  startDate: decoder.decodeObjectForKey("startDate") as! NSDate,
+                  endDate: decoder.decodeObjectForKey("endDate") as! NSDate,
                   stage: decoder.decodeObjectForKey("stage") as! String,
                   favorite: decoder.decodeBoolForKey("favorite"))
     }
@@ -47,7 +50,8 @@ public class CADEMArtist : NSObject, NSCoding {
         coder.encodeObject(stage, forKey: "stage")
         coder.encodeObject(artistURL, forKey: "artistURL")
         coder.encodeObject(imageURL, forKey: "imageURL")
-        coder.encodeObject(date, forKey: "date")
+        coder.encodeObject(startDate, forKey: "startDate")
+        coder.encodeObject(endDate, forKey: "endDate")
         coder.encodeBool(favorite, forKey: "favorite")
     }
     

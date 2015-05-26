@@ -68,11 +68,11 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     }
 
     func initialMinute(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(self.artist(forIndexPath: indexPath).date.minute)
+        return String(self.artist(forIndexPath: indexPath).startDate.minute)
     }
     
     func initialHour(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(self.artist(forIndexPath: indexPath).date.hour)
+        return String(self.artist(forIndexPath: indexPath).startDate.hour)
     }
     
     public func initialTimeString(forIndexPath indexPath : NSIndexPath) -> String {
@@ -80,11 +80,11 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     }
     
     func finalMinute(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(self.artist(forIndexPath: indexPath).date.minute)
+        return String(self.artist(forIndexPath: indexPath).endDate.minute)
     }
     
     func finalHour(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(self.artist(forIndexPath: indexPath).date.hour)
+        return String(self.artist(forIndexPath: indexPath).endDate.hour)
     }
     
     public func finalTimeString(forIndexPath indexPath : NSIndexPath) -> String {
@@ -112,7 +112,7 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
         let artist: CADEMArtist = self.artist(forIndexPath: indexPath)
         let now: NSDate = NSDate()
         
-        return now.isLaterThanDate(artist.date) && now.isEarlierThanDate(artist.date) ? UIColor.em_backgroundColor() : UIColor.em_backgroundDeselectedColor()
+        return now.isLaterThanDate(artist.startDate) && now.isEarlierThanDate(artist.endDate) ? UIColor.em_backgroundColor() : UIColor.em_backgroundDeselectedColor()
     }
     
 //    - (NSArray *)filteredArrayFromArray:(NSArray *)array withDateString:(NSString *)dateString
