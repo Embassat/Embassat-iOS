@@ -91,20 +91,4 @@ public class CADRootViewController: UIViewController {
         
         self.keyboardWillBecomeHidden(keyboardHidden, animationDuration: animationDuration!, curve: animationCurve!, keyboardHeight: keyboardHeight)
     }
-    
-    func showLoading() {
-        SVProgressHUD.show()        
-    }
-    
-    func hideLoading() {
-        SVProgressHUD.dismiss()
-    }
-    
-    func hideWithSucces(success: String) {
-        SVProgressHUD.showSuccessWithStatus(success)
-    }
-
-    func hideWithError(error: String) {
-        SVProgressHUD.showErrorWithStatus(error)
-    }
 }

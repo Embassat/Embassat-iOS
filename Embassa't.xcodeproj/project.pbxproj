@@ -19,14 +19,6 @@
 		8C04EF8518CB9353008FBC9B /* UIView+CADAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF8118CB9353008FBC9B /* UIView+CADAdditions.m */; };
 		8C04EF8B18CB9408008FBC9B /* CADEMArtistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C04EF8918CB9408008FBC9B /* CADEMArtistsViewController.xib */; };
 		8C1FF3141B03990A00078E15 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */; };
-		8C1FF3351B03AAFC00078E15 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF32D1B03AAFC00078E15 /* Alamofire.swift */; };
-		8C1FF3361B03AAFC00078E15 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF32E1B03AAFC00078E15 /* Download.swift */; };
-		8C1FF3371B03AAFC00078E15 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF32F1B03AAFC00078E15 /* Manager.swift */; };
-		8C1FF3381B03AAFC00078E15 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3301B03AAFC00078E15 /* ParameterEncoding.swift */; };
-		8C1FF3391B03AAFC00078E15 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3311B03AAFC00078E15 /* Request.swift */; };
-		8C1FF33A1B03AAFC00078E15 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3321B03AAFC00078E15 /* ResponseSerialization.swift */; };
-		8C1FF33B1B03AAFC00078E15 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3331B03AAFC00078E15 /* Upload.swift */; };
-		8C1FF33C1B03AAFC00078E15 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3341B03AAFC00078E15 /* Validation.swift */; };
 		8C1FF3401B03C9EF00078E15 /* CADEMMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF33F1B03C9EF00078E15 /* CADEMMenuViewModel.swift */; };
 		8C1FF3421B03CC2900078E15 /* CADEMViewModelCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3411B03CC2900078E15 /* CADEMViewModelCollectionDelegate.swift */; };
 		8C1FF3461B03F7C400078E15 /* CADArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3451B03F7C400078E15 /* CADArrayDataSource.swift */; };
@@ -142,14 +134,6 @@
 		8C04EF8218CB9353008FBC9B /* UIViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Private.h"; sourceTree = "<group>"; };
 		8C04EF8918CB9408008FBC9B /* CADEMArtistsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CADEMArtistsViewController.xib; sourceTree = "<group>"; };
 		8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Services/SwiftyJSON.swift; sourceTree = "<group>"; };
-		8C1FF32D1B03AAFC00078E15 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Services/Alamofire/Alamofire.swift; sourceTree = "<group>"; };
-		8C1FF32E1B03AAFC00078E15 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Services/Alamofire/Download.swift; sourceTree = "<group>"; };
-		8C1FF32F1B03AAFC00078E15 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Services/Alamofire/Manager.swift; sourceTree = "<group>"; };
-		8C1FF3301B03AAFC00078E15 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Services/Alamofire/ParameterEncoding.swift; sourceTree = "<group>"; };
-		8C1FF3311B03AAFC00078E15 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Services/Alamofire/Request.swift; sourceTree = "<group>"; };
-		8C1FF3321B03AAFC00078E15 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Services/Alamofire/ResponseSerialization.swift; sourceTree = "<group>"; };
-		8C1FF3331B03AAFC00078E15 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Services/Alamofire/Upload.swift; sourceTree = "<group>"; };
-		8C1FF3341B03AAFC00078E15 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Services/Alamofire/Validation.swift; sourceTree = "<group>"; };
 		8C1FF33F1B03C9EF00078E15 /* CADEMMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMMenuViewModel.swift; path = Menu/CADEMMenuViewModel.swift; sourceTree = "<group>"; };
 		8C1FF3411B03CC2900078E15 /* CADEMViewModelCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADEMViewModelCollectionDelegate.swift; sourceTree = "<group>"; };
 		8C1FF3451B03F7C400078E15 /* CADArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADArrayDataSource.swift; sourceTree = "<group>"; };
@@ -425,25 +409,9 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		8C1FF32C1B03AAEE00078E15 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				8C1FF32D1B03AAFC00078E15 /* Alamofire.swift */,
-				8C1FF32E1B03AAFC00078E15 /* Download.swift */,
-				8C1FF32F1B03AAFC00078E15 /* Manager.swift */,
-				8C1FF3301B03AAFC00078E15 /* ParameterEncoding.swift */,
-				8C1FF3311B03AAFC00078E15 /* Request.swift */,
-				8C1FF3321B03AAFC00078E15 /* ResponseSerialization.swift */,
-				8C1FF3331B03AAFC00078E15 /* Upload.swift */,
-				8C1FF3341B03AAFC00078E15 /* Validation.swift */,
-			);
-			name = Alamofire;
-			sourceTree = "<group>";
-		};
 		8C35AE061B0105A20014331F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8C1FF32C1B03AAEE00078E15 /* Alamofire */,
 				8C8BA6CE1B06758000896D11 /* CADEMArtistParser.swift */,
 				8C35AE071B0105C30014331F /* CADEMArtistService.swift */,
 				8CC682ED1B128D9200FD2216 /* CADEMNotificationService.swift */,
@@ -792,8 +760,6 @@
 				8C1FF3461B03F7C400078E15 /* CADArrayDataSource.swift in Sources */,
 				8C1FF34E1B04CDB700078E15 /* CADRootViewController.swift in Sources */,
 				8C8D83B31B0BBFB600CD8CA4 /* UICollectionViewFlowLayout+EMAdditions.m in Sources */,
-				8C1FF33A1B03AAFC00078E15 /* ResponseSerialization.swift in Sources */,
-				8C1FF3361B03AAFC00078E15 /* Download.swift in Sources */,
 				8CE72FEA1B137C6D00698D4A /* CADEMMenuViewController.swift in Sources */,
 				8C1FF3421B03CC2900078E15 /* CADEMViewModelCollectionDelegate.swift in Sources */,
 				8C8BA6EF1B08DF8E00896D11 /* CADEMArtistDetailViewController.swift in Sources */,
@@ -807,22 +773,16 @@
 				8C8BA6D71B07AE0400896D11 /* CADEMExtrasViewController.swift in Sources */,
 				8CABA0D318E4DF5200118FFA /* UIFont+EMAdditions.m in Sources */,
 				8C04EF8518CB9353008FBC9B /* UIView+CADAdditions.m in Sources */,
-				8C1FF33B1B03AAFC00078E15 /* Upload.swift in Sources */,
 				8CE72FF41B138F2700698D4A /* CADEMScheduleViewController.swift in Sources */,
-				8C1FF3371B03AAFC00078E15 /* Manager.swift in Sources */,
 				8CB1B5C71B11FDDD00D1A477 /* CADEMStore.swift in Sources */,
 				8CE72FE81B137AD800698D4A /* CADEMMenuCollectionViewCell.swift in Sources */,
 				8CE72FEC1B13839500698D4A /* CADEMScheduleCollectionViewCell.swift in Sources */,
-				8C1FF3351B03AAFC00078E15 /* Alamofire.swift in Sources */,
-				8C1FF33C1B03AAFC00078E15 /* Validation.swift in Sources */,
 				8CE72FF91B13C86700698D4A /* CADRootCollectionViewCell.swift in Sources */,
 				8C1FF3401B03C9EF00078E15 /* CADEMMenuViewModel.swift in Sources */,
 				8C04EF5918CB8F09008FBC9B /* CADAppDelegate.m in Sources */,
 				8C8BA6EB1B08C33900896D11 /* CADEMArtistsViewModel.swift in Sources */,
 				8C774F7A1930DF8E000D5062 /* NSDate+EMAdditions.m in Sources */,
 				8CE72FF21B138A0100698D4A /* CADEMScheduleViewModel.swift in Sources */,
-				8C1FF3381B03AAFC00078E15 /* ParameterEncoding.swift in Sources */,
-				8C1FF3391B03AAFC00078E15 /* Request.swift in Sources */,
 				8C8BA6CF1B06758000896D11 /* CADEMArtistParser.swift in Sources */,
 				8CC682E21B12550400FD2216 /* CADEMInfoCollectionViewCell.swift in Sources */,
 				8CE72FFF1B13CADC00698D4A /* CADEMShareKitConfigurator.swift in Sources */,
