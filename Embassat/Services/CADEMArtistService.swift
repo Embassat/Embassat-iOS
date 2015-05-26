@@ -80,7 +80,7 @@ public class CADEMArtistService: NSObject {
                 if index != NSNotFound {
                     cachedArtists[index].favorite = !cachedArtists[index].favorite
                     self.store.store(cachedArtists, forKey: CADEMArtistService.kArtistsStoreKey)
-                    subscriber?.sendNext(cachedArtists[index].favorite)
+                    subscriber?.sendNext(cachedArtists[index])
                     subscriber?.sendCompleted()
                     self.notificationService.toggleLocalNotification(forArtist: artist, favorited: cachedArtists[index].favorite)
                 } else {

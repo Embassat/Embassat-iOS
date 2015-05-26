@@ -15,7 +15,6 @@ public class CADEMArtistParser: NSObject {
     override init() {
         dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.locale = NSLocale(localeIdentifier: "ca_ES")
     }
     
     public func parseArtists(fromJson json: AnyObject, cached cachedArtists: Array<CADEMArtist> = []) -> Array<CADEMArtist> {
@@ -24,7 +23,7 @@ public class CADEMArtistParser: NSObject {
             var favorited = false
             
             if let existingArtist = cachedArtists.filter({ (artist: CADEMArtist) -> Bool in
-                return artist.artistId == subJson["ID"].intValue
+                return artist.artistId == subJson["id"].intValue
             }).first {
                 favorited = existingArtist.favorite
             }

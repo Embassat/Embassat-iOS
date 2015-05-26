@@ -24,16 +24,17 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     }
     public let service: CADEMArtistService = CADEMArtistService()
     public let activeSubject: RACSubject
+    let dateFormatter: NSDateFormatter
     
     override init() {
         activeSubject = RACSubject()
+        dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         super.init()
         
         service.artists().map
-            { (artists: AnyObject!) -> AnyObject! in
-                let artistsArray = artists as! Array<CADEMArtist>
-                return [artistsArray, artistsArray, artistsArray]
+            { self.dayMapping($0)
             }.subscribeNext(
                 { [unowned self] (artists: AnyObject!) -> Void in
                     self.model = artists as! Array<Array<CADEMArtist>>
@@ -44,11 +45,17 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
                 })
     }
     
+    func dayMapping (artists: AnyObject!) -> AnyObject! {
+        let artistsArray = artists as! Array<CADEMArtist>
+        
+        return [self.filteredArray(artistsArray, withDateString: "2015-06-11"),
+                self.filteredArray(artistsArray, withDateString: "2015-06-12"),
+                self.filteredArray(artistsArray, withDateString: "2015-06-13")]
+    }
+    
     public func shouldRefreshModel() {
         service.cachedArtists().map
-            { (artists: AnyObject!) -> AnyObject! in
-                let artistsArray = artists as! Array<CADEMArtist>
-                return [artistsArray, artistsArray, artistsArray]
+            { self.dayMapping($0)
             }.subscribeNext
             { [unowned self] (artists: AnyObject!) -> Void in
                 self.model = artists as! Array<Array<CADEMArtist>>
@@ -62,17 +69,21 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     public func artistName(forIndexPath indexPath : NSIndexPath) -> String {
         return self.artist(forIndexPath: indexPath).name
     }
-
+    
     public func stageName(forIndexPath indexPath : NSIndexPath) -> String {
         return self.artist(forIndexPath: indexPath).stage
     }
-
+    
     func initialMinute(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(self.artist(forIndexPath: indexPath).startDate.minute)
+        let minute = self.artist(forIndexPath: indexPath).startDate.minute
+        
+        return String(format: "%@%@", minute < 10 ? "0" : "", String(minute))
     }
     
     func initialHour(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(self.artist(forIndexPath: indexPath).startDate.hour)
+        let hour = self.artist(forIndexPath: indexPath).startDate.hour
+        
+        return String(format: "%@%@", hour < 10 ? "0" : "", String(hour))
     }
     
     public func initialTimeString(forIndexPath indexPath : NSIndexPath) -> String {
@@ -80,11 +91,15 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     }
     
     func finalMinute(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(self.artist(forIndexPath: indexPath).endDate.minute)
+        let minute = self.artist(forIndexPath: indexPath).endDate.minute
+        
+        return String(format: "%@%@", minute < 10 ? "0" : "", String(minute))
     }
     
     func finalHour(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(self.artist(forIndexPath: indexPath).endDate.hour)
+        let hour = self.artist(forIndexPath: indexPath).endDate.hour
+        
+        return String(format: "%@%@", hour < 10 ? "0" : "", String(hour))
     }
     
     public func finalTimeString(forIndexPath indexPath : NSIndexPath) -> String {
@@ -115,21 +130,15 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
         return now.isLaterThanDate(artist.startDate) && now.isEarlierThanDate(artist.endDate) ? UIColor.em_backgroundColor() : UIColor.em_backgroundDeselectedColor()
     }
     
-//    - (NSArray *)filteredArrayFromArray:(NSArray *)array withDateString:(NSString *)dateString
-//    {
-//    return [[array filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"date == %@", dateString]] sortedArrayUsingComparator:^NSComparisonResult(CADEMArtistSwift *artist1, CADEMArtistSwift *artist2) {
-//    return [artist1.date isEarlierThanDate:artist2.date];
-//    }];
-//    }
+    func filteredArray(fromArray: Array<CADEMArtist>, withDateString: String) -> Array<CADEMArtist> {
+        return sorted(fromArray.filter({ (artist: CADEMArtist) -> Bool in
+            return self.dateFormatter.stringFromDate(artist.scheduleDate) == withDateString
+        }), sortingByDate)
+    }
     
-    //- (NSArray *)filteredFixingHoursArrayFromArray:(NSArray *)array
-    //{
-    //    return [[[array rac_sequence] filter:^BOOL(CADEMArtistSwift *artist) {
-    //        return ![[artist.initialHour substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"0"];
-    //    }] concat:[[array rac_sequence] filter:^BOOL(CADEMArtistSwift *artist) {
-    //        return [[artist.initialHour substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"0"];
-    //    }]].array;
-    //}
+    func sortingByDate(forFirstArtist artist1: CADEMArtist, andSecondArtist artist2: CADEMArtist) -> Bool {
+        return artist1.startDate.isEarlierThanDate(artist2.startDate)
+    }
     
     func artist(forIndexPath indexPath: NSIndexPath) -> CADEMArtist {
         return model[dayIndex][indexPath.item]

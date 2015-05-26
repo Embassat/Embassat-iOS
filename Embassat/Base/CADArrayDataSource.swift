@@ -17,7 +17,7 @@ public class CADArrayDataSource: NSObject, UICollectionViewDataSource {
     
     let viewModel: CADEMViewModelCollectionDelegate
     let configureCellBlock: ConfigureViewBlock
-    let configureHeaderBlock: ConfigureViewBlock?
+    var configureHeaderBlock: ConfigureViewBlock?
     
     init(viewModel : CADEMViewModelCollectionDelegate, configureCellBlock: ConfigureViewBlock, configureHeaderBlock: ConfigureViewBlock?) {
         self.viewModel = viewModel

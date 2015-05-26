@@ -8,6 +8,8 @@
 
 #import "NSDate+EMAdditions.h"
 
+#define D_MINUTE	60
+
 // Thanks, AshFurrow
 static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit);
 
@@ -26,14 +28,39 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
     return sharedCalendar;
 }
 
-- (BOOL) isEarlierThanDate: (NSDate *) aDate
+- (BOOL) isEarlierThanDate:(NSDate *)aDate
 {
 	return ([self compare:aDate] == NSOrderedAscending);
 }
 
-- (BOOL) isLaterThanDate: (NSDate *) aDate
+- (BOOL)isLaterThanDate:(NSDate *)aDate
 {
 	return ([self compare:aDate] == NSOrderedDescending);
+}
+
+- (NSDate *)dateByAddingMinutes:(NSInteger)dMinutes
+{
+    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + D_MINUTE * dMinutes;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return newDate;
+}
+
+- (NSDate *)dateBySubtractingMinutes:(NSInteger)dMinutes
+{
+    return [self dateByAddingMinutes: (dMinutes * -1)];
+}
+
+- (NSDate *)dateByAddingDays:(NSInteger)dDays
+{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setDay:dDays];
+    NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self options:0];
+    return newDate;
+}
+
+- (NSDate *)dateBySubtractingDays:(NSInteger)dDays
+{
+    return [self dateByAddingDays: (dDays * -1)];
 }
 
 - (NSInteger)hour

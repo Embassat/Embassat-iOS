@@ -18,6 +18,7 @@ public class CADEMArtist : NSObject, NSCoding {
     let startDate: NSDate
     let endDate: NSDate
     var favorite: Bool
+    var scheduleDate: NSDate
     
     init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, startDate: NSDate, endDate: NSDate, stage: String, favorite: Bool = false) {
         self.artistId = artistId
@@ -29,6 +30,7 @@ public class CADEMArtist : NSObject, NSCoding {
         self.endDate = endDate
         self.stage = stage
         self.favorite = favorite
+        self.scheduleDate = startDate.hour < 10 ? startDate.dateBySubtractingDays(1) : startDate
     }
     
     required convenience public init(coder decoder: NSCoder) {

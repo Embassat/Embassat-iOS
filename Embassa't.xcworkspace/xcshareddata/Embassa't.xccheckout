@@ -5,41 +5,29 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2C27374A-BDDC-48E5-92FE-90B51A5BD625</string>
+	<string>655177CF-8D4F-445C-BF31-D7078C1B90CF</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Embassa't</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>https://github.com/Alamofire/Alamofire.git</string>
 		<key>B9602FA668B2648C866C986E63C6B2F19514275A</key>
-		<string>github.com:joanromano/Embassa-t.git</string>
+		<string>github.com:Embassat/Embassat-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Embassa't.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../Alamofire</string>
 		<key>B9602FA668B2648C866C986E63C6B2F19514275A</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:joanromano/Embassa-t.git</string>
+	<string>github.com:Embassat/Embassat-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>B9602FA668B2648C866C986E63C6B2F19514275A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Alamofire</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

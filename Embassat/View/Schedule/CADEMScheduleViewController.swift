@@ -29,15 +29,7 @@ public class CADEMScheduleViewController: CADEMRootViewController {
                 theCell.shouldShowFavorite = theViewModel.favoritedStatus(forIndexPath: indexPath)
                 theCell.backgroundColor = theViewModel.backgroundColor(forIndexPath: indexPath)
             },
-            configureHeaderBlock: { (header: AnyObject!, indexPath: NSIndexPath) -> Void in
-                let theHeader = header as! CADEMScheduleHeaderView
-                
-                theHeader.daySelectedSignal.subscribeNext(
-                    { (index: AnyObject!) -> Void in
-                        let index = index as! Int
-                        theViewModel.dayIndex = index
-                })
-        })
+            configureHeaderBlock: nil)
         viewModel = theViewModel
         
         super.init(nibName: nibNameOrNil, bundle: nibBundle)
@@ -51,6 +43,18 @@ public class CADEMScheduleViewController: CADEMRootViewController {
         super.viewDidLoad()
         
         title = "Horaris"
+        
+        dataSource.configureHeaderBlock = { (header: AnyObject!, indexPath: NSIndexPath) -> Void in
+            let theHeader = header as! CADEMScheduleHeaderView
+            
+            theHeader.daySelectedSignal.subscribeNext(
+                { [unowned self] (index: AnyObject!) -> Void in
+                    let index = index as! Int
+                    self.viewModel.dayIndex = index
+                    self.scheduleCollectionView?.reloadData()
+            })
+        }
+        
         scheduleCollectionView?.dataSource = self.dataSource
         scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSource.CADCellIdentifier)
         scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CADArrayDataSource.CADHeaderIdentifier)

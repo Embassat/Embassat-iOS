@@ -21,8 +21,8 @@ public class CADEMNotificationService: NSObject {
     public func toggleLocalNotification(forArtist artist: CADEMArtist, favorited: Bool) {
         var localNotif = UILocalNotification()
         
-        localNotif.fireDate = NSDate().dateByAddingTimeInterval(10)
-        localNotif.alertBody = String(format: "%@ començarà en 10 minuts al %@!", artist.name, artist.stage)
+        localNotif.fireDate = artist.startDate.dateBySubtractingMinutes(15)
+        localNotif.alertBody = String(format: "%@ començarà en 15 minuts al %@!", artist.name, artist.stage)
         localNotif.userInfo = ["artistId" : artist.artistId]
         localNotif.soundName = UILocalNotificationDefaultSoundName
         

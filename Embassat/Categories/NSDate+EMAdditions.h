@@ -14,4 +14,9 @@
 @property (readonly) NSInteger hour;
 @property (readonly) NSInteger minute;
 
+- (NSDate *)dateByAddingMinutes:(NSInteger)dMinutes;
+- (NSDate *)dateBySubtractingMinutes:(NSInteger)dMinutes;
+- (NSDate *)dateByAddingDays:(NSInteger)dDays;
+- (NSDate *)dateBySubtractingDays:(NSInteger)dDays;
+
 @end

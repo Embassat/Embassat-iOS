@@ -11,7 +11,7 @@ import EventKit
 
 public class CADEMArtistDetailViewModel: NSObject {
     
-    let model: Array<CADEMArtist>
+    var model: Array<CADEMArtist>
     let service: CADEMArtistService = CADEMArtistService()
     
     var currentArtist: CADEMArtist
@@ -58,7 +58,9 @@ public class CADEMArtistDetailViewModel: NSObject {
     }
     
     public func toggleFavorite(completion: () -> ()) {
-        service.toggleFavorite(forArtist: currentArtist).subscribeNext { (favorited: AnyObject!) -> Void in
+        service.toggleFavorite(forArtist: currentArtist).subscribeNext {
+            [unowned self] (updatedArtist: AnyObject!) -> Void in
+            self.model[self.currentIndex] = updatedArtist as! CADEMArtist
             completion()
         }
     }
