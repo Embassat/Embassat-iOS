@@ -81,7 +81,6 @@
 		8CCA1B8618FC718900B0C60C /* CADEMMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCA1B8418FC718900B0C60C /* CADEMMapViewController.xib */; };
 		8CDBF1A018DDC3DB002C6E50 /* CADEMMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CDBF19E18DDC3DB002C6E50 /* CADEMMenuViewController.xib */; };
 		8CE72FE11B136FEC00698D4A /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE72FDF1B136FEC00698D4A /* Default-667h@2x.png */; };
-		8CE72FE21B136FEC00698D4A /* Default-736@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE72FE01B136FEC00698D4A /* Default-736@2x.png */; };
 		8CE72FE41B13707100698D4A /* CADEMMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE31B13707000698D4A /* CADEMMapViewModel.swift */; };
 		8CE72FE61B1372D800698D4A /* CADEMMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE51B1372D800698D4A /* CADEMMapViewController.swift */; };
 		8CE72FE81B137AD800698D4A /* CADEMMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE71B137AD800698D4A /* CADEMMenuCollectionViewCell.swift */; };
@@ -206,7 +205,6 @@
 		8CCA1B8418FC718900B0C60C /* CADEMMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMMapViewController.xib; path = Map/CADEMMapViewController.xib; sourceTree = "<group>"; };
 		8CDBF19E18DDC3DB002C6E50 /* CADEMMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMMenuViewController.xib; path = Menu/CADEMMenuViewController.xib; sourceTree = "<group>"; };
 		8CE72FDF1B136FEC00698D4A /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
-		8CE72FE01B136FEC00698D4A /* Default-736@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736@2x.png"; sourceTree = "<group>"; };
 		8CE72FE31B13707000698D4A /* CADEMMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMMapViewModel.swift; path = Map/CADEMMapViewModel.swift; sourceTree = "<group>"; };
 		8CE72FE51B1372D800698D4A /* CADEMMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMMapViewController.swift; path = Map/CADEMMapViewController.swift; sourceTree = "<group>"; };
 		8CE72FE71B137AD800698D4A /* CADEMMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMMenuCollectionViewCell.swift; path = Menu/CADEMMenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -448,7 +446,6 @@
 			children = (
 				8C774F6F192EC0B9000D5062 /* Default-568h@2x.png */,
 				8CE72FDF1B136FEC00698D4A /* Default-667h@2x.png */,
-				8CE72FE01B136FEC00698D4A /* Default-736@2x.png */,
 				8C774F73192EC39A000D5062 /* Default.png */,
 				8C774F70192EC0B9000D5062 /* Default@2x.png */,
 			);
@@ -625,6 +622,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Crows And Dogs";
 				TargetAttributes = {
+					8C04EF4418CB8F09008FBC9B = {
+						DevelopmentTeam = 32S972F3NM;
+					};
 					8C4BC43D1AFBC48700215DED = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 8C04EF4418CB8F09008FBC9B;
@@ -691,7 +691,6 @@
 				8C774F72192EC0B9000D5062 /* Default@2x.png in Resources */,
 				8CAEB33D192BF7AB0017CF29 /* CADEMScheduleViewController.xib in Resources */,
 				8C8D83C91B0E2E2000CD8CA4 /* loading.jpg in Resources */,
-				8CE72FE21B136FEC00698D4A /* Default-736@2x.png in Resources */,
 				8C23D61118FAD7FE00B3C106 /* CADEMInfoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,6 +914,7 @@
 				INFOPLIST_FILE = "Embassat/Embassa't-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Embassa't";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassa't-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -926,13 +926,14 @@
 			baseConfigurationReference = D16AF894416306787E8EA880 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Pol Solsona (32S972F3NM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Embassat/Embassa't-Prefix.pch";
 				INFOPLIST_FILE = "Embassat/Embassa't-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Embassa't";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassa't-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};

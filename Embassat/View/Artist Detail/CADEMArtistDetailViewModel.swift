@@ -17,7 +17,7 @@ public class CADEMArtistDetailViewModel: NSObject {
     var currentArtist: CADEMArtist
     var artistName: String = ""
     var artistDescription: String = ""
-    var artistStartText: String = ""
+    var artistStartTimeString: String = ""
     var artistDay: String = ""
     var artistStage: String = ""
     var artistIsFavorite: Bool = false
@@ -50,7 +50,7 @@ public class CADEMArtistDetailViewModel: NSObject {
     }
     
     public func shareAction(forViewController viewController: UIViewController) {
-        let item: AnyObject! = SHKItem.URL(model[0].artistURL, title: String(format: "%@ @ Embassa't", self.artistName), contentType: SHKURLContentTypeUndefined)
+        let item: AnyObject! = SHKItem.URL(currentArtist.artistURL, title: String(format: "%@ @ Embassa't", self.artistName), contentType: SHKURLContentTypeUndefined)
         let actionSheet = SHKActionSheet(forItem: item as! SHKItem)
         SHK.setRootViewController(viewController)
         
@@ -70,9 +70,9 @@ public class CADEMArtistDetailViewModel: NSObject {
         artistDescription = currentArtist.longDescription
         artistStage = currentArtist.stage
         artistImageURL = currentArtist.imageURL
-        artistStartText = String(format: "%@:%@", String(currentArtist.startDate.hour), String(currentArtist.startDate.minute))
+        artistStartTimeString = String(format: "%@:%@", String(currentArtist.startDate.hourString), String(currentArtist.startDate.minuteString))
         artistIsFavorite = currentArtist.favorite
-        artistDay = "Dissabte"
+        artistDay = currentArtist.scheduleDayString
     }
    
 }

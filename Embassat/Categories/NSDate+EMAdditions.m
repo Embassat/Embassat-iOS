@@ -63,6 +63,14 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
     return [self dateByAddingDays: (dDays * -1)];
 }
 
+- (NSInteger)day
+{
+    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    
+    return components.day;
+}
+
+
 - (NSInteger)hour
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
@@ -75,6 +83,16 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     
     return components.minute;
+}
+
+- (NSString *)hourString
+{
+    return [NSString stringWithFormat:@"%@%@", self.hour < 10 ? @"0" : @"", @(self.hour).stringValue];
+}
+
+- (NSString *)minuteString
+{
+    return [NSString stringWithFormat:@"%@%@", self.minute < 10 ? @"0" : @"", @(self.minute).stringValue];
 }
 
 @end

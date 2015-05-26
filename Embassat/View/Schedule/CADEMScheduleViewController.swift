@@ -29,8 +29,8 @@ public class CADEMScheduleViewController: CADEMRootViewController {
             configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
                 let theCell = cell as! CADEMScheduleCollectionViewCell
             
-                theCell.startTimeSting = theViewModel.initialTimeString(forIndexPath: indexPath)
-                theCell.endTimeString = theViewModel.finalTimeString(forIndexPath: indexPath)
+                theCell.startTimeSting = theViewModel.startTimeString(forIndexPath: indexPath)
+                theCell.endTimeString = theViewModel.endTimeString(forIndexPath: indexPath)
                 theCell.artistName = theViewModel.artistName(forIndexPath: indexPath)
                 theCell.stageName = theViewModel.stageName(forIndexPath: indexPath)
                 theCell.shouldShowFavorite = theViewModel.favoritedStatus(forIndexPath: indexPath)

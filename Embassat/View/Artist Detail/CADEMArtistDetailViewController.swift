@@ -59,7 +59,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
         coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
         stageLabel?.text = viewModel?.artistStage
         dayLabel?.text = viewModel?.artistDay
-        timeLabel?.text = viewModel?.artistStartText
+        timeLabel?.text = viewModel?.artistStartTimeString
         
         let favItem: UIBarButtonItem = self.navigationItem.rightBarButtonItems?.first as! UIBarButtonItem
         favItem.tintColor = viewModel?.artistIsFavorite == true ? UIColor.em_backgroundColor() : nil

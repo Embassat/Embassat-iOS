@@ -74,36 +74,28 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
         return self.artist(forIndexPath: indexPath).stage
     }
     
-    func initialMinute(forIndexPath indexPath : NSIndexPath) -> String {
-        let minute = self.artist(forIndexPath: indexPath).startDate.minute
-        
-        return String(format: "%@%@", minute < 10 ? "0" : "", String(minute))
+    func startMinute(forIndexPath indexPath : NSIndexPath) -> String {
+        return self.artist(forIndexPath: indexPath).startDate.minuteString
     }
     
-    func initialHour(forIndexPath indexPath : NSIndexPath) -> String {
-        let hour = self.artist(forIndexPath: indexPath).startDate.hour
-        
-        return String(format: "%@%@", hour < 10 ? "0" : "", String(hour))
+    func startHour(forIndexPath indexPath : NSIndexPath) -> String {
+        return self.artist(forIndexPath: indexPath).startDate.hourString
     }
     
-    public func initialTimeString(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(format: "%@:%@", self.initialHour(forIndexPath: indexPath), self.initialMinute(forIndexPath: indexPath))
+    public func startTimeString(forIndexPath indexPath : NSIndexPath) -> String {
+        return String(format: "%@:%@", self.startHour(forIndexPath: indexPath), self.startMinute(forIndexPath: indexPath))
     }
     
-    func finalMinute(forIndexPath indexPath : NSIndexPath) -> String {
-        let minute = self.artist(forIndexPath: indexPath).endDate.minute
-        
-        return String(format: "%@%@", minute < 10 ? "0" : "", String(minute))
+    func endMinute(forIndexPath indexPath : NSIndexPath) -> String {
+        return self.artist(forIndexPath: indexPath).endDate.minuteString
     }
     
-    func finalHour(forIndexPath indexPath : NSIndexPath) -> String {
-        let hour = self.artist(forIndexPath: indexPath).endDate.hour
-        
-        return String(format: "%@%@", hour < 10 ? "0" : "", String(hour))
+    func endHour(forIndexPath indexPath : NSIndexPath) -> String {
+        return self.artist(forIndexPath: indexPath).endDate.hourString
     }
     
-    public func finalTimeString(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(format: "%@:%@", self.finalHour(forIndexPath: indexPath), self.finalMinute(forIndexPath: indexPath))
+    public func endTimeString(forIndexPath indexPath : NSIndexPath) -> String {
+        return String(format: "%@:%@", self.endHour(forIndexPath: indexPath), self.endMinute(forIndexPath: indexPath))
     }
     
     public func favoritedStatus(forIndexPath indexPath : NSIndexPath) -> Bool {

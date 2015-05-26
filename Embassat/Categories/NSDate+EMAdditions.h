@@ -11,8 +11,12 @@
 - (BOOL)isEarlierThanDate:(NSDate *)aDate;
 - (BOOL)isLaterThanDate:(NSDate *)aDate;
 
+@property (readonly) NSInteger day;
 @property (readonly) NSInteger hour;
 @property (readonly) NSInteger minute;
+
+@property (readonly) NSString *hourString;
+@property (readonly) NSString *minuteString;
 
 - (NSDate *)dateByAddingMinutes:(NSInteger)dMinutes;
 - (NSDate *)dateBySubtractingMinutes:(NSInteger)dMinutes;
