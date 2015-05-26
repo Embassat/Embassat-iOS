@@ -10,6 +10,13 @@ import UIKit
 
 public class CADEMScheduleViewController: CADEMRootViewController {
     
+    @IBOutlet weak var thursdayContainer: UIView?
+    @IBOutlet weak var fridayContainer: UIView?
+    @IBOutlet weak var saturdayContainer: UIView?
+    @IBOutlet weak var thursdayLabel: UILabel?
+    @IBOutlet weak var fridayLabel: UILabel?
+    @IBOutlet weak var saturdayLabel: UILabel?
+    
     @IBOutlet weak var scheduleCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     let dataSource: CADArrayDataSource
@@ -44,20 +51,22 @@ public class CADEMScheduleViewController: CADEMRootViewController {
         
         title = "Horaris"
         
-        dataSource.configureHeaderBlock = { (header: AnyObject!, indexPath: NSIndexPath) -> Void in
-            let theHeader = header as! CADEMScheduleHeaderView
-            
-            theHeader.daySelectedSignal.subscribeNext(
-                { [unowned self] (index: AnyObject!) -> Void in
-                    let index = index as! Int
-                    self.viewModel.dayIndex = index
-                    self.scheduleCollectionView?.reloadData()
-            })
+        thursdayLabel?.textColor = UIColor.whiteColor()
+        thursdayContainer?.backgroundColor = UIColor.em_scheduleHeaderBackgroundColor()
+        
+        let containers: Array<UIView?> = [thursdayContainer, fridayContainer, saturdayContainer]
+        
+        for view: UIView? in containers {
+            let tapGesture = UITapGestureRecognizer(target: self, action: "containerTapped:")
+            view?.addGestureRecognizer(tapGesture)
         }
+        
+        thursdayLabel?.font = UIFont.em_detailFontOfSize(15.0)
+        fridayLabel?.font = UIFont.em_detailFontOfSize(15.0)
+        saturdayLabel?.font = UIFont.em_detailFontOfSize(15.0)
         
         scheduleCollectionView?.dataSource = self.dataSource
         scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSource.CADCellIdentifier)
-        scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CADArrayDataSource.CADHeaderIdentifier)
         
         if viewModel.numberOfItemsInSection(0) > 0 {
             self.activityIndicator?.stopAnimating()
@@ -81,5 +90,34 @@ public class CADEMScheduleViewController: CADEMRootViewController {
         }
         
         self.navigationController?.pushViewController(artistViewController, animated: true)
+    }
+    
+    func containerTapped(sender: UITapGestureRecognizer) {
+        let containers: Array<UIView?> = [thursdayContainer, fridayContainer, saturdayContainer]
+        
+        for selectedView: UIView? in containers.filter({ (view: UIView?) -> Bool in
+            return view?.tag == sender.view?.tag
+        }) {
+            selectedView?.backgroundColor = UIColor.em_scheduleHeaderBackgroundColor()
+            
+            if let label = selectedView?.subviews.first as? UILabel {
+                label.textColor = UIColor.whiteColor()
+            }
+        }
+        
+        for unSelectedView: UIView? in containers.filter({ (view: UIView?) -> Bool in
+            return view?.tag != sender.view?.tag
+        }) {
+            unSelectedView?.backgroundColor = UIColor.em_scheduleHeaderDeselectedBackgroundColor()
+            
+            if let label = unSelectedView?.subviews.first as? UILabel {
+                label.textColor = UIColor.em_scheduleHeaderDeselectedTextColor()
+            }
+        }
+        
+        if let tag = sender.view?.tag {
+            self.viewModel.dayIndex = tag
+            self.scheduleCollectionView?.reloadData()
+        }
     }
 }
