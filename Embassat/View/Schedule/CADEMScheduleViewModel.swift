@@ -106,20 +106,11 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
         return CADEMArtistDetailViewModel(model: model[dayIndex], currentIndex: indexPath.item)
     }
     
-    public func color(forIndexPath indexPath : NSIndexPath) -> UIColor {
-        let colors: Dictionary<String, UIColor> =
-            ["Amfiteatre Yeearphone" : UIColor.em_stageRedColor(),
-             "Escenari Gran" : UIColor.em_stageYellowColor(),
-             "Mirador" : UIColor.em_stageBlueColor()]
-        
-        return colors[self.stageName(forIndexPath: indexPath)]!
-    }
-    
     public func backgroundColor(forIndexPath indexPath : NSIndexPath) -> UIColor {
         let artist: CADEMArtist = self.artist(forIndexPath: indexPath)
         let now: NSDate = NSDate()
         
-        return now.isLaterThanDate(artist.startDate) && now.isEarlierThanDate(artist.endDate) ? UIColor.em_backgroundColor() : UIColor.em_backgroundDeselectedColor()
+        return now.isLaterThanDate(artist.startDate) && now.isEarlierThanDate(artist.endDate) ? UIColor.em_backgroundDeselectedColor() : UIColor.em_backgroundColor()
     }
     
     func filteredArray(fromArray: Array<CADEMArtist>, withDateString: String) -> Array<CADEMArtist> {

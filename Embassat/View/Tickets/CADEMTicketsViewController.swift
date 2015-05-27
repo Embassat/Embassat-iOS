@@ -14,13 +14,14 @@ public class CADEMTicketsViewController: CADEMRootViewController {
     @IBOutlet var bodyLabels: [UILabel]?
     @IBOutlet weak var seasonContainer: UIView?
     @IBOutlet weak var dayTicketContainer: UIView?
+    @IBOutlet weak var petitEmTicketContainer: UIView?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Entrades"
         
-        for view in [seasonContainer, dayTicketContainer] {
+        for view in [seasonContainer, dayTicketContainer, petitEmTicketContainer] {
             let tapGesture = UITapGestureRecognizer()
             tapGesture.rac_gestureSignal()?.subscribeNext({ [unowned self] (_) -> Void in
                 self.linkPressed(view!)
@@ -43,7 +44,7 @@ public class CADEMTicketsViewController: CADEMRootViewController {
     }
     
     @IBAction func linkPressed(sender: UIView) {
-        self.openTicket(NSURL(string: sender.tag == 3 ? "http://www.tresc.cat/fitxa/concerts/43054/Embassat-2014" : "https://www.ticketea.com/embassat-2014-festival-independent-del-valles/")!)
+        self.openTicket(NSURL(string: "https://www.ticketea.com/entrades-embassat-2015/")!)
     }
     
     func openTicket(link: NSURL) {

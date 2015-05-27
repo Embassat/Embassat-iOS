@@ -127,14 +127,24 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0o-wc-GQN">
+                                    <rect key="frame" x="0.0" y="0.0" width="159" height="38"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <connections>
-                                        <action selector="previousPressed:" destination="-1" eventType="touchUpInside" id="6vc-da-Lf1"/>
+                                        <action selector="previousPressed:" destination="-1" eventType="touchUpInside" id="Whi-uW-7Ns"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="C0o-wc-GQN" firstAttribute="top" secondItem="XFi-X6-32q" secondAttribute="top" id="DUw-PR-SdO"/>
                                 <constraint firstAttribute="centerX" secondItem="pnf-va-nvH" secondAttribute="centerX" id="MCB-aM-6HY"/>
+                                <constraint firstAttribute="trailing" secondItem="C0o-wc-GQN" secondAttribute="trailing" id="ltG-8Q-CxK"/>
+                                <constraint firstAttribute="bottom" secondItem="C0o-wc-GQN" secondAttribute="bottom" id="qZq-uo-u8N"/>
+                                <constraint firstItem="C0o-wc-GQN" firstAttribute="leading" secondItem="XFi-X6-32q" secondAttribute="leading" id="tNO-w9-g3j"/>
                                 <constraint firstAttribute="centerY" secondItem="pnf-va-nvH" secondAttribute="centerY" id="vpX-0i-kyL"/>
                             </constraints>
                         </view>
@@ -158,15 +168,25 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXd-ys-wY6">
+                                    <rect key="frame" x="0.0" y="0.0" width="159" height="38"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <connections>
-                                        <action selector="nextPressed:" destination="-1" eventType="touchUpInside" id="cy6-Tf-HfK"/>
+                                        <action selector="nextPressed:" destination="-1" eventType="touchUpInside" id="uT4-Nu-9gS"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="GXd-ys-wY6" secondAttribute="bottom" id="Aq5-05-x6h"/>
+                                <constraint firstAttribute="trailing" secondItem="GXd-ys-wY6" secondAttribute="trailing" id="WuX-Fd-HuP"/>
                                 <constraint firstAttribute="centerX" secondItem="adI-Ta-XW8" secondAttribute="centerX" id="Ykz-6L-ueb"/>
+                                <constraint firstItem="GXd-ys-wY6" firstAttribute="leading" secondItem="x4u-sG-Wg7" secondAttribute="leading" id="iBY-Sg-izD"/>
                                 <constraint firstAttribute="centerY" secondItem="adI-Ta-XW8" secondAttribute="centerY" id="m4y-JW-r0c"/>
+                                <constraint firstItem="GXd-ys-wY6" firstAttribute="top" secondItem="x4u-sG-Wg7" secondAttribute="top" id="zik-w2-VRO"/>
                             </constraints>
                         </view>
                     </subviews>

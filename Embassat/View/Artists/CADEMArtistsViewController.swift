@@ -52,6 +52,16 @@ public class CADEMArtistsViewController: CADEMRootViewController {
             self.artistsCollectionView?.reloadData()
         })
     }
+    
+    public override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if let indexPaths = artistsCollectionView?.indexPathsForSelectedItems() as? [NSIndexPath] {
+            for indexPath in indexPaths {
+                artistsCollectionView?.deselectItemAtIndexPath(indexPath, animated: false)
+            }
+        }
+    }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let artistViewController = CADEMArtistDetailViewController(nibName: "CADEMArtistDetailViewController", bundle: nil)

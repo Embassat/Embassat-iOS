@@ -24,12 +24,31 @@ public class CADEMArtistCollectionViewCell: CADRootCollectionViewCell {
         }
     }
     
+    override public var selected: Bool {
+        didSet {
+            if selected {
+                optionNameLabel?.textColor = UIColor.em_barTintColor()
+            } else {
+                optionNameLabel?.textColor = UIColor.whiteColor()
+            }
+        }
+    }
+    
+    override public var highlighted: Bool {
+        didSet {
+            if highlighted {
+                optionNameLabel?.textColor = UIColor.em_barTintColor()
+            } else {
+                optionNameLabel?.textColor = UIColor.whiteColor()
+            }
+        }
+    }
+    
     public override func setupView() {
         super.setupView()
         
         optionNameLabel?.font = UIFont.em_detailFontOfSize(15.0)
         optionNameLabel?.adjustsFontSizeToFitWidth = true
     }
-    
 }
 
