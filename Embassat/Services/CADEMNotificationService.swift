@@ -38,11 +38,28 @@ public class CADEMNotificationService: NSObject {
             UIApplication.sharedApplication().cancelLocalNotification(existingNotification)
             
             if favorited == true {
-                existingNotification.fireDate = NSDate().dateByAddingTimeInterval(10)
                 UIApplication.sharedApplication().scheduleLocalNotification(localNotif)
             }
         } else {
             UIApplication.sharedApplication().scheduleLocalNotification(localNotif)
+        }
+    }
+    
+    public func updateLocalNotifications(forArtists artists: Array<CADEMArtist>) {
+        var localNotif = UILocalNotification()
+        
+        let existingNotifications: Array<UILocalNotification> = UIApplication.sharedApplication().scheduledLocalNotifications as! Array<UILocalNotification>
+        
+        for notification in existingNotifications {
+            if let artist = artists.filter({ (artist: CADEMArtist) -> Bool in
+                if let artistId = notification.userInfo?["artistId"] as? Int {
+                    return artistId == artist.artistId
+                } else {
+                    return false
+                }
+            }).first {
+                notification.fireDate = artist.startDate.dateBySubtractingMinutes(15)
+            }
         }
     }
 }

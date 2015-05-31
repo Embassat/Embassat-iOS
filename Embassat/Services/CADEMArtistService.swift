@@ -38,6 +38,7 @@ public class CADEMArtistService: NSObject {
                             subscriber?.sendCompleted()
                         }
                         
+                        self.notificationService.updateLocalNotifications(forArtists: artists)
                         self.store.store(artists, forKey: CADEMArtistService.kArtistsStoreKey)
                     }
                 } else {

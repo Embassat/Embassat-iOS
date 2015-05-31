@@ -34,7 +34,6 @@
 		8C23D62818FB001F00B3C106 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62018FB001F00B3C106 /* 80x80.png */; };
 		8C23D62918FB001F00B3C106 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62118FB001F00B3C106 /* 120x120.png */; };
 		8C35AE081B0105C30014331F /* CADEMArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35AE071B0105C30014331F /* CADEMArtistService.swift */; };
-		8C4BC4431AFBC48700215DED /* Embassa_t_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BC4421AFBC48700215DED /* Embassa_t_Tests.m */; };
 		8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB381B0A8F80000E019F /* apercu_medium.otf */; };
 		8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */; };
 		8C774F5F192D682B000D5062 /* CADEMTicketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F5E192D682B000D5062 /* CADEMTicketsViewController.xib */; };
@@ -96,16 +95,6 @@
 		8CEF6826193BDD120001B801 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF6824193BDD120001B801 /* chevron@2x.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		8C4BC4441AFBC48700215DED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C04EF3D18CB8F09008FBC9B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C04EF4418CB8F09008FBC9B;
-			remoteInfo = "Embassa't";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		277C6F1D0A9003401A9C907C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		84A16C10B0399F8FF5C50C3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,9 +110,6 @@
 		8C04EF5818CB8F09008FBC9B /* CADAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CADAppDelegate.m; sourceTree = "<group>"; };
 		8C04EF5A18CB8F09008FBC9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C04EF6118CB8F09008FBC9B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		8C04EF6918CB8F09008FBC9B /* Embassa'tTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Embassa'tTests-Info.plist"; sourceTree = "<group>"; };
-		8C04EF6B18CB8F09008FBC9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8C04EF6D18CB8F09008FBC9B /* EmbassatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmbassatTests.m; sourceTree = "<group>"; };
 		8C04EF7E18CB9353008FBC9B /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
 		8C04EF7F18CB9353008FBC9B /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		8C04EF8018CB9353008FBC9B /* UIView+CADAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CADAdditions.h"; sourceTree = "<group>"; };
@@ -146,9 +132,6 @@
 		8C23D62018FB001F00B3C106 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
 		8C23D62118FB001F00B3C106 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
 		8C35AE071B0105C30014331F /* CADEMArtistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADEMArtistService.swift; path = Services/CADEMArtistService.swift; sourceTree = "<group>"; };
-		8C4BC43E1AFBC48700215DED /* Embassa't Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Embassa't Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C4BC4411AFBC48700215DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C4BC4421AFBC48700215DED /* Embassa_t_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Embassa_t_Tests.m; sourceTree = "<group>"; };
 		8C6BCB381B0A8F80000E019F /* apercu_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apercu_medium.otf; sourceTree = "<group>"; };
 		8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "noe-display-bold.otf"; sourceTree = "<group>"; };
 		8C774F5E192D682B000D5062 /* CADEMTicketsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CADEMTicketsViewController.xib; path = Tickets/CADEMTicketsViewController.xib; sourceTree = "<group>"; };
@@ -235,13 +218,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C4BC43B1AFBC48700215DED /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -249,8 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				8C04EF4E18CB8F09008FBC9B /* Embassat */,
-				8C04EF6718CB8F09008FBC9B /* EmbassatTests */,
-				8C4BC43F1AFBC48700215DED /* Embassa't Tests */,
 				8C04EF4718CB8F09008FBC9B /* Frameworks */,
 				8C04EF4618CB8F09008FBC9B /* Products */,
 				D68B517AE41204179CC3A455 /* Pods */,
@@ -261,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				8C04EF4518CB8F09008FBC9B /* Embassa't.app */,
-				8C4BC43E1AFBC48700215DED /* Embassa't Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,24 +280,6 @@
 				8C04EF5618CB8F09008FBC9B /* Embassa't-Prefix.pch */,
 				8C04EF5118CB8F09008FBC9B /* InfoPlist.strings */,
 				8C04EF5418CB8F09008FBC9B /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8C04EF6718CB8F09008FBC9B /* EmbassatTests */ = {
-			isa = PBXGroup;
-			children = (
-				8C04EF6D18CB8F09008FBC9B /* EmbassatTests.m */,
-				8C04EF6818CB8F09008FBC9B /* Supporting Files */,
-			);
-			path = EmbassatTests;
-			sourceTree = "<group>";
-		};
-		8C04EF6818CB8F09008FBC9B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8C04EF6918CB8F09008FBC9B /* Embassa'tTests-Info.plist */,
-				8C04EF6A18CB8F09008FBC9B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -413,23 +368,6 @@
 				8C1FF3131B03990A00078E15 /* SwiftyJSON.swift */,
 			);
 			name = Services;
-			sourceTree = "<group>";
-		};
-		8C4BC43F1AFBC48700215DED /* Embassa't Tests */ = {
-			isa = PBXGroup;
-			children = (
-				8C4BC4421AFBC48700215DED /* Embassa_t_Tests.m */,
-				8C4BC4401AFBC48700215DED /* Supporting Files */,
-			);
-			path = "Embassa't Tests";
-			sourceTree = "<group>";
-		};
-		8C4BC4401AFBC48700215DED /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8C4BC4411AFBC48700215DED /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		8C774F5A192D67F0000D5062 /* Tickets */ = {
@@ -594,24 +532,6 @@
 			productReference = 8C04EF4518CB8F09008FBC9B /* Embassa't.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8C4BC43D1AFBC48700215DED /* Embassa't Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8C4BC4461AFBC48700215DED /* Build configuration list for PBXNativeTarget "Embassa't Tests" */;
-			buildPhases = (
-				8C4BC43A1AFBC48700215DED /* Sources */,
-				8C4BC43B1AFBC48700215DED /* Frameworks */,
-				8C4BC43C1AFBC48700215DED /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8C4BC4451AFBC48700215DED /* PBXTargetDependency */,
-			);
-			name = "Embassa't Tests";
-			productName = "Embassa't Tests";
-			productReference = 8C4BC43E1AFBC48700215DED /* Embassa't Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -624,10 +544,6 @@
 				TargetAttributes = {
 					8C04EF4418CB8F09008FBC9B = {
 						DevelopmentTeam = 32S972F3NM;
-					};
-					8C4BC43D1AFBC48700215DED = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 8C04EF4418CB8F09008FBC9B;
 					};
 				};
 			};
@@ -644,7 +560,6 @@
 			projectRoot = "";
 			targets = (
 				8C04EF4418CB8F09008FBC9B /* Embassa't */,
-				8C4BC43D1AFBC48700215DED /* Embassa't Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -692,13 +607,6 @@
 				8CAEB33D192BF7AB0017CF29 /* CADEMScheduleViewController.xib in Resources */,
 				8C8D83C91B0E2E2000CD8CA4 /* loading.jpg in Resources */,
 				8C23D61118FAD7FE00B3C106 /* CADEMInfoCollectionViewCell.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8C4BC43C1AFBC48700215DED /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,37 +696,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C4BC43A1AFBC48700215DED /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C4BC4431AFBC48700215DED /* Embassa_t_Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8C4BC4451AFBC48700215DED /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C04EF4418CB8F09008FBC9B /* Embassa't */;
-			targetProxy = 8C4BC4441AFBC48700215DED /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8C04EF5118CB8F09008FBC9B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8C04EF5218CB8F09008FBC9B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		8C04EF6A18CB8F09008FBC9B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C04EF6B18CB8F09008FBC9B /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -914,7 +798,7 @@
 				INFOPLIST_FILE = "Embassat/Embassa't-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Embassa't";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8b7a3b67-cde5-458e-be19-d1b078c107d4";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassa't-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -933,58 +817,9 @@
 				INFOPLIST_FILE = "Embassat/Embassa't-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Embassa't";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8b7a3b67-cde5-458e-be19-d1b078c107d4";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassa't-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		8C4BC4471AFBC48700215DED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Embassa't Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Embassa't.app/Embassa't";
-			};
-			name = Debug;
-		};
-		8C4BC4481AFBC48700215DED /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Embassa't Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Embassa't.app/Embassa't";
 			};
 			name = Release;
 		};
@@ -1005,15 +840,6 @@
 			buildConfigurations = (
 				8C04EF7218CB8F09008FBC9B /* Debug */,
 				8C04EF7318CB8F09008FBC9B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8C4BC4461AFBC48700215DED /* Build configuration list for PBXNativeTarget "Embassa't Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8C4BC4471AFBC48700215DED /* Debug */,
-				8C4BC4481AFBC48700215DED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
