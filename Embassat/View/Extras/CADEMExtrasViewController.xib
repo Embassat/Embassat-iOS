@@ -20,11 +20,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="1001"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3t-T4-m8X">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1001"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-27-jZu">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -59,18 +59,17 @@
                                 <constraint firstAttribute="centerY" secondItem="B0U-qi-cfK" secondAttribute="centerY" id="zOw-Mi-vhM"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="muL-gJ-rvP">
-                            <rect key="frame" x="22" y="64" width="276" height="406"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="276" id="48w-u4-D5v"/>
-                            </constraints>
-                            <string key="text">La jornada del dissabte 28 de juny, la Plaça del Gas serà l’àgora de la primera mostra de discogràfiques independents i entitats locals relacionades amb l’àmbit cultural. La fira FEM EMBASSA’T es convertirà en un aparador de totes aquelles novetats i propostes alternatives i fresques que no tenen cabuda al circuït habitual i on primarà el producte gestat a la comarca del Vallès. La Fira vol ser una plataforma d’exposició que les entitats poden utilitzar per tal de donar-se a conèixer a tota la ciutat. És per això que de 12.00 a 20.00 hores, la Fira tindrà un accés gratuït a tot el públic, amb programació oberta, composada per concerts en format reduït.</string>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="muL-gJ-rvP">
+                            <rect key="frame" x="22" y="64" width="276" height="467"/>
+                            <mutableString key="text">Si estàs consultant aquest apartat possiblement és perquè encara no has tingut prou festa. Si has d’esperar al primer tren, la connexió del nit bus o simplement no voldries que s’acabessin les nits del EMBASSA’T, has clicat al lloc correcte. És aquí on acabarem tots: públic i músics brindant per més música.
+Divendres 12 serà el torn de Dj CAPO. La millor manera per acabar la festa amb els hits d’ahir, d’avui i potser de demà.
+Dissabte 13 el tàndem el completarà JMII i Hal9000 dues maneres complementàries per entendre la nit. Des de la vessant més electrònica i ballable, fins als clàssics del rock més imperdonables i que no poden fallar quan parlem d’una gran festa. La cirereta del festival.</mutableString>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8U-zv-10y">
-                            <rect key="frame" x="0.0" y="490" width="320" height="44"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8U-zv-10y">
+                            <rect key="frame" x="0.0" y="551" width="320" height="44"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissabte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-TK-G40">
                                     <rect key="frame" x="22" y="12" width="66" height="20"/>
@@ -102,12 +101,14 @@
                                 <constraint firstAttribute="centerY" secondItem="MDM-iG-fwO" secondAttribute="centerY" id="uSf-PB-Kn5"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-gX-GTR">
-                            <rect key="frame" x="22" y="554" width="276" height="305"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="276" id="9fJ-fm-tvl"/>
-                            </constraints>
-                            <string key="text">Concebut per donar un servei d’oci al públic més petit, el Petit EMBASSA’T torna a obrir un any més la programació dels Jardins de l’Espai Cultura amb una programació variada i pensada pels més menuts que busca acostar la cultura a les futures generacions. Eina per transmetre de pares a fills la passió per la música, la cultura i les activitats de lleure. L’oferta d’enguany es composa pel taller d’iniciació al “Fingerboards” o “Skate de dits” a càrrec del campió sa</string>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-gX-GTR">
+                            <rect key="frame" x="22" y="615" width="276" height="366"/>
+                            <string key="text">El primer festival per tota la família. Una experiència perquè grans i petits comparteixin un espai i una experiència única. Per quart any consecutiu el dissabte de festival dedicarà les primeres hores de la tarda al públic més petit de la casa. Tres hores de tallers, jocs, photocall i interaccions que buscaran acostar la música i l’esbarjo entre el nou públic. 
+
+18.00h. – Dàmaris Gelabert (Gira cançons per Aprendre) 
+18.30h. – Obertura Espai Petit Embassa’t. 
+19.00h. – Polpax dj
+19.45h. – Núria Graham</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -138,6 +139,8 @@
                 <constraint firstItem="m3t-T4-m8X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YP8-bm-uk6"/>
                 <constraint firstAttribute="trailing" secondItem="m3t-T4-m8X" secondAttribute="trailing" id="xHK-xV-2Wd"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="360" y="621.5"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
