@@ -58,7 +58,9 @@ public class CADEMNotificationService: NSObject {
                     return false
                 }
             }).first {
+                UIApplication.sharedApplication().cancelLocalNotification(notification)
                 notification.fireDate = artist.startDate.dateBySubtractingMinutes(15)
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }
     }
