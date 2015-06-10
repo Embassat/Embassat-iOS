@@ -8,6 +8,7 @@
         <mutableArray key="apercu_medium.otf">
             <string>Apercu-Medium</string>
             <string>Apercu-Medium</string>
+            <string>Apercu-Medium</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -22,6 +23,10 @@
                 <outletCollection property="titleLabels" destination="MDM-iG-fwO" collectionClass="NSMutableArray" id="cIR-uj-BdR"/>
                 <outletCollection property="titleLabels" destination="sSq-mM-M4B" collectionClass="NSMutableArray" id="BhD-2p-sua"/>
                 <outletCollection property="titleLabels" destination="PqV-TK-G40" collectionClass="NSMutableArray" id="rW5-TJ-kBr"/>
+                <outletCollection property="bodyLabels" destination="5oW-Rv-9zZ" collectionClass="NSMutableArray" id="wzg-H4-QQB"/>
+                <outletCollection property="subtitleLabels" destination="CxS-ms-TWh" collectionClass="NSMutableArray" id="zh2-mI-cqc"/>
+                <outletCollection property="subtitleLabels" destination="MnG-fe-EnC" collectionClass="NSMutableArray" id="5Wc-rZ-Qz3"/>
+                <outletCollection property="subtitleLabels" destination="PTr-3d-cqH" collectionClass="NSMutableArray" id="9xP-cn-pTN"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -32,8 +37,70 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3t-T4-m8X">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="1001"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-27-jZu">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8U-zv-10y">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissabte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-TK-G40">
+                                    <rect key="frame" x="22" y="12" width="66" height="20"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00 - 21:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSq-mM-M4B">
+                                    <rect key="frame" x="113" y="12" width="96" height="20"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petit EM’" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDM-iG-fwO">
+                                    <rect key="frame" x="230" y="12" width="68" height="20"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="sSq-mM-M4B" secondAttribute="centerX" constant="-0.5" id="B5R-nw-fnE"/>
+                                <constraint firstItem="PqV-TK-G40" firstAttribute="leading" secondItem="b8U-zv-10y" secondAttribute="leading" constant="22" id="BvT-tF-nIT"/>
+                                <constraint firstAttribute="centerY" secondItem="sSq-mM-M4B" secondAttribute="centerY" id="Dpb-MW-fBB"/>
+                                <constraint firstAttribute="height" constant="44" id="H1W-Bd-vfn"/>
+                                <constraint firstAttribute="centerY" secondItem="PqV-TK-G40" secondAttribute="centerY" id="btn-h5-8b8"/>
+                                <constraint firstAttribute="trailing" secondItem="MDM-iG-fwO" secondAttribute="trailing" constant="22" id="u8c-ck-PqR"/>
+                                <constraint firstAttribute="centerY" secondItem="MDM-iG-fwO" secondAttribute="centerY" id="uSf-PB-Kn5"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Museu del Gas, Fundació Gas Natural Fenosa" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="CxS-ms-TWh">
+                            <rect key="frame" x="22" y="64" width="276" height="48"/>
+                            <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="20"/>
+                            <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-gX-GTR">
+                            <rect key="frame" x="22" y="120" width="276" height="224"/>
+                            <string key="text">El primer festival per tota la família. Una experiència perquè grans i petits comparteixin un espai i una experiència única. Per quart any consecutiu el dissabte de festival dedicarà les primeres hores de la tarda al públic més petit de la casa. Tres hores de tallers, jocs, photocall i interaccions que buscaran acostar la música i l’esbarjo entre el nou públic. </string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horaris Petit EM’:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="MnG-fe-EnC">
+                            <rect key="frame" x="22" y="352" width="159" height="24"/>
+                            <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="20"/>
+                            <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-Rv-9zZ">
+                            <rect key="frame" x="22" y="384" width="276" height="102"/>
+                            <string key="text">18.00 Dàmaris Gelabert
+19.00 Obertura Tallers Petit EM’
+19.00 Polpax (Recinte Estruch)
+20.25 Núria Graham (Recinte Estruch)</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-27-jZu">
+                            <rect key="frame" x="0.0" y="506" width="320" height="44"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After Party" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0U-qi-cfK">
                                     <rect key="frame" x="22" y="12" width="80" height="20"/>
@@ -66,65 +133,16 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divendres i Dissabte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-3d-cqH">
-                            <rect key="frame" x="22" y="64" width="181" height="24"/>
+                            <rect key="frame" x="22" y="570" width="181" height="24"/>
                             <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="20"/>
                             <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="muL-gJ-rvP">
-                            <rect key="frame" x="22" y="96" width="276" height="467"/>
+                            <rect key="frame" x="22" y="602" width="276" height="467"/>
                             <string key="text">Si estàs consultant aquest apartat possiblement és perquè encara no has tingut prou festa. Si has d’esperar al primer tren, la connexió del nit bus o simplement no voldries que s’acabessin les nits del EMBASSA’T, has clicat al lloc correcte. És aquí on acabarem tots: públic i músics brindant per més música.
 Divendres 12 serà el torn de Dj CAPO. La millor manera per acabar la festa amb els hits d’ahir, d’avui i potser de demà.
 Dissabte 13 el tàndem el completarà JMII i Hal9000 dues maneres complementàries per entendre la nit. Des de la vessant més electrònica i ballable, fins als clàssics del rock més imperdonables i que no poden fallar quan parlem d’una gran festa. La cirereta del festival.</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8U-zv-10y">
-                            <rect key="frame" x="0.0" y="583" width="320" height="44"/>
-                            <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissabte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-TK-G40">
-                                    <rect key="frame" x="22" y="12" width="66" height="20"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00 - 21:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSq-mM-M4B">
-                                    <rect key="frame" x="113" y="12" width="96" height="20"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petit EM’" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDM-iG-fwO">
-                                    <rect key="frame" x="230" y="12" width="68" height="20"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="centerX" secondItem="sSq-mM-M4B" secondAttribute="centerX" constant="-0.5" id="B5R-nw-fnE"/>
-                                <constraint firstItem="PqV-TK-G40" firstAttribute="leading" secondItem="b8U-zv-10y" secondAttribute="leading" constant="22" id="BvT-tF-nIT"/>
-                                <constraint firstAttribute="centerY" secondItem="sSq-mM-M4B" secondAttribute="centerY" id="Dpb-MW-fBB"/>
-                                <constraint firstAttribute="height" constant="44" id="H1W-Bd-vfn"/>
-                                <constraint firstAttribute="centerY" secondItem="PqV-TK-G40" secondAttribute="centerY" id="btn-h5-8b8"/>
-                                <constraint firstAttribute="trailing" secondItem="MDM-iG-fwO" secondAttribute="trailing" constant="22" id="u8c-ck-PqR"/>
-                                <constraint firstAttribute="centerY" secondItem="MDM-iG-fwO" secondAttribute="centerY" id="uSf-PB-Kn5"/>
-                            </constraints>
-                        </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Museu del Gas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxS-ms-TWh">
-                            <rect key="frame" x="22" y="647" width="130" height="24"/>
-                            <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="20"/>
-                            <color key="textColor" red="0.94117647059999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-gX-GTR">
-                            <rect key="frame" x="22" y="679" width="276" height="325"/>
-                            <string key="text">El primer festival per tota la família. Una experiència perquè grans i petits comparteixin un espai i una experiència única. Per quart any consecutiu el dissabte de festival dedicarà les primeres hores de la tarda al públic més petit de la casa. Tres hores de tallers, jocs, photocall i interaccions que buscaran acostar la música i l’esbarjo entre el nou públic. 
-
-18.00h. – Dàmaris Gelabert (Gira cançons per Aprendre) 
-18.30h. – Obertura Espai Petit Embassa’t. </string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -135,18 +153,24 @@ Dissabte 13 el tàndem el completarà JMII i Hal9000 dues maneres complementàri
                         <constraint firstItem="PTr-3d-cqH" firstAttribute="top" secondItem="LmZ-27-jZu" secondAttribute="bottom" constant="20" id="1DS-zb-D35"/>
                         <constraint firstItem="rdj-gX-GTR" firstAttribute="top" secondItem="CxS-ms-TWh" secondAttribute="bottom" constant="8" id="4DV-lN-KyD"/>
                         <constraint firstItem="muL-gJ-rvP" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" constant="22" id="5Nl-co-mjx"/>
+                        <constraint firstAttribute="bottom" secondItem="muL-gJ-rvP" secondAttribute="bottom" constant="20" id="6gG-Op-0Ul"/>
+                        <constraint firstItem="5oW-Rv-9zZ" firstAttribute="top" secondItem="MnG-fe-EnC" secondAttribute="bottom" constant="8" id="8zZ-CF-z9q"/>
                         <constraint firstItem="PTr-3d-cqH" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" constant="22" id="9Qg-x4-9fA"/>
-                        <constraint firstAttribute="bottom" secondItem="rdj-gX-GTR" secondAttribute="bottom" constant="20" id="Cp7-oR-ySo"/>
+                        <constraint firstAttribute="trailing" secondItem="5oW-Rv-9zZ" secondAttribute="trailing" constant="22" id="I31-6t-Jwg"/>
                         <constraint firstItem="rdj-gX-GTR" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" constant="22" id="IjQ-vF-Sib"/>
-                        <constraint firstItem="LmZ-27-jZu" firstAttribute="top" secondItem="m3t-T4-m8X" secondAttribute="top" id="TmX-1X-h7t"/>
+                        <constraint firstItem="5oW-Rv-9zZ" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" constant="22" id="a4p-GH-EIM"/>
+                        <constraint firstItem="LmZ-27-jZu" firstAttribute="top" secondItem="5oW-Rv-9zZ" secondAttribute="bottom" constant="20" id="aqO-9c-jMo"/>
+                        <constraint firstItem="b8U-zv-10y" firstAttribute="top" secondItem="m3t-T4-m8X" secondAttribute="top" id="dRE-dz-bWh"/>
+                        <constraint firstItem="MnG-fe-EnC" firstAttribute="top" secondItem="rdj-gX-GTR" secondAttribute="bottom" constant="8" id="gmO-S6-zoW"/>
                         <constraint firstItem="b8U-zv-10y" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" id="k66-Af-6iI"/>
-                        <constraint firstItem="b8U-zv-10y" firstAttribute="top" secondItem="muL-gJ-rvP" secondAttribute="bottom" constant="20" id="kmg-wx-VVx"/>
                         <constraint firstAttribute="trailing" secondItem="rdj-gX-GTR" secondAttribute="trailing" constant="22" id="l3z-HH-XIQ"/>
                         <constraint firstItem="CxS-ms-TWh" firstAttribute="top" secondItem="b8U-zv-10y" secondAttribute="bottom" constant="20" id="mNh-fd-gvN"/>
+                        <constraint firstItem="MnG-fe-EnC" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" constant="22" id="naN-MT-NtK"/>
                         <constraint firstItem="muL-gJ-rvP" firstAttribute="top" secondItem="PTr-3d-cqH" secondAttribute="bottom" constant="8" id="o0j-g0-b2a"/>
                         <constraint firstItem="LmZ-27-jZu" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" id="ppa-bV-VqK"/>
                         <constraint firstAttribute="trailing" secondItem="LmZ-27-jZu" secondAttribute="trailing" id="rNW-cF-eNa"/>
                         <constraint firstAttribute="trailing" secondItem="b8U-zv-10y" secondAttribute="trailing" id="sEy-Vz-b3W"/>
+                        <constraint firstAttribute="trailing" secondItem="CxS-ms-TWh" secondAttribute="trailing" constant="22" id="uEV-r0-huJ"/>
                         <constraint firstAttribute="trailing" secondItem="muL-gJ-rvP" secondAttribute="trailing" constant="22" id="xdS-eB-zvB"/>
                         <constraint firstItem="CxS-ms-TWh" firstAttribute="leading" secondItem="m3t-T4-m8X" secondAttribute="leading" constant="22" id="yLm-Bh-4sg"/>
                     </constraints>

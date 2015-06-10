@@ -31,6 +31,7 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
         super.viewDidLoad()
         
         title = "Artista"
+        artistNameLabel?.font = UIFont.em_detailFontOfSize(20.0)
         descriptionLabel?.font = UIFont.em_detailFontOfSize(15.0)
         stageLabel?.font = UIFont.em_detailFontOfSize(15.0)
         dayLabel?.font = UIFont.em_detailFontOfSize(15.0)

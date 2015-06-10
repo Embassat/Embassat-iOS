@@ -11,6 +11,7 @@ import UIKit
 public class CADEMExtrasViewController: CADEMRootViewController {
     
     @IBOutlet var titleLabels: [UILabel]?
+    @IBOutlet var subtitleLabels: [UILabel]?
     @IBOutlet var bodyLabels: [UILabel]?
 
     override public func viewDidLoad() {
@@ -23,6 +24,12 @@ public class CADEMExtrasViewController: CADEMRootViewController {
         if let labels = titleLabels {
             for label in labels {
                 label.font = UIFont.em_detailFontOfSize(15.0)
+            }
+        }
+        
+        if let labels = subtitleLabels {
+            for label in labels {
+                label.font = UIFont.em_detailFontOfSize(20.0)
             }
         }
         
