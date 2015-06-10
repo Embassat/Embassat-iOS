@@ -5,6 +5,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Firebase/Firebase.h>
+#import <TTTAttributedLabel/TTTAttributedLabel.h>
 #import <ShareKit/ShareKit.h>
 #import <ShareKit/DefaultSHKConfigurator.h>
 

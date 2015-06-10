@@ -10,15 +10,14 @@ import Foundation
 
 public class CADEMInfoViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
-    let titles: Array<String> = ["Què és l’Embassa't?", "Escenari Principal", "Amfiteatre", "Mirador Electrònic"]
+    let titles: Array<String> = ["Tant si plou com si fa sol", "Transport públic", "Escenaris"]
     let bodies: Array<String> = [
-    "L’EMBASSA’T és el teu festival. Et portem ben a prop els millors artistes d’aquí i d’allà, les bandes més potents de l’emergent panorama i els noms que trepitgen amb més ganes l’escena del moment.\n\nAmb tu volem continuar sent el motor perquè un cop més s’accelerin els fets, compartim els millors directes amb els teus amics en racons que mai els haguessis vist d’aquesta manera, i d’una forma única i privilegiada.\n\n3 escenaris de luxe. Un ventall musical envejable. Apte per tots: des del Petit Embassa’t,  els més tranquils, folks, pels que canten pop, criden punk o ballen rock, fins als que vulguin tancar les portes a ritme de hits més electrònics.\n\nAjuda’ns a fer-nos més sostenibles, tu també pots fer-nos millors i més grans. Suma’t a l’EMBASSA’T, El Festival Independent del Vallès. El festival que fa falta a Catalunya.",
-    "Dins dels magnífics Jardins de l’Espai Cultura de la Fundació Sabadell 1859 pugen a l’escenari les propostes més fermes de l’escena del moment. Bandes que fa anys que criden un nom i un lloc, fins a grups més joves amb un insultant descaro, és aquí i ara on juguen les millors cartes. Sens dubte on es viu l’esclat del festival i on sempre podràs dir que hauràs vist els millors grups del demà.  Aforament 1.000 persones.",
-    "Dins el recinte principal tenim la petita joia del festival. Les grades, la buguenvíl·lia, la llum, l’atmosfera que es palpa concert rere concert fan que des de les propostes més íntimes, al folk, cantautors, l’electrònica soft o més dura, al rock directe, garage o punk tinguin un contacte que mai abans hauràs viscut. Tota una experiència musical. Aforament amb butaca limitat 300 persones aproximadament.",
-    "El Museu del Gas acull a dalt de tot del seu modern edifici un espai envejable, tan per les seves vistes com per la seva cuidada proposta. Una finestra oberta a la emergent electrònica barcelonina que ens acosta les sonoritats, bits i ritmes més contemporanis per contemplar el panorama que vindrà. Cinc hores diàries per submergir-nos en aquest fascinant univers. La cirereta més exclusiva del festival. Fins a completar aforament, 250 persones. "]
+    "Canvi d’ubicació per garantir un esdeveniment sense risc de mullar-se i assegurar el millor cap de setmana possible. Nou espai principal, dos escenaris: exterior covert i teatre.\n\nNOU RECINTE: CA L’ESTRUCH\nCarrer de Sant Isidre,140\n08208 Sabadell, Barcelona",
+    "Bus nocturn\n- Sabadell - Barcelona\n- Sabadell - Vallès - Barcelona\n\nFGC\n- Sabadell - Barcelona\n\nRODALIES R4\n- Sabadell - Barcelona",
+    "Escenari Principal\nDins la nau industrial de Ca l’Estruch pugen les propostes més fermes de l’escena del moment. Sens dubte on es viu l’esclat del festival i on sempre podràs dir que hauràs vist els millors grups d’avui i demà. \n* Aforament limitat. \n\nEscenari Yeearphone\nEl teatre de l’Estruch ens posarà a tots de’n peus des de primera hora de la tarda fins ben entrada la nit. L’electrònica més íntima i ambiental, acústics propers o el garage i punk que donarà les gràcies a no tenir una platea, sinó una pista de ball. Una experiència musical per viure-la. \n* Aforament limitat 400 persones.\n\nMirador\nEl Museu del Gas de la Fundació Gas Natural Fenosa acull la jornada inagural del festival al mirador del seu modern edifici. Un espai envejable, tan per les seves vistes com per la seva cuidada proposta. Una finestra oberta a les noves bandes del Vallès, el surf més estiuenc o el primer guateque d’aquest gran cap de setmana.\n* Fins a completar aforament."]
     
     func numberOfSections() -> Int {
-        return 4
+        return 3
     }
     
     func numberOfItemsInSection(section : Int) -> Int {
@@ -35,6 +34,14 @@ public class CADEMInfoViewModel: NSObject, CADEMViewModelCollectionDelegate {
     
     public func imageAtIndexPath(indexPath: NSIndexPath) -> UIImage {
         return UIImage(named: String(format: "info%01d.jpg", indexPath.section + 1))!
+    }
+    
+    public func linksAtIndexPath(indexPath: NSIndexPath) -> (Array<NSURL>, Array<NSRange>) {
+        if indexPath.section == 1 {
+            return ([NSURL(string: "http://www.atm.cat/web/ca/veure.php?pdf=ca/_dir_nocturn/N65.pdf&h=770")!, NSURL(string: "http://www.atm.cat/web/ca/veure.php?pdf=ca/_dir_nocturn/N61.pdf&h=770")!, NSURL(string: "http://www.fgc.cat/downloads/horaris/Sabadell_1403.pdf")!, NSURL(string: "http://rodalies.gencat.cat/web/.content/pdf/horaris/r4.pdf")!], [NSMakeRange(14, 21), NSMakeRange(37, 29), NSMakeRange(73, 21), NSMakeRange(110, 20)])
+        } else {
+            return ([], [])
+        }
     }
 }
 

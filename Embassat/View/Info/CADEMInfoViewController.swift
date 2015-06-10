@@ -25,6 +25,7 @@ public class CADEMInfoViewController: CADEMRootViewController {
                     let theCell = cell as! CADEMInfoCollectionViewCell
             
                     theCell.body = theViewModel.bodyAtIndexPath(indexPath)
+                    theCell.links = theViewModel.linksAtIndexPath(indexPath)    
                 },
                 configureHeaderBlock: { (header: AnyObject!, indexPath: NSIndexPath) -> Void in
                     let theHeader = header as! CADEMInfoHeaderView
