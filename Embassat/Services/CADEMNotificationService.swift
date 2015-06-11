@@ -60,6 +60,7 @@ public class CADEMNotificationService: NSObject {
             }).first {
                 UIApplication.sharedApplication().cancelLocalNotification(notification)
                 notification.fireDate = artist.startDate.dateBySubtractingMinutes(15)
+                notification.alertBody = String(format: "%@ començarà en 15 minuts al %@!", artist.name, artist.stage)
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }
