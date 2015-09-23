@@ -22,7 +22,7 @@ public class CADRootViewController: UIViewController {
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         tapGestureToResign = UITapGestureRecognizer()
         tapGestureToResign.cancelsTouchesInView = false
         

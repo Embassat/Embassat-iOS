@@ -22,9 +22,9 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegate {
         service.artists().map
             { (artists: AnyObject!) -> AnyObject! in
                 let artistsArray = artists as! Array<CADEMArtist>
-                return sorted(artistsArray) { (artist1, artist2) in
-                    return artist1.name < artist2.name
-                }
+                return artistsArray.sort({ (artist1, artist2) -> Bool in
+                    artist1.name < artist2.name
+                })
             }.subscribeNext(
                 { [unowned self] (artists: AnyObject!) -> Void in
                     self.model = artists as! Array<CADEMArtist>
@@ -42,9 +42,9 @@ public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegate {
     public func shouldRefreshModel() {
         service.cachedArtists().map{ (artists: AnyObject!) -> AnyObject! in
             let artistsArray = artists as! Array<CADEMArtist>
-            return sorted(artistsArray) { (artist1, artist2) in
-                return artist1.name < artist2.name
-            }
+            return artistsArray.sort({ (artist1, artist2) -> Bool in
+                artist1.name < artist2.name
+            })
         }.subscribeNext { [unowned self] (artists: AnyObject!) -> Void in
             self.model = artists as! Array<CADEMArtist>
         }

@@ -22,7 +22,7 @@ public class CADEMMapViewController: CADEMRootViewController, MKMapViewDelegate 
         get {
             var coords: Array<CLLocation> = []
             
-            if let annotations = mapView?.annotations as? [MKAnnotation] {
+            if let annotations = mapView?.annotations {
                 for annotation in annotations {
                     coords.append(CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude))
                 }
@@ -37,13 +37,13 @@ public class CADEMMapViewController: CADEMRootViewController, MKMapViewDelegate 
         
         title = "Mapa"
         
-        if locationManager.respondsToSelector("requestWhenInUseAuthorization") {
+        if #available(iOS 8.0, *) {
             locationManager.requestWhenInUseAuthorization()
         }
         
         for var i = 0; i < viewModel.numberOfPoints(); i++
         {
-            var clubAnnotation = MKPointAnnotation()
+            let clubAnnotation = MKPointAnnotation()
             clubAnnotation.coordinate = CLLocationCoordinate2DMake(viewModel.latitudeForPoint(atIndex: i), viewModel.longitudeForPoint(atIndex: i))
             clubAnnotation.title = viewModel.titleForPoint(atIndex: i)
             
@@ -52,21 +52,20 @@ public class CADEMMapViewController: CADEMRootViewController, MKMapViewDelegate 
         
     }
     
-    public func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+    public func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         if userLocationTracked == false &&
-            userLocation.location != nil &&
-            CLLocationCoordinate2DIsValid(CLLocationCoordinate2DMake(userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude)) {
+            CLLocationCoordinate2DIsValid(CLLocationCoordinate2DMake((userLocation.location?.coordinate.latitude)!, (userLocation.location?.coordinate.longitude)!)) {
             userLocationTracked = true
             self.updateVisibleMapRect()
         }
     }
     
-    public func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    public func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation.isKindOfClass(MKUserLocation) {
             return nil
         }
         
-        var annotationView: MKPinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: CADEMMapViewController.kEMMapPinIdentifier)
+        let annotationView: MKPinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: CADEMMapViewController.kEMMapPinIdentifier)
         annotationView.canShowCallout = true
         
         return annotationView

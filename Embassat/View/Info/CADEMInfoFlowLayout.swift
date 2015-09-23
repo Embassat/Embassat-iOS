@@ -10,12 +10,15 @@ import UIKit
 
 public class CADEMInfoFlowLayout: UICollectionViewFlowLayout {
     
-    public override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]? {
+    public override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
-        var answer = super.layoutAttributesForElementsInRect(rect) as! Array<UICollectionViewLayoutAttributes>
+        guard var answer = super.layoutAttributesForElementsInRect(rect) else {
+            return []
+        }
+        
         let cv = self.collectionView
         let contentOffset = cv?.contentOffset
-        var missingSections = NSMutableIndexSet()
+        let missingSections = NSMutableIndexSet()
         
         for layoutAttributes: UICollectionViewLayoutAttributes in answer {
             if layoutAttributes.representedElementCategory == UICollectionElementCategory.Cell {
@@ -33,8 +36,9 @@ public class CADEMInfoFlowLayout: UICollectionViewFlowLayout {
         
         missingSections.enumerateIndexesUsingBlock { (idx: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
             let indexPath = NSIndexPath(forItem: 0, inSection: idx)
-            let layouAttributes = self.layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: indexPath)
-            answer.append(layouAttributes)
+            if let layouAttributes = self.layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: indexPath) {
+                answer.append(layouAttributes)
+            }
         }
         
         for layoutAttributes: UICollectionViewLayoutAttributes in answer {
@@ -48,21 +52,21 @@ public class CADEMInfoFlowLayout: UICollectionViewFlowLayout {
                         let firstCellIndexPath = NSIndexPath(forItem: 0, inSection: section)
                         let lastCellIndexPath = NSIndexPath(forItem: max(0, numberOfItemsInSection! - 1), inSection: section)
                         
-                        let firstCellAttrs = self.layoutAttributesForItemAtIndexPath(firstCellIndexPath)
-                        let lastCellAttrs = self.layoutAttributesForItemAtIndexPath(lastCellIndexPath)
-                        
-                        let headerHeight = CGRectGetHeight(layoutAttributes.frame)
-                        var origin = layoutAttributes.frame.origin
-                        origin.y = min(
-                            max(
-                                contentOffset!.y /*- 175.0f*/ + 64.0,
-                                (CGRectGetMinY(firstCellAttrs.frame) - headerHeight)
-                            ),
-                            (CGRectGetMaxY(lastCellAttrs.frame) - headerHeight)
-                        );
-                        layoutAttributes.zIndex = 1024;
-                        layoutAttributes.frame = CGRectMake(origin.x, origin.y, layoutAttributes.frame.size.width, layoutAttributes.frame.size.height)
-                        
+                        if  let firstCellAttrs = self.layoutAttributesForItemAtIndexPath(firstCellIndexPath),
+                            let lastCellAttrs = self.layoutAttributesForItemAtIndexPath(lastCellIndexPath) {
+                                let headerHeight = CGRectGetHeight(layoutAttributes.frame)
+                                var origin = layoutAttributes.frame.origin
+                                origin.y = min(
+                                    max(
+                                        contentOffset!.y /*- 175.0f*/ + 64.0,
+                                        (CGRectGetMinY(firstCellAttrs.frame) - headerHeight)
+                                    ),
+                                    (CGRectGetMaxY(lastCellAttrs.frame) - headerHeight)
+                                );
+                                layoutAttributes.zIndex = 1024;
+                                layoutAttributes.frame = CGRectMake(origin.x, origin.y, layoutAttributes.frame.size.width, layoutAttributes.frame.size.height)
+       
+                        }
                     }
                     
                 }

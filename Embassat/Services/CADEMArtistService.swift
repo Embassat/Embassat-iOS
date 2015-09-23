@@ -10,7 +10,6 @@ import Foundation
 
 public class CADEMArtistService: NSObject {
     
-    static let kArtistsEndpoint : String = "http://www.embassat.com/wp-json/posts?type=portfolio&count=100"
     static let kArtistsStoreKey : String = "/artists.db"
     
     let store: CADEMStore = CADEMStore()

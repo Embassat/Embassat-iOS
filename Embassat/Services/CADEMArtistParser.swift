@@ -19,7 +19,13 @@ public class CADEMArtistParser: NSObject {
     
     public func parseArtists(fromJson json: AnyObject, cached cachedArtists: Array<CADEMArtist> = []) -> Array<CADEMArtist> {
         var artists: [CADEMArtist] = []
-        for (index: String, subJson: JSON) in JSON(json) {
+        for (_,subJson):(String, JSON) in JSON(json) {
+            
+            guard let startDate = dateFormatter.dateFromString(subJson["start_date"].stringValue),
+                  let endDate = dateFormatter.dateFromString(subJson["start_date"].stringValue) else {
+                    break;
+            }
+            
             var favorited = false
             
             if let existingArtist = cachedArtists.filter({ (artist: CADEMArtist) -> Bool in
@@ -34,8 +40,8 @@ public class CADEMArtistParser: NSObject {
                 longDescription: subJson["description"].stringValue,
                 artistURL: NSURL(string: subJson["share_url"].stringValue)!,
                 imageURL: NSURL(string: subJson["image_url"].stringValue)!,
-                startDate: dateFormatter.dateFromString(subJson["start_date"].stringValue)!,
-                endDate: dateFormatter.dateFromString(subJson["end_date"].stringValue)!,
+                startDate: startDate,
+                endDate: endDate,
                 stage: subJson["stage"].stringValue,
                 favorite: favorited
             )

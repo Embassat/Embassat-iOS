@@ -50,7 +50,7 @@ public class CADEMMenuViewController: CADEMRootViewController {
     public override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
-        if let indexPaths = menuCollectionView?.indexPathsForSelectedItems() as? [NSIndexPath] {
+        if let indexPaths = menuCollectionView?.indexPathsForSelectedItems() {
             for indexPath in indexPaths {
                 menuCollectionView?.deselectItemAtIndexPath(indexPath, animated: false)
             }

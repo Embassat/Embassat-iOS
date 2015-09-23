@@ -539,7 +539,9 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CAD;
-				LastUpgradeCheck = 0510;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Crows And Dogs";
 				TargetAttributes = {
 					8C04EF4418CB8F09008FBC9B = {
@@ -730,6 +732,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -792,11 +795,13 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Embassat/Embassa't-Prefix.pch";
 				INFOPLIST_FILE = "Embassat/Embassa't-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cad.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Embassa't";
 				PROVISIONING_PROFILE = "a6cda194-1c01-448f-8294-1d33c9ac0f4f";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassa't-Bridging-Header.h";
@@ -811,11 +816,13 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Pol Solsona (32S972F3NM)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Embassat/Embassa't-Prefix.pch";
 				INFOPLIST_FILE = "Embassat/Embassa't-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cad.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Embassa't";
 				PROVISIONING_PROFILE = "a6cda194-1c01-448f-8294-1d33c9ac0f4f";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassa't-Bridging-Header.h";

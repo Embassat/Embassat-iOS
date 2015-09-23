@@ -62,8 +62,8 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
         dayLabel?.text = viewModel?.artistDay
         timeLabel?.text = viewModel?.artistStartTimeString
         
-        let favItem: UIBarButtonItem = self.navigationItem.rightBarButtonItems?.first as! UIBarButtonItem
-        favItem.tintColor = viewModel?.artistIsFavorite == true ? UIColor.em_backgroundColor() : nil
+        let favItem = self.navigationItem.rightBarButtonItems?.first
+        favItem?.tintColor = viewModel?.artistIsFavorite == true ? UIColor.em_backgroundColor() : nil
     }
     
     func sharePressed() {
@@ -73,8 +73,8 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
     func favoritePressed() {
         viewModel?.toggleFavorite(){ [unowned self] () -> () in
 
-            let favItem: UIBarButtonItem = self.navigationItem.rightBarButtonItems?.first as! UIBarButtonItem
-            favItem.tintColor = favItem.tintColor == nil ? UIColor.em_backgroundColor() : nil
+            let favItem = self.navigationItem.rightBarButtonItems?.first
+            favItem?.tintColor = favItem?.tintColor == nil ? UIColor.em_backgroundColor() : nil
             
             self.updateSignal.sendNext(true)
         }

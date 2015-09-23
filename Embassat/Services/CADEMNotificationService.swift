@@ -12,23 +12,23 @@ public class CADEMNotificationService: NSObject {
     
     public func registerForLocalNotifications() {
         
-        if UIApplication.sharedApplication().respondsToSelector("registerUserNotificationSettings:") {
-            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge | UIUserNotificationType.Sound | UIUserNotificationType.Alert, categories: nil))
+        if #available(iOS 8.0, *) {
+            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil))
         }
         
     }
 
     public func toggleLocalNotification(forArtist artist: CADEMArtist, favorited: Bool) {
-        var localNotif = UILocalNotification()
+        let localNotif = UILocalNotification()
         
         localNotif.fireDate = artist.startDate.dateBySubtractingMinutes(15)
         localNotif.alertBody = String(format: "%@ començarà en 15 minuts al %@!", artist.name, artist.stage)
         localNotif.userInfo = ["artistId" : artist.artistId]
         localNotif.soundName = UILocalNotificationDefaultSoundName
         
-        let existingNotifications: Array<UILocalNotification> = UIApplication.sharedApplication().scheduledLocalNotifications as! Array<UILocalNotification>
+        let existingNotifications: Array<UILocalNotification> = UIApplication.sharedApplication().scheduledLocalNotifications!
         
-        if var existingNotification = existingNotifications.filter({ (notification: UILocalNotification) -> Bool in
+        if let existingNotification = existingNotifications.filter({ (notification: UILocalNotification) -> Bool in
             if let artistId = notification.userInfo?["artistId"] as? Int {
                 return artistId == artist.artistId
             } else {
@@ -46,9 +46,7 @@ public class CADEMNotificationService: NSObject {
     }
     
     public func updateLocalNotifications(forArtists artists: Array<CADEMArtist>) {
-        var localNotif = UILocalNotification()
-        
-        let existingNotifications: Array<UILocalNotification> = UIApplication.sharedApplication().scheduledLocalNotifications as! Array<UILocalNotification>
+        let existingNotifications: Array<UILocalNotification> = UIApplication.sharedApplication().scheduledLocalNotifications!
         
         for notification in existingNotifications {
             if let artist = artists.filter({ (artist: CADEMArtist) -> Bool in

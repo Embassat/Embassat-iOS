@@ -25,8 +25,8 @@ public class CADEMArtistDetailViewModel: NSObject {
     
     public var currentIndex: Int = 0 {
         didSet {
-            if currentIndex > count(model) - 1 {
-               currentIndex = count(model) - 1
+            if currentIndex > model.count - 1 {
+               currentIndex = model.count - 1
             }
             
             if currentIndex < 0 {
@@ -54,7 +54,9 @@ public class CADEMArtistDetailViewModel: NSObject {
         let actionSheet = SHKActionSheet(forItem: item as! SHKItem)
         SHK.setRootViewController(viewController)
         
-        actionSheet.showFromToolbar(viewController.navigationController?.toolbar)
+        if let toolbar = viewController.navigationController?.toolbar {
+            actionSheet.showFromToolbar(toolbar)
+        }
     }
     
     public func toggleFavorite(completion: () -> ()) {

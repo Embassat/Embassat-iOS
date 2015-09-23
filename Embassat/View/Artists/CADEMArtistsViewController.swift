@@ -56,7 +56,7 @@ public class CADEMArtistsViewController: CADEMRootViewController {
     public override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
-        if let indexPaths = artistsCollectionView?.indexPathsForSelectedItems() as? [NSIndexPath] {
+        if let indexPaths = artistsCollectionView?.indexPathsForSelectedItems() {
             for indexPath in indexPaths {
                 artistsCollectionView?.deselectItemAtIndexPath(indexPath, animated: false)
             }

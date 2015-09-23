@@ -114,9 +114,9 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
     }
     
     func filteredArray(fromArray: Array<CADEMArtist>, withDateString: String) -> Array<CADEMArtist> {
-        return sorted(fromArray.filter({ (artist: CADEMArtist) -> Bool in
+        return fromArray.filter({ (artist: CADEMArtist) -> Bool in
             return self.dateFormatter.stringFromDate(artist.scheduleDate) == withDateString
-        }), sortingByDate)
+        }).sort(sortingByDate)
     }
     
     func sortingByDate(forFirstArtist artist1: CADEMArtist, andSecondArtist artist2: CADEMArtist) -> Bool {
