@@ -28,7 +28,7 @@ public class CADEMInfoCollectionViewCell: CADRootCollectionViewCell, TTTAttribut
     public override func setupView() {
         super.setupView()
         
-        bodyLabel?.font = UIFont.em_detailFontOfSize(15.0)
+        bodyLabel?.font = UIFont.detailFont(ofSize: 15.0)
         bodyLabel?.linkAttributes = [kCTForegroundColorAttributeName: UIColor.whiteColor(),
             kCTUnderlineStyleAttributeName: 1];
         bodyLabel?.activeLinkAttributes = [kCTForegroundColorAttributeName: UIColor.em_barTintColor()];

@@ -8,6 +8,8 @@
 
 import Foundation
 
+import SwiftyJSON
+
 public class CADEMArtistParser: NSObject {
     
     let dateFormatter: NSDateFormatter

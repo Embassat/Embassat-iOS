@@ -37,9 +37,7 @@ public class CADEMMapViewController: CADEMRootViewController, MKMapViewDelegate 
         
         title = "Mapa"
         
-        if #available(iOS 8.0, *) {
-            locationManager.requestWhenInUseAuthorization()
-        }
+        locationManager.requestWhenInUseAuthorization()
         
         for var i = 0; i < viewModel.numberOfPoints(); i++
         {

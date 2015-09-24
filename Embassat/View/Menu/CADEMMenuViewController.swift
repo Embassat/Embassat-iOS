@@ -97,7 +97,7 @@ public class CADEMMenuViewController: CADEMRootViewController {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         
-        return flowLayout.insetsForVerticallyCenteredSectionInScreenWithRows(dataSource.viewModel.numberOfItemsInSection(0), andColumns: 1)
+        return flowLayout.insetsForVerticallyCenteredSectionInScreen(withNumberOfRows: dataSource.viewModel.numberOfItemsInSection(0), andColumns: 1)
     }
     
 }

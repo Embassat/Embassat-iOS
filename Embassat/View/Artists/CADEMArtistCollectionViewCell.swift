@@ -47,7 +47,7 @@ public class CADEMArtistCollectionViewCell: CADRootCollectionViewCell {
     public override func setupView() {
         super.setupView()
         
-        optionNameLabel?.font = UIFont.em_detailFontOfSize(15.0)
+        optionNameLabel?.font = UIFont.detailFont(ofSize: 15.0)
         optionNameLabel?.adjustsFontSizeToFitWidth = true
     }
 }

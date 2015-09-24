@@ -49,10 +49,10 @@ public class CADEMScheduleCollectionViewCell: CADRootCollectionViewCell {
     public override func setupView() {
         super.setupView()
         
-        startTimeLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        endTimeLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        artistNameLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        stageLabel?.font = UIFont.em_detailFontOfSize(15.0)
+        startTimeLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        endTimeLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        artistNameLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        stageLabel?.font = UIFont.detailFont(ofSize: 15.0)
         artistNameLabel?.adjustsFontSizeToFitWidth = true
     }
 }

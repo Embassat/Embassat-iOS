@@ -27,6 +27,6 @@ public class CADEMInfoHeaderView: UICollectionReusableView {
     public override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleLabel?.font = UIFont.em_detailFontOfSize(20.0)
+        titleLabel?.font = UIFont.detailFont(ofSize: 20.0)
     }
 }

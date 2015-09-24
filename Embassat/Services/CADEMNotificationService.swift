@@ -12,9 +12,7 @@ public class CADEMNotificationService: NSObject {
     
     public func registerForLocalNotifications() {
         
-        if #available(iOS 8.0, *) {
-            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil))
-        }
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil))
         
     }
 

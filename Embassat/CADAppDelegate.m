@@ -8,8 +8,6 @@
 
 #import "CADAppDelegate.h"
 
-#import <DDTTYLogger.h>
-
 #import "UIColor+EMAdditions.h"
 
 #import <ShareKit/ShareKit.h>
@@ -26,8 +24,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    
     [[[CADEMNotificationService alloc] init] registerForLocalNotifications];
     [SHKConfiguration sharedInstanceWithConfigurator:[[CADEMShareKitConfigurator alloc] init]];
     
@@ -69,7 +65,7 @@
 {
     UINavigationBar.appearance.tintColor = [UIColor whiteColor];
     UINavigationBar.appearance.barTintColor = [UIColor em_barTintColor];
-    UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont em_titleFontOfSize:30.0f]};
+    UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont detailFontOfSize:30.0f]};
 }
 
 #pragma mark - Lazy

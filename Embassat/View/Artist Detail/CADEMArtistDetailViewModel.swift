@@ -51,12 +51,13 @@ public class CADEMArtistDetailViewModel: NSObject {
     
     public func shareAction(forViewController viewController: UIViewController) {
         let item: AnyObject! = SHKItem.URL(currentArtist.artistURL, title: String(format: "%@ @ Embassa't", self.artistName), contentType: SHKURLContentTypeUndefined)
-        let actionSheet = SHKActionSheet(forItem: item as! SHKItem)
-        SHK.setRootViewController(viewController)
         
-        if let toolbar = viewController.navigationController?.toolbar {
-            actionSheet.showFromToolbar(toolbar)
-        }
+        SHK.setRootViewController(viewController)
+        let alertController = SHKAlertController.actionSheetForItem(item as! SHKItem)
+        alertController.modalPresentationStyle = .Popover
+        let popover = alertController.popoverPresentationController
+        popover?.barButtonItem = viewController.toolbarItems?.first
+        viewController.presentViewController(alertController, animated: true, completion: nil)
     }
     
     public func toggleFavorite(completion: () -> ()) {

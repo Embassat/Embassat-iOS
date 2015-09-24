@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import WebImage
 
 public class CADEMArtistDetailViewController: CADEMRootViewController {
     
@@ -31,11 +33,11 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
         super.viewDidLoad()
         
         title = "Artista"
-        artistNameLabel?.font = UIFont.em_detailFontOfSize(20.0)
-        descriptionLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        stageLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        dayLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        timeLabel?.font = UIFont.em_detailFontOfSize(15.0)
+        artistNameLabel?.font = UIFont.detailFont(ofSize: 20.0)
+        descriptionLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        stageLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        dayLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        timeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         view.backgroundColor = UIColor.whiteColor()
         
         let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "sharePressed")

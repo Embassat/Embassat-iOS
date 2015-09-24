@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReactiveCocoa
 
 public class CADEMArtistsViewModel: NSObject, CADEMViewModelCollectionDelegate {
     

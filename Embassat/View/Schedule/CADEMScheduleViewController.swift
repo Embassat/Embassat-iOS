@@ -61,9 +61,9 @@ public class CADEMScheduleViewController: CADEMRootViewController {
             view?.addGestureRecognizer(tapGesture)
         }
         
-        thursdayLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        fridayLabel?.font = UIFont.em_detailFontOfSize(15.0)
-        saturdayLabel?.font = UIFont.em_detailFontOfSize(15.0)
+        thursdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        fridayLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        saturdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         
         scheduleCollectionView?.dataSource = self.dataSource
         scheduleCollectionView?.registerNib(UINib(nibName: "CADEMScheduleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CADArrayDataSource.CADCellIdentifier)
