@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TTTAttributedLabel
 
 public class CADEMInfoCollectionViewCell: CADRootCollectionViewCell, TTTAttributedLabelDelegate {
     

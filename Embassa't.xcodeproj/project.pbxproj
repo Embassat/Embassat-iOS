@@ -92,6 +92,7 @@
 		8CF193361BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193351BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift */; settings = {ASSET_TAGS = (); }; };
 		8CF193381BB360DE00B7D929 /* UIFont+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193371BB360DE00B7D929 /* UIFont+EMAdditions.swift */; settings = {ASSET_TAGS = (); }; };
 		8CF1933A1BB3E9FA00B7D929 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF193391BB3E9FA00B7D929 /* WebImage.framework */; };
+		8CF1933D1BB3ECCB00B7D929 /* TTTAttributedLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF1933B1BB3EBDB00B7D929 /* TTTAttributedLabel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,6 +193,7 @@
 		8CF193351BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+EMAdditions.swift"; sourceTree = "<group>"; };
 		8CF193371BB360DE00B7D929 /* UIFont+EMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+EMAdditions.swift"; sourceTree = "<group>"; };
 		8CF193391BB3E9FA00B7D929 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
+		8CF1933B1BB3EBDB00B7D929 /* TTTAttributedLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TTTAttributedLabel.framework; path = Carthage/Build/iOS/TTTAttributedLabel.framework; sourceTree = "<group>"; };
 		D16AF894416306787E8EA880 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF1933D1BB3ECCB00B7D929 /* TTTAttributedLabel.framework in Frameworks */,
 				8CF1933A1BB3E9FA00B7D929 /* WebImage.framework in Frameworks */,
 				8CF193341BB35D6400B7D929 /* ReactiveCocoa.framework in Frameworks */,
 				8CF193321BB3554400B7D929 /* SwiftyJSON.framework in Frameworks */,
@@ -235,6 +238,7 @@
 		8C04EF4718CB8F09008FBC9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CF1933B1BB3EBDB00B7D929 /* TTTAttributedLabel.framework */,
 				8CF193391BB3E9FA00B7D929 /* WebImage.framework */,
 				8CF193331BB35D6400B7D929 /* ReactiveCocoa.framework */,
 				8CF193311BB3554400B7D929 /* SwiftyJSON.framework */,
