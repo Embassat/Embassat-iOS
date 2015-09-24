@@ -6,5 +6,3 @@
 #import <ShareKit/ShareKit.h>
 #import <ShareKit/DefaultSHKConfigurator.h>
 #import <Firebase/Firebase.h>
-
-#import "NSDate+EMAdditions.h"

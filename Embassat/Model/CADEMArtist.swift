@@ -32,7 +32,7 @@ public class CADEMArtist : NSObject, NSCoding {
         self.stage = stage
         self.favorite = favorite
         
-        scheduleDate = startDate.hour < 10 ? startDate.dateBySubtractingDays(1) : startDate
+        scheduleDate = startDate.hour < 10 ? startDate.dateBySubstracting(days: 1) : startDate
         scheduleDayString = scheduleDate.day == 11 ? "Dijous" : scheduleDate.day == 12 ? "Divendres" : "Dissabte"
     }
     

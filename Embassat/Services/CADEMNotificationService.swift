@@ -19,7 +19,7 @@ public class CADEMNotificationService: NSObject {
     public func toggleLocalNotification(forArtist artist: CADEMArtist, favorited: Bool) {
         let localNotif = UILocalNotification()
         
-        localNotif.fireDate = artist.startDate.dateBySubtractingMinutes(15)
+        localNotif.fireDate = artist.startDate.dateBySubstracting(minutes: 15)
         localNotif.alertBody = String(format: "%@ començarà en 15 minuts al %@!", artist.name, artist.stage)
         localNotif.userInfo = ["artistId" : artist.artistId]
         localNotif.soundName = UILocalNotificationDefaultSoundName
@@ -55,7 +55,7 @@ public class CADEMNotificationService: NSObject {
                 }
             }).first {
                 UIApplication.sharedApplication().cancelLocalNotification(notification)
-                notification.fireDate = artist.startDate.dateBySubtractingMinutes(15)
+                notification.fireDate = artist.startDate.dateBySubstracting(minutes: 15)
                 notification.alertBody = String(format: "%@ començarà en 15 minuts al %@!", artist.name, artist.stage)
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
