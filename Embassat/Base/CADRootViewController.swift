@@ -53,9 +53,9 @@ public class CADRootViewController: UIViewController {
     
     func keyboardWillBecomeHidden(keyboardHidden: Bool, animationDuration: NSTimeInterval, curve: UIViewAnimationCurve, keyboardHeight: CGFloat) {
         var insets: UIEdgeInsets
-        let firstResponder: UIView = self.view.findFirstResponder()
         
-        if let parentScrollView = firstResponder.findParentScrollView() {
+        if  let firstResponder: UIView = self.view.findFirstResponder(),
+            let parentScrollView = firstResponder.findParentScrollView() {
             insets = UIEdgeInsetsZero
             insets.top = self.topLayoutGuide.length
             insets.bottom = keyboardHidden ? 0.0 : keyboardHeight

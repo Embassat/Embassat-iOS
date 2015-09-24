@@ -32,7 +32,7 @@ public class CADEMInfoCollectionViewCell: CADRootCollectionViewCell, TTTAttribut
         bodyLabel?.font = UIFont.detailFont(ofSize: 15.0)
         bodyLabel?.linkAttributes = [kCTForegroundColorAttributeName: UIColor.whiteColor(),
             kCTUnderlineStyleAttributeName: 1];
-        bodyLabel?.activeLinkAttributes = [kCTForegroundColorAttributeName: UIColor.em_barTintColor()];
+        bodyLabel?.activeLinkAttributes = [kCTForegroundColorAttributeName: UIColor.emBarTintColor()];
         bodyLabel?.delegate = self
     }
 

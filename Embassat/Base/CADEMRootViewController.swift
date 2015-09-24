@@ -13,7 +13,7 @@ public class CADEMRootViewController: CADRootViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.em_backgroundColor()
+        self.view.backgroundColor = UIColor.emBackgroundColor()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
     }
     

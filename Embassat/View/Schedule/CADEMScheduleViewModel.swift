@@ -111,7 +111,7 @@ public class CADEMScheduleViewModel: NSObject, CADEMViewModelCollectionDelegate 
         let artist: CADEMArtist = self.artist(forIndexPath: indexPath)
         let now: NSDate = NSDate()
         
-        return now.isLaterThanDate(artist.startDate) && now.isEarlierThanDate(artist.endDate) ? UIColor.em_backgroundDeselectedColor() : UIColor.em_backgroundColor()
+        return now.isLaterThanDate(artist.startDate) && now.isEarlierThanDate(artist.endDate) ? UIColor.emBackgroundDeselectedColor() : UIColor.emBackgroundColor()
     }
     
     func filteredArray(fromArray: Array<CADEMArtist>, withDateString: String) -> Array<CADEMArtist> {

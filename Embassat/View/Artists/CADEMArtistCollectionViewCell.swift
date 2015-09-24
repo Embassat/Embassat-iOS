@@ -27,7 +27,7 @@ public class CADEMArtistCollectionViewCell: CADRootCollectionViewCell {
     override public var selected: Bool {
         didSet {
             if selected {
-                optionNameLabel?.textColor = UIColor.em_barTintColor()
+                optionNameLabel?.textColor = UIColor.emBarTintColor()
             } else {
                 optionNameLabel?.textColor = UIColor.whiteColor()
             }
@@ -37,7 +37,7 @@ public class CADEMArtistCollectionViewCell: CADRootCollectionViewCell {
     override public var highlighted: Bool {
         didSet {
             if highlighted {
-                optionNameLabel?.textColor = UIColor.em_barTintColor()
+                optionNameLabel?.textColor = UIColor.emBarTintColor()
             } else {
                 optionNameLabel?.textColor = UIColor.whiteColor()
             }

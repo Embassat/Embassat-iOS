@@ -8,8 +8,6 @@
 
 #import "CADAppDelegate.h"
 
-#import "UIColor+EMAdditions.h"
-
 #import <ShareKit/ShareKit.h>
 #import <ShareKit/SHKConfiguration.h>
 #import <ShareKit/SHKFacebook.h>
@@ -64,7 +62,7 @@
 - (void)setupAppearance
 {
     UINavigationBar.appearance.tintColor = [UIColor whiteColor];
-    UINavigationBar.appearance.barTintColor = [UIColor em_barTintColor];
+    UINavigationBar.appearance.barTintColor = [UIColor emBarTintColor];
     UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont detailFontOfSize:30.0f]};
 }
 

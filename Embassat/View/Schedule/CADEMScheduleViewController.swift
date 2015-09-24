@@ -52,7 +52,7 @@ public class CADEMScheduleViewController: CADEMRootViewController {
         title = "Horaris"
         
         thursdayLabel?.textColor = UIColor.whiteColor()
-        thursdayContainer?.backgroundColor = UIColor.em_scheduleHeaderBackgroundColor()
+        thursdayContainer?.backgroundColor = UIColor.emScheduleHeaderBackgroundColor()
         
         let containers: Array<UIView?> = [thursdayContainer, fridayContainer, saturdayContainer]
         
@@ -98,7 +98,7 @@ public class CADEMScheduleViewController: CADEMRootViewController {
         for selectedView: UIView? in containers.filter({ (view: UIView?) -> Bool in
             return view?.tag == sender.view?.tag
         }) {
-            selectedView?.backgroundColor = UIColor.em_scheduleHeaderBackgroundColor()
+            selectedView?.backgroundColor = UIColor.emScheduleHeaderBackgroundColor()
             
             if let label = selectedView?.subviews.first as? UILabel {
                 label.textColor = UIColor.whiteColor()
@@ -108,10 +108,10 @@ public class CADEMScheduleViewController: CADEMRootViewController {
         for unSelectedView: UIView? in containers.filter({ (view: UIView?) -> Bool in
             return view?.tag != sender.view?.tag
         }) {
-            unSelectedView?.backgroundColor = UIColor.em_scheduleHeaderDeselectedBackgroundColor()
+            unSelectedView?.backgroundColor = UIColor.emScheduleHeaderDeselectedBackgroundColor()
             
             if let label = unSelectedView?.subviews.first as? UILabel {
-                label.textColor = UIColor.em_scheduleHeaderDeselectedTextColor()
+                label.textColor = UIColor.emScheduleHeaderDeselectedTextColor()
             }
         }
         
