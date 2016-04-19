@@ -18,7 +18,7 @@ public class CADRootViewController: UIViewController {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundle)
         
-        tapGestureToResign.addTarget(self, action: "tapRecognizerToResignFieldsDidTrigger")
+        tapGestureToResign.addTarget(self, action: #selector(CADRootViewController.tapRecognizerToResignFieldsDidTrigger))
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
@@ -28,7 +28,7 @@ public class CADRootViewController: UIViewController {
         
         super.init(coder: aDecoder)
         
-        tapGestureToResign.addTarget(self, action: "tapRecognizerToResignFieldsDidTrigger")
+        tapGestureToResign.addTarget(self, action: #selector(CADRootViewController.tapRecognizerToResignFieldsDidTrigger))
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
@@ -47,8 +47,8 @@ public class CADRootViewController: UIViewController {
     func loadData() {}
     
     func registerForKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardShowOrHideNotification:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardShowOrHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CADRootViewController.keyboardShowOrHideNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CADRootViewController.keyboardShowOrHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func keyboardWillBecomeHidden(keyboardHidden: Bool, animationDuration: NSTimeInterval, curve: UIViewAnimationCurve, keyboardHeight: CGFloat) {
@@ -62,7 +62,7 @@ public class CADRootViewController: UIViewController {
             UIView.animateWithDuration(animationDuration, animations: { () -> Void in
                 parentScrollView.contentInset = insets
                 parentScrollView.scrollIndicatorInsets = insets
-            }, completion: { (finished Bool) -> Void in
+            }, completion: { (finished) -> Void in
                 if !keyboardHidden {
                     if let superView = firstResponder.superview {
                         parentScrollView.scrollRectToVisible(superView.convertRect(firstResponder.frame, toView: parentScrollView), animated: true)

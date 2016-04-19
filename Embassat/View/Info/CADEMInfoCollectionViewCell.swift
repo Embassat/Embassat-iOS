@@ -17,11 +17,10 @@ public class CADEMInfoCollectionViewCell: CADRootCollectionViewCell, TTTAttribut
             bodyLabel?.text = body
         }
     }
-    public var links: (Array<NSURL>, Array<NSRange>) = ([], []) {
+    public var links: ([NSURL], [NSRange]) = ([], []) {
         didSet {
-            for var i = 0; i < links.0.count; i++
-            {
-                bodyLabel?.addLinkToURL(links.0[i], withRange: links.1[i])
+            for (index, link) in links.0.enumerate() {
+                bodyLabel?.addLinkToURL(link, withRange: links.1[index])
             }
         }
     }

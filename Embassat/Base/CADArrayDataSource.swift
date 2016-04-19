@@ -28,7 +28,7 @@ public class CADArrayDataSource: NSObject, UICollectionViewDataSource {
     public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         
         if let viewModel = self.viewModel as? NSObject {
-            if viewModel.respondsToSelector("numberOfSections") {
+            if viewModel.respondsToSelector(#selector(CADEMViewModelCollectionDelegate.numberOfSections)) {
                 return self.viewModel.numberOfSections!()
             } else {
                 return 1

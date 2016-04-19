@@ -40,19 +40,19 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
         timeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         view.backgroundColor = UIColor.whiteColor()
         
-        let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "sharePressed")
-        let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "favoritePressed")
+        let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CADEMArtistDetailViewController.sharePressed))
+        let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CADEMArtistDetailViewController.favoritePressed))
         
         self.navigationItem.rightBarButtonItems = [favItem, shareItem]
     }
     
     @IBAction func nextPressed(sender: UIButton) {
-        viewModel?.currentIndex++
+        viewModel?.currentIndex+=1
         self.updateSubviewDetails()
     }
     
     @IBAction func previousPressed(sender: UIButton) {
-        viewModel?.currentIndex--
+        viewModel?.currentIndex-=1
         self.updateSubviewDetails()
     }
     

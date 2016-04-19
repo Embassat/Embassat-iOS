@@ -57,7 +57,7 @@ public class CADEMScheduleViewController: CADEMRootViewController {
         let containers: Array<UIView?> = [thursdayContainer, fridayContainer, saturdayContainer]
         
         for view: UIView? in containers {
-            let tapGesture = UITapGestureRecognizer(target: self, action: "containerTapped:")
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CADEMScheduleViewController.containerTapped(_:)))
             view?.addGestureRecognizer(tapGesture)
         }
         

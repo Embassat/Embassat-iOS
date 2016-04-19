@@ -70,9 +70,8 @@ public class CADEMArtistService: NSObject {
                 
                 var index = NSNotFound
                 
-                for var i = 0; i < cachedArtists.count; i++
-                {
-                    if cachedArtists[i].artistId == artist.artistId {
+                for (i, cachedArtist) in cachedArtists.enumerate() {
+                    if cachedArtist.artistId == artist.artistId {
                         index = i
                         break
                     }

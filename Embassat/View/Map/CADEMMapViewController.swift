@@ -39,8 +39,7 @@ public class CADEMMapViewController: CADEMRootViewController, MKMapViewDelegate 
         
         locationManager.requestWhenInUseAuthorization()
         
-        for var i = 0; i < viewModel.numberOfPoints(); i++
-        {
+        for i in 0..<viewModel.numberOfPoints() {
             let clubAnnotation = MKPointAnnotation()
             clubAnnotation.coordinate = CLLocationCoordinate2DMake(viewModel.latitudeForPoint(atIndex: i), viewModel.longitudeForPoint(atIndex: i))
             clubAnnotation.title = viewModel.titleForPoint(atIndex: i)
@@ -73,12 +72,11 @@ public class CADEMMapViewController: CADEMRootViewController, MKMapViewDelegate 
         mapView?.setVisibleMapRect(self.mapRect(forCoordinates: coordinates, coordCount: coordinates.count), edgePadding: UIEdgeInsetsMake(30.0, 30.0, 30.0, 30.0), animated: true)
     }
     
-    func mapRect(forCoordinates coords: Array<CLLocation>, coordCount: Int) -> MKMapRect {
+    func mapRect(forCoordinates coords: [CLLocation], coordCount: Int) -> MKMapRect {
         var r: MKMapRect = MKMapRectNull
         
-        for var i = 0; i < coordCount; i++
+        for location in coords
         {
-            let location = coords[i]
             let p = MKMapPointForCoordinate(location.coordinate)
             r = MKMapRectUnion(r, MKMapRectMake(p.x, p.y, 0.0, 0.0))
         }

@@ -86,13 +86,13 @@
 		8CEF6826193BDD120001B801 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF6824193BDD120001B801 /* chevron@2x.png */; };
 		8CF193321BB3554400B7D929 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF193311BB3554400B7D929 /* SwiftyJSON.framework */; };
 		8CF193341BB35D6400B7D929 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF193331BB35D6400B7D929 /* ReactiveCocoa.framework */; };
-		8CF193361BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193351BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift */; settings = {ASSET_TAGS = (); }; };
-		8CF193381BB360DE00B7D929 /* UIFont+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193371BB360DE00B7D929 /* UIFont+EMAdditions.swift */; settings = {ASSET_TAGS = (); }; };
+		8CF193361BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193351BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift */; };
+		8CF193381BB360DE00B7D929 /* UIFont+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193371BB360DE00B7D929 /* UIFont+EMAdditions.swift */; };
 		8CF1933A1BB3E9FA00B7D929 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF193391BB3E9FA00B7D929 /* WebImage.framework */; };
-		8CF1933F1BB3EF5400B7D929 /* UIColor+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1933E1BB3EF5400B7D929 /* UIColor+EMAdditions.swift */; settings = {ASSET_TAGS = (); }; };
-		8CF193411BB3F24900B7D929 /* UIView+CADAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193401BB3F24900B7D929 /* UIView+CADAdditions.swift */; settings = {ASSET_TAGS = (); }; };
+		8CF1933F1BB3EF5400B7D929 /* UIColor+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1933E1BB3EF5400B7D929 /* UIColor+EMAdditions.swift */; };
+		8CF193411BB3F24900B7D929 /* UIView+CADAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193401BB3F24900B7D929 /* UIView+CADAdditions.swift */; };
 		8CF193431BB3F89400B7D929 /* TTTAttributedLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF1933B1BB3EBDB00B7D929 /* TTTAttributedLabel.framework */; };
-		8CF193451BB49AB200B7D929 /* NSDate+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193441BB49AB200B7D929 /* NSDate+EMAdditions.swift */; settings = {ASSET_TAGS = (); }; };
+		8CF193451BB49AB200B7D929 /* NSDate+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193441BB49AB200B7D929 /* NSDate+EMAdditions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -627,8 +627,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/usr/local/bin/carthage copy-frameworks";
-			shellScript = "";
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		B9D815959B1D4CC4AA727FD4 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

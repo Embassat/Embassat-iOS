@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "53761307155AD0D5005750A4"
-               BuildableName = "libSDWebImage.a"
-               BlueprintName = "SDWebImage"
-               ReferencedContainer = "container:SDWebImage.xcodeproj">
+               BlueprintIdentifier = "7236B4EC1BAC14150020529B"
+               BuildableName = "SwiftyJSON.framework"
+               BlueprintName = "SwiftyJSON tvOS"
+               ReferencedContainer = "container:SwiftyJSON.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "79049A551BAB7CF500ABA14A"
+               BuildableName = "SwiftyJSON tvOS Tests.xctest"
+               BlueprintName = "SwiftyJSON tvOS Tests"
+               ReferencedContainer = "container:SwiftyJSON.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7236B4EC1BAC14150020529B"
+            BuildableName = "SwiftyJSON.framework"
+            BlueprintName = "SwiftyJSON tvOS"
+            ReferencedContainer = "container:SwiftyJSON.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "53761307155AD0D5005750A4"
-            BuildableName = "libSDWebImage.a"
-            BlueprintName = "SDWebImage"
-            ReferencedContainer = "container:SDWebImage.xcodeproj">
+            BlueprintIdentifier = "7236B4EC1BAC14150020529B"
+            BuildableName = "SwiftyJSON.framework"
+            BlueprintName = "SwiftyJSON tvOS"
+            ReferencedContainer = "container:SwiftyJSON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,6 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7236B4EC1BAC14150020529B"
+            BuildableName = "SwiftyJSON.framework"
+            BlueprintName = "SwiftyJSON tvOS"
+            ReferencedContainer = "container:SwiftyJSON.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
