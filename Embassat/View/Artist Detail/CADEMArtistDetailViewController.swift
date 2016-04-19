@@ -38,7 +38,6 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
         stageLabel?.font = UIFont.detailFont(ofSize: 15.0)
         dayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         timeLabel?.font = UIFont.detailFont(ofSize: 15.0)
-        view.backgroundColor = UIColor.whiteColor()
         
         let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CADEMArtistDetailViewController.sharePressed))
         let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CADEMArtistDetailViewController.favoritePressed))

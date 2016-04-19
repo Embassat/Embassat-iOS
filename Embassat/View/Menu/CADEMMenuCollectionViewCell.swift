@@ -20,7 +20,7 @@ public class CADEMMenuCollectionViewCell: CADRootCollectionViewCell {
     override public var selected: Bool {
         didSet {
             if selected {
-                optionNameLabel?.textColor = UIColor.emBarTintColor()
+                optionNameLabel?.textColor = UIColor.emSelectedColor()
             } else {
                 optionNameLabel?.textColor = UIColor.whiteColor()
             }
@@ -30,7 +30,7 @@ public class CADEMMenuCollectionViewCell: CADRootCollectionViewCell {
     override public var highlighted: Bool {
         didSet {
             if highlighted {
-                optionNameLabel?.textColor = UIColor.emBarTintColor()
+                optionNameLabel?.textColor = UIColor.emSelectedColor()
             } else {
                 optionNameLabel?.textColor = UIColor.whiteColor()
             }
