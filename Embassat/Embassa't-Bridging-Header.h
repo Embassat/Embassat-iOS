@@ -6,3 +6,4 @@
 #import <ShareKit/ShareKit.h>
 #import <ShareKit/DefaultSHKConfigurator.h>
 #import <Firebase/Firebase.h>
+#import <youtube-ios-player-helper/YTPlayerView.h>

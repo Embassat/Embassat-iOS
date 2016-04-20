@@ -61,6 +61,7 @@
 
 - (void)setupAppearance
 {
+    UINavigationBar.appearance.translucent = NO;
     UINavigationBar.appearance.tintColor = [UIColor whiteColor];
     UINavigationBar.appearance.barTintColor = [UIColor emBarTintColor];
     UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont detailFontOfSize:30.0f]};

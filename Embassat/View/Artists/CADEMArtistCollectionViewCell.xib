@@ -17,12 +17,11 @@
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoG-bb-Phh">
                         <rect key="frame" x="118" y="13" width="40" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-V6-6Mx" userLabel="Separator">
                         <rect key="frame" x="0.0" y="43" width="276" height="2"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.76862745098039209" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="25T-dd-ld9"/>
                         </constraints>
@@ -30,7 +29,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="RoG-bb-Phh" secondAttribute="centerX" id="3nP-eA-GJn"/>
                 <constraint firstAttribute="bottom" secondItem="Dbc-V6-6Mx" secondAttribute="bottom" id="7PG-sh-34h"/>

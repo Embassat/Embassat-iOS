@@ -27,11 +27,9 @@ public class CADEMArtistCollectionViewCell: CADRootCollectionViewCell {
     override public var selected: Bool {
         didSet {
             if selected {
-                contentView.backgroundColor = UIColor.emSelectedColor()
-                optionNameLabel?.textColor = UIColor.emBarTintColor()
+                selectElements()
             } else {
-                contentView.backgroundColor = UIColor.emBackgroundColor()
-                optionNameLabel?.textColor = UIColor.whiteColor()
+                deselectElements()
             }
         }
     }
@@ -39,11 +37,9 @@ public class CADEMArtistCollectionViewCell: CADRootCollectionViewCell {
     override public var highlighted: Bool {
         didSet {
             if highlighted {
-                contentView.backgroundColor = UIColor.emSelectedColor()
-                optionNameLabel?.textColor = UIColor.emBarTintColor()
+                selectElements()
             } else {
-                contentView.backgroundColor = UIColor.emBackgroundColor()
-                optionNameLabel?.textColor = UIColor.whiteColor()
+                deselectElements()
             }
         }
     }
@@ -53,6 +49,16 @@ public class CADEMArtistCollectionViewCell: CADRootCollectionViewCell {
         
         optionNameLabel?.font = UIFont.detailFont(ofSize: 15.0)
         optionNameLabel?.adjustsFontSizeToFitWidth = true
+    }
+    
+    private func selectElements() {
+        contentView.backgroundColor = .blackColor()
+        optionNameLabel?.textColor = .whiteColor()
+    }
+    
+    private func deselectElements() {
+        contentView.backgroundColor = .whiteColor()
+        optionNameLabel?.textColor = .blackColor()
     }
 }
 

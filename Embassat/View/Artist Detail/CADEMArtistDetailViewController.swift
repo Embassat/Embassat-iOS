@@ -12,9 +12,7 @@ import WebImage
 
 public class CADEMArtistDetailViewController: CADEMRootViewController {
     
-    @IBOutlet weak var scrollView: UIScrollView?
-    @IBOutlet weak var coverImage: UIImageView?
-    @IBOutlet weak var infoView: UIView?
+    @IBOutlet weak var playerView: YTPlayerView?
     @IBOutlet weak var bottomView: UIView?
     @IBOutlet weak var artistNameLabel: UILabel?
     @IBOutlet weak var descriptionLabel: UILabel?
@@ -31,8 +29,9 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "Artista"
+        view.backgroundColor = UIColor.emBackgroundSelectedColor()
         artistNameLabel?.font = UIFont.detailFont(ofSize: 20.0)
         descriptionLabel?.font = UIFont.detailFont(ofSize: 15.0)
         stageLabel?.font = UIFont.detailFont(ofSize: 15.0)
@@ -42,28 +41,28 @@ public class CADEMArtistDetailViewController: CADEMRootViewController {
         let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CADEMArtistDetailViewController.sharePressed))
         let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CADEMArtistDetailViewController.favoritePressed))
         
-        self.navigationItem.rightBarButtonItems = [favItem, shareItem]
+        navigationItem.rightBarButtonItems = [favItem, shareItem]
     }
     
     @IBAction func nextPressed(sender: UIButton) {
         viewModel?.currentIndex+=1
-        self.updateSubviewDetails()
+        updateSubviewDetails()
     }
     
     @IBAction func previousPressed(sender: UIButton) {
         viewModel?.currentIndex-=1
-        self.updateSubviewDetails()
+        updateSubviewDetails()
     }
     
     func updateSubviewDetails() {
         artistNameLabel?.text = viewModel?.artistName
         descriptionLabel?.text = viewModel?.artistDescription
-        coverImage?.sd_setImageWithURL(viewModel?.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
         stageLabel?.text = viewModel?.artistStage
         dayLabel?.text = viewModel?.artistDay
         timeLabel?.text = viewModel?.artistStartTimeString
+        playerView?.loadWithVideoId("M7lc1UVf-VE")
         
-        let favItem = self.navigationItem.rightBarButtonItems?.first
+        let favItem = navigationItem.rightBarButtonItems?.first
         favItem?.tintColor = viewModel?.artistIsFavorite == true ? UIColor.emBackgroundColor() : nil
     }
     

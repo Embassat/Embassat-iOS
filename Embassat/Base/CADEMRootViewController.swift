@@ -13,14 +13,14 @@ public class CADEMRootViewController: CADRootViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.emBackgroundColor()
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
+        view.backgroundColor = UIColor.emBackgroundColor()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
     }
     
     override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBarHidden = false
+        navigationController?.navigationBarHidden = false
     }
     
     override public func preferredStatusBarStyle() -> UIStatusBarStyle {

@@ -19,6 +19,8 @@ public class CADEMTicketsViewController: CADEMRootViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.emBackgroundSelectedColor()
+        
         title = "Entrades"
         
         for view in [seasonContainer, dayTicketContainer, petitEmTicketContainer] {
@@ -44,7 +46,7 @@ public class CADEMTicketsViewController: CADEMRootViewController {
     }
     
     @IBAction func linkPressed(sender: UIView) {
-        self.openTicket(NSURL(string: "https://www.ticketea.com/entrades-embassat-2015/")!)
+        self.openTicket(NSURL(string: "http://entradium.com/sites/MjQ0Mg==")!)
     }
     
     func openTicket(link: NSURL) {
