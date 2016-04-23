@@ -8,33 +8,33 @@
 
 import Foundation
 
-public class ShareKitConfigurator: DefaultSHKConfigurator {
+class ShareKitConfigurator: DefaultSHKConfigurator {
     
-    public override func facebookAppId() -> String {
+    override func facebookAppId() -> String {
         return "388219104649367"
     }
     
-    public override func defaultFavoriteURLSharers() -> [AnyObject] {
+    override func defaultFavoriteURLSharers() -> [AnyObject] {
         return ["SHKTwitter", "SHKFacebook", "SHKiOSTwitter", "SHKiOSFacebook"]
     }
     
-    public override func showActionSheetMoreButton() -> NSNumber {
+    override func showActionSheetMoreButton() -> NSNumber {
         return false
     }
     
-    public override func twitterConsumerKey() -> String {
+    override func twitterConsumerKey() -> String {
         return "uYRWKK8XHEEw5gho0p6YsCfGK"
     }
     
-    public override func twitterCallbackUrl() -> String {
+    override func twitterCallbackUrl() -> String {
         return "http://twitter.sharekit.com"
     }
     
-    public override func twitterUseXAuth() -> NSNumber {
+    override func twitterUseXAuth() -> NSNumber {
         return 0
     }
     
-    public override func twitterUsername() -> String {
+    override func twitterUsername() -> String {
         return ""
     }
 }

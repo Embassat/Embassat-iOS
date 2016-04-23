@@ -10,7 +10,7 @@ import UIKit
 import ReactiveCocoa
 import WebImage
 
-public class ArtistDetailViewController: EmbassatRootViewController {
+class ArtistDetailViewController: EmbassatRootViewController {
     
     @IBOutlet weak var playerView: YTPlayerView?
     @IBOutlet weak var bottomView: UIView?
@@ -20,14 +20,14 @@ public class ArtistDetailViewController: EmbassatRootViewController {
     @IBOutlet weak var timeLabel: UILabel?
     @IBOutlet weak var stageLabel: UILabel?
     
-    public var updateSignal: RACSubject = RACSubject()
-    public var viewModel: ArtistDetailViewModel? {
+    var updateSignal: RACSubject = RACSubject()
+    var viewModel: ArtistDetailViewModel? {
         didSet {
             self.updateSubviewDetails()
         }
     }
 
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Artista"

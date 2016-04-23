@@ -73,7 +73,7 @@
 {
     if (!_rootNavigationController)
     {
-        _rootNavigationController = [[RootNavigationController alloc] initWithRootViewController:[[MenuViewController alloc] init]];
+        _rootNavigationController = [[RootNavigationController alloc] initWithRootViewController:[[MenuViewController alloc] init:[[MenuViewModel alloc] initWithModel:@[@"Info", @"Artistes", @"Horaris", @"Petit EM'", @"Transport", @"Mapa", @"Entrades"]]]];
     }
     
     return _rootNavigationController;

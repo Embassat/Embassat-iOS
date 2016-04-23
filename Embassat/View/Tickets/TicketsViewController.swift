@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TicketsViewController: EmbassatRootViewController {
+class TicketsViewController: EmbassatRootViewController {
     
     @IBOutlet var titleLabels: [UILabel]?
     @IBOutlet var bodyLabels: [UILabel]?
@@ -16,7 +16,7 @@ public class TicketsViewController: EmbassatRootViewController {
     @IBOutlet weak var dayTicketContainer: UIView?
     @IBOutlet weak var petitEmTicketContainer: UIView?
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.emBackgroundSelectedColor()

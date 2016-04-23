@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class RootViewController: UIViewController {
+class RootViewController: UIViewController {
     
     let tapGestureToResign: UITapGestureRecognizer
     
@@ -22,7 +22,7 @@ public class RootViewController: UIViewController {
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         tapGestureToResign = UITapGestureRecognizer()
         tapGestureToResign.cancelsTouchesInView = false
         
@@ -32,13 +32,13 @@ public class RootViewController: UIViewController {
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
-    override public func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.loadData()

@@ -9,10 +9,10 @@
 import Foundation
 import ReactiveCocoa
 
-public class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
+class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
     
     var model: [[CADEMArtist]] = [[], [], []]
-    public var dayIndex: Int = 0 {
+    var dayIndex: Int = 0 {
         didSet {
             if dayIndex > 2 {
                 dayIndex = 2
@@ -23,8 +23,8 @@ public class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
             }
         }
     }
-    public let service: ArtistService = ArtistService()
-    public let activeSubject: RACSubject
+    let service: ArtistService = ArtistService()
+    let activeSubject: RACSubject
     let dateFormatter: NSDateFormatter
     
     override init() {
@@ -54,7 +54,7 @@ public class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
                 self.filteredArray(artistsArray, withDateString: "2015-06-13")]
     }
     
-    public func shouldRefreshModel() {
+    func shouldRefreshModel() {
         service.cachedArtists().map
             { self.dayMapping($0)
             }.subscribeNext
@@ -67,11 +67,11 @@ public class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
         return model[dayIndex].count
     }
     
-    public func artistName(forIndexPath indexPath : NSIndexPath) -> String {
+    func artistName(forIndexPath indexPath : NSIndexPath) -> String {
         return self.artist(forIndexPath: indexPath).name
     }
     
-    public func stageName(forIndexPath indexPath : NSIndexPath) -> String {
+    func stageName(forIndexPath indexPath : NSIndexPath) -> String {
         return self.artist(forIndexPath: indexPath).stage
     }
     
@@ -83,7 +83,7 @@ public class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
         return self.artist(forIndexPath: indexPath).startDate.hourString
     }
     
-    public func startTimeString(forIndexPath indexPath : NSIndexPath) -> String {
+    func startTimeString(forIndexPath indexPath : NSIndexPath) -> String {
         return String(format: "%@:%@", self.startHour(forIndexPath: indexPath), self.startMinute(forIndexPath: indexPath))
     }
     
@@ -95,19 +95,19 @@ public class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
         return self.artist(forIndexPath: indexPath).endDate.hourString
     }
     
-    public func endTimeString(forIndexPath indexPath : NSIndexPath) -> String {
+    func endTimeString(forIndexPath indexPath : NSIndexPath) -> String {
         return String(format: "%@:%@", self.endHour(forIndexPath: indexPath), self.endMinute(forIndexPath: indexPath))
     }
     
-    public func favoritedStatus(forIndexPath indexPath : NSIndexPath) -> Bool {
+    func favoritedStatus(forIndexPath indexPath : NSIndexPath) -> Bool {
         return self.artist(forIndexPath: indexPath).favorite
     }
     
-    public func artistViewModel(forIndexPath indexPath : NSIndexPath) -> ArtistDetailViewModel {
+    func artistViewModel(forIndexPath indexPath : NSIndexPath) -> ArtistDetailViewModel {
         return ArtistDetailViewModel(model: model[dayIndex], currentIndex: indexPath.item)
     }
     
-    public func backgroundColor(forIndexPath indexPath : NSIndexPath) -> UIColor {
+    func backgroundColor(forIndexPath indexPath : NSIndexPath) -> UIColor {
         let artist: CADEMArtist = self.artist(forIndexPath: indexPath)
         let now: NSDate = NSDate()
         

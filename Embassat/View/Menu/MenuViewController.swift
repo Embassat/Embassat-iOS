@@ -8,46 +8,44 @@
 
 import Foundation
 
-public class MenuViewController: EmbassatRootViewController {
+class MenuViewController: EmbassatRootViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView?
     let dataSource: ArrayDataSource
     let viewModel: MenuViewModel
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
-        
-        let theViewModel = MenuViewModel(model: ["Info", "Artistes", "Horaris", "Petit EM'", "Transport","Mapa", "Entrades"])
+    required init(_ viewModel: MenuViewModel) {
         dataSource =
-            ArrayDataSource(viewModel: theViewModel,
-                configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
-                    let theCell = cell as! MenuCollectionViewCell
-                    
-                    theCell.optionName = theViewModel.titleAtIndexPath(indexPath)
+            ArrayDataSource(viewModel: viewModel,
+                            configureCellBlock: { cell, indexPath in
+                                guard let cell = cell as? MenuCollectionViewCell else { return }
+                                
+                                cell.optionName = viewModel.titleAtIndexPath(indexPath)
                 },
-                configureHeaderBlock: nil)
-        viewModel = theViewModel
+                            configureHeaderBlock: nil)
+        self.viewModel = viewModel
         
-        super.init(nibName: nibNameOrNil, bundle: nibBundle)
+        super.init(nibName: nil, bundle: nil)
     }
     
-    required public convenience init(coder aDecoder: NSCoder) {
-        self.init(nibName: nil, bundle: nil)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         menuCollectionView?.dataSource = dataSource
         menuCollectionView?.registerNib(UINib(nibName: String(MenuCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
-    public override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBarHidden = true
     }
     
-    public override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
         if let indexPaths = menuCollectionView?.indexPathsForSelectedItems() {
@@ -58,48 +56,13 @@ public class MenuViewController: EmbassatRootViewController {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var viewController: UIViewController?
-        
-        switch indexPath.item {
-        case 0:
-            viewController = InfoViewController(nibName: String(InfoViewController), bundle: nil)
-            break;
-            
-        case 1:
-            viewController = ArtistsViewController(nibName: String(ArtistsViewController), bundle: nil)
-            break;
-            
-        case 2:
-            viewController = ScheduleViewController(nibName: String(ScheduleViewController), bundle: nil)
-            break;
-            
-        case 3:
-            viewController = PetitEMViewController(nibName: String(PetitEMViewController), bundle: nil)
-            break;
-            
-        case 4:
-            viewController = InfoViewController(nibName: String(InfoViewController), bundle: nil)
-            break;
-            
-        case 5:
-            viewController = MapViewController(nibName: String(MapViewController), bundle: nil)
-            break;
-            
-        case 6:
-            viewController = TicketsViewController(nibName: String(TicketsViewController), bundle: nil)
-            break;
-            
-        default:
-            break;
-        }
-        
-        if viewController != nil {
-            navigationController?.pushViewController(viewController!, animated: true)
+        if let viewController = viewModel.nextViewControllerAtIndexPath(indexPath) {
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return UIEdgeInsetsZero }
         
         return flowLayout.insetsForVerticallyCenteredSectionInScreen(withNumberOfRows: dataSource.viewModel.numberOfItemsInSection(0), andColumns: 1)
     }

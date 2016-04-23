@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MenuViewModel: NSObject, ViewModelCollectionDelegate {
+class MenuViewModel: NSObject, ViewModelCollectionDelegate {
     
     let model: [String]
     
@@ -20,8 +20,48 @@ public class MenuViewModel: NSObject, ViewModelCollectionDelegate {
         return self.model.count
     }
     
-    public func titleAtIndexPath(indexPath: NSIndexPath) -> String {
+    func titleAtIndexPath(indexPath: NSIndexPath) -> String {
         return self.model[indexPath.row]
+    }
+    
+    func nextViewControllerAtIndexPath(indexPath: NSIndexPath) -> UIViewController? {
+        
+        var viewController: UIViewController?
+        
+        switch indexPath.item {
+        case 0:
+            viewController = InfoViewController()
+            break;
+            
+        case 1:
+            viewController = ArtistsViewController()
+            break;
+            
+        case 2:
+            viewController = ScheduleViewController(ScheduleViewModel())
+            break;
+            
+        case 3:
+            viewController = PetitEMViewController()
+            break;
+            
+        case 4:
+            viewController = InfoViewController()
+            break;
+            
+        case 5:
+            viewController = MapViewController(MapViewModel())
+            break;
+            
+        case 6:
+            viewController = TicketsViewController()
+            break;
+            
+        default:
+            break;
+        }
+
+        return viewController
     }
 
 }

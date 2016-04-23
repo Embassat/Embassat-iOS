@@ -9,7 +9,7 @@
 import Foundation
 import EventKit
 
-public class ArtistDetailViewModel: NSObject {
+class ArtistDetailViewModel: NSObject {
     
     var model: [CADEMArtist]
     let service: ArtistService = ArtistService()
@@ -23,7 +23,7 @@ public class ArtistDetailViewModel: NSObject {
     var artistIsFavorite: Bool = false
     var artistImageURL: NSURL? = nil
     
-    public var currentIndex: Int = 0 {
+    var currentIndex: Int = 0 {
         didSet {
             if currentIndex > model.count - 1 {
                currentIndex = model.count - 1
@@ -49,7 +49,7 @@ public class ArtistDetailViewModel: NSObject {
         updateCurrentArtistData()
     }
     
-    public func shareAction(forViewController viewController: UIViewController) {
+    func shareAction(forViewController viewController: UIViewController) {
         let item: AnyObject! = SHKItem.URL(currentArtist.artistURL, title: String(format: "%@ @ Embassa't", self.artistName), contentType: SHKURLContentTypeUndefined)
         
         SHK.setRootViewController(viewController)
@@ -60,7 +60,7 @@ public class ArtistDetailViewModel: NSObject {
         viewController.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    public func toggleFavorite(completion: () -> ()) {
+    func toggleFavorite(completion: () -> ()) {
         service.toggleFavorite(forArtist: currentArtist).subscribeNext {
             [weak self] updatedArtist in
             guard let weakSelf = self,

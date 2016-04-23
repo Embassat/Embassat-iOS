@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ScheduleViewController: EmbassatRootViewController {
+class ScheduleViewController: EmbassatRootViewController {
     
     @IBOutlet weak var thursdayContainer: UIView?
     @IBOutlet weak var fridayContainer: UIView?
@@ -22,31 +22,30 @@ public class ScheduleViewController: EmbassatRootViewController {
     let dataSource: ArrayDataSource
     let viewModel: ScheduleViewModel
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
-        
-        let theViewModel = ScheduleViewModel()
-        dataSource = ArrayDataSource(viewModel: theViewModel,
-            configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
-                let theCell = cell as! ScheduleCollectionViewCell
-            
-                theCell.startTimeSting = theViewModel.startTimeString(forIndexPath: indexPath)
-                theCell.endTimeString = theViewModel.endTimeString(forIndexPath: indexPath)
-                theCell.artistName = theViewModel.artistName(forIndexPath: indexPath)
-                theCell.stageName = theViewModel.stageName(forIndexPath: indexPath)
-                theCell.shouldShowFavorite = theViewModel.favoritedStatus(forIndexPath: indexPath)
-                theCell.backgroundColor = theViewModel.backgroundColor(forIndexPath: indexPath)
+    required init(_ viewModel: ScheduleViewModel) {
+        dataSource = ArrayDataSource(
+            viewModel: viewModel,
+            configureCellBlock: { cell, indexPath in
+                guard let cell = cell as? ScheduleCollectionViewCell else { return }
+                                        
+                cell.startTimeSting = viewModel.startTimeString(forIndexPath: indexPath)
+                cell.endTimeString = viewModel.endTimeString(forIndexPath: indexPath)
+                cell.artistName = viewModel.artistName(forIndexPath: indexPath)
+                cell.stageName = viewModel.stageName(forIndexPath: indexPath)
+                cell.shouldShowFavorite = viewModel.favoritedStatus(forIndexPath: indexPath)
+                cell.backgroundColor = viewModel.backgroundColor(forIndexPath: indexPath)
             },
             configureHeaderBlock: nil)
-        viewModel = theViewModel
+        self.viewModel = viewModel
         
-        super.init(nibName: nibNameOrNil, bundle: nibBundle)
+        super.init(nibName: nil, bundle: nil)
     }
     
-    required public convenience init(coder aDecoder: NSCoder) {
-        self.init(nibName: nil, bundle: nil)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Horaris"
@@ -87,7 +86,7 @@ public class ScheduleViewController: EmbassatRootViewController {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let artistViewController = ArtistDetailViewController(nibName: String(ArtistDetailViewController), bundle: nil)
+        let artistViewController = ArtistDetailViewController()
         artistViewController.viewModel = viewModel.artistViewModel(forIndexPath: indexPath)
         artistViewController.updateSignal.subscribeNext { [weak self] (_) -> Void in
             guard let weakSelf = self else { return }

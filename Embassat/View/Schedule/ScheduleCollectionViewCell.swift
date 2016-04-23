@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ScheduleCollectionViewCell: RootCollectionViewCell {
+class ScheduleCollectionViewCell: RootCollectionViewCell {
     
     @IBOutlet weak var startTimeLabel: UILabel?
     @IBOutlet weak var endTimeLabel: UILabel?
@@ -16,37 +16,37 @@ public class ScheduleCollectionViewCell: RootCollectionViewCell {
     @IBOutlet weak var stageLabel: UILabel?
     @IBOutlet weak var favoriteImageView: UIImageView?
     
-    public var startTimeSting: String = "" {
+    var startTimeSting: String = "" {
         didSet {
             startTimeLabel?.text = startTimeSting
         }
     }
     
-    public var endTimeString: String = "" {
+    var endTimeString: String = "" {
         didSet {
             endTimeLabel?.text = endTimeString
         }
     }
     
-    public var artistName: String = "" {
+    var artistName: String = "" {
         didSet {
             artistNameLabel?.text = artistName
         }
     }
     
-    public var stageName: String = "" {
+    var stageName: String = "" {
         didSet {
             stageLabel?.text = stageName
         }
     }
     
-    public var shouldShowFavorite: Bool = false {
+    var shouldShowFavorite: Bool = false {
         didSet {
             favoriteImageView?.hidden = !shouldShowFavorite
         }
     }
     
-    public override func setupView() {
+    override func setupView() {
         super.setupView()
         
         startTimeLabel?.font = UIFont.detailFont(ofSize: 15.0)

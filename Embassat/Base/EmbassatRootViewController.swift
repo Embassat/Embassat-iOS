@@ -8,22 +8,22 @@
 
 import UIKit
 
-public class EmbassatRootViewController: RootViewController {
+class EmbassatRootViewController: RootViewController {
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.emBackgroundColor()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
     }
     
-    override public func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBarHidden = false
     }
     
-    override public func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
 }

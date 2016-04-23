@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class PetitEMViewController: EmbassatRootViewController {
+class PetitEMViewController: EmbassatRootViewController {
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Petit EM'"

@@ -9,13 +9,13 @@
 import UIKit
 import MapKit
 
-public class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
+class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
     
     static let kEMMapPinIdentifier : String = "EMMapPinIdentifier"
     
     @IBOutlet weak var mapView: MKMapView?
 
-    let viewModel: MapViewModel = MapViewModel()
+    let viewModel: MapViewModel
     let locationManager: CLLocationManager = CLLocationManager()
     var userLocationTracked: Bool = false
     var coordinates: [CLLocation] {
@@ -32,7 +32,17 @@ public class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
         }
     }
     
-    public override func viewDidLoad() {
+    required init(_ viewModel: MapViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Mapa"
@@ -49,7 +59,7 @@ public class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
         
     }
     
-    public func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         if userLocationTracked == false &&
             CLLocationCoordinate2DIsValid(CLLocationCoordinate2DMake((userLocation.location?.coordinate.latitude)!, (userLocation.location?.coordinate.longitude)!)) {
             userLocationTracked = true
@@ -57,7 +67,7 @@ public class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
         }
     }
     
-    public func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation.isKindOfClass(MKUserLocation) {
             return nil
         }

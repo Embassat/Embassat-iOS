@@ -8,13 +8,9 @@
 
 import UIKit
 
-public class InfoViewController: EmbassatRootViewController {
+class InfoViewController: EmbassatRootViewController {
     
-    required public convenience init(coder aDecoder: NSCoder) {
-        self.init(nibName: nil, bundle: nil)
-    }
-    
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Info"

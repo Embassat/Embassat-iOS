@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class RootCollectionViewCell: UICollectionViewCell {
+class RootCollectionViewCell: UICollectionViewCell {
     
     override init(frame aRect: CGRect) {
         super.init(frame: aRect)
@@ -16,17 +16,17 @@ public class RootCollectionViewCell: UICollectionViewCell {
         self.setupView()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.setupView()
     }
     
-    public override func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
         
         self.setupView()
     }
     
-    public func setupView() {}
+    func setupView() {}
 }

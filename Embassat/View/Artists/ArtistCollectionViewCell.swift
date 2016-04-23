@@ -8,23 +8,23 @@
 
 import UIKit
 
-public class ArtistCollectionViewCell: RootCollectionViewCell {
+class ArtistCollectionViewCell: RootCollectionViewCell {
     
     @IBOutlet weak var optionNameLabel: UILabel?
     @IBOutlet weak var bottomSeparator: UIView?
     
-    public var optionName: String = "" {
+    var optionName: String = "" {
         didSet {
             optionNameLabel?.text = optionName
         }
     }
-    public var hidesBottomSeparator: Bool = false {
+    var hidesBottomSeparator: Bool = false {
         didSet {
             bottomSeparator?.hidden = hidesBottomSeparator
         }
     }
     
-    override public var selected: Bool {
+    override var selected: Bool {
         didSet {
             if selected {
                 selectElements()
@@ -34,7 +34,7 @@ public class ArtistCollectionViewCell: RootCollectionViewCell {
         }
     }
     
-    override public var highlighted: Bool {
+    override var highlighted: Bool {
         didSet {
             if highlighted {
                 selectElements()
@@ -44,7 +44,7 @@ public class ArtistCollectionViewCell: RootCollectionViewCell {
         }
     }
     
-    public override func setupView() {
+    override func setupView() {
         super.setupView()
         
         optionNameLabel?.font = UIFont.detailFont(ofSize: 15.0)

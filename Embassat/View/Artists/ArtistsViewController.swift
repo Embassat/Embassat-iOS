@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ArtistsViewController: EmbassatRootViewController {
+class ArtistsViewController: EmbassatRootViewController {
     
     @IBOutlet weak var artistsCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
@@ -29,11 +29,11 @@ public class ArtistsViewController: EmbassatRootViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundle)
     }
 
-    required public convenience init(coder aDecoder: NSCoder) {
+    required convenience init(coder aDecoder: NSCoder) {
         self.init(nibName: nil, bundle: nil)
     }
 
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Artistes"
@@ -58,7 +58,7 @@ public class ArtistsViewController: EmbassatRootViewController {
         })
     }
     
-    public override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
         guard let indexPaths = artistsCollectionView?.indexPathsForSelectedItems() else { return }
@@ -69,10 +69,12 @@ public class ArtistsViewController: EmbassatRootViewController {
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let artistDetailViewController = ArtistDetailViewController(nibName: String(ArtistDetailViewController), bundle: nil)
+        let artistDetailViewController = ArtistDetailViewController()
         artistDetailViewController.viewModel = viewModel.artistViewModel(forIndexPath: indexPath)
-        artistDetailViewController.updateSignal.subscribeNext { [unowned self] (_) -> Void in
-            self.viewModel.shouldRefreshModel()
+        artistDetailViewController.updateSignal.subscribeNext { [weak self] _ in
+            guard let weakSelf = self else { return }
+            
+            weakSelf.viewModel.shouldRefreshModel()
         }
         
         self.navigationController?.pushViewController(artistDetailViewController, animated: true)

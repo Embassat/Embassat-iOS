@@ -9,11 +9,11 @@
 import Foundation
 import ReactiveCocoa
 
-public class ArtistsViewModel: NSObject, ViewModelCollectionDelegate {
+class ArtistsViewModel: NSObject, ViewModelCollectionDelegate {
     
     var model: [CADEMArtist] = []
-    public let service: ArtistService = ArtistService()
-    public let activeSubject: RACSubject
+    let service: ArtistService = ArtistService()
+    let activeSubject: RACSubject
     
     override init() {
         activeSubject = RACSubject()
@@ -46,7 +46,7 @@ public class ArtistsViewModel: NSObject, ViewModelCollectionDelegate {
         return model.count
     }
     
-    public func shouldRefreshModel() {
+    func shouldRefreshModel() {
         service.cachedArtists().map{ artists in
             guard let artists = artists as? [CADEMArtist] else { return [] }
 
@@ -61,11 +61,11 @@ public class ArtistsViewModel: NSObject, ViewModelCollectionDelegate {
         }
     }
     
-    public func titleAtIndexPath(indexPath: NSIndexPath) -> String {
+    func titleAtIndexPath(indexPath: NSIndexPath) -> String {
         return self.model[indexPath.row].name.uppercaseString
     }
     
-    public func artistViewModel(forIndexPath indexPath: NSIndexPath) -> ArtistDetailViewModel {
+    func artistViewModel(forIndexPath indexPath: NSIndexPath) -> ArtistDetailViewModel {
         return ArtistDetailViewModel(model: model, currentIndex: indexPath.item)
     }
 }

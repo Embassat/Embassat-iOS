@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class MenuCollectionViewCell: RootCollectionViewCell {
+class MenuCollectionViewCell: RootCollectionViewCell {
     
     @IBOutlet weak var optionNameLabel: UILabel?
-    public var optionName: String = "" {
+    var optionName: String = "" {
         didSet {
             optionNameLabel?.text = optionName
         }
     }
     
-    override public var selected: Bool {
+    override var selected: Bool {
         didSet {
             if selected {
                 optionNameLabel?.textColor = UIColor.emSelectedColor()
@@ -27,7 +27,7 @@ public class MenuCollectionViewCell: RootCollectionViewCell {
         }
     }
     
-    override public var highlighted: Bool {
+    override var highlighted: Bool {
         didSet {
             if highlighted {
                 optionNameLabel?.textColor = UIColor.emSelectedColor()
@@ -37,7 +37,7 @@ public class MenuCollectionViewCell: RootCollectionViewCell {
         }
     }
     
-    public override func setupView() {
+    override func setupView() {
         super.setupView()
         
         optionNameLabel?.font = UIFont.detailFont(ofSize: 30.0)
