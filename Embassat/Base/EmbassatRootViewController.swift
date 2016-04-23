@@ -13,7 +13,6 @@ class EmbassatRootViewController: RootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.emBackgroundColor()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
     }
     

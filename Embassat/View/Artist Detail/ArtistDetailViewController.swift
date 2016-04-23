@@ -31,7 +31,6 @@ class ArtistDetailViewController: EmbassatRootViewController {
         super.viewDidLoad()
 
         title = "Artista"
-        view.backgroundColor = UIColor.emBackgroundSelectedColor()
         artistNameLabel?.font = UIFont.detailFont(ofSize: 20.0)
         descriptionLabel?.font = UIFont.detailFont(ofSize: 15.0)
         stageLabel?.font = UIFont.detailFont(ofSize: 15.0)
@@ -63,7 +62,7 @@ class ArtistDetailViewController: EmbassatRootViewController {
         playerView?.loadWithVideoId("M7lc1UVf-VE")
         
         let favItem = navigationItem.rightBarButtonItems?.first
-        favItem?.tintColor = viewModel?.artistIsFavorite == true ? UIColor.emBackgroundColor() : nil
+        favItem?.tintColor = viewModel?.artistIsFavorite == true ? .yellowColor() : nil
     }
     
     func sharePressed() {
@@ -75,7 +74,7 @@ class ArtistDetailViewController: EmbassatRootViewController {
             guard let weakSelf = self else { return }
 
             let favItem = weakSelf.navigationItem.rightBarButtonItems?.first
-            favItem?.tintColor = favItem?.tintColor == nil ? UIColor.emBackgroundColor() : nil
+            favItem?.tintColor = favItem?.tintColor == nil ? .yellowColor() : nil
             
             weakSelf.updateSignal.sendNext(true)
         }

@@ -17,26 +17,6 @@ class MenuCollectionViewCell: RootCollectionViewCell {
         }
     }
     
-    override var selected: Bool {
-        didSet {
-            if selected {
-                optionNameLabel?.textColor = UIColor.emSelectedColor()
-            } else {
-                optionNameLabel?.textColor = UIColor.whiteColor()
-            }
-        }
-    }
-    
-    override var highlighted: Bool {
-        didSet {
-            if highlighted {
-                optionNameLabel?.textColor = UIColor.emSelectedColor()
-            } else {
-                optionNameLabel?.textColor = UIColor.whiteColor()
-            }
-        }
-    }
-    
     override func setupView() {
         super.setupView()
         

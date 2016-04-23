@@ -111,7 +111,7 @@ class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
         let artist: CADEMArtist = self.artist(forIndexPath: indexPath)
         let now: NSDate = NSDate()
         
-        return now.isLaterThan(artist.startDate) && now.isEarlierThan(artist.endDate) ? UIColor.emBackgroundSelectedColor() : UIColor.emBackgroundDeselectedColor()
+        return now.isLaterThan(artist.startDate) && now.isEarlierThan(artist.endDate) ? UIColor.emScheduleBackgroundSelectedColor() : UIColor.emScheduleBackgroundDeselectedColor()
     }
     
     func filteredArray(fromArray: [CADEMArtist], withDateString: String) -> [CADEMArtist] {

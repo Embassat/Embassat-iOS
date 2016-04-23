@@ -50,7 +50,6 @@ class ScheduleViewController: EmbassatRootViewController {
         
         title = "Horaris"
         
-        view.backgroundColor = UIColor.emBackgroundDeselectedColor()
         thursdayLabel?.textColor = UIColor.emScheduleHeaderSelectedTextColor()
         thursdayContainer?.backgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
         

@@ -14,19 +14,11 @@ extension UIColor {
         return .blackColor()
     }
     
-    class func emBackgroundColor() -> UIColor {
-        return .blackColor()
-    }
-    
-    class func emSelectedColor() -> UIColor {
+    class func emScheduleBackgroundSelectedColor() -> UIColor {
         return .whiteColor()
     }
     
-    class func emBackgroundSelectedColor() -> UIColor {
-        return .whiteColor()
-    }
-    
-    class func emBackgroundDeselectedColor() -> UIColor {
+    class func emScheduleBackgroundDeselectedColor() -> UIColor {
         return UIColor(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/255.0, alpha: 1.0)
     }
     

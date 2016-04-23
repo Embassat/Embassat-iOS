@@ -14,8 +14,6 @@ class PetitEMViewController: EmbassatRootViewController {
         super.viewDidLoad()
         
         title = "Petit EM'"
-        
-        view.backgroundColor = UIColor.whiteColor()
     }
 
 }

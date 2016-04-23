@@ -31,7 +31,7 @@
                     </connections>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Jmv-0r-Udt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N80-hn-Mga"/>
                 <constraint firstAttribute="trailing" secondItem="Jmv-0r-Udt" secondAttribute="trailing" id="VrA-1w-p5o"/>

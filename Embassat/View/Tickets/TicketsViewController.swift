@@ -19,8 +19,6 @@ class TicketsViewController: EmbassatRootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.emBackgroundSelectedColor()
-        
         title = "Entrades"
         
         for view in [seasonContainer, dayTicketContainer, petitEmTicketContainer] {

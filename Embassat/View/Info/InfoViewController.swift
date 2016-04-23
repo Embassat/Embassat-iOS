@@ -14,7 +14,5 @@ class InfoViewController: EmbassatRootViewController {
         super.viewDidLoad()
         
         title = "Info"
-        
-        view.backgroundColor = .whiteColor()
     }
 }
