@@ -14,7 +14,7 @@
 
 @interface CADAppDelegate ()
 
-@property (nonatomic, copy) CADEMRootNavigationController *rootNavigationController;
+@property (nonatomic, copy) RootNavigationController *rootNavigationController;
 
 @end
 
@@ -22,8 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[[CADEMNotificationService alloc] init] registerForLocalNotifications];
-    [SHKConfiguration sharedInstanceWithConfigurator:[[CADEMShareKitConfigurator alloc] init]];
+    [[[NotificationService alloc] init] registerForLocalNotifications];
+    [SHKConfiguration sharedInstanceWithConfigurator:[[ShareKitConfigurator alloc] init]];
     
     [self setupAppearance];
     
@@ -69,13 +69,11 @@
 
 #pragma mark - Lazy
 
-- (CADEMRootNavigationController *)rootNavigationController
+- (RootNavigationController *)rootNavigationController
 {
     if (!_rootNavigationController)
     {
-        CADEMMenuViewController *menuViewController = [[CADEMMenuViewController alloc] initWithNibName:@"CADEMMenuViewController" bundle:nil];
-        
-        _rootNavigationController = [[CADEMRootNavigationController alloc] initWithRootViewController:menuViewController];
+        _rootNavigationController = [[RootNavigationController alloc] initWithRootViewController:[[MenuViewController alloc] init]];
     }
     
     return _rootNavigationController;
