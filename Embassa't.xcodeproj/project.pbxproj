@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		62A7F2D288564154C05FBF8C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDDAC266F52D12D4F511623 /* libPods.a */; };
+		8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4737E41CCB92FC00B1816A /* AppDelegate.swift */; };
 		8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4818CB8F09008FBC9B /* Foundation.framework */; };
 		8C04EF4B18CB8F09008FBC9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */; };
 		8C04EF4D18CB8F09008FBC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4C18CB8F09008FBC9B /* UIKit.framework */; };
 		8C04EF5318CB8F09008FBC9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C04EF5118CB8F09008FBC9B /* InfoPlist.strings */; };
-		8C04EF5518CB8F09008FBC9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF5418CB8F09008FBC9B /* main.m */; };
-		8C04EF5918CB8F09008FBC9B /* CADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04EF5818CB8F09008FBC9B /* CADAppDelegate.m */; };
 		8C04EF5B18CB8F09008FBC9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C04EF5A18CB8F09008FBC9B /* Images.xcassets */; };
 		8C04EF8B18CB9408008FBC9B /* ArtistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C04EF8918CB9408008FBC9B /* ArtistsViewController.xib */; };
 		8C1FF3401B03C9EF00078E15 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF33F1B03C9EF00078E15 /* MenuViewModel.swift */; };
@@ -91,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		277C6F1D0A9003401A9C907C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8B4737E41CCB92FC00B1816A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BD4A5061CC97D290082AE37 /* libyoutube-ios-player-helper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libyoutube-ios-player-helper.a"; path = "../../Library/Developer/Xcode/DerivedData/Embassa't-ftbfzshfmcjfnbflvseyitxzrlqr/Build/Products/Debug-iphonesimulator/libyoutube-ios-player-helper.a"; sourceTree = "<group>"; };
 		8C04EF4518CB8F09008FBC9B /* Embassa't.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Embassa't.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04EF4818CB8F09008FBC9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,10 +98,7 @@
 		8C04EF4C18CB8F09008FBC9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8C04EF5018CB8F09008FBC9B /* Embassa't-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Embassa't-Info.plist"; sourceTree = "<group>"; };
 		8C04EF5218CB8F09008FBC9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8C04EF5418CB8F09008FBC9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C04EF5618CB8F09008FBC9B /* Embassa't-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Embassa't-Prefix.pch"; sourceTree = "<group>"; };
-		8C04EF5718CB8F09008FBC9B /* CADAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CADAppDelegate.h; sourceTree = "<group>"; };
-		8C04EF5818CB8F09008FBC9B /* CADAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CADAppDelegate.m; sourceTree = "<group>"; };
 		8C04EF5A18CB8F09008FBC9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C04EF6118CB8F09008FBC9B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8C04EF8218CB9353008FBC9B /* UIViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Private.h"; sourceTree = "<group>"; };
@@ -242,9 +239,8 @@
 		8C04EF4E18CB8F09008FBC9B /* Embassat */ = {
 			isa = PBXGroup;
 			children = (
+				8B4737E41CCB92FC00B1816A /* AppDelegate.swift */,
 				8C04EF7918CB9341008FBC9B /* Base */,
-				8C04EF5718CB8F09008FBC9B /* CADAppDelegate.h */,
-				8C04EF5818CB8F09008FBC9B /* CADAppDelegate.m */,
 				8C04EF7D18CB9353008FBC9B /* Categories */,
 				8C04EF5A18CB8F09008FBC9B /* Images.xcassets */,
 				8C04EF9418CBCF19008FBC9B /* Model */,
@@ -263,7 +259,6 @@
 				8C04EF5018CB8F09008FBC9B /* Embassa't-Info.plist */,
 				8C04EF5618CB8F09008FBC9B /* Embassa't-Prefix.pch */,
 				8C04EF5118CB8F09008FBC9B /* InfoPlist.strings */,
-				8C04EF5418CB8F09008FBC9B /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -646,9 +641,9 @@
 				8C1FF3421B03CC2900078E15 /* ViewModelCollectionDelegate.swift in Sources */,
 				8C8BA6EF1B08DF8E00896D11 /* ArtistDetailViewController.swift in Sources */,
 				8CA0CE821B038E3E00BC04B0 /* CADEMArtist.swift in Sources */,
+				8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */,
 				8CE72FE41B13707100698D4A /* MapViewModel.swift in Sources */,
 				8CE72FE61B1372D800698D4A /* MapViewController.swift in Sources */,
-				8C04EF5518CB8F09008FBC9B /* main.m in Sources */,
 				8CF193411BB3F24900B7D929 /* UIView+CADAdditions.swift in Sources */,
 				8C8BA6D71B07AE0400896D11 /* PetitEMViewController.swift in Sources */,
 				8CE72FF41B138F2700698D4A /* ScheduleViewController.swift in Sources */,
@@ -658,7 +653,6 @@
 				8CE72FEC1B13839500698D4A /* ScheduleCollectionViewCell.swift in Sources */,
 				8CE72FF91B13C86700698D4A /* RootCollectionViewCell.swift in Sources */,
 				8C1FF3401B03C9EF00078E15 /* MenuViewModel.swift in Sources */,
-				8C04EF5918CB8F09008FBC9B /* CADAppDelegate.m in Sources */,
 				8C8BA6EB1B08C33900896D11 /* ArtistsViewModel.swift in Sources */,
 				8CE72FF21B138A0100698D4A /* ScheduleViewModel.swift in Sources */,
 				8C8BA6CF1B06758000896D11 /* ArtistParser.swift in Sources */,

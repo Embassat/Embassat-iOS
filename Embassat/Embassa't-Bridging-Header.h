@@ -4,6 +4,8 @@
 
 #import <TTTAttributedLabel/TTTAttributedLabel.h>
 #import <ShareKit/ShareKit.h>
+#import <ShareKit/SHKConfiguration.h>
+#import <ShareKit/SHKFacebook.h>
 #import <ShareKit/DefaultSHKConfigurator.h>
 #import <Firebase/Firebase.h>
 #import <youtube-ios-player-helper/YTPlayerView.h>

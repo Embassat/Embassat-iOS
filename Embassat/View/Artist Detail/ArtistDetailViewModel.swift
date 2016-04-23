@@ -50,7 +50,7 @@ class ArtistDetailViewModel: NSObject {
     }
     
     func shareAction(forViewController viewController: UIViewController) {
-        let item: AnyObject! = SHKItem.URL(currentArtist.artistURL, title: String(format: "%@ @ Embassa't", self.artistName), contentType: SHKURLContentTypeUndefined)
+        let item: AnyObject! = SHKItem.URL(currentArtist.artistURL, title: String(format: "%@ @ Embassa't 2016", self.artistName), contentType: SHKURLContentTypeUndefined)
         
         SHK.setRootViewController(viewController)
         let alertController = SHKAlertController.actionSheetForItem(item as! SHKItem)
