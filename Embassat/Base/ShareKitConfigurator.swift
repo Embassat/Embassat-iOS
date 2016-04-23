@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ShareKit
 
 class ShareKitConfigurator: DefaultSHKConfigurator {
     

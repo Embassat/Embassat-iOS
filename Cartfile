@@ -1,4 +1,0 @@
-github "SwiftyJSON/SwiftyJSON" ~> 2.3.0
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.2.4
-github "rs/SDWebImage" ~> 3.7.2
-github "TTTAttributedLabel/TTTAttributedLabel" ~> 1.13.3

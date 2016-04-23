@@ -8,7 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
-import WebImage
+import youtube_ios_player_helper
 
 class ArtistDetailViewController: EmbassatRootViewController {
     

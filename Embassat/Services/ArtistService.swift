@@ -8,6 +8,7 @@
 
 import Foundation
 import ReactiveCocoa
+import Firebase
 
 public class ArtistService: NSObject {
     

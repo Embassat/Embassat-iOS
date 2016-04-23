@@ -8,6 +8,7 @@
 
 import Foundation
 import EventKit
+import ShareKit
 
 class ArtistDetailViewModel: NSObject {
     
