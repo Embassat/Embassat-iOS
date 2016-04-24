@@ -10,16 +10,16 @@ import Foundation
 
 import SwiftyJSON
 
-public class ArtistParser: NSObject {
+struct ArtistParser {
     
     let dateFormatter: NSDateFormatter
     
-    override init() {
+    init() {
         dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     }
     
-    public func parseArtists(fromJson json: AnyObject, cached cachedArtists: [CADEMArtist] = []) -> [CADEMArtist] {
+    func parseArtists(fromJson json: AnyObject, cached cachedArtists: [CADEMArtist] = []) -> [CADEMArtist] {
         var artists: [CADEMArtist] = []
         for (_,subJson):(String, JSON) in JSON(json) {
             

@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
-public class NotificationService: NSObject {
+struct NotificationService {
     
-    public func registerForLocalNotifications() {
+    func registerForLocalNotifications() {
         
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil))
         
     }
 
-    public func toggleLocalNotification(forArtist artist: CADEMArtist, favorited: Bool) {
+    func toggleLocalNotification(forArtist artist: CADEMArtist, favorited: Bool) {
         let localNotif = UILocalNotification()
         
         localNotif.fireDate = artist.startDate.dateBySubstracting(minutes: 15)
@@ -43,7 +44,7 @@ public class NotificationService: NSObject {
         }
     }
     
-    public func updateLocalNotifications(forArtists artists: [CADEMArtist]) {
+    func updateLocalNotifications(forArtists artists: [CADEMArtist]) {
         let existingNotifications = UIApplication.sharedApplication().scheduledLocalNotifications!
         
         for notification in existingNotifications {

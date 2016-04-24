@@ -17,9 +17,10 @@ public class CADEMArtist : NSObject, NSCoding {
     let imageURL: NSURL
     let startDate: NSDate
     let endDate: NSDate
+    let scheduleDate: NSDate
+    let scheduleDayString: String
+    
     var favorite: Bool
-    var scheduleDate: NSDate
-    var scheduleDayString: String
     
     init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, startDate: NSDate, endDate: NSDate, stage: String, favorite: Bool = false) {
         self.artistId = artistId
@@ -30,10 +31,9 @@ public class CADEMArtist : NSObject, NSCoding {
         self.startDate = startDate
         self.endDate = endDate
         self.stage = stage
-        self.favorite = favorite
-        
-        scheduleDate = startDate.hour < 10 ? startDate.dateBySubstracting(days: 1) : startDate
-        scheduleDayString = scheduleDate.day == 11 ? "Dijous" : scheduleDate.day == 12 ? "Divendres" : "Dissabte"
+        self.favorite = favorite    
+        self.scheduleDate = startDate.hour < 10 ? startDate.dateBySubstracting(days: 1) : startDate
+        self.scheduleDayString = scheduleDate.day == 9 ? "Dijous" : scheduleDate.day == 10 ? "Divendres" : "Dissabte"
     }
     
     required convenience public init(coder decoder: NSCoder) {
@@ -61,6 +61,6 @@ public class CADEMArtist : NSObject, NSCoding {
     }
     
     override public var description: String {
-        return "Artist: \(name), favorited? \(favorite)"
+        return "Artist: \(name), id \(artistId), description\(longDescription), favorited? \(favorite)"
     }
 }

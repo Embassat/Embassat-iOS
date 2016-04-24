@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22A47478915D9DC6DCB184A9 /* Pods_EmbassatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FB3C836FC2477A40FE680C /* Pods_EmbassatTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8B310E351CCBEACB0030B8CD /* KakapoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E2E1CCBEACB0030B8CD /* KakapoDB.swift */; };
+		8B310E361CCBEACB0030B8CD /* KakapoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E2F1CCBEACB0030B8CD /* KakapoServer.swift */; };
+		8B310E371CCBEACB0030B8CD /* NSURL+Kakapo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E301CCBEACB0030B8CD /* NSURL+Kakapo.swift */; };
+		8B310E381CCBEACB0030B8CD /* NSURLRequest+FixCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E311CCBEACB0030B8CD /* NSURLRequest+FixCopy.swift */; };
+		8B310E391CCBEACB0030B8CD /* PropertyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E321CCBEACB0030B8CD /* PropertyPolicy.swift */; };
+		8B310E3A1CCBEACB0030B8CD /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E331CCBEACB0030B8CD /* Serializer.swift */; };
+		8B310E3B1CCBEACB0030B8CD /* String+Kakapo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E341CCBEACB0030B8CD /* String+Kakapo.swift */; };
+		8B310E431CCBEC830030B8CD /* ArtistServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E421CCBEC830030B8CD /* ArtistServiceTests.swift */; };
+		8B310E4A1CCBECAF0030B8CD /* ArtistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6CE1B06758000896D11 /* ArtistParser.swift */; };
+		8B310E4B1CCBEF5F0030B8CD /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35AE071B0105C30014331F /* ArtistService.swift */; };
+		8B310E4C1CCBEF720030B8CD /* KakapoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E2E1CCBEACB0030B8CD /* KakapoDB.swift */; };
+		8B310E4D1CCBEF720030B8CD /* KakapoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E2F1CCBEACB0030B8CD /* KakapoServer.swift */; };
+		8B310E4E1CCBEF720030B8CD /* NSURL+Kakapo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E301CCBEACB0030B8CD /* NSURL+Kakapo.swift */; };
+		8B310E4F1CCBEF720030B8CD /* NSURLRequest+FixCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E311CCBEACB0030B8CD /* NSURLRequest+FixCopy.swift */; };
+		8B310E501CCBEF720030B8CD /* PropertyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E321CCBEACB0030B8CD /* PropertyPolicy.swift */; };
+		8B310E511CCBEF720030B8CD /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E331CCBEACB0030B8CD /* Serializer.swift */; };
+		8B310E521CCBEF720030B8CD /* String+Kakapo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E341CCBEACB0030B8CD /* String+Kakapo.swift */; };
+		8B310E531CCBF35E0030B8CD /* ArtistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1B5C61B11FDDD00D1A477 /* ArtistStore.swift */; };
+		8B310E541CCBF3600030B8CD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682ED1B128D9200FD2216 /* NotificationService.swift */; };
+		8B310E551CCBF3AA0030B8CD /* CADEMArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtist.swift */; };
+		8B310E561CCBF3B60030B8CD /* NSDate+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193441BB49AB200B7D929 /* NSDate+EMAdditions.swift */; };
 		8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4737E41CCB92FC00B1816A /* AppDelegate.swift */; };
 		8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4818CB8F09008FBC9B /* Foundation.framework */; };
 		8C04EF4B18CB8F09008FBC9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */; };
@@ -84,8 +106,31 @@
 		E15F6D086AC42CE986DD2E7B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71D91641F9CEDABBA8BEF1B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8B310E451CCBEC830030B8CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C04EF3D18CB8F09008FBC9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C04EF4418CB8F09008FBC9B;
+			remoteInfo = Embassat;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		277C6F1D0A9003401A9C907C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		503BE5F2A1D58D6DCE20FBE6 /* Pods-EmbassatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmbassatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmbassatTests/Pods-EmbassatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		53B4562E45CC0ECC6172E65C /* Pods-EmbassatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmbassatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmbassatTests/Pods-EmbassatTests.release.xcconfig"; sourceTree = "<group>"; };
+		59FB3C836FC2477A40FE680C /* Pods_EmbassatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmbassatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B310E2E1CCBEACB0030B8CD /* KakapoDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakapoDB.swift; sourceTree = "<group>"; };
+		8B310E2F1CCBEACB0030B8CD /* KakapoServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakapoServer.swift; sourceTree = "<group>"; };
+		8B310E301CCBEACB0030B8CD /* NSURL+Kakapo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Kakapo.swift"; sourceTree = "<group>"; };
+		8B310E311CCBEACB0030B8CD /* NSURLRequest+FixCopy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLRequest+FixCopy.swift"; sourceTree = "<group>"; };
+		8B310E321CCBEACB0030B8CD /* PropertyPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyPolicy.swift; sourceTree = "<group>"; };
+		8B310E331CCBEACB0030B8CD /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		8B310E341CCBEACB0030B8CD /* String+Kakapo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Kakapo.swift"; sourceTree = "<group>"; };
+		8B310E401CCBEC830030B8CD /* EmbassatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbassatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B310E421CCBEC830030B8CD /* ArtistServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistServiceTests.swift; sourceTree = "<group>"; };
+		8B310E441CCBEC830030B8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B4737E41CCB92FC00B1816A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B9D8E141CCBE81100FC75BA /* ShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareKit.framework; path = "../../Library/Developer/Xcode/DerivedData/Embassat-arywtvxbokqlnjcnovihfxzrgoyi/Build/Products/Debug-iphonesimulator/ShareKit.framework"; sourceTree = "<group>"; };
 		8B9D8E161CCBE81E00FC75BA /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../Library/Developer/Xcode/DerivedData/Embassat-arywtvxbokqlnjcnovihfxzrgoyi/Build/Products/Debug-iphonesimulator/ReactiveCocoa.framework"; sourceTree = "<group>"; };
@@ -177,6 +222,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8B310E3D1CCBEC830030B8CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A47478915D9DC6DCB184A9 /* Pods_EmbassatTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8C04EF4218CB8F09008FBC9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,10 +245,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B310E2D1CCBEACB0030B8CD /* Kakapo */ = {
+			isa = PBXGroup;
+			children = (
+				8B310E2E1CCBEACB0030B8CD /* KakapoDB.swift */,
+				8B310E2F1CCBEACB0030B8CD /* KakapoServer.swift */,
+				8B310E301CCBEACB0030B8CD /* NSURL+Kakapo.swift */,
+				8B310E311CCBEACB0030B8CD /* NSURLRequest+FixCopy.swift */,
+				8B310E321CCBEACB0030B8CD /* PropertyPolicy.swift */,
+				8B310E331CCBEACB0030B8CD /* Serializer.swift */,
+				8B310E341CCBEACB0030B8CD /* String+Kakapo.swift */,
+			);
+			path = Kakapo;
+			sourceTree = "<group>";
+		};
+		8B310E411CCBEC830030B8CD /* EmbassatTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B310E421CCBEC830030B8CD /* ArtistServiceTests.swift */,
+				8B310E441CCBEC830030B8CD /* Info.plist */,
+			);
+			path = EmbassatTests;
+			sourceTree = "<group>";
+		};
 		8C04EF3C18CB8F09008FBC9B = {
 			isa = PBXGroup;
 			children = (
 				8C04EF4E18CB8F09008FBC9B /* Embassat */,
+				8B310E411CCBEC830030B8CD /* EmbassatTests */,
 				8C04EF4718CB8F09008FBC9B /* Frameworks */,
 				8C04EF4618CB8F09008FBC9B /* Products */,
 				D68B517AE41204179CC3A455 /* Pods */,
@@ -206,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				8C04EF4518CB8F09008FBC9B /* Embassat.app */,
+				8B310E401CCBEC830030B8CD /* EmbassatTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +304,7 @@
 				8C04EF4C18CB8F09008FBC9B /* UIKit.framework */,
 				8C04EF6118CB8F09008FBC9B /* XCTest.framework */,
 				A71D91641F9CEDABBA8BEF1B /* Pods.framework */,
+				59FB3C836FC2477A40FE680C /* Pods_EmbassatTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,6 +316,7 @@
 				8C04EF7918CB9341008FBC9B /* Base */,
 				8C04EF7D18CB9353008FBC9B /* Categories */,
 				8C04EF5A18CB8F09008FBC9B /* Images.xcassets */,
+				8B310E2D1CCBEACB0030B8CD /* Kakapo */,
 				8C04EF9418CBCF19008FBC9B /* Model */,
 				8CDBF19518DDB9D9002C6E50 /* Resources */,
 				8C35AE061B0105A20014331F /* Services */,
@@ -459,6 +539,8 @@
 			children = (
 				277C6F1D0A9003401A9C907C /* Pods.debug.xcconfig */,
 				D16AF894416306787E8EA880 /* Pods.release.xcconfig */,
+				503BE5F2A1D58D6DCE20FBE6 /* Pods-EmbassatTests.debug.xcconfig */,
+				53B4562E45CC0ECC6172E65C /* Pods-EmbassatTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -466,6 +548,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8B310E3F1CCBEC830030B8CD /* EmbassatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B310E471CCBEC830030B8CD /* Build configuration list for PBXNativeTarget "EmbassatTests" */;
+			buildPhases = (
+				D10840FD9EB95CADA07BECF1 /* Check Pods Manifest.lock */,
+				8B310E3C1CCBEC830030B8CD /* Sources */,
+				8B310E3D1CCBEC830030B8CD /* Frameworks */,
+				8B310E3E1CCBEC830030B8CD /* Resources */,
+				55BB93FB7FABBE5CBF1A7704 /* Embed Pods Frameworks */,
+				89549E1EA1DDB07D9BDB6BD8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B310E461CCBEC830030B8CD /* PBXTargetDependency */,
+			);
+			name = EmbassatTests;
+			productName = EmbassatTests;
+			productReference = 8B310E401CCBEC830030B8CD /* EmbassatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8C04EF4418CB8F09008FBC9B /* Embassat */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C04EF7118CB8F09008FBC9B /* Build configuration list for PBXNativeTarget "Embassat" */;
@@ -494,10 +597,14 @@
 			attributes = {
 				CLASSPREFIX = CAD;
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Crows And Dogs";
 				TargetAttributes = {
+					8B310E3F1CCBEC830030B8CD = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 8C04EF4418CB8F09008FBC9B;
+					};
 					8C04EF4418CB8F09008FBC9B = {
 						DevelopmentTeam = 32S972F3NM;
 					};
@@ -516,11 +623,19 @@
 			projectRoot = "";
 			targets = (
 				8C04EF4418CB8F09008FBC9B /* Embassat */,
+				8B310E3F1CCBEC830030B8CD /* EmbassatTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8B310E3E1CCBEC830030B8CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8C04EF4318CB8F09008FBC9B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -597,6 +712,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		55BB93FB7FABBE5CBF1A7704 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmbassatTests/Pods-EmbassatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89549E1EA1DDB07D9BDB6BD8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmbassatTests/Pods-EmbassatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B9D815959B1D4CC4AA727FD4 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -612,9 +757,45 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D10840FD9EB95CADA07BECF1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8B310E3C1CCBEC830030B8CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B310E4D1CCBEF720030B8CD /* KakapoServer.swift in Sources */,
+				8B310E511CCBEF720030B8CD /* Serializer.swift in Sources */,
+				8B310E531CCBF35E0030B8CD /* ArtistStore.swift in Sources */,
+				8B310E4E1CCBEF720030B8CD /* NSURL+Kakapo.swift in Sources */,
+				8B310E541CCBF3600030B8CD /* NotificationService.swift in Sources */,
+				8B310E431CCBEC830030B8CD /* ArtistServiceTests.swift in Sources */,
+				8B310E4A1CCBECAF0030B8CD /* ArtistParser.swift in Sources */,
+				8B310E501CCBEF720030B8CD /* PropertyPolicy.swift in Sources */,
+				8B310E4C1CCBEF720030B8CD /* KakapoDB.swift in Sources */,
+				8B310E4B1CCBEF5F0030B8CD /* ArtistService.swift in Sources */,
+				8B310E561CCBF3B60030B8CD /* NSDate+EMAdditions.swift in Sources */,
+				8B310E4F1CCBEF720030B8CD /* NSURLRequest+FixCopy.swift in Sources */,
+				8B310E521CCBEF720030B8CD /* String+Kakapo.swift in Sources */,
+				8B310E551CCBF3AA0030B8CD /* CADEMArtist.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8C04EF4118CB8F09008FBC9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -625,19 +806,23 @@
 				8C8BA6ED1B08D41100896D11 /* ArtistDetailViewModel.swift in Sources */,
 				8C1FF3461B03F7C400078E15 /* ArrayDataSource.swift in Sources */,
 				8C1FF34E1B04CDB700078E15 /* RootViewController.swift in Sources */,
+				8B310E371CCBEACB0030B8CD /* NSURL+Kakapo.swift in Sources */,
 				8CF193451BB49AB200B7D929 /* NSDate+EMAdditions.swift in Sources */,
 				8CF193361BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift in Sources */,
 				8CE72FEA1B137C6D00698D4A /* MenuViewController.swift in Sources */,
 				8C1FF3421B03CC2900078E15 /* ViewModelCollectionDelegate.swift in Sources */,
 				8C8BA6EF1B08DF8E00896D11 /* ArtistDetailViewController.swift in Sources */,
 				8CA0CE821B038E3E00BC04B0 /* CADEMArtist.swift in Sources */,
+				8B310E351CCBEACB0030B8CD /* KakapoDB.swift in Sources */,
 				8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */,
 				8CE72FE41B13707100698D4A /* MapViewModel.swift in Sources */,
+				8B310E361CCBEACB0030B8CD /* KakapoServer.swift in Sources */,
 				8CE72FE61B1372D800698D4A /* MapViewController.swift in Sources */,
 				8CF193411BB3F24900B7D929 /* UIView+CADAdditions.swift in Sources */,
 				8C8BA6D71B07AE0400896D11 /* PetitEMViewController.swift in Sources */,
 				8CE72FF41B138F2700698D4A /* ScheduleViewController.swift in Sources */,
 				8CB1B5C71B11FDDD00D1A477 /* ArtistStore.swift in Sources */,
+				8B310E3B1CCBEACB0030B8CD /* String+Kakapo.swift in Sources */,
 				8CF193381BB360DE00B7D929 /* UIFont+EMAdditions.swift in Sources */,
 				8CE72FE81B137AD800698D4A /* MenuCollectionViewCell.swift in Sources */,
 				8CE72FEC1B13839500698D4A /* ScheduleCollectionViewCell.swift in Sources */,
@@ -645,18 +830,29 @@
 				8C1FF3401B03C9EF00078E15 /* MenuViewModel.swift in Sources */,
 				8C8BA6EB1B08C33900896D11 /* ArtistsViewModel.swift in Sources */,
 				8CE72FF21B138A0100698D4A /* ScheduleViewModel.swift in Sources */,
+				8B310E3A1CCBEACB0030B8CD /* Serializer.swift in Sources */,
+				8B310E381CCBEACB0030B8CD /* NSURLRequest+FixCopy.swift in Sources */,
 				8C8BA6CF1B06758000896D11 /* ArtistParser.swift in Sources */,
 				8CF1933F1BB3EF5400B7D929 /* UIColor+EMAdditions.swift in Sources */,
 				8CE72FFF1B13CADC00698D4A /* ShareKitConfigurator.swift in Sources */,
 				8C1FF34C1B04CD1D00078E15 /* TicketsViewController.swift in Sources */,
 				8CC682EA1B12613100FD2216 /* InfoViewController.swift in Sources */,
 				8CC682EC1B126F1F00FD2216 /* ArtistCollectionViewCell.swift in Sources */,
+				8B310E391CCBEACB0030B8CD /* PropertyPolicy.swift in Sources */,
 				8CC682EE1B128D9200FD2216 /* NotificationService.swift in Sources */,
 				8C35AE081B0105C30014331F /* ArtistService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B310E461CCBEC830030B8CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C04EF4418CB8F09008FBC9B /* Embassat */;
+			targetProxy = 8B310E451CCBEC830030B8CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8C04EF5118CB8F09008FBC9B /* InfoPlist.strings */ = {
@@ -670,6 +866,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8B310E481CCBEC830030B8CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 503BE5F2A1D58D6DCE20FBE6 /* Pods-EmbassatTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = EmbassatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romano.EmbassatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Embassat.app/Embassat";
+			};
+			name = Debug;
+		};
+		8B310E491CCBEC830030B8CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53B4562E45CC0ECC6172E65C /* Pods-EmbassatTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = EmbassatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romano.EmbassatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Embassat.app/Embassat";
+			};
+			name = Release;
+		};
 		8C04EF6F18CB8F09008FBC9B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -793,6 +1033,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8B310E471CCBEC830030B8CD /* Build configuration list for PBXNativeTarget "EmbassatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B310E481CCBEC830030B8CD /* Debug */,
+				8B310E491CCBEC830030B8CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8C04EF4018CB8F09008FBC9B /* Build configuration list for PBXProject "Embassat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

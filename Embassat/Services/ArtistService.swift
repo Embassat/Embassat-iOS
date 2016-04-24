@@ -8,68 +8,81 @@
 
 import Foundation
 import ReactiveCocoa
-import Firebase
 
-public class ArtistService: NSObject {
+class ArtistService {
     
-    static let kArtistsStoreKey : String = "/artists.db"
+    static let kArtistsEndpoint = "https://scorching-torch-2707.firebaseio.com/artists.json"
+    static private let kArtistsStoreKey = "/artists.db"
     
-    let store: ArtistStore = ArtistStore()
-    let parser: ArtistParser = ArtistParser()
-    let notificationService: NotificationService = NotificationService()
+    private let store: ArtistStore = ArtistStore()
+    private let parser: ArtistParser = ArtistParser()
+    private let notificationService: NotificationService = NotificationService()
+    private var lastTask: NSURLSessionDataTask?
     
-    public func artists() -> RACSignal
+    func artists() -> RACSignal
     {
-        return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
-            var cachedArtists: [CADEMArtist] = []
+        lastTask?.cancel()
+        
+        return RACSignal.createSignal { [weak self] subscriber in
+            guard let weakSelf = self else { return nil }
             
-            if let cached = self.store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
+            var cachedArtists: [CADEMArtist] = []
+            let url = NSURL(string: ArtistService.kArtistsEndpoint)!
+            
+            if let cached = weakSelf.store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
                 cachedArtists = cached
-                subscriber?.sendNext(cachedArtists)
+                subscriber.sendNext(cachedArtists)
             }
             
-            let fireBaseRoot = Firebase(url: "https://scorching-torch-2707.firebaseio.com/artists")
-            fireBaseRoot.observeSingleEventOfType(FEventType.Value, withBlock: { [weak self] snapshot in
-                guard let weakSelf = self else { return }
+            weakSelf.lastTask = NSURLSession.sharedSession().dataTaskWithURL(url) { data, _, error in
                 
-                if snapshot.exists() {
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                        let artists = weakSelf.parser.parseArtists(fromJson: snapshot.value, cached: cachedArtists)
-                        
-                        dispatch_async(dispatch_get_main_queue()) {
-                            subscriber?.sendNext(artists)
-                            subscriber?.sendCompleted()
-                        }
-                        
+                if let data = data,
+                       json = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                    where error == nil {
+                    
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                        let artists = weakSelf.parser.parseArtists(fromJson: json, cached: cachedArtists)
                         weakSelf.notificationService.updateLocalNotifications(forArtists: artists)
                         weakSelf.store.store(artists, forKey: ArtistService.kArtistsStoreKey)
-                    }
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            subscriber.sendNext(artists)
+                            subscriber.sendCompleted()
+                        }
+                    })
+                    
                 } else {
-                    subscriber?.sendError(nil)
+                    subscriber?.sendError(error)
                 }
-            })
+            }
+            
+            weakSelf.lastTask?.resume()
             
             return nil
-        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
+        }.subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
     }
     
-    public func cachedArtists() -> RACSignal
+    func cachedArtists() -> RACSignal
     {
-        return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
-            if let cachedArtists = self.store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
-                subscriber?.sendNext(cachedArtists)
-                subscriber?.sendCompleted()
+        return RACSignal.createSignal { [weak self] subscriber in
+            guard let weakSelf = self else { return nil }
+            
+            if let cachedArtists = weakSelf.store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
+                subscriber.sendNext(cachedArtists)
+                subscriber.sendCompleted()
             } else {
-                subscriber?.sendCompleted()
+                subscriber.sendCompleted()
             }
             
             return nil
-        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
+        }.subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
     }
     
-    public func toggleFavorite(forArtist artist: CADEMArtist) -> RACSignal {
-        return RACSignal.createSignal({ (subscriber: RACSubscriber?) -> RACDisposable! in
-            if var cachedArtists = self.store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
+    func toggleFavorite(forArtist artist: CADEMArtist) -> RACSignal {
+        return RACSignal.createSignal { [weak self] subscriber in
+            guard let weakSelf = self else { return nil }
+            
+            if var cachedArtists = weakSelf.store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
                 
                 var index = NSNotFound
                 
@@ -82,16 +95,18 @@ public class ArtistService: NSObject {
                 
                 if index != NSNotFound {
                     cachedArtists[index].favorite = !cachedArtists[index].favorite
-                    self.store.store(cachedArtists, forKey: ArtistService.kArtistsStoreKey)
-                    subscriber?.sendNext(cachedArtists[index])
-                    subscriber?.sendCompleted()
-                    self.notificationService.toggleLocalNotification(forArtist: artist, favorited: cachedArtists[index].favorite)
+                    weakSelf.store.store(cachedArtists, forKey: ArtistService.kArtistsStoreKey)
+                    subscriber.sendNext(cachedArtists[index])
+                    subscriber.sendCompleted()
+                    weakSelf.notificationService.toggleLocalNotification(forArtist: artist, favorited: cachedArtists[index].favorite)
                 } else {
-                    subscriber?.sendError(nil)
+                    subscriber.sendError(nil)
                 }
+            } else {
+                subscriber.sendCompleted()
             }
             
             return nil
-        }).subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
+        }.subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
     }
 }

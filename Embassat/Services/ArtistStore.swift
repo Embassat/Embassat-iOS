@@ -8,15 +8,15 @@
 
 import Foundation
 
-public class ArtistStore: NSObject {
+struct ArtistStore {
     
     let documentsPath: AnyObject = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask,true)[0]
 
-    public func object(forKey key: String) -> AnyObject? {
+    func object(forKey key: String) -> AnyObject? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath.stringByAppendingString(key))
     }
     
-    public func store(object: AnyObject, forKey key: String) {
+    func store(object: AnyObject, forKey key: String) {
         NSKeyedArchiver.archiveRootObject(object, toFile: documentsPath.stringByAppendingString(key))
     }
 }
