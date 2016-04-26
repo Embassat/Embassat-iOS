@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Kakapo
 
 struct ArtistFactory: Storable, Serializable {
     let description: String
