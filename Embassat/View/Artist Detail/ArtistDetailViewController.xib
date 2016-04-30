@@ -11,7 +11,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMArtistDetailViewController" customModule="Embassat" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtistDetailViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
                 <outlet property="artistNameLabel" destination="bfQ-nj-bzD" id="NlC-Tl-VJ4"/>
                 <outlet property="bottomView" destination="npP-KU-93P" id="KlY-56-89V"/>

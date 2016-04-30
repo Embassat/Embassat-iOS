@@ -35,7 +35,7 @@ class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
     required init(_ viewModel: MapViewModel) {
         self.viewModel = viewModel
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: String(MapViewController), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

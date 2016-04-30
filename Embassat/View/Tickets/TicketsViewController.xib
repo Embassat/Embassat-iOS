@@ -6,7 +6,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMTicketsViewController" customModule="Embassat" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TicketsViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
                 <outlet property="dayTicketContainer" destination="tPw-fW-49Y" id="R1C-4E-y0b"/>
                 <outlet property="petitEmTicketContainer" destination="wP9-dp-4Oo" id="Vpb-xR-9db"/>
@@ -37,7 +37,7 @@
                     <rect key="frame" x="0.0" y="214" width="320" height="290"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJc-yo-sKz">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                            <rect key="frame" x="0.0" y="10" width="320" height="64"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abonament 3 dies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3V-uk-wB4">
                                     <rect key="frame" x="22" y="22" width="132" height="20"/>
@@ -50,7 +50,7 @@
                                         <constraint firstAttribute="height" constant="22" id="0x3-xE-xUl"/>
                                         <constraint firstAttribute="width" constant="22" id="Idq-H0-2nC"/>
                                     </constraints>
-                                    <state key="normal" image="chevron-red.png">
+                                    <state key="normal" image="chevron.png">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -69,7 +69,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9c-Rz-hgf">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="74" width="320" height="44"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30€ Anticipada" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3I-KU-2Ob">
                                     <rect key="frame" x="22" y="0.0" width="111" height="20"/>
@@ -93,7 +93,7 @@
                             </constraints>
                         </view>
                         <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPw-fW-49Y">
-                            <rect key="frame" x="0.0" y="108" width="320" height="64"/>
+                            <rect key="frame" x="0.0" y="118" width="320" height="64"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrada d'un dia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvT-Im-MaU">
                                     <rect key="frame" x="22" y="22" width="118" height="20"/>
@@ -106,7 +106,7 @@
                                         <constraint firstAttribute="height" constant="22" id="dzM-3u-SCq"/>
                                         <constraint firstAttribute="width" constant="22" id="ke6-5m-nNT"/>
                                     </constraints>
-                                    <state key="normal" image="chevron-red.png">
+                                    <state key="normal" image="chevron.png">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -125,7 +125,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTU-cO-Mwh">
-                            <rect key="frame" x="0.0" y="172" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="182" width="320" height="44"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20€ Anticipada" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGK-Vf-CgC">
                                     <rect key="frame" x="22" y="0.0" width="111" height="20"/>
@@ -148,17 +148,17 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZr-Yl-cBk">
-                            <rect key="frame" x="22" y="230" width="9" height="21"/>
+                            <rect key="frame" x="22" y="240" width="9" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aforament limitat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ds-s9-iXB">
-                            <rect key="frame" x="32" y="230" width="131" height="21"/>
+                            <rect key="frame" x="32" y="240" width="131" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wP9-dp-4Oo">
-                            <rect key="frame" x="0.0" y="265" width="320" height="64"/>
+                            <rect key="frame" x="0.0" y="275" width="320" height="64"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petit EM'" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joH-cl-212">
                                     <rect key="frame" x="22" y="22" width="64" height="20"/>
@@ -190,7 +190,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Tu-fh-g2e">
-                            <rect key="frame" x="0.0" y="337" width="320" height="22"/>
+                            <rect key="frame" x="0.0" y="347" width="320" height="22"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10€ Anticipada" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3np-WS-aHU">
                                     <rect key="frame" x="22" y="0.0" width="109" height="20"/>
@@ -206,16 +206,17 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEO-UK-2Bn">
-                            <rect key="frame" x="22" y="373" width="9" height="21"/>
+                            <rect key="frame" x="22" y="383" width="9" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aforament limitat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFg-3Z-VyJ">
-                            <rect key="frame" x="32" y="373" width="131" height="21"/>
+                            <rect key="frame" x="32" y="383" width="131" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="xJc-yo-sKz" firstAttribute="centerX" secondItem="yjY-8r-SNc" secondAttribute="centerX" id="0hS-2W-iOd"/>
                         <constraint firstAttribute="trailing" secondItem="BTU-cO-Mwh" secondAttribute="trailing" id="15q-Uc-XIM"/>
@@ -240,7 +241,7 @@
                         <constraint firstItem="bZr-Yl-cBk" firstAttribute="top" secondItem="BTU-cO-Mwh" secondAttribute="bottom" constant="14" id="inF-oF-hV7"/>
                         <constraint firstAttribute="trailing" secondItem="wP9-dp-4Oo" secondAttribute="trailing" id="j9K-5r-rII"/>
                         <constraint firstItem="u9c-Rz-hgf" firstAttribute="top" secondItem="xJc-yo-sKz" secondAttribute="bottom" id="jV3-hb-WpN"/>
-                        <constraint firstItem="xJc-yo-sKz" firstAttribute="top" secondItem="yjY-8r-SNc" secondAttribute="top" id="mOE-1V-sHB"/>
+                        <constraint firstItem="xJc-yo-sKz" firstAttribute="top" secondItem="yjY-8r-SNc" secondAttribute="top" constant="10" id="mOE-1V-sHB"/>
                         <constraint firstItem="tEO-UK-2Bn" firstAttribute="top" secondItem="8Tu-fh-g2e" secondAttribute="bottom" constant="14" id="ozh-HI-3lY"/>
                         <constraint firstItem="bZr-Yl-cBk" firstAttribute="leading" secondItem="yjY-8r-SNc" secondAttribute="leading" constant="22" id="p6I-gc-mZ5"/>
                         <constraint firstItem="QFg-3Z-VyJ" firstAttribute="top" secondItem="8Tu-fh-g2e" secondAttribute="bottom" constant="14" id="qcn-xx-fRr"/>
@@ -268,6 +269,7 @@
     </objects>
     <resources>
         <image name="chevron-red.png" width="48" height="48"/>
+        <image name="chevron.png" width="8" height="14"/>
         <image name="info4.jpg" width="1000" height="639"/>
     </resources>
 </document>

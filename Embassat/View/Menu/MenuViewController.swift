@@ -25,7 +25,7 @@ class MenuViewController: EmbassatRootViewController {
                             configureHeaderBlock: nil)
         self.viewModel = viewModel
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: String(MenuViewController), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

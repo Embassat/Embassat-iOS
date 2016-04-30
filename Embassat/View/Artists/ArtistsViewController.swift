@@ -15,7 +15,7 @@ class ArtistsViewController: EmbassatRootViewController {
     let dataSource: ArrayDataSource
     let viewModel: ArtistsViewModel
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
+    init() {
 
         let theViewModel = ArtistsViewModel()
         dataSource = ArrayDataSource(viewModel: theViewModel, configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
@@ -26,11 +26,11 @@ class ArtistsViewController: EmbassatRootViewController {
         }, configureHeaderBlock: nil)
         viewModel = theViewModel
         
-        super.init(nibName: nibNameOrNil, bundle: nibBundle)
+        super.init(nibName: String(ArtistsViewController), bundle: nil)
     }
 
-    required convenience init(coder aDecoder: NSCoder) {
-        self.init(nibName: nil, bundle: nil)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {

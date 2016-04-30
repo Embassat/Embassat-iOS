@@ -1,20 +1,20 @@
 //
-//  InfoViewController.swift
-//  Embassa't
+//  TransportViewController.swift
+//  Embassat
 //
-//  Created by Joan Romano on 24/05/15.
-//  Copyright (c) 2015 Crows And Dogs. All rights reserved.
+//  Created by Joan Romano on 30/04/16.
+//  Copyright © 2016 Crows And Dogs. All rights reserved.
 //
 
 import UIKit
 
-class InfoViewController: EmbassatRootViewController {
-    
+class TransportViewController: EmbassatRootViewController {
+
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var detailLabel: UILabel?
     
     init() {
-        super.init(nibName: String(InfoViewController), bundle: nil)
+        super.init(nibName: String(TransportViewController), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,9 +24,10 @@ class InfoViewController: EmbassatRootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Info"
+        title = "Transport"
         
         titleLabel?.font = UIFont.detailFont(ofSize: 20)
         detailLabel?.font = UIFont.detailFont(ofSize: 15)
     }
+    
 }

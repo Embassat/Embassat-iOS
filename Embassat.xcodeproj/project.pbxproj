@@ -16,6 +16,8 @@
 		8B310E551CCBF3AA0030B8CD /* CADEMArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtist.swift */; };
 		8B310E561CCBF3B60030B8CD /* NSDate+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193441BB49AB200B7D929 /* NSDate+EMAdditions.swift */; };
 		8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4737E41CCB92FC00B1816A /* AppDelegate.swift */; };
+		8BA59AE31CD4B41E0043BAE3 /* TransportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59AE21CD4B41E0043BAE3 /* TransportViewController.swift */; };
+		8BA59AE61CD4B45A0043BAE3 /* TransportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BA59AE51CD4B45A0043BAE3 /* TransportViewController.xib */; };
 		8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4818CB8F09008FBC9B /* Foundation.framework */; };
 		8C04EF4B18CB8F09008FBC9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */; };
 		8C04EF4D18CB8F09008FBC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4C18CB8F09008FBC9B /* UIKit.framework */; };
@@ -113,6 +115,8 @@
 		8B4737E41CCB92FC00B1816A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B9D8E141CCBE81100FC75BA /* ShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareKit.framework; path = "../../Library/Developer/Xcode/DerivedData/Embassat-arywtvxbokqlnjcnovihfxzrgoyi/Build/Products/Debug-iphonesimulator/ShareKit.framework"; sourceTree = "<group>"; };
 		8B9D8E161CCBE81E00FC75BA /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../Library/Developer/Xcode/DerivedData/Embassat-arywtvxbokqlnjcnovihfxzrgoyi/Build/Products/Debug-iphonesimulator/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		8BA59AE21CD4B41E0043BAE3 /* TransportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportViewController.swift; path = Transport/TransportViewController.swift; sourceTree = "<group>"; };
+		8BA59AE51CD4B45A0043BAE3 /* TransportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TransportViewController.xib; path = Transport/TransportViewController.xib; sourceTree = "<group>"; };
 		8BD4A5061CC97D290082AE37 /* libyoutube-ios-player-helper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libyoutube-ios-player-helper.a"; path = "../../Library/Developer/Xcode/DerivedData/Embassa't-ftbfzshfmcjfnbflvseyitxzrlqr/Build/Products/Debug-iphonesimulator/libyoutube-ios-player-helper.a"; sourceTree = "<group>"; };
 		8C04EF4518CB8F09008FBC9B /* Embassat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embassat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04EF4818CB8F09008FBC9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -233,6 +237,15 @@
 			path = EmbassatTests;
 			sourceTree = "<group>";
 		};
+		8BA59AE11CD4B3FF0043BAE3 /* Transport */ = {
+			isa = PBXGroup;
+			children = (
+				8BA59AE21CD4B41E0043BAE3 /* TransportViewController.swift */,
+				8BA59AE51CD4B45A0043BAE3 /* TransportViewController.xib */,
+			);
+			name = Transport;
+			sourceTree = "<group>";
+		};
 		8C04EF3C18CB8F09008FBC9B = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +325,7 @@
 				8CA1D4181948FA900095067C /* PetitEM */,
 				8CAEB338192BF77B0017CF29 /* Schedule */,
 				8C774F5A192D67F0000D5062 /* Tickets */,
+				8BA59AE11CD4B3FF0043BAE3 /* Transport */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,6 +621,7 @@
 				8CEF6826193BDD120001B801 /* chevron@2x.png in Resources */,
 				8C8D83CD1B0E482C00CD8CA4 /* fav@2x.png in Resources */,
 				8CDBF1A018DDC3DB002C6E50 /* MenuViewController.xib in Resources */,
+				8BA59AE61CD4B45A0043BAE3 /* TransportViewController.xib in Resources */,
 				8C04EF8B18CB9408008FBC9B /* ArtistsViewController.xib in Resources */,
 				8C04EF5318CB8F09008FBC9B /* InfoPlist.strings in Resources */,
 				8CCA1B8618FC718900B0C60C /* MapViewController.xib in Resources */,
@@ -778,6 +793,7 @@
 				8CB1B5C71B11FDDD00D1A477 /* ArtistStore.swift in Sources */,
 				8CF193381BB360DE00B7D929 /* UIFont+EMAdditions.swift in Sources */,
 				8CE72FE81B137AD800698D4A /* MenuCollectionViewCell.swift in Sources */,
+				8BA59AE31CD4B41E0043BAE3 /* TransportViewController.swift in Sources */,
 				8CE72FEC1B13839500698D4A /* ScheduleCollectionViewCell.swift in Sources */,
 				8CE72FF91B13C86700698D4A /* RootCollectionViewCell.swift in Sources */,
 				8C1FF3401B03C9EF00078E15 /* MenuViewModel.swift in Sources */,

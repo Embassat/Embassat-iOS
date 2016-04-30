@@ -26,6 +26,14 @@ class ArtistDetailViewController: EmbassatRootViewController {
             self.updateSubviewDetails()
         }
     }
+    
+    init() {
+        super.init(nibName: String(ArtistDetailViewController), bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +70,7 @@ class ArtistDetailViewController: EmbassatRootViewController {
         playerView?.loadWithVideoId("M7lc1UVf-VE")
         
         let favItem = navigationItem.rightBarButtonItems?.first
-        favItem?.tintColor = viewModel?.artistIsFavorite == true ? .yellowColor() : nil
+        favItem?.tintColor = viewModel?.artistIsFavorite == true ? .lightGrayColor() : .whiteColor()
     }
     
     func sharePressed() {
@@ -74,7 +82,7 @@ class ArtistDetailViewController: EmbassatRootViewController {
             guard let weakSelf = self else { return }
 
             let favItem = weakSelf.navigationItem.rightBarButtonItems?.first
-            favItem?.tintColor = favItem?.tintColor == nil ? .yellowColor() : nil
+            favItem?.tintColor = favItem?.tintColor == .whiteColor() ? .lightGrayColor() : .whiteColor()
             
             weakSelf.updateSignal.sendNext(true)
         }

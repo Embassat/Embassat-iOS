@@ -38,7 +38,7 @@ class ScheduleViewController: EmbassatRootViewController {
             configureHeaderBlock: nil)
         self.viewModel = viewModel
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: String(ScheduleViewController), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

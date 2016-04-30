@@ -16,6 +16,14 @@ class TicketsViewController: EmbassatRootViewController {
     @IBOutlet weak var dayTicketContainer: UIView?
     @IBOutlet weak var petitEmTicketContainer: UIView?
     
+    init() {
+        super.init(nibName: String(TicketsViewController), bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

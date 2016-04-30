@@ -46,7 +46,7 @@ class MenuViewModel: NSObject, ViewModelCollectionDelegate {
             break;
             
         case 4:
-            viewController = InfoViewController()
+            viewController = TransportViewController()
             break;
             
         case 5:

@@ -20,7 +20,7 @@ class MenuCollectionViewCell: RootCollectionViewCell {
     override func setupView() {
         super.setupView()
         
-        optionNameLabel?.font = UIFont.detailFont(ofSize: 30.0)
+        optionNameLabel?.font = UIFont.titleFont(ofSize: 30.0)
         optionNameLabel?.adjustsFontSizeToFitWidth = true
     }
 }

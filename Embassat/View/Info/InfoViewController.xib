@@ -11,8 +11,10 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMInfoViewControllerSwift" customModule="Embassat" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
+                <outlet property="detailLabel" destination="i3z-1G-GGG" id="Asz-Mz-lxz"/>
+                <outlet property="titleLabel" destination="yhx-bK-UHB" id="W6q-Nc-0Sf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ndq-ZY-1Q4">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63O-i2-yo1">
-                    <rect key="frame" x="0.0" y="214" width="320" height="290"/>
+                    <rect key="frame" x="0.0" y="184" width="320" height="320"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Que es l’Embassa’t?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-bK-UHB">
                             <rect key="frame" x="22" y="20" width="274" height="24"/>
@@ -33,7 +35,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="i3z-1G-GGG">
-                            <rect key="frame" x="22" y="52" width="274" height="467"/>
+                            <rect key="frame" x="22" y="64" width="274" height="467"/>
                             <string key="text">La vuitena edició de l’Embassa’t no és només un pas més, després d’una llarga espera de 365 dies per molt que ens movem de lloc, a nosaltres ens continua movent el mateix que el primer dia: donar autèntic sentit a la paraula festival i vestir la nostra ciutat, encara que sigui per només  unes hores, de música  i alegria sense parar. Reivindicant espais, músics, maneres d’oci diferents, cultura i filosofia, un pensament positiu que vol encomanar el bon humor i la passió per la música des dels més petits als més grans. Intentant arribar al màxim de gent  i estils possibles. Des dels concerts principals a Can Marcet, la inauguració al Museu del Gas com els vermuts gratuïts al centre de Sabadell, no hi ha excusa per fer Embassa’t, aquesta és la qüestió. </string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -44,7 +46,7 @@
                         <constraint firstItem="yhx-bK-UHB" firstAttribute="leading" secondItem="63O-i2-yo1" secondAttribute="leading" constant="22" id="1fp-qL-FcB"/>
                         <constraint firstAttribute="trailing" secondItem="yhx-bK-UHB" secondAttribute="trailing" constant="22" id="5SY-7a-MDW"/>
                         <constraint firstAttribute="trailing" secondItem="i3z-1G-GGG" secondAttribute="trailing" constant="22" id="5Wr-Sq-5Sk"/>
-                        <constraint firstItem="i3z-1G-GGG" firstAttribute="top" secondItem="yhx-bK-UHB" secondAttribute="bottom" constant="8" id="DpE-lD-IdP"/>
+                        <constraint firstItem="i3z-1G-GGG" firstAttribute="top" secondItem="yhx-bK-UHB" secondAttribute="bottom" constant="20" id="DpE-lD-IdP"/>
                         <constraint firstAttribute="bottom" secondItem="i3z-1G-GGG" secondAttribute="bottom" constant="20" id="k4T-Jw-TT8"/>
                         <constraint firstItem="i3z-1G-GGG" firstAttribute="leading" secondItem="63O-i2-yo1" secondAttribute="leading" constant="22" id="rNs-Es-k9b"/>
                         <constraint firstItem="yhx-bK-UHB" firstAttribute="top" secondItem="63O-i2-yo1" secondAttribute="top" constant="20" id="zct-Cb-vYs"/>
@@ -53,7 +55,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ndq-ZY-1Q4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.426295" id="2TA-wF-dsM"/>
+                <constraint firstItem="ndq-ZY-1Q4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.365079" id="2TA-wF-dsM"/>
                 <constraint firstItem="ndq-ZY-1Q4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dak-Wo-hZS"/>
                 <constraint firstItem="63O-i2-yo1" firstAttribute="top" secondItem="ndq-ZY-1Q4" secondAttribute="bottom" id="F9Y-cL-Gsh"/>
                 <constraint firstAttribute="trailing" secondItem="63O-i2-yo1" secondAttribute="trailing" id="GSI-PG-1uL"/>

@@ -11,8 +11,10 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CADEMExtrasViewController" customModule="Embassat" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PetitEMViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
+                <outlet property="detailLabel" destination="7xi-QC-cKx" id="9hd-1k-f4N"/>
+                <outlet property="titleLabel" destination="0xO-7Q-ePI" id="ei7-Nn-5by"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cDQ-7V-Hlv">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJj-XV-k7A">
-                    <rect key="frame" x="0.0" y="214" width="320" height="290"/>
+                    <rect key="frame" x="0.0" y="184" width="320" height="320"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petit Embassa’t" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-7Q-ePI">
                             <rect key="frame" x="22" y="20" width="276" height="24"/>
@@ -33,15 +35,15 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="7xi-QC-cKx">
-                            <rect key="frame" x="22" y="52" width="276" height="325"/>
-                            <mutableString key="text">Conviure, compartir, créixer, enriquir, gaudir, recordar... hi ha mil i un moments especials per pares i fills, és per això que també volem tenir una primera experiència amb el festival, els concerts, la música, amics, família, tallers, experiències, sensacions diferents en una jornada extraordinària per tots. El Petit Embassa’t vol ser tot això, però de ben segur que per cadascuna de les famílies pot arribar a ser molt més. Veniu a passar la tarda amb tota aquesta programació pensada pels més petits que de ben segur farà gaudir als més grans.</mutableString>
+                            <rect key="frame" x="22" y="64" width="276" height="325"/>
+                            <string key="text">Conviure, compartir, créixer, enriquir, gaudir, recordar... hi ha mil i un moments especials per pares i fills, és per això que també volem tenir una primera experiència amb el festival, els concerts, la música, amics, família, tallers, experiències, sensacions diferents en una jornada extraordinària per tots. El Petit Embassa’t vol ser tot això, però de ben segur que per cadascuna de les famílies pot arribar a ser molt més. Veniu a passar la tarda amb tota aquesta programació pensada pels més petits que de ben segur farà gaudir als més grans.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="7xi-QC-cKx" secondAttribute="trailing" constant="22" id="IFS-gR-rbK"/>
-                        <constraint firstItem="7xi-QC-cKx" firstAttribute="top" secondItem="0xO-7Q-ePI" secondAttribute="bottom" constant="8" id="Mhb-pp-StV"/>
+                        <constraint firstItem="7xi-QC-cKx" firstAttribute="top" secondItem="0xO-7Q-ePI" secondAttribute="bottom" constant="20" id="Mhb-pp-StV"/>
                         <constraint firstItem="0xO-7Q-ePI" firstAttribute="top" secondItem="BJj-XV-k7A" secondAttribute="top" constant="20" id="TX1-Lo-p8f"/>
                         <constraint firstItem="7xi-QC-cKx" firstAttribute="leading" secondItem="BJj-XV-k7A" secondAttribute="leading" constant="22" id="eKU-tB-xyv"/>
                         <constraint firstAttribute="trailing" secondItem="0xO-7Q-ePI" secondAttribute="trailing" constant="22" id="f3d-bW-U81"/>
@@ -59,11 +61,11 @@
                 <constraint firstItem="BJj-XV-k7A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zep-9g-kkF"/>
                 <constraint firstItem="cDQ-7V-Hlv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="adD-yR-RI2"/>
                 <constraint firstItem="BJj-XV-k7A" firstAttribute="top" secondItem="cDQ-7V-Hlv" secondAttribute="bottom" id="qN2-Wl-Wuq"/>
-                <constraint firstItem="cDQ-7V-Hlv" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.426295" id="wHN-ae-yJ9"/>
+                <constraint firstItem="cDQ-7V-Hlv" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.365079" id="wHN-ae-yJ9"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="360" y="423.5"/>
+            <point key="canvasLocation" x="360" y="423"/>
         </view>
     </objects>
     <resources>
