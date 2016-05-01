@@ -39,7 +39,7 @@ class ArtistDetailViewController: EmbassatRootViewController {
         super.viewDidLoad()
 
         title = "Artista"
-        artistNameLabel?.font = UIFont.detailFont(ofSize: 20.0)
+        artistNameLabel?.font = UIFont.titleFont(ofSize: 30.0)
         descriptionLabel?.font = UIFont.detailFont(ofSize: 15.0)
         stageLabel?.font = UIFont.detailFont(ofSize: 15.0)
         dayLabel?.font = UIFont.detailFont(ofSize: 15.0)

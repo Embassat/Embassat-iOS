@@ -29,37 +29,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfQ-nj-bzD">
-                    <rect key="frame" x="135" y="8" width="49" height="24"/>
+                    <rect key="frame" x="135" y="20" width="49" height="24"/>
                     <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="20"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="lte-RV-GmL">
-                    <rect key="frame" x="61" y="40" width="198" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="ATV-Cl-Rxn"/>
-                    </constraints>
+                    <rect key="frame" x="61" y="52" width="198" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucv-Se-bVi" customClass="YTPlayerView">
-                    <rect key="frame" x="21" y="123" width="278" height="157"/>
+                    <rect key="frame" x="21" y="105" width="278" height="157"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ucv-Se-bVi" secondAttribute="height" multiplier="278:157" id="SuV-ip-5Pw"/>
                     </constraints>
                 </view>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="//" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOZ-Yp-FmG">
-                    <rect key="frame" x="22" y="295" width="12" height="20"/>
+                    <rect key="frame" x="22" y="277" width="12" height="20"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22.30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkM-Ch-t55">
-                    <rect key="frame" x="22" y="325" width="46" height="20"/>
+                    <rect key="frame" x="22" y="307" width="46" height="20"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="//" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ctb-xq-vg2">
-                    <rect key="frame" x="286" y="295" width="12" height="20"/>
+                    <rect key="frame" x="286" y="277" width="12" height="20"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -171,7 +168,7 @@
                 <constraint firstItem="bkM-Ch-t55" firstAttribute="leading" secondItem="jOZ-Yp-FmG" secondAttribute="leading" id="PPg-sY-U3T"/>
                 <constraint firstItem="ucv-Se-bVi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="THh-L2-3en"/>
                 <constraint firstItem="ucv-Se-bVi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="WHF-Ac-N5J"/>
-                <constraint firstItem="bfQ-nj-bzD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="dyJ-R8-NPC"/>
+                <constraint firstItem="bfQ-nj-bzD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="dyJ-R8-NPC"/>
                 <constraint firstItem="bkM-Ch-t55" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="ebB-AF-yDY"/>
                 <constraint firstAttribute="bottom" secondItem="npP-KU-93P" secondAttribute="bottom" id="jyL-ii-Elx"/>
                 <constraint firstItem="lte-RV-GmL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lxG-FT-MTQ"/>

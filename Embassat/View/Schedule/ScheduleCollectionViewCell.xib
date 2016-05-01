@@ -42,7 +42,7 @@
                         <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fav.png" translatesAutoresizingMaskIntoConstraints="NO" id="d5E-pr-fnc">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="fav.png" translatesAutoresizingMaskIntoConstraints="NO" id="d5E-pr-fnc">
                         <rect key="frame" x="278" y="22" width="20" height="20"/>
                     </imageView>
                 </subviews>

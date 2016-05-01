@@ -37,29 +37,29 @@ class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
         service.artists().map
             { self.dayMapping($0)
             }.subscribeNext(
-                { [unowned self] (artists: AnyObject!) -> Void in
-                    self.model = artists as! [[CADEMArtist]]
-                    self.activeSubject.sendNext(true)
+                { [weak self] (artists: AnyObject!) -> Void in
+                    self?.model = artists as? [[CADEMArtist]] ?? []
+                    self?.activeSubject.sendNext(true)
                 }, error:
-                { [unowned self] (error: NSError!) -> Void in
-                    self.activeSubject.sendError(error)
+                { [weak self] (error: NSError!) -> Void in
+                    self?.activeSubject.sendError(error)
                 })
     }
     
     func dayMapping (artists: AnyObject!) -> AnyObject! {
         let artistsArray = artists as! [CADEMArtist]
         
-        return [self.filteredArray(artistsArray, withDateString: "2015-06-11"),
-                self.filteredArray(artistsArray, withDateString: "2015-06-12"),
-                self.filteredArray(artistsArray, withDateString: "2015-06-13")]
+        return [self.filteredArray(artistsArray, withDateString: "2016-06-09"),
+                self.filteredArray(artistsArray, withDateString: "2016-06-10"),
+                self.filteredArray(artistsArray, withDateString: "2016-06-11")]
     }
     
     func shouldRefreshModel() {
         service.cachedArtists().map
             { self.dayMapping($0)
             }.subscribeNext
-            { [unowned self] (artists: AnyObject!) -> Void in
-                self.model = artists as! [[CADEMArtist]]
+            { [weak self] (artists: AnyObject!) -> Void in
+                self?.model = artists as? [[CADEMArtist]] ?? []
         }
     }
     
@@ -68,39 +68,39 @@ class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
     }
     
     func artistName(forIndexPath indexPath : NSIndexPath) -> String {
-        return self.artist(forIndexPath: indexPath).name
+        return artist(forIndexPath: indexPath).name
     }
     
     func stageName(forIndexPath indexPath : NSIndexPath) -> String {
-        return self.artist(forIndexPath: indexPath).stage
+        return artist(forIndexPath: indexPath).stage
     }
     
     func startMinute(forIndexPath indexPath : NSIndexPath) -> String {
-        return self.artist(forIndexPath: indexPath).startDate.minuteString
+        return artist(forIndexPath: indexPath).startDate.minuteString
     }
     
     func startHour(forIndexPath indexPath : NSIndexPath) -> String {
-        return self.artist(forIndexPath: indexPath).startDate.hourString
+        return artist(forIndexPath: indexPath).startDate.hourString
     }
     
     func startTimeString(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(format: "%@:%@", self.startHour(forIndexPath: indexPath), self.startMinute(forIndexPath: indexPath))
+        return String(format: "%@:%@", startHour(forIndexPath: indexPath), startMinute(forIndexPath: indexPath))
     }
     
     func endMinute(forIndexPath indexPath : NSIndexPath) -> String {
-        return self.artist(forIndexPath: indexPath).endDate.minuteString
+        return artist(forIndexPath: indexPath).endDate.minuteString
     }
     
     func endHour(forIndexPath indexPath : NSIndexPath) -> String {
-        return self.artist(forIndexPath: indexPath).endDate.hourString
+        return artist(forIndexPath: indexPath).endDate.hourString
     }
     
     func endTimeString(forIndexPath indexPath : NSIndexPath) -> String {
-        return String(format: "%@:%@", self.endHour(forIndexPath: indexPath), self.endMinute(forIndexPath: indexPath))
+        return String(format: "%@:%@", endHour(forIndexPath: indexPath), endMinute(forIndexPath: indexPath))
     }
     
     func favoritedStatus(forIndexPath indexPath : NSIndexPath) -> Bool {
-        return self.artist(forIndexPath: indexPath).favorite
+        return artist(forIndexPath: indexPath).favorite
     }
     
     func artistViewModel(forIndexPath indexPath : NSIndexPath) -> ArtistDetailViewModel {
@@ -108,7 +108,7 @@ class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
     }
     
     func backgroundColor(forIndexPath indexPath : NSIndexPath) -> UIColor {
-        let artist: CADEMArtist = self.artist(forIndexPath: indexPath)
+        let artist = self.artist(forIndexPath: indexPath)
         let now: NSDate = NSDate()
         
         return now.isLaterThan(artist.startDate) && now.isEarlierThan(artist.endDate) ? UIColor.emScheduleBackgroundSelectedColor() : UIColor.emScheduleBackgroundDeselectedColor()
@@ -116,7 +116,7 @@ class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
     
     func filteredArray(fromArray: [CADEMArtist], withDateString: String) -> [CADEMArtist] {
         return fromArray.filter({ (artist: CADEMArtist) -> Bool in
-            return self.dateFormatter.stringFromDate(artist.scheduleDate) == withDateString
+            return dateFormatter.stringFromDate(artist.scheduleDate) == withDateString
         }).sort(sortingByDate)
     }
     

@@ -19,7 +19,7 @@
             <subviews>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ocL-i3-F9O">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Cpp-hj-4Q0">
                         <size key="itemSize" width="320" height="53"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -35,7 +35,7 @@
                     <rect key="frame" x="142" y="266" width="37" height="37"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ocL-i3-F9O" secondAttribute="trailing" id="DGq-gx-S6f"/>
                 <constraint firstAttribute="centerY" secondItem="ACl-9w-5i9" secondAttribute="centerY" id="E6O-0E-TEN"/>

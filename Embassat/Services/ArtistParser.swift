@@ -24,7 +24,7 @@ struct ArtistParser {
         for (_,subJson):(String, JSON) in JSON(json) {
             
             guard let startDate = dateFormatter.dateFromString(subJson["start_date"].stringValue),
-                  let endDate = dateFormatter.dateFromString(subJson["start_date"].stringValue) else {
+                  let endDate = dateFormatter.dateFromString(subJson["end_date"].stringValue) else {
                     break;
             }
             
@@ -40,8 +40,8 @@ struct ArtistParser {
                 artistId: subJson["id"].intValue,
                 name: subJson["name"].stringValue,
                 longDescription: subJson["description"].stringValue,
-                artistURL: NSURL(string: subJson["share_url"].stringValue)!,
-                imageURL: NSURL(string: subJson["image_url"].stringValue)!,
+                artistURL: NSURL(string: subJson["share_url"].stringValue.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) ?? "")!,
+                imageURL: NSURL(string: subJson["image_url"].stringValue.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) ?? "")!,
                 startDate: startDate,
                 endDate: endDate,
                 stage: subJson["stage"].stringValue,
