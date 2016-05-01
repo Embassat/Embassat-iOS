@@ -968,7 +968,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cad.Embassa-t";
 				PRODUCT_NAME = Embassat;
-				PROVISIONING_PROFILE = "eda285eb-9154-491b-b9a7-240dbd54447f";
+				PROVISIONING_PROFILE = "6d6229da-5f76-4b1b-be67-63fba25bc660";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -990,7 +990,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cad.Embassa-t";
 				PRODUCT_NAME = Embassat;
-				PROVISIONING_PROFILE = "eda285eb-9154-491b-b9a7-240dbd54447f";
+				PROVISIONING_PROFILE = "6d6229da-5f76-4b1b-be67-63fba25bc660";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassat-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};

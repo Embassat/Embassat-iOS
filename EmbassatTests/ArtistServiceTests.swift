@@ -13,6 +13,7 @@ struct ArtistFactory: Storable, Serializable {
     let description: String
     let image_url: String
     let share_url: String
+    let youtube_video_id: String
     let name: String
     let stage: String
     let start_date: String
@@ -23,6 +24,7 @@ struct ArtistFactory: Storable, Serializable {
         self.init(description: randomString(),
                   image_url: "http://www.embassat.com/wp-content/uploads/gullen1.jpg",
                   share_url: "http://www.embassat.com/wp-content/uploads/gullen1.jpg",
+                  youtube_video_id : "ec5PyegiGJg",
                   name: randomString(),
                   stage: randomString(),
                   start_date: "2015-06-12T21:15:00",
@@ -33,6 +35,7 @@ struct ArtistFactory: Storable, Serializable {
     init(description: String,
          image_url: String,
          share_url: String,
+         youtube_video_id: String,
          name: String,
          stage: String,
          start_date: String,
@@ -41,6 +44,7 @@ struct ArtistFactory: Storable, Serializable {
         self.description = description
         self.image_url = image_url
         self.share_url = share_url
+        self.youtube_video_id = youtube_video_id
         self.name = name
         self.stage = stage
         self.start_date = start_date
@@ -90,6 +94,7 @@ class ArtistServiceTests: XCTestCase {
             XCTAssertTrue(artist.stage.characters.count > 0)
             XCTAssertTrue(artist.longDescription.characters.count > 0)
             XCTAssertTrue(artist.artistURL.absoluteString.characters.count > 0)
+            XCTAssertTrue(artist.youtubeId.characters.count > 0)
             XCTAssertTrue(artist.scheduleDayString.characters.count > 0)
             XCTAssertFalse(artist.favorite)
             XCTAssertNotNil(artist.startDate)
@@ -120,6 +125,7 @@ class ArtistServiceTests: XCTestCase {
             XCTAssertTrue(artist.stage.characters.count > 0)
             XCTAssertTrue(artist.longDescription.characters.count > 0)
             XCTAssertTrue(artist.artistURL.absoluteString.characters.count > 0)
+            XCTAssertTrue(artist.youtubeId.characters.count > 0)
             XCTAssertTrue(artist.scheduleDayString.characters.count > 0)
             XCTAssertFalse(artist.favorite)
             XCTAssertNotNil(artist.startDate)
