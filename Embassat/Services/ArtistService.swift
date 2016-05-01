@@ -12,7 +12,7 @@ import ReactiveCocoa
 class ArtistService {
     
     static let kArtistsEndpoint = "https://scorching-torch-2707.firebaseio.com/artists.json"
-    static private let kArtistsStoreKey = "/artists.db"
+    static private let kArtistsStoreKey = "/artists.db_2"
     
     private let store: ArtistStore = ArtistStore()
     private let parser: ArtistParser = ArtistParser()

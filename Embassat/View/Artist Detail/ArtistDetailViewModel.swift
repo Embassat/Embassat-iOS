@@ -21,6 +21,7 @@ class ArtistDetailViewModel: NSObject {
     var artistStartTimeString: String = ""
     var artistDay: String = ""
     var artistStage: String = ""
+    var artistVideoId: String = ""
     var artistIsFavorite: Bool = false
     var artistImageURL: NSURL? = nil
     
@@ -51,7 +52,7 @@ class ArtistDetailViewModel: NSObject {
     }
     
     func shareAction(forViewController viewController: UIViewController) {
-        let item: AnyObject! = SHKItem.URL(currentArtist.artistURL, title: String(format: "%@ @ Embassa't 2016", self.artistName), contentType: SHKURLContentTypeUndefined)
+        let item: AnyObject! = SHKItem.URL(currentArtist.artistURL, title: String(format: "%@ @ Embassa't 2016", artistName), contentType: SHKURLContentTypeUndefined)
         
         SHK.setRootViewController(viewController)
         let alertController = SHKAlertController.actionSheetForItem(item as! SHKItem)
@@ -74,8 +75,9 @@ class ArtistDetailViewModel: NSObject {
     
     func updateCurrentArtistData() {
         artistName = currentArtist.name
-        artistDescription = currentArtist.longDescription
+        artistDescription = "\"\(currentArtist.longDescription)\""
         artistStage = currentArtist.stage
+        artistVideoId = currentArtist.youtubeId
         artistImageURL = currentArtist.imageURL
         artistStartTimeString = String(format: "%@:%@", String(currentArtist.startDate.hourString), String(currentArtist.startDate.minuteString))
         artistIsFavorite = currentArtist.favorite

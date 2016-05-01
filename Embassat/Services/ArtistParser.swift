@@ -45,6 +45,7 @@ struct ArtistParser {
                 startDate: startDate,
                 endDate: endDate,
                 stage: subJson["stage"].stringValue,
+                youtubeId: subJson["youtube_video_id"].stringValue,
                 favorite: favorited
             )
             artists.append(artist)

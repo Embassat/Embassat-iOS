@@ -13,6 +13,7 @@ public class CADEMArtist : NSObject, NSCoding {
     let name: String
     let longDescription: String
     let stage: String
+    let youtubeId: String
     let artistURL: NSURL
     let imageURL: NSURL
     let startDate: NSDate
@@ -22,7 +23,7 @@ public class CADEMArtist : NSObject, NSCoding {
     
     var favorite: Bool
     
-    init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, startDate: NSDate, endDate: NSDate, stage: String, favorite: Bool = false) {
+    init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, startDate: NSDate, endDate: NSDate, stage: String, youtubeId: String, favorite: Bool = false) {
         self.artistId = artistId
         self.name = name
         self.longDescription = longDescription
@@ -31,6 +32,7 @@ public class CADEMArtist : NSObject, NSCoding {
         self.startDate = startDate
         self.endDate = endDate
         self.stage = stage
+        self.youtubeId = youtubeId
         self.favorite = favorite    
         self.scheduleDate = startDate.hour < 10 ? startDate.dateBySubstracting(days: 1) : startDate
         self.scheduleDayString = scheduleDate.day == 9 ? "Dijous" : scheduleDate.day == 10 ? "Divendres" : "Dissabte"
@@ -45,6 +47,7 @@ public class CADEMArtist : NSObject, NSCoding {
                   startDate: decoder.decodeObjectForKey("startDate") as! NSDate,
                   endDate: decoder.decodeObjectForKey("endDate") as! NSDate,
                   stage: decoder.decodeObjectForKey("stage") as! String,
+                  youtubeId: decoder.decodeObjectForKey("youtubeId") as! String,
                   favorite: decoder.decodeBoolForKey("favorite"))
     }
     
@@ -53,6 +56,7 @@ public class CADEMArtist : NSObject, NSCoding {
         coder.encodeObject(name, forKey: "name")
         coder.encodeObject(longDescription, forKey: "longDescription")
         coder.encodeObject(stage, forKey: "stage")
+        coder.encodeObject(youtubeId, forKey: "youtubeId")
         coder.encodeObject(artistURL, forKey: "artistURL")
         coder.encodeObject(imageURL, forKey: "imageURL")
         coder.encodeObject(startDate, forKey: "startDate")

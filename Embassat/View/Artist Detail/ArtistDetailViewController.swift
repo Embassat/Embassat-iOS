@@ -8,11 +8,13 @@
 
 import UIKit
 import ReactiveCocoa
+import SDWebImage
 import youtube_ios_player_helper
 
 class ArtistDetailViewController: EmbassatRootViewController {
     
     @IBOutlet weak var playerView: YTPlayerView?
+    @IBOutlet weak var imageView: UIImageView?
     @IBOutlet weak var bottomView: UIView?
     @IBOutlet weak var contentView: UIScrollView?
     @IBOutlet weak var artistNameLabel: UILabel?
@@ -74,7 +76,16 @@ class ArtistDetailViewController: EmbassatRootViewController {
         stageLabel?.text = viewModel?.artistStage
         dayLabel?.text = viewModel?.artistDay
         timeLabel?.text = viewModel?.artistStartTimeString
-        playerView?.loadWithVideoId("M7lc1UVf-VE")
+        
+        if let videoId = viewModel?.artistVideoId where videoId.characters.count > 0 {
+            imageView?.hidden = true
+            playerView?.hidden = false
+            playerView?.loadWithVideoId(videoId)
+        } else if let imageURL = viewModel?.artistImageURL {
+            imageView?.hidden = false
+            playerView?.hidden = true
+            imageView?.sd_setImageWithURL(imageURL, placeholderImage: UIImage(named: "loading.jpg"))
+        }
         
         let favItem = navigationItem.rightBarButtonItems?.first
         favItem?.tintColor = viewModel?.artistIsFavorite == true ? .lightGrayColor() : .whiteColor()
