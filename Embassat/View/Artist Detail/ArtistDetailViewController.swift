@@ -14,6 +14,7 @@ class ArtistDetailViewController: EmbassatRootViewController {
     
     @IBOutlet weak var playerView: YTPlayerView?
     @IBOutlet weak var bottomView: UIView?
+    @IBOutlet weak var contentView: UIScrollView?
     @IBOutlet weak var artistNameLabel: UILabel?
     @IBOutlet weak var descriptionLabel: UILabel?
     @IBOutlet weak var dayLabel: UILabel?
@@ -49,6 +50,12 @@ class ArtistDetailViewController: EmbassatRootViewController {
         let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ArtistDetailViewController.favoritePressed))
         
         navigationItem.rightBarButtonItems = [favItem, shareItem]
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        contentView?.flashScrollIndicators()
     }
     
     @IBAction func nextPressed(sender: UIButton) {
