@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="64" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ndq-ZY-1Q4">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ndq-ZY-1Q4">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63O-i2-yo1">
@@ -68,6 +68,6 @@
         </view>
     </objects>
     <resources>
-        <image name="info4.jpg" width="1000" height="639"/>
+        <image name="info.jpg" width="1500" height="1000"/>
     </resources>
 </document>
