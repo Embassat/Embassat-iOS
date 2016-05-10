@@ -15,6 +15,11 @@
 		8B310E541CCBF3600030B8CD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682ED1B128D9200FD2216 /* NotificationService.swift */; };
 		8B310E551CCBF3AA0030B8CD /* CADEMArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0CE811B038E3E00BC04B0 /* CADEMArtist.swift */; };
 		8B310E561CCBF3B60030B8CD /* NSDate+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193441BB49AB200B7D929 /* NSDate+EMAdditions.swift */; };
+		8B3A18CF1CE2664D00B90876 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3A18CA1CE2664D00B90876 /* 58x58.png */; };
+		8B3A18D01CE2664D00B90876 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3A18CB1CE2664D00B90876 /* 80x80.png */; };
+		8B3A18D11CE2664D00B90876 /* 87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3A18CC1CE2664D00B90876 /* 87x87.png */; };
+		8B3A18D21CE2664D00B90876 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3A18CD1CE2664D00B90876 /* 120x120.png */; };
+		8B3A18D31CE2664D00B90876 /* 180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3A18CE1CE2664D00B90876 /* 180x180.png */; };
 		8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4737E41CCB92FC00B1816A /* AppDelegate.swift */; };
 		8B4D39EA1CE111550088DDA5 /* info.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D39E71CE111550088DDA5 /* info.jpg */; };
 		8B4D39EB1CE111550088DDA5 /* petitem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D39E81CE111550088DDA5 /* petitem.jpg */; };
@@ -33,9 +38,6 @@
 		8C1FF3461B03F7C400078E15 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3451B03F7C400078E15 /* ArrayDataSource.swift */; };
 		8C1FF34C1B04CD1D00078E15 /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF34B1B04CD1D00078E15 /* TicketsViewController.swift */; };
 		8C1FF34E1B04CDB700078E15 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF34D1B04CDB700078E15 /* RootViewController.swift */; };
-		8C23D62618FB001F00B3C106 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D61E18FB001F00B3C106 /* 58x58.png */; };
-		8C23D62818FB001F00B3C106 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62018FB001F00B3C106 /* 80x80.png */; };
-		8C23D62918FB001F00B3C106 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C23D62118FB001F00B3C106 /* 120x120.png */; };
 		8C35AE081B0105C30014331F /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35AE071B0105C30014331F /* ArtistService.swift */; };
 		8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB381B0A8F80000E019F /* apercu_medium.otf */; };
 		8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */; };
@@ -112,6 +114,11 @@
 		8B310E401CCBEC830030B8CD /* EmbassatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbassatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B310E421CCBEC830030B8CD /* ArtistServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistServiceTests.swift; sourceTree = "<group>"; };
 		8B310E441CCBEC830030B8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B3A18CA1CE2664D00B90876 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
+		8B3A18CB1CE2664D00B90876 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
+		8B3A18CC1CE2664D00B90876 /* 87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87x87.png; sourceTree = "<group>"; };
+		8B3A18CD1CE2664D00B90876 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
+		8B3A18CE1CE2664D00B90876 /* 180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 180x180.png; sourceTree = "<group>"; };
 		8B4737E41CCB92FC00B1816A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B4D39E71CE111550088DDA5 /* info.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = info.jpg; sourceTree = "<group>"; };
 		8B4D39E81CE111550088DDA5 /* petitem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = petitem.jpg; sourceTree = "<group>"; };
@@ -137,9 +144,6 @@
 		8C1FF3451B03F7C400078E15 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
 		8C1FF34B1B04CD1D00078E15 /* TicketsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicketsViewController.swift; path = Tickets/TicketsViewController.swift; sourceTree = "<group>"; };
 		8C1FF34D1B04CDB700078E15 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		8C23D61E18FB001F00B3C106 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
-		8C23D62018FB001F00B3C106 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
-		8C23D62118FB001F00B3C106 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
 		8C35AE071B0105C30014331F /* ArtistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ArtistService.swift; path = Services/ArtistService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8C6BCB381B0A8F80000E019F /* apercu_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apercu_medium.otf; sourceTree = "<group>"; };
 		8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "noe-display-bold.otf"; sourceTree = "<group>"; };
@@ -478,9 +482,11 @@
 		8CDBF19618DDB9D9002C6E50 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				8C23D61E18FB001F00B3C106 /* 58x58.png */,
-				8C23D62018FB001F00B3C106 /* 80x80.png */,
-				8C23D62118FB001F00B3C106 /* 120x120.png */,
+				8B3A18CA1CE2664D00B90876 /* 58x58.png */,
+				8B3A18CB1CE2664D00B90876 /* 80x80.png */,
+				8B3A18CC1CE2664D00B90876 /* 87x87.png */,
+				8B3A18CD1CE2664D00B90876 /* 120x120.png */,
+				8B3A18CE1CE2664D00B90876 /* 180x180.png */,
 				8CE72FF61B13C70F00698D4A /* chevron-red@2x.png */,
 				8CEF6823193BDD120001B801 /* chevron.png */,
 				8CEF6824193BDD120001B801 /* chevron@2x.png */,
@@ -630,6 +636,7 @@
 				8B4D39EC1CE111550088DDA5 /* tickets.jpg in Resources */,
 				8CE72FE11B136FEC00698D4A /* Default-667h@2x.png in Resources */,
 				8CB6C69B18E8B919008D19FE /* info_cover@2x.png in Resources */,
+				8B3A18D01CE2664D00B90876 /* 80x80.png in Resources */,
 				8C8D83BD1B0BC45D00CD8CA4 /* ArtistCollectionViewCell.xib in Resources */,
 				8CA1D41D1948FAAE0095067C /* PetitEMViewController.xib in Resources */,
 				8C8D83C81B0E2E2000CD8CA4 /* left@2x.png in Resources */,
@@ -638,21 +645,22 @@
 				8CB6C69A18E8B919008D19FE /* info_cover.png in Resources */,
 				8B4D39EE1CE111910088DDA5 /* transport.jpg in Resources */,
 				8CAABD5A18E37162005431B9 /* ArtistDetailViewController.xib in Resources */,
-				8C23D62918FB001F00B3C106 /* 120x120.png in Resources */,
-				8C23D62818FB001F00B3C106 /* 80x80.png in Resources */,
 				8C04EF5B18CB8F09008FBC9B /* Images.xcassets in Resources */,
 				8C8D83CB1B0E2E2000CD8CA4 /* share@2x.png in Resources */,
 				8C8D83CA1B0E2E2000CD8CA4 /* right@2x.png in Resources */,
 				8C774F74192EC39A000D5062 /* Default.png in Resources */,
 				8C774F5F192D682B000D5062 /* TicketsViewController.xib in Resources */,
+				8B3A18D21CE2664D00B90876 /* 120x120.png in Resources */,
 				8CE72FF71B13C70F00698D4A /* chevron-red@2x.png in Resources */,
+				8B3A18D11CE2664D00B90876 /* 87x87.png in Resources */,
 				8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */,
-				8C23D62618FB001F00B3C106 /* 58x58.png in Resources */,
 				8B4D39EB1CE111550088DDA5 /* petitem.jpg in Resources */,
+				8B3A18D31CE2664D00B90876 /* 180x180.png in Resources */,
 				8CB6C69418E8B3D6008D19FE /* InfoViewController.xib in Resources */,
 				8CEF6825193BDD120001B801 /* chevron.png in Resources */,
 				8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */,
 				8C774F72192EC0B9000D5062 /* Default@2x.png in Resources */,
+				8B3A18CF1CE2664D00B90876 /* 58x58.png in Resources */,
 				8CAEB33D192BF7AB0017CF29 /* ScheduleViewController.xib in Resources */,
 				8C8D83C91B0E2E2000CD8CA4 /* loading.jpg in Resources */,
 			);
