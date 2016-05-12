@@ -30,7 +30,7 @@
             <rect key="frame" x="0.0" y="64" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickets.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cd2-jM-4qT">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickets.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cd2-jM-4qT">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjY-8r-SNc">

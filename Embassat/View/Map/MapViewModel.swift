@@ -12,7 +12,7 @@ struct MapViewModel {
     
     let latitudes = [41.545738, 41.5417171, 41.54164, 41.5466157]
     let longitudes = [2.106824, 2.0969444, 2.096826, 2.1067646]
-    let titles = ["Mirador Museu del Gas", "Can Marcet - Escenari Principal", "Can Marcet - Yeearphone", "Pç del Dr Robert"]
+    let titles = ["Mirador Museu del Gas", "Can Marcet - Escenari Principal", "Can Marcet - Yeearphone", "Pl. Dr. Robert"]
     
     func numberOfPoints() -> Int {
         return latitudes.count
