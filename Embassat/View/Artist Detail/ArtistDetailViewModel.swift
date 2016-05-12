@@ -24,6 +24,9 @@ class ArtistDetailViewModel: NSObject {
     var artistVideoId: String = ""
     var artistIsFavorite: Bool = false
     var artistImageURL: NSURL? = nil
+    var artistIsFree: Bool {
+        return currentArtist.isFree
+    }
     
     var currentIndex: Int = 0 {
         didSet {

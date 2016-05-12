@@ -23,6 +23,12 @@ public class CADEMArtist : NSObject, NSCoding {
     
     var favorite: Bool
     
+    var isFree: Bool {
+        get {
+            return scheduleDate.day == 9 || (startDate.hour > 10 && startDate.hour < 17)
+        }
+    }
+    
     init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, startDate: NSDate, endDate: NSDate, stage: String, youtubeId: String, favorite: Bool = false) {
         self.artistId = artistId
         self.name = name

@@ -18,6 +18,7 @@
                 <outlet property="contentView" destination="OnD-wt-qQl" id="i9k-JB-qfL"/>
                 <outlet property="dayLabel" destination="jOZ-Yp-FmG" id="vaa-Ve-hG6"/>
                 <outlet property="descriptionLabel" destination="lte-RV-GmL" id="ePE-Px-kyS"/>
+                <outlet property="freeLabel" destination="EFI-Fd-4gh" id="Atp-dm-RGu"/>
                 <outlet property="imageView" destination="D82-FI-wd1" id="Qhd-Xl-6bj"/>
                 <outlet property="playerView" destination="ucv-Se-bVi" id="7Px-NR-HKY"/>
                 <outlet property="stageLabel" destination="Ctb-xq-vg2" id="7eq-lf-4qM"/>
@@ -71,9 +72,15 @@
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gratuït" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="EFI-Fd-4gh">
+                            <rect key="frame" x="244" y="307" width="55" height="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
                         <constraint firstItem="Ctb-xq-vg2" firstAttribute="trailing" secondItem="ucv-Se-bVi" secondAttribute="trailing" id="4V4-IF-lBy"/>
+                        <constraint firstItem="EFI-Fd-4gh" firstAttribute="trailing" secondItem="Ctb-xq-vg2" secondAttribute="trailing" id="7EL-w9-FXd"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bkM-Ch-t55" secondAttribute="bottom" constant="8" id="7dv-az-yQm"/>
                         <constraint firstItem="lte-RV-GmL" firstAttribute="top" secondItem="bfQ-nj-bzD" secondAttribute="bottom" constant="8" id="9EF-U4-p5k"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bfQ-nj-bzD" secondAttribute="trailing" constant="21" id="AIm-wc-m1C"/>
@@ -84,6 +91,7 @@
                         <constraint firstItem="D82-FI-wd1" firstAttribute="leading" secondItem="OnD-wt-qQl" secondAttribute="leading" constant="21" id="PfN-CR-KyM"/>
                         <constraint firstItem="ucv-Se-bVi" firstAttribute="centerX" secondItem="OnD-wt-qQl" secondAttribute="centerX" id="SEw-0O-GQu"/>
                         <constraint firstItem="jOZ-Yp-FmG" firstAttribute="top" secondItem="ucv-Se-bVi" secondAttribute="bottom" constant="15" id="YDt-e0-9bN"/>
+                        <constraint firstItem="EFI-Fd-4gh" firstAttribute="centerY" secondItem="bkM-Ch-t55" secondAttribute="centerY" id="ZQ4-lH-ivx"/>
                         <constraint firstItem="bfQ-nj-bzD" firstAttribute="top" secondItem="OnD-wt-qQl" secondAttribute="top" constant="20" id="caH-Nf-3XO"/>
                         <constraint firstItem="lte-RV-GmL" firstAttribute="centerX" secondItem="OnD-wt-qQl" secondAttribute="centerX" id="ewX-aA-SdM"/>
                         <constraint firstItem="ucv-Se-bVi" firstAttribute="leading" secondItem="OnD-wt-qQl" secondAttribute="leading" constant="21" id="fZb-0K-fCm"/>

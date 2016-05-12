@@ -22,6 +22,7 @@ class ArtistDetailViewController: EmbassatRootViewController {
     @IBOutlet weak var dayLabel: UILabel?
     @IBOutlet weak var timeLabel: UILabel?
     @IBOutlet weak var stageLabel: UILabel?
+    @IBOutlet weak var freeLabel: UILabel?
     
     var updateSignal: RACSubject = RACSubject()
     var viewModel: ArtistDetailViewModel? {
@@ -45,6 +46,7 @@ class ArtistDetailViewController: EmbassatRootViewController {
         artistNameLabel?.font = UIFont.titleFont(ofSize: 30.0)
         descriptionLabel?.font = UIFont.detailFont(ofSize: 15.0)
         stageLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        freeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         dayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         timeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         
@@ -71,24 +73,27 @@ class ArtistDetailViewController: EmbassatRootViewController {
     }
     
     func updateSubviewDetails() {
-        artistNameLabel?.text = viewModel?.artistName
-        descriptionLabel?.text = viewModel?.artistDescription
-        stageLabel?.text = viewModel?.artistStage
-        dayLabel?.text = viewModel?.artistDay
-        timeLabel?.text = viewModel?.artistStartTimeString
+        guard let viewModel = viewModel else { return }
         
-        if let videoId = viewModel?.artistVideoId where videoId.characters.count > 0 {
+        artistNameLabel?.text = viewModel.artistName
+        descriptionLabel?.text = viewModel.artistDescription
+        stageLabel?.text = viewModel.artistStage
+        dayLabel?.text = viewModel.artistDay
+        timeLabel?.text = viewModel.artistStartTimeString
+        freeLabel?.hidden = !viewModel.artistIsFree
+        
+        if viewModel.artistVideoId.characters.count > 0 {
             imageView?.hidden = true
             playerView?.hidden = false
-            playerView?.loadWithVideoId(videoId)
-        } else if let imageURL = viewModel?.artistImageURL {
+            playerView?.loadWithVideoId(viewModel.artistVideoId)
+        } else if let imageURL = viewModel.artistImageURL {
             imageView?.hidden = false
             playerView?.hidden = true
             imageView?.sd_setImageWithURL(imageURL, placeholderImage: UIImage(named: "loading.jpg"))
         }
         
         let favItem = navigationItem.rightBarButtonItems?.first
-        favItem?.tintColor = viewModel?.artistIsFavorite == true ? .lightGrayColor() : .whiteColor()
+        favItem?.tintColor = viewModel.artistIsFavorite == true ? .lightGrayColor() : .whiteColor()
     }
     
     func sharePressed() {
