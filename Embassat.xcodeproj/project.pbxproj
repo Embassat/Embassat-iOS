@@ -998,7 +998,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cad.Embassa-t";
 				PRODUCT_NAME = Embassat;
-				PROVISIONING_PROFILE = "6d6229da-5f76-4b1b-be67-63fba25bc660";
+				PROVISIONING_PROFILE = "0e95ef2c-2d9c-4862-99ca-98d901b9e733";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassat-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
