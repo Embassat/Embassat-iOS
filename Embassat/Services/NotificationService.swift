@@ -11,13 +11,42 @@ import UIKit
 
 struct NotificationService {
     
+    let dateFormatter = NSDateFormatter()
+    
     func registerForLocalNotifications() {
-        
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil))
+        scheduleAfterPartyNotification()
+    }
+    
+    private func scheduleAfterPartyNotification() {
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
+        let localAfterPartyNotif = UILocalNotification()
+        
+        localAfterPartyNotif.fireDate = dateFormatter.dateFromString("2016-06-12T03:00:00")?.dateBySubstracting(minutes: 15)
+        localAfterPartyNotif.alertBody = String(format: "Seapoint començarà en 15 minuts al Sala Oui!")
+        localAfterPartyNotif.userInfo = ["artistName" : "seapoint"]
+        localAfterPartyNotif.soundName = UILocalNotificationDefaultSoundName
+        
+        let existingNotifications = UIApplication.sharedApplication().scheduledLocalNotifications!
+        
+        if let afterPartyExistingNotification = existingNotifications.filter({ notification -> Bool in
+            if let artistName = notification.userInfo?["artistName"] as? String {
+                return artistName == "seapoint"
+            } else {
+                return false
+            }
+        }).first {
+            UIApplication.sharedApplication().cancelLocalNotification(afterPartyExistingNotification)
+            UIApplication.sharedApplication().scheduleLocalNotification(localAfterPartyNotif)
+        } else {
+            UIApplication.sharedApplication().scheduleLocalNotification(localAfterPartyNotif)
+        }
     }
 
     func toggleLocalNotification(forArtist artist: CADEMArtist, favorited: Bool) {
+        guard artist.name != "Seapoint" else { return }
+        
         let localNotif = UILocalNotification()
         
         localNotif.fireDate = artist.startDate.dateBySubstracting(minutes: 15)
