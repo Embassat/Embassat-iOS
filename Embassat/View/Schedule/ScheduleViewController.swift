@@ -13,9 +13,11 @@ class ScheduleViewController: EmbassatRootViewController {
     @IBOutlet weak var thursdayContainer: UIView?
     @IBOutlet weak var fridayContainer: UIView?
     @IBOutlet weak var saturdayContainer: UIView?
+    @IBOutlet weak var sundayContainer: UIView?
     @IBOutlet weak var thursdayLabel: UILabel?
     @IBOutlet weak var fridayLabel: UILabel?
     @IBOutlet weak var saturdayLabel: UILabel?
+    @IBOutlet weak var sundayLabel: UILabel?
     
     @IBOutlet weak var scheduleCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
@@ -53,7 +55,7 @@ class ScheduleViewController: EmbassatRootViewController {
         thursdayLabel?.textColor = UIColor.emScheduleHeaderSelectedTextColor()
         thursdayContainer?.backgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
         
-        let containers = [thursdayContainer, fridayContainer, saturdayContainer]
+        let containers = [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer]
         
         for view in containers {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ScheduleViewController.containerTapped(_:)))
@@ -63,6 +65,7 @@ class ScheduleViewController: EmbassatRootViewController {
         thursdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         fridayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         saturdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        sundayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         
         scheduleCollectionView?.dataSource = self.dataSource
         scheduleCollectionView?.registerNib(UINib(nibName: String(ScheduleCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
@@ -98,7 +101,7 @@ class ScheduleViewController: EmbassatRootViewController {
     }
     
     func containerTapped(sender: UITapGestureRecognizer) {
-        let containers = [thursdayContainer, fridayContainer, saturdayContainer]
+        let containers = [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer]
         
         for selectedView in containers.filter({ (view: UIView?) -> Bool in
             return view?.tag == sender.view?.tag

@@ -11,11 +11,11 @@ import ReactiveCocoa
 
 class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
     
-    var model: [[CADEMArtist]] = [[], [], []]
+    var model: [[CADEMArtist]] = [[], [], [], []]
     var dayIndex: Int = 0 {
         didSet {
-            if dayIndex > 2 {
-                dayIndex = 2
+            if dayIndex > 3 {
+                dayIndex = 3
             }
             
             if dayIndex < 0 {
@@ -49,9 +49,10 @@ class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
     func dayMapping (artists: AnyObject!) -> AnyObject! {
         let artistsArray = artists as! [CADEMArtist]
         
-        return [self.filteredArray(artistsArray, withDateString: "2016-06-09"),
-                self.filteredArray(artistsArray, withDateString: "2016-06-10"),
-                self.filteredArray(artistsArray, withDateString: "2016-06-11")]
+        return [filteredArray(artistsArray, withDateString: "2016-06-09"),
+                filteredArray(artistsArray, withDateString: "2016-06-10"),
+                filteredArray(artistsArray, withDateString: "2016-06-11"),
+                filteredArray(artistsArray, withDateString: "2016-06-12")]
     }
     
     func shouldRefreshModel() {

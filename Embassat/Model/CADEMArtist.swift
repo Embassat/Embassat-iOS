@@ -23,12 +23,6 @@ public class CADEMArtist : NSObject, NSCoding {
     
     var favorite: Bool
     
-    var isFree: Bool {
-        get {
-            return scheduleDate.day == 9 || (startDate.hour > 10 && startDate.hour < 17)
-        }
-    }
-    
     init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, startDate: NSDate, endDate: NSDate, stage: String, youtubeId: String, favorite: Bool = false) {
         self.artistId = artistId
         self.name = name
@@ -41,7 +35,7 @@ public class CADEMArtist : NSObject, NSCoding {
         self.youtubeId = youtubeId
         self.favorite = favorite    
         self.scheduleDate = startDate.hour < 10 ? startDate.dateBySubstracting(days: 1) : startDate
-        self.scheduleDayString = scheduleDate.day == 9 ? "Dijous" : scheduleDate.day == 10 ? "Divendres" : "Dissabte"
+        self.scheduleDayString = scheduleDate.day == 9 ? "Dijous" : scheduleDate.day == 10 ? "Divendres" : scheduleDate.day == 11 ? "Dissabte" : "Diumenge"
     }
     
     required convenience public init(coder decoder: NSCoder) {

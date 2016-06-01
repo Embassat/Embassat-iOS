@@ -22,7 +22,6 @@ class ArtistDetailViewController: EmbassatRootViewController {
     @IBOutlet weak var dayLabel: UILabel?
     @IBOutlet weak var timeLabel: UILabel?
     @IBOutlet weak var stageLabel: UILabel?
-    @IBOutlet weak var freeLabel: UILabel?
     
     var updateSignal: RACSubject = RACSubject()
     var viewModel: ArtistDetailViewModel? {
@@ -46,7 +45,6 @@ class ArtistDetailViewController: EmbassatRootViewController {
         artistNameLabel?.font = UIFont.titleFont(ofSize: 30.0)
         descriptionLabel?.font = UIFont.detailFont(ofSize: 15.0)
         stageLabel?.font = UIFont.detailFont(ofSize: 15.0)
-        freeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         dayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         timeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         
@@ -80,7 +78,6 @@ class ArtistDetailViewController: EmbassatRootViewController {
         stageLabel?.text = viewModel.artistStage
         dayLabel?.text = viewModel.artistDay
         timeLabel?.text = viewModel.artistStartTimeString
-        freeLabel?.hidden = !viewModel.artistIsFree
         
         if viewModel.artistVideoId.characters.count > 0 {
             imageView?.hidden = true

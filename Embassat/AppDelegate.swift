@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupAppearance()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = RootNavigationController(rootViewController: MenuViewController(MenuViewModel(model: ["Info", "Artistes", "Horaris", "Petit EM'", "Transport", "Mapa", "Entrades"])))
+        window?.rootViewController = RootNavigationController(rootViewController: MenuViewController(MenuViewModel(model: ["Info", "Artistes", "Horaris", "Petit EM'", "Transport", "Mapa", "Entrades", "Playlist"])))
         window?.makeKeyAndVisible()
         
         return true

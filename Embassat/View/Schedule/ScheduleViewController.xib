@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,6 +14,8 @@
                 <outlet property="saturdayContainer" destination="2cU-jW-eEu" id="0n5-YE-9J8"/>
                 <outlet property="saturdayLabel" destination="gTU-cb-jiP" id="SsW-8N-4GW"/>
                 <outlet property="scheduleCollectionView" destination="4ZG-M8-6WX" id="b27-zi-ygg"/>
+                <outlet property="sundayContainer" destination="jp6-J7-0jT" id="IMW-Vf-ogk"/>
+                <outlet property="sundayLabel" destination="UFQ-3Y-E17" id="OKn-sR-1bN"/>
                 <outlet property="thursdayContainer" destination="KlS-3N-n64" id="u11-Uj-EF2"/>
                 <outlet property="thursdayLabel" destination="ddf-kn-kGK" id="UrK-Dw-Q1V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="6Jg-4f-KbZ"/>
@@ -28,10 +30,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlS-3N-n64">
-                            <rect key="frame" x="0.0" y="0.0" width="107" height="38"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="38"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dijous" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-kn-kGK">
-                                    <rect key="frame" x="31" y="10" width="45" height="20"/>
+                                    <rect key="frame" x="17" y="9" width="45" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -39,15 +41,15 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="centerY" secondItem="ddf-kn-kGK" secondAttribute="centerY" constant="-0.5" id="3HS-Ca-yq5"/>
-                                <constraint firstAttribute="centerX" secondItem="ddf-kn-kGK" secondAttribute="centerX" constant="-0.5" id="SFH-JF-H9u"/>
+                                <constraint firstAttribute="centerY" secondItem="ddf-kn-kGK" secondAttribute="centerY" id="3HS-Ca-yq5"/>
+                                <constraint firstAttribute="centerX" secondItem="ddf-kn-kGK" secondAttribute="centerX" id="SFH-JF-H9u"/>
                             </constraints>
                         </view>
                         <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yG-BG-DC3">
-                            <rect key="frame" x="107" y="0.0" width="106" height="38"/>
+                            <rect key="frame" x="80" y="0.0" width="80" height="38"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divendres" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44p-05-mYP">
-                                    <rect key="frame" x="16" y="10" width="73" height="20"/>
+                                    <rect key="frame" x="3" y="9" width="73" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -55,15 +57,15 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="centerX" secondItem="44p-05-mYP" secondAttribute="centerX" constant="0.5" id="RHX-Ga-KY7"/>
-                                <constraint firstAttribute="centerY" secondItem="44p-05-mYP" secondAttribute="centerY" constant="-0.5" id="Y28-NE-2C3"/>
+                                <constraint firstAttribute="centerX" secondItem="44p-05-mYP" secondAttribute="centerX" id="RHX-Ga-KY7"/>
+                                <constraint firstAttribute="centerY" secondItem="44p-05-mYP" secondAttribute="centerY" id="Y28-NE-2C3"/>
                             </constraints>
                         </view>
                         <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-jW-eEu">
-                            <rect key="frame" x="213" y="0.0" width="107" height="38"/>
+                            <rect key="frame" x="160" y="0.0" width="80" height="38"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissabte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTU-cb-jiP">
-                                    <rect key="frame" x="22" y="10" width="64" height="20"/>
+                                    <rect key="frame" x="8" y="9" width="64" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -71,26 +73,48 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="centerY" secondItem="gTU-cb-jiP" secondAttribute="centerY" constant="-0.5" id="eqz-hJ-4pO"/>
+                                <constraint firstAttribute="centerY" secondItem="gTU-cb-jiP" secondAttribute="centerY" id="eqz-hJ-4pO"/>
                                 <constraint firstAttribute="centerX" secondItem="gTU-cb-jiP" secondAttribute="centerX" id="lmp-xq-kvi"/>
+                            </constraints>
+                        </view>
+                        <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jp6-J7-0jT" userLabel="Sunday Container">
+                            <rect key="frame" x="240" y="0.0" width="80" height="38"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diumenge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFQ-3Y-E17">
+                                    <rect key="frame" x="3" y="10" width="74" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="UFQ-3Y-E17" secondAttribute="centerY" constant="-0.5" id="jxd-Xa-dts"/>
+                                <constraint firstAttribute="centerX" secondItem="UFQ-3Y-E17" secondAttribute="centerX" id="tuM-ev-ru6"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="2cU-jW-eEu" secondAttribute="trailing" id="7X4-MW-m8U"/>
+                        <constraint firstItem="jp6-J7-0jT" firstAttribute="leading" secondItem="2cU-jW-eEu" secondAttribute="trailing" id="2wD-Gf-uBv"/>
+                        <constraint firstAttribute="trailing" secondItem="2cU-jW-eEu" secondAttribute="trailing" constant="80" id="4Y2-hu-rcm"/>
+                        <constraint firstItem="5yG-BG-DC3" firstAttribute="width" secondItem="Hje-8Z-bIN" secondAttribute="width" multiplier="0.25" id="5Zg-ki-JqH"/>
+                        <constraint firstItem="KlS-3N-n64" firstAttribute="width" secondItem="Hje-8Z-bIN" secondAttribute="width" multiplier="0.25" id="D2H-z4-PEF"/>
                         <constraint firstItem="2cU-jW-eEu" firstAttribute="top" secondItem="Hje-8Z-bIN" secondAttribute="top" id="H9J-if-QHW"/>
-                        <constraint firstAttribute="centerX" secondItem="5yG-BG-DC3" secondAttribute="centerX" id="HnK-6F-ETs"/>
                         <constraint firstAttribute="bottom" secondItem="5yG-BG-DC3" secondAttribute="bottom" id="LxU-0x-UvN"/>
                         <constraint firstItem="5yG-BG-DC3" firstAttribute="leading" secondItem="KlS-3N-n64" secondAttribute="trailing" id="MSq-8U-mTA"/>
                         <constraint firstAttribute="bottom" secondItem="KlS-3N-n64" secondAttribute="bottom" id="PlG-Pg-XE3"/>
                         <constraint firstItem="KlS-3N-n64" firstAttribute="top" secondItem="Hje-8Z-bIN" secondAttribute="top" id="Ptm-hZ-Wfi"/>
+                        <constraint firstItem="2cU-jW-eEu" firstAttribute="width" secondItem="Hje-8Z-bIN" secondAttribute="width" multiplier="0.25" id="Ssh-ul-4VK"/>
+                        <constraint firstAttribute="trailing" secondItem="jp6-J7-0jT" secondAttribute="trailing" id="YRl-Aq-xDp"/>
+                        <constraint firstItem="jp6-J7-0jT" firstAttribute="width" secondItem="Hje-8Z-bIN" secondAttribute="width" multiplier="0.25" id="cJw-E6-mVz"/>
                         <constraint firstAttribute="bottom" secondItem="2cU-jW-eEu" secondAttribute="bottom" id="gnW-hW-fSK"/>
                         <constraint firstAttribute="height" constant="38" id="gwx-54-7vA"/>
+                        <constraint firstAttribute="bottom" secondItem="jp6-J7-0jT" secondAttribute="bottom" id="iDr-es-2m3"/>
+                        <constraint firstItem="jp6-J7-0jT" firstAttribute="top" secondItem="Hje-8Z-bIN" secondAttribute="top" id="lGk-jH-ieF"/>
                         <constraint firstItem="2cU-jW-eEu" firstAttribute="leading" secondItem="5yG-BG-DC3" secondAttribute="trailing" id="pKe-zt-IPk"/>
                         <constraint firstItem="5yG-BG-DC3" firstAttribute="top" secondItem="Hje-8Z-bIN" secondAttribute="top" id="uYU-OV-3TH"/>
                         <constraint firstItem="KlS-3N-n64" firstAttribute="leading" secondItem="Hje-8Z-bIN" secondAttribute="leading" id="ugv-Y8-SKO"/>
-                        <constraint firstItem="5yG-BG-DC3" firstAttribute="width" secondItem="Hje-8Z-bIN" secondAttribute="width" multiplier="0.33125" id="vwd-I1-ilo"/>
                     </constraints>
                 </view>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4ZG-M8-6WX">

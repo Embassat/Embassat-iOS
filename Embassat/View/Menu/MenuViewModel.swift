@@ -57,6 +57,17 @@ class MenuViewModel: NSObject, ViewModelCollectionDelegate {
             viewController = TicketsViewController()
             break;
             
+        case 7:
+            viewController = nil
+            let normalURL = NSURL(string: "http://open.spotify.com/user/embassat/playlist/16SGgn6bS6uQnImxWzZfrc")!
+            let appURL = NSURL(string: "spotify://user:embassat")!
+            //:playlist:16SGgn6bS6uQnImxWzZfrc
+            if UIApplication.sharedApplication().openURL(appURL) == false {
+                UIApplication.sharedApplication().openURL(normalURL)
+            }
+            
+            break;
+            
         default:
             break;
         }
