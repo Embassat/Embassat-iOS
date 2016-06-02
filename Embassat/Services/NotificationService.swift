@@ -23,7 +23,7 @@ struct NotificationService {
         
         let localAfterPartyNotif = UILocalNotification()
         
-        localAfterPartyNotif.fireDate = dateFormatter.dateFromString("2016-06-12T03:00:00")?.dateBySubstracting(minutes: 15)
+        localAfterPartyNotif.fireDate = dateFormatter.dateFromString("2016-06-12T02:30:00")
         localAfterPartyNotif.alertBody = String(format: "Seapoint començarà en 15 minuts al Sala Oui!")
         localAfterPartyNotif.userInfo = ["artistName" : "seapoint"]
         localAfterPartyNotif.soundName = UILocalNotificationDefaultSoundName
