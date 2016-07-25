@@ -25,6 +25,24 @@
 		8B4D39EB1CE111550088DDA5 /* petitem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D39E81CE111550088DDA5 /* petitem.jpg */; };
 		8B4D39EC1CE111550088DDA5 /* tickets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D39E91CE111550088DDA5 /* tickets.jpg */; };
 		8B4D39EE1CE111910088DDA5 /* transport.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D39ED1CE111910088DDA5 /* transport.jpg */; };
+		8B9AAB781D46A66400CDA2E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */; };
+		8B9AAB791D46A66400CDA2E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */; };
+		8B9AAB7B1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB7A1D46A91600CDA2E0 /* MenuInteractor.swift */; };
+		8B9AAB7C1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB7A1D46A91600CDA2E0 /* MenuInteractor.swift */; };
+		8B9AAB7E1D46A9E500CDA2E0 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB7D1D46A9E500CDA2E0 /* MenuCoordinator.swift */; };
+		8B9AAB7F1D46A9E500CDA2E0 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB7D1D46A9E500CDA2E0 /* MenuCoordinator.swift */; };
+		8B9AAB801D46AEF200CDA2E0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682E91B12613100FD2216 /* InfoViewController.swift */; };
+		8B9AAB811D46AF0400CDA2E0 /* EmbassatRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D01B07800600896D11 /* EmbassatRootViewController.swift */; };
+		8B9AAB821D46AF0700CDA2E0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF34D1B04CDB700078E15 /* RootViewController.swift */; };
+		8B9AAB831D46AF1F00CDA2E0 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6E81B07BE1600896D11 /* ArtistsViewController.swift */; };
+		8B9AAB841D46AF2400CDA2E0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF31B138F2700698D4A /* ScheduleViewController.swift */; };
+		8B9AAB851D46AF2D00CDA2E0 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF11B138A0100698D4A /* ScheduleViewModel.swift */; };
+		8B9AAB861D46AF3100CDA2E0 /* PetitEMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D61B07AE0400896D11 /* PetitEMViewController.swift */; };
+		8B9AAB871D46AF3500CDA2E0 /* TransportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59AE21CD4B41E0043BAE3 /* TransportViewController.swift */; };
+		8B9AAB881D46AF3A00CDA2E0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE51B1372D800698D4A /* MapViewController.swift */; };
+		8B9AAB891D46AF3F00CDA2E0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE31B13707000698D4A /* MapViewModel.swift */; };
+		8B9AAB8A1D46AF4400CDA2E0 /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF34B1B04CD1D00078E15 /* TicketsViewController.swift */; };
+		8B9AAB8B1D46B03B00CDA2E0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE91B137C6D00698D4A /* MenuViewController.swift */; };
 		8BA59AE31CD4B41E0043BAE3 /* TransportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59AE21CD4B41E0043BAE3 /* TransportViewController.swift */; };
 		8BA59AE61CD4B45A0043BAE3 /* TransportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BA59AE51CD4B45A0043BAE3 /* TransportViewController.xib */; };
 		8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4818CB8F09008FBC9B /* Foundation.framework */; };
@@ -124,6 +142,9 @@
 		8B4D39E81CE111550088DDA5 /* petitem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = petitem.jpg; sourceTree = "<group>"; };
 		8B4D39E91CE111550088DDA5 /* tickets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tickets.jpg; sourceTree = "<group>"; };
 		8B4D39ED1CE111910088DDA5 /* transport.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = transport.jpg; sourceTree = "<group>"; };
+		8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8B9AAB7A1D46A91600CDA2E0 /* MenuInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuInteractor.swift; path = Menu/MenuInteractor.swift; sourceTree = "<group>"; };
+		8B9AAB7D1D46A9E500CDA2E0 /* MenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCoordinator.swift; path = Menu/MenuCoordinator.swift; sourceTree = "<group>"; };
 		8B9D8E141CCBE81100FC75BA /* ShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareKit.framework; path = "../../Library/Developer/Xcode/DerivedData/Embassat-arywtvxbokqlnjcnovihfxzrgoyi/Build/Products/Debug-iphonesimulator/ShareKit.framework"; sourceTree = "<group>"; };
 		8B9D8E161CCBE81E00FC75BA /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../Library/Developer/Xcode/DerivedData/Embassat-arywtvxbokqlnjcnovihfxzrgoyi/Build/Products/Debug-iphonesimulator/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		8BA59AE21CD4B41E0043BAE3 /* TransportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportViewController.swift; path = Transport/TransportViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				8C1FF3451B03F7C400078E15 /* ArrayDataSource.swift */,
+				8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */,
 				8C8BA6D01B07800600896D11 /* EmbassatRootViewController.swift */,
 				8CE72FF81B13C86700698D4A /* RootCollectionViewCell.swift */,
 				8CE72FFC1B13CA3200698D4A /* RootNavigationController.swift */,
@@ -511,6 +533,8 @@
 			children = (
 				8CE72FE71B137AD800698D4A /* MenuCollectionViewCell.swift */,
 				8C8D83B61B0BC40300CD8CA4 /* MenuCollectionViewCell.xib */,
+				8B9AAB7D1D46A9E500CDA2E0 /* MenuCoordinator.swift */,
+				8B9AAB7A1D46A91600CDA2E0 /* MenuInteractor.swift */,
 				8CE72FE91B137C6D00698D4A /* MenuViewController.swift */,
 				8CDBF19E18DDC3DB002C6E50 /* MenuViewController.xib */,
 				8C1FF33F1B03C9EF00078E15 /* MenuViewModel.swift */,
@@ -766,12 +790,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B9AAB841D46AF2400CDA2E0 /* ScheduleViewController.swift in Sources */,
+				8B9AAB8A1D46AF4400CDA2E0 /* TicketsViewController.swift in Sources */,
+				8B9AAB7C1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */,
+				8B9AAB801D46AEF200CDA2E0 /* InfoViewController.swift in Sources */,
+				8B9AAB791D46A66400CDA2E0 /* Coordinator.swift in Sources */,
 				8B310E531CCBF35E0030B8CD /* ArtistStore.swift in Sources */,
+				8B9AAB821D46AF0700CDA2E0 /* RootViewController.swift in Sources */,
 				8B310E541CCBF3600030B8CD /* NotificationService.swift in Sources */,
+				8B9AAB881D46AF3A00CDA2E0 /* MapViewController.swift in Sources */,
 				8B310E431CCBEC830030B8CD /* ArtistServiceTests.swift in Sources */,
+				8B9AAB831D46AF1F00CDA2E0 /* ArtistsViewController.swift in Sources */,
 				8B310E4A1CCBECAF0030B8CD /* ArtistParser.swift in Sources */,
+				8B9AAB891D46AF3F00CDA2E0 /* MapViewModel.swift in Sources */,
 				8B310E4B1CCBEF5F0030B8CD /* ArtistService.swift in Sources */,
+				8B9AAB851D46AF2D00CDA2E0 /* ScheduleViewModel.swift in Sources */,
+				8B9AAB8B1D46B03B00CDA2E0 /* MenuViewController.swift in Sources */,
+				8B9AAB811D46AF0400CDA2E0 /* EmbassatRootViewController.swift in Sources */,
+				8B9AAB861D46AF3100CDA2E0 /* PetitEMViewController.swift in Sources */,
+				8B9AAB7F1D46A9E500CDA2E0 /* MenuCoordinator.swift in Sources */,
 				8B310E561CCBF3B60030B8CD /* NSDate+EMAdditions.swift in Sources */,
+				8B9AAB871D46AF3500CDA2E0 /* TransportViewController.swift in Sources */,
 				8B310E551CCBF3AA0030B8CD /* CADEMArtist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,9 +827,12 @@
 				8C1FF34E1B04CDB700078E15 /* RootViewController.swift in Sources */,
 				8CF193451BB49AB200B7D929 /* NSDate+EMAdditions.swift in Sources */,
 				8CF193361BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift in Sources */,
+				8B9AAB781D46A66400CDA2E0 /* Coordinator.swift in Sources */,
 				8CE72FEA1B137C6D00698D4A /* MenuViewController.swift in Sources */,
 				8C1FF3421B03CC2900078E15 /* ViewModelCollectionDelegate.swift in Sources */,
 				8C8BA6EF1B08DF8E00896D11 /* ArtistDetailViewController.swift in Sources */,
+				8B9AAB7B1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */,
+				8B9AAB7E1D46A9E500CDA2E0 /* MenuCoordinator.swift in Sources */,
 				8CA0CE821B038E3E00BC04B0 /* CADEMArtist.swift in Sources */,
 				8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */,
 				8CE72FE41B13707100698D4A /* MapViewModel.swift in Sources */,

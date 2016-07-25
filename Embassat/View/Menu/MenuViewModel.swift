@@ -8,71 +8,27 @@
 
 import Foundation
 
-class MenuViewModel: NSObject, ViewModelCollectionDelegate {
+class MenuViewModel: NSObject, ViewModelCollectionDelegate, CoordinatedViewModel {
     
-    let model: [String]
+    let interactor: MenuInteractor
+    let coordinator: MenuCoordinator
     
-    init(model : [String]) {
-        self.model = model
+    required init(interactor: MenuInteractor, coordinator: MenuCoordinator) {
+        self.interactor = interactor
+        self.coordinator = coordinator
     }
     
     func numberOfItemsInSection(section : Int) -> Int {
-        return self.model.count
+        return self.interactor.model.count
     }
     
     func titleAtIndexPath(indexPath: NSIndexPath) -> String {
-        return self.model[indexPath.row]
+        return self.interactor.model[indexPath.row]
     }
     
-    func nextViewControllerAtIndexPath(indexPath: NSIndexPath) -> UIViewController? {
+    func show(nextViewControllerWithIndex index: Int) {
+        guard let menuIndex = MenuIndex(rawValue: index) else { fatalError("Invalid index to show from Menu") }
         
-        var viewController: UIViewController?
-        
-        switch indexPath.item {
-        case 0:
-            viewController = InfoViewController()
-            break;
-            
-        case 1:
-            viewController = ArtistsViewController()
-            break;
-            
-        case 2:
-            viewController = ScheduleViewController(ScheduleViewModel())
-            break;
-            
-        case 3:
-            viewController = PetitEMViewController()
-            break;
-            
-        case 4:
-            viewController = TransportViewController()
-            break;
-            
-        case 5:
-            viewController = MapViewController(MapViewModel())
-            break;
-            
-        case 6:
-            viewController = TicketsViewController()
-            break;
-            
-        case 7:
-            viewController = nil
-            let normalURL = NSURL(string: "http://open.spotify.com/user/embassat/playlist/16SGgn6bS6uQnImxWzZfrc")!
-            let appURL = NSURL(string: "spotify://user:embassat")!
-            //:playlist:16SGgn6bS6uQnImxWzZfrc
-            if UIApplication.sharedApplication().openURL(appURL) == false {
-                UIApplication.sharedApplication().openURL(normalURL)
-            }
-            
-            break;
-            
-        default:
-            break;
-        }
-
-        return viewController
+        coordinator.show(nextViewControllerWithIndex: menuIndex)
     }
-
 }

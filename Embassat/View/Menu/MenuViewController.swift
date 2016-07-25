@@ -8,13 +8,17 @@
 
 import Foundation
 
-class MenuViewController: EmbassatRootViewController {
+class MenuViewController: EmbassatRootViewController, UpdateableView {
     
     @IBOutlet weak var menuCollectionView: UICollectionView?
     let dataSource: ArrayDataSource
-    let viewModel: MenuViewModel
+    var viewModel: MenuViewModel {
+        didSet {
+            menuCollectionView?.reloadData()
+        }
+    }
     
-    required init(_ viewModel: MenuViewModel) {
+    required init(viewModel: MenuViewModel) {
         dataSource =
             ArrayDataSource(viewModel: viewModel,
                             configureCellBlock: { cell, indexPath in
@@ -56,9 +60,7 @@ class MenuViewController: EmbassatRootViewController {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let viewController = viewModel.nextViewControllerAtIndexPath(indexPath) {
-            navigationController?.pushViewController(viewController, animated: true)
-        }
+        viewModel.show(nextViewControllerWithIndex: indexPath.row)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {

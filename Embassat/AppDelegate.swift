@@ -20,8 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupAppearance()
         
+        let interactor = MenuInteractor()
+        let coordinator = MenuCoordinator()
+        let viewModel = MenuViewModel(interactor: interactor, coordinator: coordinator)
+        let viewController = MenuViewController(viewModel: viewModel)
+        viewController.bind(to: interactor)
+        coordinator.viewController = viewController
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = RootNavigationController(rootViewController: MenuViewController(MenuViewModel(model: ["Info", "Artistes", "Horaris", "Petit EM'", "Transport", "Mapa", "Entrades", "Playlist"])))
+        window?.rootViewController = RootNavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
         
         return true
