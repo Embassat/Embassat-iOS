@@ -11,7 +11,7 @@ import ReactiveCocoa
 import SDWebImage
 import youtube_ios_player_helper
 
-class ArtistDetailViewController: EmbassatRootViewController {
+class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     
     @IBOutlet weak var playerView: YTPlayerView?
     @IBOutlet weak var imageView: UIImageView?
@@ -24,18 +24,28 @@ class ArtistDetailViewController: EmbassatRootViewController {
     @IBOutlet weak var stageLabel: UILabel?
     
     var updateSignal: RACSubject = RACSubject()
-    var viewModel: ArtistDetailViewModel? {
+    var viewModel: ArtistDetailViewModel {
         didSet {
-            self.updateSubviewDetails()
+            if oldValue.artistName != viewModel.artistName {
+                updateSubviewDetails()
+            }
+            
+            updateNavigationItemDetails()
         }
     }
     
-    init() {
+    required init(viewModel: ArtistDetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: String(ArtistDetailViewController), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    init() {
+        self.viewModel = ArtistDetailViewModel(interactor: ArtistDetailInteractor(artists: [], index: 0), coordinator: ArtistDetailCoordinator())
+        super.init(nibName: String(ArtistDetailViewController), bundle: nil)
     }
 
     override func viewDidLoad() {
@@ -52,6 +62,8 @@ class ArtistDetailViewController: EmbassatRootViewController {
         let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ArtistDetailViewController.favoritePressed))
         
         navigationItem.rightBarButtonItems = [favItem, shareItem]
+        
+        updateSubviewDetails()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -61,18 +73,14 @@ class ArtistDetailViewController: EmbassatRootViewController {
     }
     
     @IBAction func nextPressed(sender: UIButton) {
-        viewModel?.currentIndex+=1
-        updateSubviewDetails()
+        viewModel.currentIndex+=1
     }
     
     @IBAction func previousPressed(sender: UIButton) {
-        viewModel?.currentIndex-=1
-        updateSubviewDetails()
+        viewModel.currentIndex-=1
     }
     
-    func updateSubviewDetails() {
-        guard let viewModel = viewModel else { return }
-        
+    private func updateSubviewDetails() {
         artistNameLabel?.text = viewModel.artistName
         descriptionLabel?.text = viewModel.artistDescription
         stageLabel?.text = viewModel.artistStage
@@ -83,28 +91,23 @@ class ArtistDetailViewController: EmbassatRootViewController {
             imageView?.hidden = true
             playerView?.hidden = false
             playerView?.loadWithVideoId(viewModel.artistVideoId)
-        } else if let imageURL = viewModel.artistImageURL {
+        } else {
             imageView?.hidden = false
             playerView?.hidden = true
-            imageView?.sd_setImageWithURL(imageURL, placeholderImage: UIImage(named: "loading.jpg"))
+            imageView?.sd_setImageWithURL(viewModel.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
         }
-        
+    }
+    
+    private func updateNavigationItemDetails() {
         let favItem = navigationItem.rightBarButtonItems?.first
         favItem?.tintColor = viewModel.artistIsFavorite == true ? .lightGrayColor() : .whiteColor()
     }
     
-    func sharePressed() {
-        viewModel?.shareAction(forViewController: self)
+    @objc private func sharePressed() {
+        viewModel.shareAction()
     }
     
-    func favoritePressed() {
-        viewModel?.toggleFavorite(){ [weak self] in
-            guard let weakSelf = self else { return }
-
-            let favItem = weakSelf.navigationItem.rightBarButtonItems?.first
-            favItem?.tintColor = favItem?.tintColor == .whiteColor() ? .lightGrayColor() : .whiteColor()
-            
-            weakSelf.updateSignal.sendNext(true)
-        }
+    @objc private func favoritePressed() {
+        viewModel.toggleFavorite()
     }
 }

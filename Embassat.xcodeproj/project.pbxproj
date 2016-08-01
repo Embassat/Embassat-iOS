@@ -58,6 +58,11 @@
 		8BFF386A1D4F758900A4A103 /* UIFont+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193371BB360DE00B7D929 /* UIFont+EMAdditions.swift */; };
 		8BFF386C1D4F776200A4A103 /* UICollectionView+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF386B1D4F776200A4A103 /* UICollectionView+EMAdditions.swift */; };
 		8BFF386D1D4F776200A4A103 /* UICollectionView+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF386B1D4F776200A4A103 /* UICollectionView+EMAdditions.swift */; };
+		8BFF386F1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF386E1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift */; };
+		8BFF38701D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF386E1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift */; };
+		8BFF38711D4F83BA00A4A103 /* UIColor+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1933E1BB3EF5400B7D929 /* UIColor+EMAdditions.swift */; };
+		8BFF38731D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38721D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift */; };
+		8BFF38741D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38721D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift */; };
 		8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4818CB8F09008FBC9B /* Foundation.framework */; };
 		8C04EF4B18CB8F09008FBC9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */; };
 		8C04EF4D18CB8F09008FBC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4C18CB8F09008FBC9B /* UIKit.framework */; };
@@ -166,6 +171,8 @@
 		8BFF385E1D4F661200A4A103 /* ArtistsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsInteractor.swift; sourceTree = "<group>"; };
 		8BFF38611D4F69B100A4A103 /* ArtistsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsCoordinator.swift; sourceTree = "<group>"; };
 		8BFF386B1D4F776200A4A103 /* UICollectionView+EMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+EMAdditions.swift"; sourceTree = "<group>"; };
+		8BFF386E1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistDetailInteractor.swift; path = "Artist Detail/ArtistDetailInteractor.swift"; sourceTree = "<group>"; };
+		8BFF38721D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistDetailCoordinator.swift; path = "Artist Detail/ArtistDetailCoordinator.swift"; sourceTree = "<group>"; };
 		8C04EF4518CB8F09008FBC9B /* Embassat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embassat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04EF4818CB8F09008FBC9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -464,6 +471,8 @@
 		8CAABD5518E36AE1005431B9 /* Artist Detail */ = {
 			isa = PBXGroup;
 			children = (
+				8BFF38721D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift */,
+				8BFF386E1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift */,
 				8C8BA6EE1B08DF8E00896D11 /* ArtistDetailViewController.swift */,
 				8CAABD5818E37162005431B9 /* ArtistDetailViewController.xib */,
 				8C8BA6EC1B08D41100896D11 /* ArtistDetailViewModel.swift */,
@@ -812,6 +821,7 @@
 				8BFF38651D4F6D4400A4A103 /* ArrayDataSource.swift in Sources */,
 				8B9AAB841D46AF2400CDA2E0 /* ScheduleViewController.swift in Sources */,
 				8BFF38631D4F69B100A4A103 /* ArtistsCoordinator.swift in Sources */,
+				8BFF38711D4F83BA00A4A103 /* UIColor+EMAdditions.swift in Sources */,
 				8B9AAB8A1D46AF4400CDA2E0 /* TicketsViewController.swift in Sources */,
 				8BFF38671D4F6D6B00A4A103 /* ArtistDetailViewController.swift in Sources */,
 				8B9AAB7C1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */,
@@ -819,8 +829,10 @@
 				8B9AAB801D46AEF200CDA2E0 /* InfoViewController.swift in Sources */,
 				8B9AAB791D46A66400CDA2E0 /* Coordinator.swift in Sources */,
 				8BFF386A1D4F758900A4A103 /* UIFont+EMAdditions.swift in Sources */,
+				8BFF38701D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */,
 				8B310E531CCBF35E0030B8CD /* ArtistStore.swift in Sources */,
 				8B9AAB821D46AF0700CDA2E0 /* RootViewController.swift in Sources */,
+				8BFF38741D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */,
 				8BFF38601D4F661200A4A103 /* ArtistsInteractor.swift in Sources */,
 				8BFF38691D4F6FAE00A4A103 /* ArtistDetailViewModel.swift in Sources */,
 				8B310E541CCBF3600030B8CD /* NotificationService.swift in Sources */,
@@ -864,6 +876,8 @@
 				8B9AAB7E1D46A9E500CDA2E0 /* MenuCoordinator.swift in Sources */,
 				8CA0CE821B038E3E00BC04B0 /* CADEMArtist.swift in Sources */,
 				8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */,
+				8BFF38731D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */,
+				8BFF386F1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */,
 				8CE72FE41B13707100698D4A /* MapViewModel.swift in Sources */,
 				8CE72FE61B1372D800698D4A /* MapViewController.swift in Sources */,
 				8CF193411BB3F24900B7D929 /* UIView+CADAdditions.swift in Sources */,

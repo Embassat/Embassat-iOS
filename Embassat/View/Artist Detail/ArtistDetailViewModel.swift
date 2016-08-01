@@ -7,77 +7,73 @@
 //
 
 import Foundation
-import EventKit
-import ShareKit
 
-class ArtistDetailViewModel {
+class ArtistDetailViewModel: CoordinatedViewModel {
     
-    var model: [CADEMArtist]
-    let service: ArtistService = ArtistService()
+    let model: CADEMArtist
+    let interactor: ArtistDetailInteractor
+    let coordinator: ArtistDetailCoordinator
+
+    var artistName: String {
+        return model.name
+    }
     
-    var currentArtist: CADEMArtist
-    var artistName: String = ""
-    var artistDescription: String = ""
-    var artistStartTimeString: String = ""
-    var artistDay: String = ""
-    var artistStage: String = ""
-    var artistVideoId: String = ""
-    var artistIsFavorite: Bool = false
-    var artistImageURL: NSURL? = nil
+    var artistDescription: String {
+        return "\"\(model.longDescription)\""
+    }
     
-    var currentIndex: Int = 0 {
-        didSet {
-            if currentIndex > model.count - 1 {
-               currentIndex = model.count - 1
-            }
-            
-            if currentIndex < 0 {
-                currentIndex = 0
-            }
-            
-            currentArtist = model[currentIndex]
-            updateCurrentArtistData()
-        }
+    var artistStartTimeString: String {
+        return "\"\(model.startDate.hourString):\(model.startDate.minuteString)\""
+    }
+    
+    var artistDay: String {
+        return model.scheduleDayString
+    }
+    
+    var artistStage: String {
+        return model.stage
+    }
+    
+    var artistVideoId: String {
+        return model.youtubeId
+    }
+    
+    var artistIsFavorite: Bool {
+        return model.favorite
+    }
+    
+    var artistImageURL: NSURL {
+        return model.imageURL
+    }
+    
+    required init(interactor: ArtistDetailInteractor, coordinator: ArtistDetailCoordinator) {
+        self.model = interactor.model
+        self.interactor = interactor
+        self.coordinator = coordinator
     }
     
     init(model: [CADEMArtist], currentIndex: Int) {
-        self.model = model
-        self.currentIndex = currentIndex
-        self.currentArtist = model[currentIndex]
-        updateCurrentArtistData()
+        self.interactor = ArtistDetailInteractor(artists: model, index: currentIndex)
+        self.coordinator = ArtistDetailCoordinator()
+        self.model = self.interactor.model
     }
     
-    func shareAction(forViewController viewController: UIViewController) {
-        let item: AnyObject! = SHKItem.URL(currentArtist.artistURL, title: String(format: "%@ @ Embassa't 2016", artistName), contentType: SHKURLContentTypeUndefined)
+    var currentIndex: Int {
+        set {
+            interactor.currentIndex = newValue
+        }
         
-        SHK.setRootViewController(viewController)
-        let alertController = SHKAlertController.actionSheetForItem(item as! SHKItem)
-        alertController.modalPresentationStyle = .Popover
-        let popover = alertController.popoverPresentationController
-        popover?.barButtonItem = viewController.toolbarItems?.first
-        viewController.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    func toggleFavorite(completion: () -> ()) {
-        service.toggleFavorite(forArtist: currentArtist).subscribeNext {
-            [weak self] updatedArtist in
-            guard let weakSelf = self,
-                      updatedArtist = updatedArtist as? CADEMArtist else { return }
-            
-            weakSelf.model[weakSelf.currentIndex] = updatedArtist
-            completion()
+        get {
+            return interactor.currentIndex
         }
     }
     
-    func updateCurrentArtistData() {
-        artistName = currentArtist.name
-        artistDescription = "\"\(currentArtist.longDescription)\""
-        artistStage = currentArtist.stage
-        artistVideoId = currentArtist.youtubeId
-        artistImageURL = currentArtist.imageURL
-        artistStartTimeString = String(format: "%@:%@", String(currentArtist.startDate.hourString), String(currentArtist.startDate.minuteString))
-        artistIsFavorite = currentArtist.favorite
-        artistDay = currentArtist.scheduleDayString
+    func shareAction() {
+        coordinator.showShareAction(withURL: model.artistURL, title: String(format: "%@ @ Embassa't 2016", artistName))
+    }
+    
+    func toggleFavorite() {
+        interactor.toggleFavorite()
     }
    
 }

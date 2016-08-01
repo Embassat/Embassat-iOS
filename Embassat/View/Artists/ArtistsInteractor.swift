@@ -18,19 +18,18 @@ class ArtistsInteractor: Interactor {
     
     func fetchArtists() {
         service.artists { [weak self] (artists) in
-            guard let strongSelf = self else { return }
-            
-            strongSelf.model = artists.sort{ $0.name < $1.name }
-            strongSelf.updateHandler?(strongSelf.model)
+            self?.updateArtists(withArtists: artists)
         }
     }
     
     func fetchCachedArtists() {
         service.cachedArtists { [weak self] (artists) in
-            guard let strongSelf = self else { return }
-            
-            strongSelf.model = artists.sort{ $0.name < $1.name }
-            strongSelf.updateHandler?(strongSelf.model)
+            self?.updateArtists(withArtists: artists)
         }
+    }
+    
+    private func updateArtists(withArtists artists: [CADEMArtist]) {
+        model = artists.sort{ $0.name < $1.name }
+        updateHandler?(model)
     }
 }

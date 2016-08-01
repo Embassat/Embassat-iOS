@@ -43,17 +43,14 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
         
         artistsCollectionView?.deselectAllSelectedItems()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.shouldRefreshModel()
+    }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        let artistDetailViewController = ArtistDetailViewController()
-//        artistDetailViewController.viewModel = viewModel.artistViewModel(forIndexPath: indexPath)
-//        artistDetailViewController.updateSignal.subscribeNext { [weak self] _ in
-//            guard let weakSelf = self else { return }
-//            
-//            weakSelf.viewModel.shouldRefreshModel()
-//        }
-//        
-//        self.navigationController?.pushViewController(artistDetailViewController, animated: true)
         viewModel.didSelect(at: indexPath.row)
     }
     

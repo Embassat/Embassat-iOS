@@ -114,6 +114,27 @@ class ArtistService {
         }.subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
     }
     
+    func toggleFavorite(forArtist artist: CADEMArtist, completion: (CADEMArtist) -> ()) {
+        if var cachedArtists = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
+            
+            var index = NSNotFound
+            
+            for (i, cachedArtist) in cachedArtists.enumerate() {
+                if cachedArtist.artistId == artist.artistId {
+                    index = i
+                    break
+                }
+            }
+            
+            if index != NSNotFound {
+                cachedArtists[index].favorite = !cachedArtists[index].favorite
+                store.store(cachedArtists, forKey: ArtistService.kArtistsStoreKey)
+                completion(cachedArtists[index])
+                notificationService.toggleLocalNotification(forArtist: artist, favorited: cachedArtists[index].favorite)
+            }
+        }
+    }
+    
     func toggleFavorite(forArtist artist: CADEMArtist) -> RACSignal {
         return RACSignal.createSignal { [weak self] subscriber in
             guard let weakSelf = self else { return nil }

@@ -12,9 +12,13 @@ class ArtistsCoordinator: Coordinator {
     weak var viewController: ArtistsViewController?
     
     func presentArtistDetail(artists: [CADEMArtist], currentIndex: Int) {
-        let artistDetailViewController = ArtistDetailViewController()
-        let viewModel = ArtistDetailViewModel(model: artists, currentIndex: currentIndex)
-        artistDetailViewController.viewModel = viewModel
+        let interactor = ArtistDetailInteractor(artists: artists, index: currentIndex)
+        let coordinator = ArtistDetailCoordinator()
+        let viewModel = ArtistDetailViewModel(interactor: interactor, coordinator: coordinator)
+        let artistDetailViewController = ArtistDetailViewController(viewModel: viewModel)
+        artistDetailViewController.bind(to: interactor)
+        coordinator.viewController = artistDetailViewController
+        
         viewController?.navigationController?.pushViewController(artistDetailViewController, animated: true)
     }
 }

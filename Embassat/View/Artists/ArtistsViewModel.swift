@@ -13,7 +13,7 @@ class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
     
     let interactor: ArtistsInteractor
     let coordinator: ArtistsCoordinator
-    var artists: [CADEMArtist] = []
+    let artists: [CADEMArtist]
     
     required init(interactor: ArtistsInteractor, coordinator: ArtistsCoordinator) {
         self.artists = interactor.model
@@ -31,10 +31,6 @@ class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
     
     func titleAtIndexPath(indexPath: NSIndexPath) -> String {
         return artists[indexPath.row].name.uppercaseString
-    }
-    
-    func artistViewModel(forIndexPath indexPath: NSIndexPath) -> ArtistDetailViewModel {
-        return ArtistDetailViewModel(model: artists, currentIndex: indexPath.item)
     }
     
     func didSelect(at index: Int) {
