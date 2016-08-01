@@ -19,23 +19,14 @@ class ArrayDataSource: NSObject, UICollectionViewDataSource {
     let configureCellBlock: ConfigureViewBlock
     let configureHeaderBlock: ConfigureViewBlock?
     
-    init(viewModel : ViewModelCollectionDelegate, configureCellBlock: ConfigureViewBlock, configureHeaderBlock: ConfigureViewBlock?) {
+    init(viewModel: ViewModelCollectionDelegate, configureCellBlock: ConfigureViewBlock, configureHeaderBlock: ConfigureViewBlock?) {
         self.viewModel = viewModel
         self.configureCellBlock = configureCellBlock
         self.configureHeaderBlock = configureHeaderBlock
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        
-        if let viewModel = self.viewModel as? NSObject {
-            if viewModel.respondsToSelector(#selector(ViewModelCollectionDelegate.numberOfSections)) {
-                return self.viewModel.numberOfSections!()
-            } else {
-                return 1
-            }
-        } else {
-            return 1
-        }
+        return viewModel.numberOfSections()
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

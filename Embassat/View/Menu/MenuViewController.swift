@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Crows And Dogs. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MenuViewController: EmbassatRootViewController, UpdateableView {
     

@@ -33,7 +33,14 @@ class MenuCoordinator: Coordinator {
             break;
             
         case .Artists:
-            nextViewController = ArtistsViewController()
+            let interactor = ArtistsInteractor()
+            let coordinator = ArtistsCoordinator()
+            let viewModel = ArtistsViewModel(interactor: interactor, coordinator: coordinator)
+            let viewController = ArtistsViewController(viewModel: viewModel)
+            viewController.bind(to: interactor)
+            coordinator.viewController = viewController
+            interactor.fetchArtists()
+            nextViewController = viewController
             break;
             
         case .Schedule:

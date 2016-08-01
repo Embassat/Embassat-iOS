@@ -9,63 +9,35 @@
 import Foundation
 import ReactiveCocoa
 
-class ArtistsViewModel: NSObject, ViewModelCollectionDelegate {
+class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
     
-    var model: [CADEMArtist] = []
-    let service: ArtistService = ArtistService()
-    let activeSubject: RACSubject
+    let interactor: ArtistsInteractor
+    let coordinator: ArtistsCoordinator
+    var artists: [CADEMArtist] = []
     
-    override init() {
-        activeSubject = RACSubject()
-        
-        super.init()
-        
-        service.artists().map
-            { artists in
-                guard let artists = artists as? [CADEMArtist] else { return [] }
-                
-                return artists.sort({ (artist1, artist2) -> Bool in
-                    artist1.name < artist2.name
-                })
-            }.subscribeNext(
-                { [weak self] artists in
-                    guard let weakSelf = self,
-                              artists = artists as? [CADEMArtist] else { return }
-                    
-                    weakSelf.model = artists
-                    weakSelf.activeSubject.sendNext(true)
-            }, error:
-                { [weak self] (error: NSError!) -> Void in
-                    guard let weakSelf = self else { return }
-                    
-                    weakSelf.activeSubject.sendError(error)
-            })
+    required init(interactor: ArtistsInteractor, coordinator: ArtistsCoordinator) {
+        self.artists = interactor.model
+        self.interactor = interactor
+        self.coordinator = coordinator
     }
     
     func numberOfItemsInSection(section : Int) -> Int {
-        return model.count
+        return artists.count
     }
     
     func shouldRefreshModel() {
-        service.cachedArtists().map{ artists in
-            guard let artists = artists as? [CADEMArtist] else { return [] }
-
-            return artists.sort({ (artist1, artist2) -> Bool in
-                artist1.name < artist2.name
-            })
-        }.subscribeNext { [weak self] artists in
-            guard let weakSelf = self ,
-                      artists = artists as? [CADEMArtist] else { return }
-            
-            weakSelf.model = artists
-        }
+        interactor.fetchCachedArtists()
     }
     
     func titleAtIndexPath(indexPath: NSIndexPath) -> String {
-        return self.model[indexPath.row].name.uppercaseString
+        return artists[indexPath.row].name.uppercaseString
     }
     
     func artistViewModel(forIndexPath indexPath: NSIndexPath) -> ArtistDetailViewModel {
-        return ArtistDetailViewModel(model: model, currentIndex: indexPath.item)
+        return ArtistDetailViewModel(model: artists, currentIndex: indexPath.item)
+    }
+    
+    func didSelect(at index: Int) {
+        coordinator.presentArtistDetail(interactor.model, currentIndex: index)
     }
 }

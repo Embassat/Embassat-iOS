@@ -62,6 +62,42 @@ class ArtistService {
         }.subscribeOn(RACScheduler(priority: RACSchedulerPriorityDefault)).deliverOn(RACScheduler.mainThreadScheduler())
     }
     
+    func artists(completion: ([CADEMArtist]) -> ()) {
+        var cachedArtists: [CADEMArtist] = []
+        let url = NSURL(string: ArtistService.kArtistsEndpoint)!
+        
+        if let cached = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
+            cachedArtists = cached
+        }
+        
+        lastTask = NSURLSession.sharedSession().dataTaskWithURL(url) { [weak self] data, _, error in
+            guard let strongSelf = self else { return }
+            
+            if let data = data,
+                   json = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                where error == nil {
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    let artists = strongSelf.parser.parseArtists(fromJson: json, cached: cachedArtists)
+                    strongSelf.notificationService.updateLocalNotifications(forArtists: artists)
+                    strongSelf.store.store(artists, forKey: ArtistService.kArtistsStoreKey)
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        completion(artists)
+                    }
+                })
+            }
+        }
+        
+        lastTask?.resume()
+    }
+    
+    func cachedArtists(completion: ([CADEMArtist]) -> ()) {
+        if let cachedArtists = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
+            completion(cachedArtists)
+        }
+    }
+    
     func cachedArtists() -> RACSignal
     {
         return RACSignal.createSignal { [weak self] subscriber in

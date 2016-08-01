@@ -8,8 +8,13 @@
 
 import Foundation
 
-@objc protocol ViewModelCollectionDelegate {
-    
-    optional func numberOfSections() -> Int
+protocol ViewModelCollectionDelegate {
+    func numberOfSections() -> Int
     func numberOfItemsInSection(section: Int) -> Int
+}
+
+extension ViewModelCollectionDelegate {
+    func numberOfSections() -> Int {
+        return 1
+    }
 }

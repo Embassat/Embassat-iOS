@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MenuViewModel: NSObject, ViewModelCollectionDelegate, CoordinatedViewModel {
+class MenuViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
     
     let interactor: MenuInteractor
     let coordinator: MenuCoordinator

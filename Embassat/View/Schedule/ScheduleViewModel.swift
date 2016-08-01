@@ -9,7 +9,7 @@
 import Foundation
 import ReactiveCocoa
 
-class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
+class ScheduleViewModel: ViewModelCollectionDelegate {
     
     var model: [[CADEMArtist]] = [[], [], [], []]
     var dayIndex: Int = 0 {
@@ -27,12 +27,10 @@ class ScheduleViewModel: NSObject, ViewModelCollectionDelegate {
     let activeSubject: RACSubject
     let dateFormatter: NSDateFormatter
     
-    override init() {
+    init() {
         activeSubject = RACSubject()
         dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        super.init()
         
         service.artists().map
             { self.dayMapping($0)

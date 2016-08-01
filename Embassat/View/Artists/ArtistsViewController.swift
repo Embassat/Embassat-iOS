@@ -8,25 +8,22 @@
 
 import UIKit
 
-class ArtistsViewController: EmbassatRootViewController {
+class ArtistsViewController: EmbassatRootViewController, UpdateableView {
     
     @IBOutlet weak var artistsCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-    let dataSource: ArrayDataSource
-    let viewModel: ArtistsViewModel
+    private var dataSource: ArrayDataSource?
+    var viewModel: ArtistsViewModel {
+        didSet {
+            updateDataSource()
+            activityIndicator?.stopAnimating()
+        }
+    }
     
-    init() {
-
-        let theViewModel = ArtistsViewModel()
-        dataSource = ArrayDataSource(viewModel: theViewModel, configureCellBlock: { (cell: AnyObject!, indexPath: NSIndexPath) -> Void in
-            let theCell = cell as! ArtistCollectionViewCell
-            
-            theCell.optionName = theViewModel.titleAtIndexPath(indexPath)
-            theCell.hidesBottomSeparator = indexPath.row == theViewModel.numberOfItemsInSection(0) - 1
-        }, configureHeaderBlock: nil)
-        viewModel = theViewModel
-        
+    required init(viewModel: ArtistsViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: String(ArtistsViewController), bundle: nil)
+        self.updateDataSource()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -39,44 +36,42 @@ class ArtistsViewController: EmbassatRootViewController {
         title = "Artistes"
         artistsCollectionView?.dataSource = dataSource
         artistsCollectionView?.registerNib(UINib(nibName: String(ArtistCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
-        
-        if viewModel.numberOfItemsInSection(0) > 0 {
-            activityIndicator?.stopAnimating()
-        }
-        
-        viewModel.activeSubject.subscribeNext({ [weak self] _ in
-            guard let weakSelf = self else { return }
-            
-            weakSelf.activityIndicator?.stopAnimating()
-            weakSelf.artistsCollectionView?.reloadData()
-        }, error: { [weak self] _ in
-            
-            guard let weakSelf = self else { return }
-            
-            weakSelf.activityIndicator?.stopAnimating()
-            weakSelf.artistsCollectionView?.reloadData()
-        })
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
-        guard let indexPaths = artistsCollectionView?.indexPathsForSelectedItems() else { return }
-        
-        for indexPath in indexPaths {
-            artistsCollectionView?.deselectItemAtIndexPath(indexPath, animated: false)
-        }
+        artistsCollectionView?.deselectAllSelectedItems()
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let artistDetailViewController = ArtistDetailViewController()
-        artistDetailViewController.viewModel = viewModel.artistViewModel(forIndexPath: indexPath)
-        artistDetailViewController.updateSignal.subscribeNext { [weak self] _ in
-            guard let weakSelf = self else { return }
-            
-            weakSelf.viewModel.shouldRefreshModel()
-        }
-        
-        self.navigationController?.pushViewController(artistDetailViewController, animated: true)
+//        let artistDetailViewController = ArtistDetailViewController()
+//        artistDetailViewController.viewModel = viewModel.artistViewModel(forIndexPath: indexPath)
+//        artistDetailViewController.updateSignal.subscribeNext { [weak self] _ in
+//            guard let weakSelf = self else { return }
+//            
+//            weakSelf.viewModel.shouldRefreshModel()
+//        }
+//        
+//        self.navigationController?.pushViewController(artistDetailViewController, animated: true)
+        viewModel.didSelect(at: indexPath.row)
+    }
+    
+    private func updateDataSource() {
+        dataSource =
+            ArrayDataSource(
+                viewModel: viewModel,
+                configureCellBlock: { [weak self] (cell, indexPath) in
+                    guard let strongSelf = self else { return }
+                    
+                    let theCell = cell as! ArtistCollectionViewCell
+                    
+                    theCell.optionName = strongSelf.viewModel.titleAtIndexPath(indexPath)
+                    theCell.hidesBottomSeparator = indexPath.row == strongSelf.viewModel.numberOfItemsInSection(0) - 1
+                },
+                configureHeaderBlock: nil
+            )
+        artistsCollectionView?.dataSource = dataSource
+        artistsCollectionView?.reloadData()
     }
 }

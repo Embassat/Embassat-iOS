@@ -10,7 +10,7 @@ import Foundation
 import EventKit
 import ShareKit
 
-class ArtistDetailViewModel: NSObject {
+class ArtistDetailViewModel {
     
     var model: [CADEMArtist]
     let service: ArtistService = ArtistService()
@@ -43,11 +43,7 @@ class ArtistDetailViewModel: NSObject {
     init(model: [CADEMArtist], currentIndex: Int) {
         self.model = model
         self.currentIndex = currentIndex
-        
-        currentArtist = model[currentIndex]
-        
-        super.init()
-        
+        self.currentArtist = model[currentIndex]
         updateCurrentArtistData()
     }
     
