@@ -52,12 +52,6 @@ class ArtistDetailViewModel: CoordinatedViewModel {
         self.coordinator = coordinator
     }
     
-    init(model: [CADEMArtist], currentIndex: Int) {
-        self.interactor = ArtistDetailInteractor(artists: model, index: currentIndex)
-        self.coordinator = ArtistDetailCoordinator()
-        self.model = self.interactor.model
-    }
-    
     var currentIndex: Int {
         set {
             interactor.currentIndex = newValue
@@ -75,5 +69,4 @@ class ArtistDetailViewModel: CoordinatedViewModel {
     func toggleFavorite() {
         interactor.toggleFavorite()
     }
-   
 }

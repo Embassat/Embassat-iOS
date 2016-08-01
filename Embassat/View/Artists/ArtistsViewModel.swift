@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ReactiveCocoa
 
 class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
     

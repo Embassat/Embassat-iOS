@@ -34,7 +34,6 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
         super.viewDidLoad()
 
         title = "Artistes"
-        artistsCollectionView?.dataSource = dataSource
         artistsCollectionView?.registerNib(UINib(nibName: String(ArtistCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
@@ -51,7 +50,7 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        viewModel.didSelect(at: indexPath.row)
+        viewModel.didSelect(at: indexPath.item)
     }
     
     private func updateDataSource() {

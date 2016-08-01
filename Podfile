@@ -7,13 +7,11 @@ pod 'ShareKit/Facebook',         '~> 4.0.4'
 pod 'ShareKit/Twitter',          '~> 4.0.4'
 pod 'youtube-ios-player-helper', '~> 0.1.4'
 pod 'SwiftyJSON',                '~> 2.3.0'
-pod 'ReactiveCocoa',             '~> 2.2.4'
 pod 'SDWebImage',                '~> 3.7.5'
 pod 'TTTAttributedLabel',        '~> 1.13.3'
 pod 'Kakapo', '~> 0.0.1-alpha2'
 
 target 'EmbassatTests' do
-pod 'ReactiveCocoa',             '~> 2.2.4'
 pod 'ShareKit/Facebook',         '~> 4.0.4'
 pod 'ShareKit/Twitter',          '~> 4.0.4'
 end

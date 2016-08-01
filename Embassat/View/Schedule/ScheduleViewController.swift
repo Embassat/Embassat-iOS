@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleViewController: EmbassatRootViewController {
+class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     
     @IBOutlet weak var thursdayContainer: UIView?
     @IBOutlet weak var fridayContainer: UIView?
@@ -21,26 +21,20 @@ class ScheduleViewController: EmbassatRootViewController {
     
     @IBOutlet weak var scheduleCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-    let dataSource: ArrayDataSource
-    let viewModel: ScheduleViewModel
     
-    required init(_ viewModel: ScheduleViewModel) {
-        dataSource = ArrayDataSource(
-            viewModel: viewModel,
-            configureCellBlock: { cell, indexPath in
-                guard let cell = cell as? ScheduleCollectionViewCell else { return }
-                                        
-                cell.startTimeSting = viewModel.startTimeString(forIndexPath: indexPath)
-                cell.endTimeString = viewModel.endTimeString(forIndexPath: indexPath)
-                cell.artistName = viewModel.artistName(forIndexPath: indexPath)
-                cell.stageName = viewModel.stageName(forIndexPath: indexPath)
-                cell.shouldShowFavorite = viewModel.favoritedStatus(forIndexPath: indexPath)
-                cell.backgroundColor = viewModel.backgroundColor(forIndexPath: indexPath)
-            },
-            configureHeaderBlock: nil)
+    
+    private var dataSource: ArrayDataSource?
+    var viewModel: ScheduleViewModel {
+        didSet {
+            updateDataSource()
+            activityIndicator?.stopAnimating()
+        }
+    }
+    
+    required init(viewModel: ScheduleViewModel) {
         self.viewModel = viewModel
-        
         super.init(nibName: String(ScheduleViewController), bundle: nil)
+        updateDataSource()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,60 +46,37 @@ class ScheduleViewController: EmbassatRootViewController {
         
         title = "Horaris"
         
-        thursdayLabel?.textColor = UIColor.emScheduleHeaderSelectedTextColor()
-        thursdayContainer?.backgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
-        
-        let containers = [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer]
-        
-        for view in containers {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ScheduleViewController.containerTapped(_:)))
-            view?.addGestureRecognizer(tapGesture)
-        }
-        
         thursdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         fridayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         saturdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         sundayLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        thursdayLabel?.textColor = UIColor.emScheduleHeaderSelectedTextColor()
+        thursdayContainer?.backgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
         
-        scheduleCollectionView?.dataSource = self.dataSource
-        scheduleCollectionView?.registerNib(UINib(nibName: String(ScheduleCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
-        
-        if viewModel.numberOfItemsInSection(0) > 0 {
-            activityIndicator?.stopAnimating()
+        for view in [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer] {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(containerTapped))
+            view?.addGestureRecognizer(tapGesture)
         }
         
-        viewModel.activeSubject.subscribeNext({ [weak self] _ in
-            guard let weakSelf = self else { return }
-            
-            weakSelf.activityIndicator?.stopAnimating()
-            weakSelf.scheduleCollectionView?.reloadData()
-        }, error: { [weak self] _ in
-            guard let weakSelf = self else { return }
-            
-            weakSelf.activityIndicator?.stopAnimating()
-            weakSelf.scheduleCollectionView?.reloadData()
-        })
+        scheduleCollectionView?.registerNib(UINib(nibName: String(ScheduleCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.shouldRefreshModel()
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let artistViewController = ArtistDetailViewController()
-        artistViewController.viewModel = viewModel.artistViewModel(forIndexPath: indexPath)
-        artistViewController.updateSignal.subscribeNext { [weak self] (_) -> Void in
-            guard let weakSelf = self else { return }
-            
-            weakSelf.viewModel.shouldRefreshModel()
-            weakSelf.scheduleCollectionView?.reloadData()
-        }
-        
-        self.navigationController?.pushViewController(artistViewController, animated: true)
+        viewModel.didSelect(at: indexPath.item)
     }
     
-    func containerTapped(sender: UITapGestureRecognizer) {
+    @objc private func containerTapped(sender: UITapGestureRecognizer) {
+        guard let tag = sender.view?.tag else { return }
+        
         let containers = [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer]
         
-        for selectedView in containers.filter({ (view: UIView?) -> Bool in
-            return view?.tag == sender.view?.tag
-        }) {
+        for selectedView in containers.filter({ $0?.tag == tag }) {
             selectedView?.backgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
             
             if let label = selectedView?.subviews.first as? UILabel {
@@ -113,9 +84,7 @@ class ScheduleViewController: EmbassatRootViewController {
             }
         }
         
-        for unSelectedView in containers.filter({ (view: UIView?) -> Bool in
-            return view?.tag != sender.view?.tag
-        }) {
+        for unSelectedView in containers.filter({ $0?.tag != tag }) {
             unSelectedView?.backgroundColor = UIColor.emScheduleHeaderDeselectedBackgroundColor()
             
             if let label = unSelectedView?.subviews.first as? UILabel {
@@ -123,9 +92,27 @@ class ScheduleViewController: EmbassatRootViewController {
             }
         }
         
-        if let tag = sender.view?.tag {
-            self.viewModel.dayIndex = tag
-            self.scheduleCollectionView?.reloadData()
-        }
+        viewModel.dayIndex = tag
+    }
+    
+    private func updateDataSource() {
+        dataSource =
+            ArrayDataSource(
+                viewModel: viewModel,
+                configureCellBlock: { [weak self] (cell, indexPath) in
+                    guard let cell = cell as? ScheduleCollectionViewCell,
+                              viewModel = self?.viewModel else { return }
+                    
+                    cell.startTimeSting = viewModel.startTimeString(forIndexPath: indexPath)
+                    cell.endTimeString = viewModel.endTimeString(forIndexPath: indexPath)
+                    cell.artistName = viewModel.artistName(forIndexPath: indexPath)
+                    cell.stageName = viewModel.stageName(forIndexPath: indexPath)
+                    cell.shouldShowFavorite = viewModel.favoritedStatus(forIndexPath: indexPath)
+                    cell.backgroundColor = viewModel.backgroundColor(forIndexPath: indexPath)
+                },
+                configureHeaderBlock: nil
+        )
+        scheduleCollectionView?.dataSource = dataSource
+        scheduleCollectionView?.reloadData()
     }
 }

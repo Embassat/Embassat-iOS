@@ -30,14 +30,7 @@ class TicketsViewController: EmbassatRootViewController {
         title = "Entrades"
         
         for view in [seasonContainer, dayTicketContainer, petitEmTicketContainer] {
-            let tapGesture = UITapGestureRecognizer()
-            tapGesture.rac_gestureSignal()?.subscribeNext({ [weak self] (_) -> Void in
-                guard let weakSelf = self,
-                          view = view else { return }
-                
-                weakSelf.linkPressed(view)
-            })
-            
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(linkPressed))
             view?.addGestureRecognizer(tapGesture)
         }
         

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ReactiveCocoa
 import SDWebImage
 import youtube_ios_player_helper
 
@@ -23,7 +22,6 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     @IBOutlet weak var timeLabel: UILabel?
     @IBOutlet weak var stageLabel: UILabel?
     
-    var updateSignal: RACSubject = RACSubject()
     var viewModel: ArtistDetailViewModel {
         didSet {
             if oldValue.artistName != viewModel.artistName {
@@ -42,11 +40,6 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    init() {
-        self.viewModel = ArtistDetailViewModel(interactor: ArtistDetailInteractor(artists: [], index: 0), coordinator: ArtistDetailCoordinator())
-        super.init(nibName: String(ArtistDetailViewController), bundle: nil)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +51,8 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         dayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         timeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         
-        let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ArtistDetailViewController.sharePressed))
-        let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ArtistDetailViewController.favoritePressed))
+        let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(sharePressed))
+        let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(favoritePressed))
         
         navigationItem.rightBarButtonItems = [favItem, shareItem]
         
@@ -70,14 +63,6 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         super.viewDidAppear(animated)
         
         contentView?.flashScrollIndicators()
-    }
-    
-    @IBAction func nextPressed(sender: UIButton) {
-        viewModel.currentIndex+=1
-    }
-    
-    @IBAction func previousPressed(sender: UIButton) {
-        viewModel.currentIndex-=1
     }
     
     private func updateSubviewDetails() {
@@ -109,5 +94,13 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     
     @objc private func favoritePressed() {
         viewModel.toggleFavorite()
+    }
+    
+    @IBAction func nextPressed(sender: UIButton) {
+        viewModel.currentIndex+=1
+    }
+    
+    @IBAction func previousPressed(sender: UIButton) {
+        viewModel.currentIndex-=1
     }
 }

@@ -18,7 +18,7 @@ class RootViewController: UIViewController {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundle)
         
-        tapGestureToResign.addTarget(self, action: #selector(RootViewController.tapRecognizerToResignFieldsDidTrigger))
+        tapGestureToResign.addTarget(self, action: #selector(tapRecognizerToResignFieldsDidTrigger))
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
@@ -28,7 +28,7 @@ class RootViewController: UIViewController {
         
         super.init(coder: aDecoder)
         
-        tapGestureToResign.addTarget(self, action: #selector(RootViewController.tapRecognizerToResignFieldsDidTrigger))
+        tapGestureToResign.addTarget(self, action: #selector(tapRecognizerToResignFieldsDidTrigger))
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
@@ -47,8 +47,8 @@ class RootViewController: UIViewController {
     func loadData() {}
     
     func registerForKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RootViewController.keyboardShowOrHideNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RootViewController.keyboardShowOrHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardShowOrHideNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardShowOrHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func keyboardWillBecomeHidden(keyboardHidden: Bool, animationDuration: NSTimeInterval, curve: UIViewAnimationCurve, keyboardHeight: CGFloat) {
