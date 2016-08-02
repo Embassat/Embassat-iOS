@@ -32,6 +32,10 @@ class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
         return artists[indexPath.row].name.uppercaseString
     }
     
+    func shouldHideSeparator(forIndexPath indexPath: NSIndexPath) -> Bool {
+        return indexPath.row == numberOfItemsInSection(0) - 1
+    }
+    
     func didSelect(at index: Int) {
         coordinator.presentArtistDetail(interactor.model, currentIndex: index)
     }

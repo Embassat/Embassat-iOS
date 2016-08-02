@@ -70,6 +70,8 @@
 		8BFF387B1D4FEB3F00A4A103 /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF387A1D4FEB3F00A4A103 /* ScheduleCoordinator.swift */; };
 		8BFF387C1D4FEB3F00A4A103 /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF387A1D4FEB3F00A4A103 /* ScheduleCoordinator.swift */; };
 		8BFF387D1D4FF6C300A4A103 /* UIView+CADAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193401BB3F24900B7D929 /* UIView+CADAdditions.swift */; };
+		8BFF387F1D5118B900A4A103 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF387E1D5118B900A4A103 /* MapInteractor.swift */; };
+		8BFF38801D5118BA00A4A103 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF387E1D5118B900A4A103 /* MapInteractor.swift */; };
 		8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4818CB8F09008FBC9B /* Foundation.framework */; };
 		8C04EF4B18CB8F09008FBC9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */; };
 		8C04EF4D18CB8F09008FBC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04EF4C18CB8F09008FBC9B /* UIKit.framework */; };
@@ -179,6 +181,7 @@
 		8BFF38721D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistDetailCoordinator.swift; path = "Artist Detail/ArtistDetailCoordinator.swift"; sourceTree = "<group>"; };
 		8BFF38771D4FA7EA00A4A103 /* ScheduleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleInteractor.swift; path = Schedule/ScheduleInteractor.swift; sourceTree = "<group>"; };
 		8BFF387A1D4FEB3F00A4A103 /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleCoordinator.swift; path = Schedule/ScheduleCoordinator.swift; sourceTree = "<group>"; };
+		8BFF387E1D5118B900A4A103 /* MapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapInteractor.swift; path = Map/MapInteractor.swift; sourceTree = "<group>"; };
 		8C04EF4518CB8F09008FBC9B /* Embassat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embassat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04EF4818CB8F09008FBC9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C04EF4A18CB8F09008FBC9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -529,6 +532,7 @@
 		8CCA1B8118FC717000B0C60C /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				8BFF387E1D5118B900A4A103 /* MapInteractor.swift */,
 				8CE72FE51B1372D800698D4A /* MapViewController.swift */,
 				8CCA1B8418FC718900B0C60C /* MapViewController.xib */,
 				8CE72FE31B13707000698D4A /* MapViewModel.swift */,
@@ -784,6 +788,7 @@
 				8B9AAB7C1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */,
 				8BFF38661D4F6D6200A4A103 /* ArtistCollectionViewCell.swift in Sources */,
 				8B9AAB801D46AEF200CDA2E0 /* InfoViewController.swift in Sources */,
+				8BFF38801D5118BA00A4A103 /* MapInteractor.swift in Sources */,
 				8B9AAB791D46A66400CDA2E0 /* Coordinator.swift in Sources */,
 				8BFF386A1D4F758900A4A103 /* UIFont+EMAdditions.swift in Sources */,
 				8BFF38701D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */,
@@ -831,6 +836,7 @@
 				8CF193451BB49AB200B7D929 /* NSDate+EMAdditions.swift in Sources */,
 				8CF193361BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift in Sources */,
 				8B9AAB781D46A66400CDA2E0 /* Coordinator.swift in Sources */,
+				8BFF387F1D5118B900A4A103 /* MapInteractor.swift in Sources */,
 				8CE72FEA1B137C6D00698D4A /* MenuViewController.swift in Sources */,
 				8BFF387B1D4FEB3F00A4A103 /* ScheduleCoordinator.swift in Sources */,
 				8C1FF3421B03CC2900078E15 /* ViewModelCollectionDelegate.swift in Sources */,

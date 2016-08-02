@@ -63,7 +63,7 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
                     let theCell = cell as! ArtistCollectionViewCell
                     
                     theCell.optionName = strongSelf.viewModel.titleAtIndexPath(indexPath)
-                    theCell.hidesBottomSeparator = indexPath.row == strongSelf.viewModel.numberOfItemsInSection(0) - 1
+                    theCell.hidesBottomSeparator = strongSelf.viewModel.shouldHideSeparator(forIndexPath: indexPath)
                 },
                 configureHeaderBlock: nil
             )

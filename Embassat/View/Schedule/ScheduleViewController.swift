@@ -74,20 +74,23 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     @objc private func containerTapped(sender: UITapGestureRecognizer) {
         guard let tag = sender.view?.tag else { return }
         
-        let containers = [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer]
+        let selectedBackgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
+        let unselectedBackgroundColor = UIColor.emScheduleHeaderDeselectedBackgroundColor()
         
-        for selectedView in containers.filter({ $0?.tag == tag }) {
-            selectedView?.backgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
+        let containers = [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer].flatMap { $0 }
+        
+        for selectedView in containers.subviews(withTag: tag) {
+            selectedView.backgroundColor = selectedBackgroundColor
             
-            if let label = selectedView?.subviews.first as? UILabel {
+            if let label = selectedView.subviews.first as? UILabel {
                 label.textColor = UIColor.emScheduleHeaderSelectedTextColor()
             }
         }
         
-        for unSelectedView in containers.filter({ $0?.tag != tag }) {
-            unSelectedView?.backgroundColor = UIColor.emScheduleHeaderDeselectedBackgroundColor()
+        for unSelectedView in containers.subviews(withoutTag: tag) {
+            unSelectedView.backgroundColor = unselectedBackgroundColor
             
-            if let label = unSelectedView?.subviews.first as? UILabel {
+            if let label = unSelectedView.subviews.first as? UILabel {
                 label.textColor = UIColor.emScheduleHeaderDeselectedTextColor()
             }
         }
@@ -115,4 +118,16 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
         scheduleCollectionView?.dataSource = dataSource
         scheduleCollectionView?.reloadData()
     }
+}
+
+private extension Array where Element: UIView {
+    
+    func subviews(withTag tag: Int) -> [Element] {
+        return filter { $0.tag == tag }
+    }
+    
+    func subviews(withoutTag tag: Int) -> [Element] {
+        return filter { $0.tag != tag }
+    }
+    
 }

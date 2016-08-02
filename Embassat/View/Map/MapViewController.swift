@@ -9,30 +9,23 @@
 import UIKit
 import MapKit
 
-class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
+class MapViewController: EmbassatRootViewController, MKMapViewDelegate, UpdateableView {
     
-    static let kEMMapPinIdentifier : String = "EMMapPinIdentifier"
+    static private let kEMMapPinIdentifier = "EMMapPinIdentifier"
+    static private let kDefaultEdgeInset: CGFloat = 30.0
     
-    @IBOutlet weak var mapView: MKMapView?
+    @IBOutlet weak var mapView: MKMapView!
 
-    let viewModel: MapViewModel
-    let locationManager: CLLocationManager = CLLocationManager()
-    var userLocationTracked: Bool = false
+    let locationManager = CLLocationManager()
+    
+    var viewModel: MapViewModel
     var coordinates: [CLLocation] {
         get {
-            var coords: [CLLocation] = []
-            
-            if let annotations = mapView?.annotations {
-                for annotation in annotations {
-                    coords.append(CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude))
-                }
-            }
-            
-            return coords
+            return mapView.annotations.map{ CLLocation(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude) }
         }
     }
     
-    required init(_ viewModel: MapViewModel) {
+    required init(viewModel: MapViewModel) {
         self.viewModel = viewModel
         
         super.init(nibName: String(MapViewController), bundle: nil)
@@ -54,16 +47,14 @@ class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
             clubAnnotation.coordinate = CLLocationCoordinate2DMake(viewModel.latitudeForPoint(atIndex: i), viewModel.longitudeForPoint(atIndex: i))
             clubAnnotation.title = viewModel.titleForPoint(atIndex: i)
             
-            mapView?.addAnnotation(clubAnnotation)
+            mapView.addAnnotation(clubAnnotation)
         }
-        
     }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        if userLocationTracked == false &&
+        if  viewModel.shouldUpdateVisibleRect() &&
             CLLocationCoordinate2DIsValid(CLLocationCoordinate2DMake((userLocation.location?.coordinate.latitude)!, (userLocation.location?.coordinate.longitude)!)) {
-            userLocationTracked = true
-            self.updateVisibleMapRect()
+            updateVisibleMapRect()
         }
     }
     
@@ -78,19 +69,20 @@ class MapViewController: EmbassatRootViewController, MKMapViewDelegate {
         return annotationView
     }
     
-    func updateVisibleMapRect() {
-        mapView?.setVisibleMapRect(self.mapRect(forCoordinates: coordinates, coordCount: coordinates.count), edgePadding: UIEdgeInsetsMake(30.0, 30.0, 30.0, 30.0), animated: true)
+    private func updateVisibleMapRect() {
+        let inset = MapViewController.kDefaultEdgeInset
+        mapView.setVisibleMapRect(mapRect(forCoordinates: coordinates, coordCount: coordinates.count), edgePadding: UIEdgeInsetsMake(inset, inset, inset, inset), animated: true)
     }
     
-    func mapRect(forCoordinates coords: [CLLocation], coordCount: Int) -> MKMapRect {
-        var r: MKMapRect = MKMapRectNull
+    private func mapRect(forCoordinates coords: [CLLocation], coordCount: Int) -> MKMapRect {
+        var rect: MKMapRect = MKMapRectNull
         
         for location in coords
         {
-            let p = MKMapPointForCoordinate(location.coordinate)
-            r = MKMapRectUnion(r, MKMapRectMake(p.x, p.y, 0.0, 0.0))
+            let point = MKMapPointForCoordinate(location.coordinate)
+            rect = MKMapRectUnion(rect, MKMapRectMake(point.x, point.y, 0.0, 0.0))
         }
         
-        return r
+        return rect
     }
 }

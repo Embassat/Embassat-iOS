@@ -8,26 +8,41 @@
 
 import Foundation
 
-struct MapViewModel {
+class MapViewModel: ViewModel {
     
-    let latitudes = [41.545738, 41.5417171, 41.5466157, 41.5468636]
-    let longitudes = [2.106824, 2.0969444, 2.1067646, 2.1035644]
-    let titles = ["Mirador Museu del Gas", "Can Marcet", "Pl. Dr. Robert", "Sala Oui!"]
+    let interactor: MapInteractor
+    let model: MapFields
+    
+    private var didTrackUserLocation = false
+    
+    required init(interactor: MapInteractor) {
+        self.model = interactor.model
+        self.interactor = interactor
+    }
     
     func numberOfPoints() -> Int {
-        return latitudes.count
+        return model.latitudes.count
     }
     
     func latitudeForPoint(atIndex index: Int) -> Double {
-        return latitudes[index]
+        return model.latitudes[index]
     }
     
     func longitudeForPoint(atIndex index: Int) -> Double {
-        return longitudes[index]
+        return model.longitudes[index]
     }
     
     func titleForPoint(atIndex index: Int) -> String {
-        return titles[index]
+        return model.titles[index]
+    }
+    
+    func shouldUpdateVisibleRect() -> Bool {
+        if !didTrackUserLocation {
+            didTrackUserLocation = true
+            return true
+        } else {
+            return false
+        }
     }
     
 }

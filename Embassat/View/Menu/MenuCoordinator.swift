@@ -63,7 +63,11 @@ class MenuCoordinator: Coordinator {
             break;
             
         case .Map:
-            nextViewController = MapViewController(MapViewModel())
+            let interactor = MapInteractor()
+            let viewModel = MapViewModel(interactor: interactor)
+            let viewController = MapViewController(viewModel: viewModel)
+            viewController.bind(to: interactor)
+            nextViewController = viewController
             break;
             
         case .Tickets:
