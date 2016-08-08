@@ -17,7 +17,8 @@ class ArtistsInteractor: Interactor {
     private let service = ArtistService()
     
     func fetchArtists() {
-        service.artists { [weak self] (artists) in
+        service.artists { [weak self] (artists, error) in
+            guard let artists = artists where error == nil else { return }
             self?.updateArtists(withArtists: artists)
         }
     }

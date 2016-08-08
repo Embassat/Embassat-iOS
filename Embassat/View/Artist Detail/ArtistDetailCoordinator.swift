@@ -10,7 +10,13 @@ import Foundation
 import EventKit
 import ShareKit
 
-class ArtistDetailCoordinator: Coordinator {
+protocol ArtistDetailCoordinatorProtocol: Coordinator {
+    func showShareAction(withURL URL: NSURL, title: String)
+    
+    weak var viewController: ArtistDetailViewController? { get set }
+}
+
+class ArtistDetailCoordinator: ArtistDetailCoordinatorProtocol {
     weak var viewController: ArtistDetailViewController?
     
     func showShareAction(withURL URL: NSURL, title: String) {

@@ -18,7 +18,7 @@ class ArtistService {
     private let notificationService: NotificationService = NotificationService()
     private var lastTask: NSURLSessionDataTask?
     
-    func artists(completion: ([CADEMArtist]) -> ()) {
+    func artists(completion: ([CADEMArtist]?, NSError?) -> ()) {
         var cachedArtists: [CADEMArtist] = []
         let url = NSURL(string: ArtistService.kArtistsEndpoint)!
         
@@ -26,7 +26,7 @@ class ArtistService {
             cachedArtists = cached
         }
         
-        lastTask = NSURLSession.sharedSession().dataTaskWithURL(url) { [weak self] data, _, error in
+        lastTask = NSURLSession.sharedSession().dataTaskWithURL(url) { [weak self] data, response, error in
             guard let strongSelf = self else { return }
             
             if let data = data,
@@ -39,9 +39,13 @@ class ArtistService {
                     strongSelf.store.store(artists, forKey: ArtistService.kArtistsStoreKey)
                     
                     dispatch_async(dispatch_get_main_queue()) {
-                        completion(artists)
+                        completion(artists, nil)
                     }
                 })
+            } else if let error = error {
+                completion(nil, error)
+            } else if let response = response as? NSHTTPURLResponse where response.statusCode != 200 {
+                completion(nil, nil)
             }
         }
         

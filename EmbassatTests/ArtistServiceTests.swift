@@ -9,7 +9,19 @@
 import XCTest
 import Kakapo
 
-struct ArtistFactory: Storable, Serializable {
+func randomString() -> String {
+    let charactersString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    let charactersArray : [Character] = Array(charactersString.characters)
+    
+    var string = ""
+    for _ in 0..<20 {
+        string.append(charactersArray[Int(arc4random()) % charactersArray.count])
+    }
+    
+    return string
+}
+
+struct Artist: Storable, Serializable {
     let description: String
     let image_url: String
     let share_url: String
@@ -18,9 +30,9 @@ struct ArtistFactory: Storable, Serializable {
     let stage: String
     let start_date: String
     let end_date: String
-    let id: Int
+    let id: String
     
-    init(id: Int, db: KakapoDB) {
+    init(id: String, db: KakapoDB) {
         self.init(description: randomString(),
                   image_url: "http://www.embassat.com/wp-content/uploads/gullen1.jpg",
                   share_url: "http://www.embassat.com/wp-content/uploads/gullen1.jpg",
@@ -40,7 +52,7 @@ struct ArtistFactory: Storable, Serializable {
          stage: String,
          start_date: String,
          end_date: String,
-         id: Int) {
+         id: String) {
         self.description = description
         self.image_url = image_url
         self.share_url = share_url
@@ -53,37 +65,34 @@ struct ArtistFactory: Storable, Serializable {
     }
 }
 
-extension ArtistFactory: Equatable {}
-
-func ==(lhs: ArtistFactory, rhs: ArtistFactory) -> Bool {
-    return lhs.name == rhs.name && lhs.description == rhs.description && lhs.stage == rhs.stage && lhs.id == rhs.id
-}
-
 class ArtistServiceTests: XCTestCase {
     
-    let sut = ArtistService()
+    var sut: ArtistService?
     let db = KakapoDB()
+    var router: Router?
     
     override func setUp() {
         super.setUp()
         
-        KakapoServer.enable()
+        sut = ArtistService()
+        router = Router.register("https://scorching-torch-2707.firebaseio.com")
     }
     
     override func tearDown() {
-        KakapoServer.disable()
+        sut = nil
+        Router.unregister("https://scorching-torch-2707.firebaseio.com")
         
         super.tearDown()
     }
     
     func testGet1Artist() {
-        KakapoServer.get("https://scorching-torch-2707.firebaseio.com/:artists") { request in
-            return self.db.create(ArtistFactory)
+        router!.get("/:artists") { request in
+            return self.db.create(Artist)
         }
         let expectation = expectationWithDescription("Should properly get 1 artist")
         
-        sut.artists().subscribeNext { artists in
-            guard let artists = artists as? [CADEMArtist] else { XCTFail(); return }
+        sut?.artists { (artists, error) in
+            guard let artists = artists else { return }
             
             let artist = artists.first!
             
@@ -108,13 +117,13 @@ class ArtistServiceTests: XCTestCase {
     }
     
     func testGet50Artists() {
-        KakapoServer.get("https://scorching-torch-2707.firebaseio.com/:artists") { request in
-            return self.db.create(ArtistFactory.self, number: 50)
+        router!.get("/:artists") { request in
+            return self.db.create(Artist.self, number: 50)
         }
         let expectation = expectationWithDescription("Should properly get 50 artists")
         
-        sut.artists().subscribeNext { artists in
-            guard let artists = artists as? [CADEMArtist] else { XCTFail(); return }
+        sut?.artists { (artists, error) in
+            guard let artists = artists else { return }
             
             let artist = artists[30]
             
@@ -139,17 +148,16 @@ class ArtistServiceTests: XCTestCase {
     }
     
     func testGetArtistError() {
-        KakapoServer.get("https://scorching-torch-2707.firebaseio.com/:artists") { request in
-            return Response(code: 400, body: Optional.Some("none"))
+        router!.get("/:artists") { request in
+            return Response(statusCode: 400, body: Optional.Some("none"))
         }
         
         let expectation = expectationWithDescription("Should error when invalid response")
         
-        sut.artists().subscribeNext({ artists in
-            XCTFail()
-            }, error: { error in
-                expectation.fulfill()
-        })
+        sut?.artists { (artists, error) in
+            XCTAssertNil(artists)
+            expectation.fulfill()
+        }
         
         waitForExpectationsWithTimeout(1) { _ in }
     }

@@ -22,7 +22,7 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     @IBOutlet weak var timeLabel: UILabel?
     @IBOutlet weak var stageLabel: UILabel?
     
-    var viewModel: ArtistDetailViewModel {
+    var viewModel: ArtistDetailViewModel<ArtistDetailCoordinator, ArtistDetailInteractor> {
         didSet {
             if oldValue.artistName != viewModel.artistName {
                 updateSubviewDetails()
@@ -32,7 +32,7 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         }
     }
     
-    required init(viewModel: ArtistDetailViewModel) {
+    required init(viewModel: ArtistDetailViewModel<ArtistDetailCoordinator,ArtistDetailInteractor>) {
         self.viewModel = viewModel
         super.init(nibName: String(ArtistDetailViewController), bundle: nil)
     }

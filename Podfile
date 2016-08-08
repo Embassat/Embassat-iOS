@@ -3,22 +3,21 @@ platform :ios,              '8.0'
 use_frameworks!
 inhibit_all_warnings!
 
-pod 'ShareKit/Facebook',         '~> 4.0.4'
-pod 'ShareKit/Twitter',          '~> 4.0.4'
-pod 'youtube-ios-player-helper', '~> 0.1.4'
-pod 'SwiftyJSON',                '~> 2.3.0'
-pod 'SDWebImage',                '~> 3.7.5'
-pod 'TTTAttributedLabel',        '~> 1.13.3'
-pod 'Kakapo', '~> 0.0.1-alpha2'
-
-target 'EmbassatTests' do
-pod 'ShareKit/Facebook',         '~> 4.0.4'
-pod 'ShareKit/Twitter',          '~> 4.0.4'
+target 'Embassat' do
+    pod 'ShareKit/Facebook',         '~> 5.0'
+    pod 'ShareKit/Twitter',          '~> 5.0'
+    pod 'youtube-ios-player-helper', '~> 0.1.4'
+    pod 'SwiftyJSON',                '~> 2.3.0'
+    pod 'SDWebImage',                '~> 3.7.5'
+    pod 'TTTAttributedLabel',        '~> 1.13.3'
 end
 
-post_install do |installer|  
-  installer.pods_project.build_configuration_list.build_configurations.each do |configuration|  
-    configuration.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'  
-  end  
-end 
+target 'EmbassatTests' do
+    pod 'ShareKit/Facebook',         '~> 5.0'
+    pod 'ShareKit/Twitter',          '~> 5.0'
+    pod 'Kakapo',                    '~> 0.1.0'
+    pod 'SwiftyJSON',                '~> 2.3.0'
+    pod 'youtube-ios-player-helper', '~> 0.1.4'
+    pod 'TTTAttributedLabel',        '~> 1.13.3'
+end
 

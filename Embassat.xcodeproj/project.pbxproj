@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C844305CED64305828B2C9C /* Pods_Embassat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297DA5372E5CC5A33072C2C6 /* Pods_Embassat.framework */; };
 		82EB095420A008C11212DD58 /* Pods_EmbassatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D188832DBCBDFB7C658364 /* Pods_EmbassatTests.framework */; };
 		8B310E431CCBEC830030B8CD /* ArtistServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B310E421CCBEC830030B8CD /* ArtistServiceTests.swift */; };
-		8B310E4A1CCBECAF0030B8CD /* ArtistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6CE1B06758000896D11 /* ArtistParser.swift */; };
 		8B310E4B1CCBEF5F0030B8CD /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35AE071B0105C30014331F /* ArtistService.swift */; };
 		8B310E531CCBF35E0030B8CD /* ArtistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1B5C61B11FDDD00D1A477 /* ArtistStore.swift */; };
 		8B310E541CCBF3600030B8CD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682ED1B128D9200FD2216 /* NotificationService.swift */; };
@@ -25,13 +25,21 @@
 		8B4D39EB1CE111550088DDA5 /* petitem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D39E81CE111550088DDA5 /* petitem.jpg */; };
 		8B4D39EC1CE111550088DDA5 /* tickets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D39E91CE111550088DDA5 /* tickets.jpg */; };
 		8B4D39EE1CE111910088DDA5 /* transport.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D39ED1CE111910088DDA5 /* transport.jpg */; };
+		8B8F65771D58C1CE00BFB060 /* ArtistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6CE1B06758000896D11 /* ArtistParser.swift */; };
+		8B8F65781D58C2E400BFB060 /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EE1B08DF8E00896D11 /* ArtistDetailViewController.swift */; };
+		8B8F65791D58C2EE00BFB060 /* ArtistDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38721D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift */; };
+		8B8F657A1D58C4D100BFB060 /* ArtistsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38611D4F69B100A4A103 /* ArtistsCoordinator.swift */; };
+		8B8F657B1D58C4DA00BFB060 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF33F1B03C9EF00078E15 /* MenuViewModel.swift */; };
+		8B8F657C1D58C4E200BFB060 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682E91B12613100FD2216 /* InfoViewController.swift */; };
+		8B8F657D1D58C59700BFB060 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE71B137AD800698D4A /* MenuCollectionViewCell.swift */; };
+		8B8F657E1D58C5A800BFB060 /* UICollectionViewFlowLayout+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193351BB35DFD00B7D929 /* UICollectionViewFlowLayout+EMAdditions.swift */; };
+		8B8F65801D58C8E000BFB060 /* ArtistDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8F657F1D58C8E000BFB060 /* ArtistDetailViewModelTests.swift */; };
 		8B9AAB781D46A66400CDA2E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */; };
 		8B9AAB791D46A66400CDA2E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */; };
 		8B9AAB7B1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB7A1D46A91600CDA2E0 /* MenuInteractor.swift */; };
 		8B9AAB7C1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB7A1D46A91600CDA2E0 /* MenuInteractor.swift */; };
 		8B9AAB7E1D46A9E500CDA2E0 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB7D1D46A9E500CDA2E0 /* MenuCoordinator.swift */; };
 		8B9AAB7F1D46A9E500CDA2E0 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB7D1D46A9E500CDA2E0 /* MenuCoordinator.swift */; };
-		8B9AAB801D46AEF200CDA2E0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682E91B12613100FD2216 /* InfoViewController.swift */; };
 		8B9AAB811D46AF0400CDA2E0 /* EmbassatRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D01B07800600896D11 /* EmbassatRootViewController.swift */; };
 		8B9AAB821D46AF0700CDA2E0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF34D1B04CDB700078E15 /* RootViewController.swift */; };
 		8B9AAB831D46AF1F00CDA2E0 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6E81B07BE1600896D11 /* ArtistsViewController.swift */; };
@@ -48,11 +56,9 @@
 		8BFF385F1D4F661200A4A103 /* ArtistsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF385E1D4F661200A4A103 /* ArtistsInteractor.swift */; };
 		8BFF38601D4F661200A4A103 /* ArtistsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF385E1D4F661200A4A103 /* ArtistsInteractor.swift */; };
 		8BFF38621D4F69B100A4A103 /* ArtistsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38611D4F69B100A4A103 /* ArtistsCoordinator.swift */; };
-		8BFF38631D4F69B100A4A103 /* ArtistsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38611D4F69B100A4A103 /* ArtistsCoordinator.swift */; };
 		8BFF38641D4F6CF800A4A103 /* ArtistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EA1B08C33900896D11 /* ArtistsViewModel.swift */; };
 		8BFF38651D4F6D4400A4A103 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3451B03F7C400078E15 /* ArrayDataSource.swift */; };
 		8BFF38661D4F6D6200A4A103 /* ArtistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC682EB1B126F1F00FD2216 /* ArtistCollectionViewCell.swift */; };
-		8BFF38671D4F6D6B00A4A103 /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EE1B08DF8E00896D11 /* ArtistDetailViewController.swift */; };
 		8BFF38681D4F6F3800A4A103 /* ViewModelCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3411B03CC2900078E15 /* ViewModelCollectionDelegate.swift */; };
 		8BFF38691D4F6FAE00A4A103 /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EC1B08D41100896D11 /* ArtistDetailViewModel.swift */; };
 		8BFF386A1D4F758900A4A103 /* UIFont+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF193371BB360DE00B7D929 /* UIFont+EMAdditions.swift */; };
@@ -62,7 +68,6 @@
 		8BFF38701D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF386E1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift */; };
 		8BFF38711D4F83BA00A4A103 /* UIColor+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1933E1BB3EF5400B7D929 /* UIColor+EMAdditions.swift */; };
 		8BFF38731D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38721D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift */; };
-		8BFF38741D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38721D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift */; };
 		8BFF38751D4FA2A400A4A103 /* ScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FEB1B13839500698D4A /* ScheduleCollectionViewCell.swift */; };
 		8BFF38761D4FA2D600A4A103 /* RootCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF81B13C86700698D4A /* RootCollectionViewCell.swift */; };
 		8BFF38781D4FA7EA00A4A103 /* ScheduleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF38771D4FA7EA00A4A103 /* ScheduleInteractor.swift */; };
@@ -153,6 +158,8 @@
 /* Begin PBXFileReference section */
 		0DE19D7F9E2E34644E7AD542 /* Pods-EmbassatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmbassatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmbassatTests/Pods-EmbassatTests.release.xcconfig"; sourceTree = "<group>"; };
 		25D188832DBCBDFB7C658364 /* Pods_EmbassatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmbassatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27A3D7901C868F014222357C /* Pods-Embassat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embassat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embassat/Pods-Embassat.debug.xcconfig"; sourceTree = "<group>"; };
+		297DA5372E5CC5A33072C2C6 /* Pods_Embassat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Embassat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B310E401CCBEC830030B8CD /* EmbassatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbassatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B310E421CCBEC830030B8CD /* ArtistServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistServiceTests.swift; sourceTree = "<group>"; };
 		8B310E441CCBEC830030B8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,6 +173,7 @@
 		8B4D39E81CE111550088DDA5 /* petitem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = petitem.jpg; sourceTree = "<group>"; };
 		8B4D39E91CE111550088DDA5 /* tickets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tickets.jpg; sourceTree = "<group>"; };
 		8B4D39ED1CE111910088DDA5 /* transport.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = transport.jpg; sourceTree = "<group>"; };
+		8B8F657F1D58C8E000BFB060 /* ArtistDetailViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModelTests.swift; sourceTree = "<group>"; };
 		8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8B9AAB7A1D46A91600CDA2E0 /* MenuInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuInteractor.swift; path = Menu/MenuInteractor.swift; sourceTree = "<group>"; };
 		8B9AAB7D1D46A9E500CDA2E0 /* MenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCoordinator.swift; path = Menu/MenuCoordinator.swift; sourceTree = "<group>"; };
@@ -258,6 +266,7 @@
 		8CF193401BB3F24900B7D929 /* UIView+CADAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CADAdditions.swift"; sourceTree = "<group>"; };
 		8CF193441BB49AB200B7D929 /* NSDate+EMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+EMAdditions.swift"; sourceTree = "<group>"; };
 		A71D91641F9CEDABBA8BEF1B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5F48A11CA0C33068DC44F48 /* Pods-Embassat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embassat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embassat/Pods-Embassat.release.xcconfig"; sourceTree = "<group>"; };
 		F130F80040E70A21A9FCAF78 /* Pods-EmbassatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmbassatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmbassatTests/Pods-EmbassatTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +287,7 @@
 				8C04EF4B18CB8F09008FBC9B /* CoreGraphics.framework in Frameworks */,
 				8C04EF4D18CB8F09008FBC9B /* UIKit.framework in Frameworks */,
 				8C04EF4918CB8F09008FBC9B /* Foundation.framework in Frameworks */,
+				2C844305CED64305828B2C9C /* Pods_Embassat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +299,8 @@
 			children = (
 				F130F80040E70A21A9FCAF78 /* Pods-EmbassatTests.debug.xcconfig */,
 				0DE19D7F9E2E34644E7AD542 /* Pods-EmbassatTests.release.xcconfig */,
+				27A3D7901C868F014222357C /* Pods-Embassat.debug.xcconfig */,
+				B5F48A11CA0C33068DC44F48 /* Pods-Embassat.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -296,6 +308,7 @@
 		8B310E411CCBEC830030B8CD /* EmbassatTests */ = {
 			isa = PBXGroup;
 			children = (
+				8B8F657F1D58C8E000BFB060 /* ArtistDetailViewModelTests.swift */,
 				8B310E421CCBEC830030B8CD /* ArtistServiceTests.swift */,
 				8B310E441CCBEC830030B8CD /* Info.plist */,
 			);
@@ -348,6 +361,7 @@
 				8C04EF6118CB8F09008FBC9B /* XCTest.framework */,
 				A71D91641F9CEDABBA8BEF1B /* Pods.framework */,
 				25D188832DBCBDFB7C658364 /* Pods_EmbassatTests.framework */,
+				297DA5372E5CC5A33072C2C6 /* Pods_Embassat.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -618,9 +632,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C04EF7118CB8F09008FBC9B /* Build configuration list for PBXNativeTarget "Embassat" */;
 			buildPhases = (
+				3A8491EF837B5DB145ACD189 /* [CP] Check Pods Manifest.lock */,
 				8C04EF4118CB8F09008FBC9B /* Sources */,
 				8C04EF4218CB8F09008FBC9B /* Frameworks */,
 				8C04EF4318CB8F09008FBC9B /* Resources */,
+				BDA13C09CD077E8F99A43671 /* [CP] Embed Pods Frameworks */,
+				73C93BBB0860A23E5E2BA3FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -742,6 +759,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmbassatTests/Pods-EmbassatTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3A8491EF837B5DB145ACD189 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		73C93BBB0860A23E5E2BA3FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embassat/Pods-Embassat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7F4A8BFF3E0A9E69269F3E20 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -772,6 +819,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmbassatTests/Pods-EmbassatTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BDA13C09CD077E8F99A43671 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embassat/Pods-Embassat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -781,37 +843,41 @@
 			files = (
 				8BFF38651D4F6D4400A4A103 /* ArrayDataSource.swift in Sources */,
 				8B9AAB841D46AF2400CDA2E0 /* ScheduleViewController.swift in Sources */,
-				8BFF38631D4F69B100A4A103 /* ArtistsCoordinator.swift in Sources */,
 				8BFF38711D4F83BA00A4A103 /* UIColor+EMAdditions.swift in Sources */,
+				8B8F657D1D58C59700BFB060 /* MenuCollectionViewCell.swift in Sources */,
 				8B9AAB8A1D46AF4400CDA2E0 /* TicketsViewController.swift in Sources */,
-				8BFF38671D4F6D6B00A4A103 /* ArtistDetailViewController.swift in Sources */,
 				8B9AAB7C1D46A91600CDA2E0 /* MenuInteractor.swift in Sources */,
 				8BFF38661D4F6D6200A4A103 /* ArtistCollectionViewCell.swift in Sources */,
-				8B9AAB801D46AEF200CDA2E0 /* InfoViewController.swift in Sources */,
 				8BFF38801D5118BA00A4A103 /* MapInteractor.swift in Sources */,
+				8B8F65771D58C1CE00BFB060 /* ArtistParser.swift in Sources */,
 				8B9AAB791D46A66400CDA2E0 /* Coordinator.swift in Sources */,
+				8B8F657E1D58C5A800BFB060 /* UICollectionViewFlowLayout+EMAdditions.swift in Sources */,
 				8BFF386A1D4F758900A4A103 /* UIFont+EMAdditions.swift in Sources */,
+				8B8F657C1D58C4E200BFB060 /* InfoViewController.swift in Sources */,
 				8BFF38701D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */,
 				8B310E531CCBF35E0030B8CD /* ArtistStore.swift in Sources */,
 				8B9AAB821D46AF0700CDA2E0 /* RootViewController.swift in Sources */,
-				8BFF38741D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */,
 				8BFF387D1D4FF6C300A4A103 /* UIView+CADAdditions.swift in Sources */,
 				8BFF38761D4FA2D600A4A103 /* RootCollectionViewCell.swift in Sources */,
+				8B8F65791D58C2EE00BFB060 /* ArtistDetailCoordinator.swift in Sources */,
 				8BFF38601D4F661200A4A103 /* ArtistsInteractor.swift in Sources */,
 				8BFF38691D4F6FAE00A4A103 /* ArtistDetailViewModel.swift in Sources */,
 				8B310E541CCBF3600030B8CD /* NotificationService.swift in Sources */,
 				8B9AAB881D46AF3A00CDA2E0 /* MapViewController.swift in Sources */,
 				8B310E431CCBEC830030B8CD /* ArtistServiceTests.swift in Sources */,
 				8B9AAB831D46AF1F00CDA2E0 /* ArtistsViewController.swift in Sources */,
-				8B310E4A1CCBECAF0030B8CD /* ArtistParser.swift in Sources */,
 				8BFF38791D4FA7EA00A4A103 /* ScheduleInteractor.swift in Sources */,
 				8BFF38751D4FA2A400A4A103 /* ScheduleCollectionViewCell.swift in Sources */,
 				8BFF387C1D4FEB3F00A4A103 /* ScheduleCoordinator.swift in Sources */,
+				8B8F657A1D58C4D100BFB060 /* ArtistsCoordinator.swift in Sources */,
 				8B9AAB891D46AF3F00CDA2E0 /* MapViewModel.swift in Sources */,
 				8B310E4B1CCBEF5F0030B8CD /* ArtistService.swift in Sources */,
 				8B9AAB851D46AF2D00CDA2E0 /* ScheduleViewModel.swift in Sources */,
 				8BFF386D1D4F776200A4A103 /* UICollectionView+EMAdditions.swift in Sources */,
+				8B8F65801D58C8E000BFB060 /* ArtistDetailViewModelTests.swift in Sources */,
+				8B8F65781D58C2E400BFB060 /* ArtistDetailViewController.swift in Sources */,
 				8BFF38681D4F6F3800A4A103 /* ViewModelCollectionDelegate.swift in Sources */,
+				8B8F657B1D58C4DA00BFB060 /* MenuViewModel.swift in Sources */,
 				8BFF38641D4F6CF800A4A103 /* ArtistsViewModel.swift in Sources */,
 				8B9AAB8B1D46B03B00CDA2E0 /* MenuViewController.swift in Sources */,
 				8B9AAB811D46AF0400CDA2E0 /* EmbassatRootViewController.swift in Sources */,
@@ -1021,6 +1087,7 @@
 		};
 		8C04EF7218CB8F09008FBC9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27A3D7901C868F014222357C /* Pods-Embassat.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Pol Solsona (32S972F3NM)";
@@ -1042,6 +1109,7 @@
 		};
 		8C04EF7318CB8F09008FBC9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F48A11CA0C33068DC44F48 /* Pods-Embassat.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Pol Solsona (32S972F3NM)";
