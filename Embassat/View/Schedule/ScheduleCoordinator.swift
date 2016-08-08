@@ -12,7 +12,7 @@ class ScheduleCoordinator: Coordinator {
     weak var viewController: ScheduleViewController?
     
     func presentArtistDetail(artists: [CADEMArtist], currentIndex: Int) {
-        let interactor = ArtistDetailInteractor(artists: artists, index: currentIndex)
+        let interactor = ArtistDetailInteractor(artists: artists, index: currentIndex, service: ArtistService())
         let coordinator = ArtistDetailCoordinator()
         let viewModel = ArtistDetailViewModel<ArtistDetailCoordinator, ArtistDetailInteractor>(interactor: interactor, coordinator: coordinator)
         let artistDetailViewController = ArtistDetailViewController(viewModel: viewModel)

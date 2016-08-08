@@ -11,7 +11,7 @@ import Foundation
 protocol ArtistDetailInteractorProtocol: Interactor {
     associatedtype ModelType = CADEMArtist
     
-    init(artists: [CADEMArtist], index: Int)
+    init(artists: [CADEMArtist], index: Int, service: ArtistServiceProtocol)
     func toggleFavorite()
     func nextArtist()
     func previousArtist()
@@ -19,30 +19,45 @@ protocol ArtistDetailInteractorProtocol: Interactor {
 
 class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
     
+    /** The interactor's update handler */
     var updateHandler: ((CADEMArtist) -> ())?
     
+    /** The interactor's model */
     private(set) var model: CADEMArtist
     
-    private var artists: [CADEMArtist]
-    private let service = ArtistService()
+    /** An ArtistServiceProtocol to perform actions on the model. */
+    let service: ArtistServiceProtocol
     
-    required init(artists: [CADEMArtist], index: Int) {
+    private var artists: [CADEMArtist]
+    
+    /**
+     Initializes a new ArtistDetailInteractor.
+     
+     - parameter artists: An array of CADEMArtist.
+     - parameter index: The index of the current artist.
+     - parameter service: An ArtistServiceProtocol to perform actions on the model.
+     */
+    required init(artists: [CADEMArtist], index: Int, service: ArtistServiceProtocol) {
         self.artists = artists
         self.model = artists[index]
+        self.service = service
     }
     
+    /** Fetches the next artist and updates the model, calling the update handler */
     func nextArtist() {
         guard let index = artists.indexOf(model) else { return }
         
         updateModel(withNexIndex: index + 1)
     }
     
+    /** Fetches the previous artist and updates the model, calling the update handler */
     func previousArtist() {
         guard let index = artists.indexOf(model) else { return }
         
         updateModel(withNexIndex: index - 1)
     }
     
+    /** Toggles the favorite state of the model/artist */
     func toggleFavorite() {
         service.toggleFavorite(forArtist: model) { [weak self] (artist) in
             guard let strongSelf = self, index = strongSelf.artists.indexOf(strongSelf.model) else { return }

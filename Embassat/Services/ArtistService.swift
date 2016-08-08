@@ -8,7 +8,13 @@
 
 import Foundation
 
-class ArtistService {
+protocol ArtistServiceProtocol {
+    func artists(completion: ([CADEMArtist]?, NSError?) -> ())
+    func cachedArtists(completion: ([CADEMArtist]) -> ())
+    func toggleFavorite(forArtist artist: CADEMArtist, completion: (CADEMArtist) -> ())
+}
+
+class ArtistService: ArtistServiceProtocol {
     
     static let kArtistsEndpoint = "https://scorching-torch-2707.firebaseio.com/artists.json"
     static private let kArtistsStoreKey = "/artists.db_2"
