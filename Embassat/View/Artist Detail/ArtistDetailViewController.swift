@@ -57,6 +57,7 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         navigationItem.rightBarButtonItems = [favItem, shareItem]
         
         updateSubviewDetails()
+        updateNavigationItemDetails()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -72,7 +73,7 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         dayLabel?.text = viewModel.artistDay
         timeLabel?.text = viewModel.artistStartTimeString
         
-        if viewModel.artistVideoId.characters.count > 0 {
+        if viewModel.shouldShowArtistVideo() {
             imageView?.hidden = true
             playerView?.hidden = false
             playerView?.loadWithVideoId(viewModel.artistVideoId)
@@ -84,8 +85,7 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     }
     
     private func updateNavigationItemDetails() {
-        let favItem = navigationItem.rightBarButtonItems?.first
-        favItem?.tintColor = viewModel.artistIsFavorite == true ? .lightGrayColor() : .whiteColor()
+        navigationItem.rightBarButtonItems?.first?.tintColor = viewModel.favTintColor()
     }
     
     @objc private func sharePressed() {
@@ -97,10 +97,10 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     }
     
     @IBAction func nextPressed(sender: UIButton) {
-        viewModel.currentIndex+=1
+        viewModel.showNext()
     }
     
     @IBAction func previousPressed(sender: UIButton) {
-        viewModel.currentIndex-=1
+        viewModel.showPrevious()
     }
 }

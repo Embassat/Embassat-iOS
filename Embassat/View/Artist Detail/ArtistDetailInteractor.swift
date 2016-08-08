@@ -13,8 +13,8 @@ protocol ArtistDetailInteractorProtocol: Interactor {
     
     init(artists: [CADEMArtist], index: Int)
     func toggleFavorite()
-    func currentIndex() -> Int
-    func updateModel(withNexIndex index: Int)
+    func nextArtist()
+    func previousArtist()
 }
 
 class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
@@ -31,11 +31,29 @@ class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
         self.model = artists[index]
     }
     
-    func currentIndex() -> Int {
-        return artists.indexOf(model)!
+    func nextArtist() {
+        guard let index = artists.indexOf(model) else { return }
+        
+        updateModel(withNexIndex: index + 1)
     }
     
-    func updateModel(withNexIndex index: Int) {
+    func previousArtist() {
+        guard let index = artists.indexOf(model) else { return }
+        
+        updateModel(withNexIndex: index - 1)
+    }
+    
+    func toggleFavorite() {
+        service.toggleFavorite(forArtist: model) { [weak self] (artist) in
+            guard let strongSelf = self, index = strongSelf.artists.indexOf(strongSelf.model) else { return }
+            
+            strongSelf.artists[index] = artist
+            strongSelf.model = artist
+            strongSelf.updateHandler?(strongSelf.model)
+        }
+    }
+    
+    private func updateModel(withNexIndex index: Int) {
         var theIndex: Int = index
         
         if theIndex > artists.count - 1 {
@@ -48,15 +66,5 @@ class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
         
         model = artists[theIndex]
         updateHandler?(model)
-    }
-    
-    func toggleFavorite() {
-        service.toggleFavorite(forArtist: model) { [weak self] (artist) in
-            guard let strongSelf = self, index = strongSelf.artists.indexOf(artist) else { return }
-            
-            strongSelf.artists[index] = artist
-            strongSelf.model = artist
-            strongSelf.updateHandler?(strongSelf.model)
-        }
     }
 }

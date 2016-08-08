@@ -28,31 +28,25 @@ class FakeArtistDetailInteractor: ArtistDetailInteractorProtocol {
     private var artists: [CADEMArtist]
     private(set) var model: CADEMArtist
     
+    var previousArtistCalled: Bool = false
+    var nextArtistCalled: Bool = false
+    var toggleFavoriteCalled: Bool = false
+    
     required init(artists: [CADEMArtist], index: Int) {
         self.artists = artists
-        model = artists.first!
+        self.model = artists[index]
     }
     
-    func currentIndex() -> Int {
-        return artists.indexOf(model)!
+    func nextArtist() {
+        nextArtistCalled = true
     }
     
-    func updateModel(withNexIndex index: Int) {
-        var theIndex: Int = index
-        
-        if theIndex > artists.count - 1 {
-            theIndex = artists.count - 1
-        }
-        
-        if theIndex < 0 {
-            theIndex = 0
-        }
-        
-        model = artists[theIndex]
+    func previousArtist() {
+        previousArtistCalled = true
     }
     
     func toggleFavorite() {
-        artists[currentIndex()].favorite = !artists[currentIndex()].favorite
+        toggleFavoriteCalled = true
     }
 }
 
@@ -77,7 +71,8 @@ class ArtistDetailViewModelTests: XCTestCase {
                     startDate: NSDate.date(fromYear: 2016, month: 11, day: 02, hour: 20, minute: 45),
                     endDate: NSDate(),
                     stage: "First Stage",
-                    youtubeId: "123"),
+                    youtubeId: "123",
+                    favorite: false),
         CADEMArtist(artistId: 2,
                     name: "Alex",
                     longDescription: "Long Description 2",
@@ -86,7 +81,8 @@ class ArtistDetailViewModelTests: XCTestCase {
                     startDate: NSDate(),
                     endDate: NSDate(),
                     stage: "Second Stage",
-                    youtubeId: "455"),
+                    youtubeId: "455",
+                    favorite: true),
         CADEMArtist(artistId: 3,
                     name: "Hector",
                     longDescription: "Long Description 3",
@@ -95,15 +91,14 @@ class ArtistDetailViewModelTests: XCTestCase {
                     startDate: NSDate(),
                     endDate: NSDate(),
                     stage: "Third Stage",
-                    youtubeId: "678")
+                    youtubeId: "",
+                    favorite: true)
     ]
     
     var sut: ArtistDetailViewModel<FakeArtistDetailCoordinator, FakeArtistDetailInteractor>?
 
     override func setUp() {
         super.setUp()
-        
-        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 0), coordinator: FakeArtistDetailCoordinator())
     }
     
     override func tearDown() {
@@ -113,63 +108,73 @@ class ArtistDetailViewModelTests: XCTestCase {
     }
 
     func testViewModelDefaultValues() {
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 0), coordinator: FakeArtistDetailCoordinator())
+        
         XCTAssertEqual(sut!.artistName, "Joan")
         XCTAssertTrue(sut!.artistDescription.containsString("Long Description"))
         XCTAssertTrue(sut!.artistStartTimeString.containsString("20:45"))
         XCTAssertEqual(sut!.artistDay, "Diumenge")
         XCTAssertEqual(sut!.artistStage, "First Stage")
         XCTAssertEqual(sut!.artistVideoId, "123")
-        XCTAssertFalse(sut!.artistIsFavorite)
+        XCTAssertTrue(sut!.shouldShowArtistVideo())
+        XCTAssertEqual(sut?.favTintColor(), .whiteColor())
         XCTAssertEqual(sut!.artistImageURL, NSURL(string: "www.test.com"))
     }
     
-    func testViewModelCurrentIndex() {
-        XCTAssertEqual(sut?.currentIndex, 0)
+    func testFavoriteTintColor() {
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 1), coordinator: FakeArtistDetailCoordinator())
         
-        sut?.currentIndex = 1
+        XCTAssertEqual(sut?.favTintColor(), .lightGrayColor())
         
-        XCTAssertEqual(sut!.artistName, "Alex")
-        XCTAssertTrue(sut!.artistDescription.containsString("Long Description 2"))
-        XCTAssertEqual(sut!.artistStage, "Second Stage")
-        XCTAssertEqual(sut!.artistVideoId, "455")
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 2), coordinator: FakeArtistDetailCoordinator())
         
-        sut?.currentIndex = 2
+        XCTAssertEqual(sut?.favTintColor(), .lightGrayColor())
         
-        XCTAssertEqual(sut!.artistName, "Hector")
-        XCTAssertTrue(sut!.artistDescription.containsString("Long Description 3"))
-        XCTAssertEqual(sut!.artistStage, "Third Stage")
-        XCTAssertEqual(sut!.artistVideoId, "678")
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 0), coordinator: FakeArtistDetailCoordinator())
+        
+        XCTAssertEqual(sut?.favTintColor(), .whiteColor())
+    }
+    
+    func testShowArtistVideo() {
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 1), coordinator: FakeArtistDetailCoordinator())
+        
+        XCTAssertTrue(sut!.shouldShowArtistVideo())
+        
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 2), coordinator: FakeArtistDetailCoordinator())
+        
+        XCTAssertFalse(sut!.shouldShowArtistVideo())
+        
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 0), coordinator: FakeArtistDetailCoordinator())
+        
+        XCTAssertTrue(sut!.shouldShowArtistVideo())
+    }
+    
+    func testViewModelNextAndPreviousIndex() {
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 0), coordinator: FakeArtistDetailCoordinator())
+        
+        XCTAssertFalse(sut!.interactor.nextArtistCalled)
+        XCTAssertFalse(sut!.interactor.previousArtistCalled)
+        
+        sut?.showNext()
+        sut?.showPrevious()
+        
+        XCTAssertTrue(sut!.interactor.nextArtistCalled)
+        XCTAssertTrue(sut!.interactor.previousArtistCalled)
     }
     
     func testViewModelFavorite() {
-        XCTAssertFalse(sut!.artistIsFavorite)
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 0), coordinator: FakeArtistDetailCoordinator())
+        
+        XCTAssertFalse(sut!.interactor.toggleFavoriteCalled)
         
         sut?.toggleFavorite()
         
-        XCTAssertTrue(sut!.artistIsFavorite)
-        
-        sut?.currentIndex = 2
-        
-        XCTAssertFalse(sut!.artistIsFavorite)
-        
-        sut?.toggleFavorite()
-        
-        XCTAssertTrue(sut!.artistIsFavorite)
-        
-        sut?.currentIndex = 0
-        
-        XCTAssertTrue(sut!.artistIsFavorite)
-        
-        sut?.toggleFavorite()
-        
-        XCTAssertFalse(sut!.artistIsFavorite)
-        
-        sut?.currentIndex = 1
-        
-        XCTAssertFalse(sut!.artistIsFavorite)
+        XCTAssertTrue(sut!.interactor.toggleFavoriteCalled)
     }
     
     func testShareAction() {
+        sut = ArtistDetailViewModel(interactor: FakeArtistDetailInteractor(artists: artists, index: 0), coordinator: FakeArtistDetailCoordinator())
+        
         XCTAssertFalse(sut!.coordinator.actionShared)
         
         sut?.shareAction()
