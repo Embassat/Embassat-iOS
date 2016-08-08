@@ -58,7 +58,7 @@ class ScheduleInteractor: Interactor {
     }
     
     func fetchCachedArtists() {
-        service.cachedArtists { [weak self] (artists) in
+        service.persistedArtists { [weak self] (artists) in
             self?.updateArtists(withArtists: artists)
         }
     }

@@ -10,7 +10,7 @@ import Foundation
 
 struct ArtistStore {
     
-    let documentsPath: AnyObject = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask,true)[0]
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask,true)[0]
 
     func object(forKey key: String) -> AnyObject? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath.stringByAppendingString(key))

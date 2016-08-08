@@ -25,7 +25,7 @@ class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
     }
     
     func shouldRefreshModel() {
-        interactor.fetchCachedArtists()
+        interactor.fetchPersistedArtists()
     }
     
     func titleAtIndexPath(indexPath: NSIndexPath) -> String {

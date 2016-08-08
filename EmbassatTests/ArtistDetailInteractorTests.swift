@@ -52,7 +52,7 @@ class FakeArtistService: ArtistServiceProtocol {
         artistsCalled = true
     }
     
-    func cachedArtists(completion: ([CADEMArtist]) -> ()) {
+    func persistedArtists(completion: ([CADEMArtist]) -> ()) {
         completion([])
         cachedArtistsCalled = true
     }

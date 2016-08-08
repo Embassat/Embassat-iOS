@@ -23,8 +23,8 @@ class ArtistsInteractor: Interactor {
         }
     }
     
-    func fetchCachedArtists() {
-        service.cachedArtists { [weak self] (artists) in
+    func fetchPersistedArtists() {
+        service.persistedArtists { [weak self] (artists) in
             self?.updateArtists(withArtists: artists)
         }
     }

@@ -10,20 +10,26 @@ import Foundation
 
 protocol ArtistServiceProtocol {
     func artists(completion: ([CADEMArtist]?, NSError?) -> ())
-    func cachedArtists(completion: ([CADEMArtist]) -> ())
+    func persistedArtists(completion: ([CADEMArtist]) -> ())
     func toggleFavorite(forArtist artist: CADEMArtist, completion: (CADEMArtist) -> ())
 }
 
 class ArtistService: ArtistServiceProtocol {
     
     static let kArtistsEndpoint = "https://scorching-torch-2707.firebaseio.com/artists.json"
-    static private let kArtistsStoreKey = "/artists.db_2"
+    static let kArtistsStoreKey = "/artists.db_2"
     
-    private let store: ArtistStore = ArtistStore()
-    private let parser: ArtistParser = ArtistParser()
-    private let notificationService: NotificationService = NotificationService()
+    let store: ArtistStore = ArtistStore()
+    let parser: ArtistParser = ArtistParser()
+    let notificationService: NotificationService = NotificationService()
+    
     private var lastTask: NSURLSessionDataTask?
     
+    /**
+     Retrieves the artists from the network, also persisting them in disk.
+     
+     - parameter completion: A completion which will get called with an optional array of artists and an optional error, if any. Note that both can be nil if there is no error but the response's status code is not 200.
+     */
     func artists(completion: ([CADEMArtist]?, NSError?) -> ()) {
         var cachedArtists: [CADEMArtist] = []
         let url = NSURL(string: ArtistService.kArtistsEndpoint)!
@@ -58,25 +64,28 @@ class ArtistService: ArtistServiceProtocol {
         lastTask?.resume()
     }
     
-    func cachedArtists(completion: ([CADEMArtist]) -> ()) {
+    /**
+     Retrieves the persisted artists from disk.
+     
+     - parameter completion: A completion which will get called with an array of the persisted artists. This can be an empty array if no persisted artists.
+     */
+    func persistedArtists(completion: ([CADEMArtist]) -> ()) {
         if let cachedArtists = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
             completion(cachedArtists)
+        } else {
+            completion([])
         }
     }
     
+    /**
+     Toggles and persists the favorite state of an already artist. Will do nothing if the artist is not present in the currently peristed artists.
+     
+     - parameter artist: The artist to toggle the favorite state from.
+     - parameter completion: A completion which will get called with the updated artist.
+     */
     func toggleFavorite(forArtist artist: CADEMArtist, completion: (CADEMArtist) -> ()) {
         if var cachedArtists = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
-            
-            var index = NSNotFound
-            
-            for (i, cachedArtist) in cachedArtists.enumerate() {
-                if cachedArtist.artistId == artist.artistId {
-                    index = i
-                    break
-                }
-            }
-            
-            if index != NSNotFound {
+            if let index = cachedArtists.indexOf(artist) {
                 cachedArtists[index].favorite = !cachedArtists[index].favorite
                 store.store(cachedArtists, forKey: ArtistService.kArtistsStoreKey)
                 completion(cachedArtists[index])

@@ -79,6 +79,7 @@ class ArtistServiceTests: XCTestCase {
     }
     
     override func tearDown() {
+        let _ = try? NSFileManager.defaultManager().removeItemAtPath(sut!.store.documentsPath.stringByAppendingString(ArtistService.kArtistsStoreKey))
         sut = nil
         Router.unregister("https://scorching-torch-2707.firebaseio.com")
         
