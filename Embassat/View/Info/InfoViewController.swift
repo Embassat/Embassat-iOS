@@ -9,7 +9,7 @@
 import UIKit
 import TTTAttributedLabel
 
-final class InfoViewController: EmbassatRootViewController {
+final class InfoViewController: RootViewController {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var detailScrollView: UIScrollView!

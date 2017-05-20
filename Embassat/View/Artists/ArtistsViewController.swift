@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ArtistsViewController: EmbassatRootViewController, UpdateableView {
+final class ArtistsViewController: RootViewController, UpdateableView {
     
     @IBOutlet weak var artistsCollectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

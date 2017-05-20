@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import youtube_ios_player_helper
 
-final class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
+final class ArtistDetailViewController: RootViewController, UpdateableView {
     
     @IBOutlet var playerView: YTPlayerView!
     @IBOutlet var imageView: UIImageView!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ScheduleViewController: EmbassatRootViewController, UpdateableView {
+final class ScheduleViewController: RootViewController, UpdateableView {
     
     @IBOutlet var scheduleCollectionView: UICollectionView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!

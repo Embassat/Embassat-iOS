@@ -34,7 +34,7 @@
 		8B8F65821D59250200BFB060 /* ArtistDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8F65811D59250200BFB060 /* ArtistDetailInteractorTests.swift */; };
 		8B9AAB781D46A66400CDA2E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */; };
 		8B9AAB791D46A66400CDA2E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */; };
-		8B9AAB811D46AF0400CDA2E0 /* EmbassatRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D01B07800600896D11 /* EmbassatRootViewController.swift */; };
+		8B9AAB811D46AF0400CDA2E0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D01B07800600896D11 /* RootViewController.swift */; };
 		8B9AAB831D46AF1F00CDA2E0 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6E81B07BE1600896D11 /* ArtistsViewController.swift */; };
 		8B9AAB841D46AF2400CDA2E0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF31B138F2700698D4A /* ScheduleViewController.swift */; };
 		8B9AAB851D46AF2D00CDA2E0 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FF11B138A0100698D4A /* ScheduleViewModel.swift */; };
@@ -80,6 +80,8 @@
 		8C3D9B9D1ED085830029266E /* UICollectionView+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9B9C1ED085830029266E /* UICollectionView+EMAdditions.swift */; };
 		8C3D9BA31ED08EA40029266E /* TabContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BA11ED08EA40029266E /* TabContainerViewController.swift */; };
 		8C3D9BA41ED08EA40029266E /* TabContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BA21ED08EA40029266E /* TabContainerViewModel.swift */; };
+		8C3D9BA61ED101360029266E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BA51ED101360029266E /* UIViewController.swift */; };
+		8C3D9BA81ED105CD0029266E /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BA71ED105CD0029266E /* NSLayoutConstraint.swift */; };
 		8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB381B0A8F80000E019F /* apercu_medium.otf */; };
 		8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */; };
 		8C774F5F192D682B000D5062 /* TicketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F5E192D682B000D5062 /* TicketsViewController.xib */; };
@@ -87,7 +89,7 @@
 		8C774F72192EC0B9000D5062 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F70192EC0B9000D5062 /* Default@2x.png */; };
 		8C774F74192EC39A000D5062 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F73192EC39A000D5062 /* Default.png */; };
 		8C8BA6CF1B06758000896D11 /* ArtistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6CE1B06758000896D11 /* ArtistParser.swift */; };
-		8C8BA6D11B07800600896D11 /* EmbassatRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D01B07800600896D11 /* EmbassatRootViewController.swift */; };
+		8C8BA6D11B07800600896D11 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6D01B07800600896D11 /* RootViewController.swift */; };
 		8C8BA6E91B07BE1600896D11 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6E81B07BE1600896D11 /* ArtistsViewController.swift */; };
 		8C8BA6EB1B08C33900896D11 /* ArtistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EA1B08C33900896D11 /* ArtistsViewModel.swift */; };
 		8C8BA6ED1B08D41100896D11 /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA6EC1B08D41100896D11 /* ArtistDetailViewModel.swift */; };
@@ -190,6 +192,8 @@
 		8C3D9B9C1ED085830029266E /* UICollectionView+EMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+EMAdditions.swift"; sourceTree = "<group>"; };
 		8C3D9BA11ED08EA40029266E /* TabContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabContainerViewController.swift; path = TabContainer/TabContainerViewController.swift; sourceTree = "<group>"; };
 		8C3D9BA21ED08EA40029266E /* TabContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabContainerViewModel.swift; path = TabContainer/TabContainerViewModel.swift; sourceTree = "<group>"; };
+		8C3D9BA51ED101360029266E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8C3D9BA71ED105CD0029266E /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		8C6BCB381B0A8F80000E019F /* apercu_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apercu_medium.otf; sourceTree = "<group>"; };
 		8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "noe-display-bold.otf"; sourceTree = "<group>"; };
 		8C774F5E192D682B000D5062 /* TicketsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TicketsViewController.xib; path = Tickets/TicketsViewController.xib; sourceTree = "<group>"; };
@@ -197,7 +201,7 @@
 		8C774F70192EC0B9000D5062 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8C774F73192EC39A000D5062 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8C8BA6CE1B06758000896D11 /* ArtistParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistParser.swift; path = Services/ArtistParser.swift; sourceTree = "<group>"; };
-		8C8BA6D01B07800600896D11 /* EmbassatRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbassatRootViewController.swift; sourceTree = "<group>"; };
+		8C8BA6D01B07800600896D11 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8C8BA6E81B07BE1600896D11 /* ArtistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsViewController.swift; sourceTree = "<group>"; };
 		8C8BA6EA1B08C33900896D11 /* ArtistsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsViewModel.swift; sourceTree = "<group>"; };
 		8C8BA6EC1B08D41100896D11 /* ArtistDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ArtistDetailViewModel.swift; path = "Artist Detail/ArtistDetailViewModel.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -405,9 +409,9 @@
 			children = (
 				8C1FF3451B03F7C400078E15 /* ArrayDataSource.swift */,
 				8B9AAB771D46A66400CDA2E0 /* Coordinator.swift */,
-				8C8BA6D01B07800600896D11 /* EmbassatRootViewController.swift */,
 				8CE72FF81B13C86700698D4A /* RootCollectionViewCell.swift */,
 				8CE72FFC1B13CA3200698D4A /* RootNavigationController.swift */,
+				8C8BA6D01B07800600896D11 /* RootViewController.swift */,
 				8CE72FFE1B13CADC00698D4A /* ShareKitConfigurator.swift */,
 				8C1FF3411B03CC2900078E15 /* ViewModelCollectionDelegate.swift */,
 			);
@@ -418,11 +422,13 @@
 			isa = PBXGroup;
 			children = (
 				8CF193441BB49AB200B7D929 /* Date+EMAdditions.swift */,
+				8C3D9BA71ED105CD0029266E /* NSLayoutConstraint.swift */,
 				8C3D9B9C1ED085830029266E /* UICollectionView+EMAdditions.swift */,
 				8CF1933E1BB3EF5400B7D929 /* UIColor+EMAdditions.swift */,
 				8CF193371BB360DE00B7D929 /* UIFont+EMAdditions.swift */,
 				8C3D9B981ED068370029266E /* UIImage.swift */,
 				8CF193401BB3F24900B7D929 /* UIView+CADAdditions.swift */,
+				8C3D9BA51ED101360029266E /* UIViewController.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -834,7 +840,7 @@
 				8B8F65781D58C2E400BFB060 /* ArtistDetailViewController.swift in Sources */,
 				8BFF38681D4F6F3800A4A103 /* ViewModelCollectionDelegate.swift in Sources */,
 				8BFF38641D4F6CF800A4A103 /* ArtistsViewModel.swift in Sources */,
-				8B9AAB811D46AF0400CDA2E0 /* EmbassatRootViewController.swift in Sources */,
+				8B9AAB811D46AF0400CDA2E0 /* RootViewController.swift in Sources */,
 				8B8F65821D59250200BFB060 /* ArtistDetailInteractorTests.swift in Sources */,
 				8B310E561CCBF3B60030B8CD /* Date+EMAdditions.swift in Sources */,
 				8B9AAB871D46AF3500CDA2E0 /* TransportViewController.swift in Sources */,
@@ -847,7 +853,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C8BA6E91B07BE1600896D11 /* ArtistsViewController.swift in Sources */,
-				8C8BA6D11B07800600896D11 /* EmbassatRootViewController.swift in Sources */,
+				8C8BA6D11B07800600896D11 /* RootViewController.swift in Sources */,
 				8CE72FFD1B13CA3200698D4A /* RootNavigationController.swift in Sources */,
 				8C8BA6ED1B08D41100896D11 /* ArtistDetailViewModel.swift in Sources */,
 				8C1FF3461B03F7C400078E15 /* ArrayDataSource.swift in Sources */,
@@ -860,6 +866,8 @@
 				8CA0CE821B038E3E00BC04B0 /* CADEMArtist.swift in Sources */,
 				8B4737E51CCB92FC00B1816A /* AppDelegate.swift in Sources */,
 				8BFF38731D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */,
+				8C3D9BA61ED101360029266E /* UIViewController.swift in Sources */,
+				8C3D9BA81ED105CD0029266E /* NSLayoutConstraint.swift in Sources */,
 				8BFF386F1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */,
 				8CE72FE41B13707100698D4A /* MapViewModel.swift in Sources */,
 				8C3D9BA31ED08EA40029266E /* TabContainerViewController.swift in Sources */,

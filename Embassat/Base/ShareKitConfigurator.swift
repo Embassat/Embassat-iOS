@@ -16,7 +16,7 @@ final class ShareKitConfigurator: DefaultSHKConfigurator {
     }
     
     override func defaultFavoriteURLSharers() -> [Any] {
-        return ["SHKTwitter" as AnyObject, "SHKFacebook" as AnyObject, "SHKiOSTwitter" as AnyObject, "SHKiOSFacebook" as AnyObject]
+        return ["SHKTwitter", "SHKFacebook", "SHKiOSTwitter", "SHKiOSFacebook"]
     }
     
     override func showActionSheetMoreButton() -> NSNumber {

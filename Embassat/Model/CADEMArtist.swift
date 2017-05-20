@@ -44,7 +44,7 @@ open class CADEMArtist : NSObject, NSCoding {
         self.youtubeId = youtubeId
         self.favorite = favorite    
         self.scheduleDate = startDate.hour < 10 ? startDate.dateBySubstracting(days: 1) : startDate
-        self.scheduleDayString = scheduleDate.day == 9 ? "Dijous" : scheduleDate.day == 10 ? "Divendres" : scheduleDate.day == 11 ? "Dissabte" : "Diumenge"
+        self.scheduleDayString = scheduleDate.day == 9 ? "Divendres" : "Dissabte"
     }
     
     required convenience public init(coder decoder: NSCoder) {

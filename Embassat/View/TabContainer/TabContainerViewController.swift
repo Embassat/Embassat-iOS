@@ -8,18 +8,20 @@
 
 import UIKit
 
-final class TabContainerViewController: UIViewController {
+/// A `UIViewController` container that manages his children in tabs
+final class TabContainerViewController: RootViewController {
     
-    var selectedIndex: Int
-    let viewModel: TabContainerViewModel
+    private let viewModel: TabContainerViewModel
+    private let tabContainer = UIView()
     
-    let tabContainer: UIView = {
-        let container = UIView()
-        container.translatesAutoresizingMaskIntoConstraints = false
-        
-        return container
-    }()
+    static let tabHeight: CGFloat = 38
     
+    /// The current selected index
+    private(set) var selectedIndex: Int
+    
+    /// Initializes a new `TabContainerViewController` with the given parameters
+    ///
+    /// - Parameter viewModel: a `TabContainerViewModel` object
     init(viewModel: TabContainerViewModel) {
         self.viewModel = viewModel
         self.selectedIndex = viewModel.initialIndex
@@ -30,21 +32,26 @@ final class TabContainerViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .secondary
         view.addSubview(tabContainer)
-        tabContainer.heightAnchor.constraint(equalToConstant: 38).isActive = true
-        tabContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tabContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        NSLayoutConstraint.useAndActivate([
+        tabContainer.heightAnchor.constraint(equalToConstant: TabContainerViewController.tabHeight),
+        tabContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        tabContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        tabContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: topLayoutGuide.length).isActive = true
+        NSLayoutConstraint.useAndActivate([
+            tabContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: topLayoutGuide.length)])
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,79 +59,88 @@ final class TabContainerViewController: UIViewController {
         
         guard tabContainer.subviews.count == 0 else { return }
         
+        addTabs()
+    }
+    
+    override var childViewControllerForStatusBarStyle : UIViewController? {
+        return viewModel.sections[selectedIndex].viewController
+    }
+    
+    // MARK: - Private
+    
+    private func addTabs() {
         let tabWidth = view.bounds.width / CGFloat(viewModel.sections.count)
         for (index, section) in viewModel.sections.enumerated() {
             let tab = UIView()
-            tab.translatesAutoresizingMaskIntoConstraints = false
             let label = UILabel()
-            label.font = UIFont.detailFont(ofSize: 15.0)
-            label.translatesAutoresizingMaskIntoConstraints = false
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tabTapped))
-            tab.addGestureRecognizer(tapGesture)
-            label.text = section.title
             
+            label.font = UIFont.detailFont(ofSize: 15.0)
+            label.text = section.title
+            tab.addGestureRecognizer(tapGesture)
             tab.addSubview(label)
             tabContainer.addSubview(tab)
             
-            label.centerXAnchor.constraint(equalTo: tab.centerXAnchor).isActive = true
-            label.centerYAnchor.constraint(equalTo: tab.centerYAnchor).isActive = true
-            tab.widthAnchor.constraint(equalToConstant: tabWidth).isActive = true
-            tab.topAnchor.constraint(equalTo: tabContainer.topAnchor).isActive = true
-            tab.bottomAnchor.constraint(equalTo: tabContainer.bottomAnchor).isActive = true
+            NSLayoutConstraint.useAndActivate([
+                label.centerXAnchor.constraint(equalTo: tab.centerXAnchor),
+                label.centerYAnchor.constraint(equalTo: tab.centerYAnchor),
+                tab.widthAnchor.constraint(equalToConstant: tabWidth),
+                tab.topAnchor.constraint(equalTo: tabContainer.topAnchor),
+                tab.bottomAnchor.constraint(equalTo: tabContainer.bottomAnchor)])
             
             if index == 0 {
-                tab.leadingAnchor.constraint(equalTo: tabContainer.leadingAnchor).isActive = true
+                NSLayoutConstraint.useAndActivate([tab.leadingAnchor.constraint(equalTo: tabContainer.leadingAnchor)])
             } else {
                 let previousView = tabContainer.subviews[tabContainer.subviews.count - 2]
-                tab.leadingAnchor.constraint(equalTo: previousView.trailingAnchor).isActive = true
+                NSLayoutConstraint.useAndActivate([tab.leadingAnchor.constraint(equalTo: previousView.trailingAnchor)])
             }
             
             if index == viewModel.sections.count - 1 {
-                tab.trailingAnchor.constraint(equalTo: tabContainer.trailingAnchor).isActive = true
+                NSLayoutConstraint.useAndActivate([tab.trailingAnchor.constraint(equalTo: tabContainer.trailingAnchor)])
             }
         }
         
         tabTapped(tabContainer.subviews[selectedIndex].gestureRecognizers?.first)
     }
     
-    override var childViewControllerForStatusBarStyle : UIViewController? {
-        return viewModel.sections[selectedIndex].viewController
-    }
-
-    @objc fileprivate func tabTapped(_ sender: UIGestureRecognizer?) {
-        guard let selectedView = sender?.view,
-              let newSelectedIndex = tabContainer.subviews.index(of: selectedView) else { return }
-        
+    private func replaceCurrentTab(with newIndex: Int) {
         let currentViewController = viewModel.sections[selectedIndex].viewController
-        currentViewController.willMove(toParentViewController: nil)
-        currentViewController.view.removeFromSuperview()
-        currentViewController.removeFromParentViewController()
+        currentViewController.em_removeFromParentViewController()
         
-        selectedIndex = newSelectedIndex
+        selectedIndex = newIndex
         let newViewController = viewModel.sections[selectedIndex].viewController
-        newViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        addChildViewController(newViewController)
-        view.addSubview(newViewController.view)
-        newViewController.didMove(toParentViewController: self)
+        em_addChildViewController(newViewController)
         
-        newViewController.view.topAnchor.constraint(equalTo: tabContainer.bottomAnchor).isActive = true
-        newViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        newViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        NSLayoutConstraint.useAndActivate([
+            newViewController.view.topAnchor.constraint(equalTo: tabContainer.bottomAnchor),
+            newViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            newViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor)])
         
         tabContainer.subviews.enumerated()
             .filter { return $0.offset == selectedIndex }
-            .forEach { (_, view) in
-                view.backgroundColor = .secondary
-                (view.subviews.first as! UILabel).textColor = .primary
-        }
+            .forEach { $0.element.toggleTagStyle(color: viewModel.selectedBackgroundColor,
+                                                 textColor: viewModel.selectedTextColor) }
         
         tabContainer.subviews.enumerated()
             .filter { return $0.offset != selectedIndex }
-            .forEach { (_, view) in
-                view.backgroundColor = UIColor.primary.withAlphaComponent(0.5)
-                (view.subviews.first as! UILabel).textColor = .secondary
-        }
+            .forEach { $0.element.toggleTagStyle(color: viewModel.unselectedBackgroundColor,
+                                                 textColor: viewModel.unselectedTextColor) }
         
         setNeedsStatusBarAppearanceUpdate()
+    }
+
+    @objc private func tabTapped(_ sender: UIGestureRecognizer?) {
+        guard let selectedView = sender?.view,
+              let newSelectedIndex = tabContainer.subviews.index(of: selectedView) else { return }
+        
+        replaceCurrentTab(with: newSelectedIndex)
+    }
+}
+
+private extension UIView {
+    
+    func toggleTagStyle(color: UIColor, textColor: UIColor) {
+        backgroundColor = color
+        (subviews.first as! UILabel).textColor = textColor
     }
 }

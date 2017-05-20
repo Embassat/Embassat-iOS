@@ -1,5 +1,5 @@
 //
-//  EmbassatRootViewController.swift
+//  RootViewController.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 16/05/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmbassatRootViewController: UIViewController {
+class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

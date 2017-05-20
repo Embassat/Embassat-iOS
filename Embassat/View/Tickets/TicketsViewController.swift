@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TicketsViewController: EmbassatRootViewController {
+final class TicketsViewController: RootViewController {
     
     @IBOutlet var titleLabels: [UILabel]!
     @IBOutlet var bodyLabels: [UILabel]!

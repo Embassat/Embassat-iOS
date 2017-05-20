@@ -63,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let scheduleViewController = ScheduleViewController(binding: scheduleInteractor) { (interactor, _) in
                 return ScheduleViewModel(interactor: scheduleInteractor, coordinator: scheduleCoordinator)
             }
+            scheduleCoordinator.viewController = scheduleViewController
             
             return TabContainerSection(title: day.title, viewController: scheduleViewController)
         }
