@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleCollectionViewCell: RootCollectionViewCell {
+final class ScheduleCollectionViewCell: RootCollectionViewCell {
     
     @IBOutlet weak var startTimeLabel: UILabel?
     @IBOutlet weak var endTimeLabel: UILabel?

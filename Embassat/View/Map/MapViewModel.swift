@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MapViewModel: ViewModel {
+final class MapViewModel {
     
     let interactor: MapInteractor
     let model: MapFields

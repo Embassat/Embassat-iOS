@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtistCollectionViewCell: RootCollectionViewCell {
+final class ArtistCollectionViewCell: RootCollectionViewCell {
     
     @IBOutlet weak var optionNameLabel: UILabel?
     @IBOutlet weak var bottomSeparator: UIView?

@@ -25,14 +25,12 @@ struct ArtistParser {
             
             guard let startDate = dateFormatter.date(from: subJson["start_date"].stringValue),
                   let endDate = dateFormatter.date(from: subJson["end_date"].stringValue) else {
-                    break;
+                    break
             }
             
             var favorited = false
             
-            if let existingArtist = cachedArtists.filter({ (artist: CADEMArtist) -> Bool in
-                return artist.artistId == subJson["id"].intValue
-            }).first {
+            if let existingArtist = cachedArtists.first(where: { return $0.artistId == subJson["id"].intValue }) {
                 favorited = existingArtist.favorite
             }
 
@@ -40,8 +38,8 @@ struct ArtistParser {
                 artistId: subJson["id"].intValue,
                 name: subJson["name"].stringValue,
                 longDescription: subJson["description"].stringValue,
-                artistURL: URL(string: subJson["share_url"].stringValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")!,
-                imageURL: URL(string: subJson["image_url"].stringValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")!,
+                artistURL: URL(string: subJson["share_url"].stringValue.addingEncoding())!,
+                imageURL: URL(string: subJson["image_url"].stringValue.addingEncoding())!,
                 startDate: startDate,
                 endDate: endDate,
                 stage: subJson["stage"].stringValue,
@@ -53,4 +51,12 @@ struct ArtistParser {
         
         return artists
     }
+}
+
+private extension String {
+    
+    func addingEncoding() -> String {
+        return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+    }
+    
 }

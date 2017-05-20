@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import youtube_ios_player_helper
 
-class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
+final class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     
     @IBOutlet var playerView: YTPlayerView!
     @IBOutlet var imageView: UIImageView!
@@ -22,7 +22,7 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var stageLabel: UILabel!
     
-    var viewModel: ArtistDetailViewModel<ArtistDetailCoordinator, ArtistDetailInteractor> {
+    var viewModel: ArtistDetailViewModel {
         didSet {
             if oldValue.artistName != viewModel.artistName {
                 updateSubviewDetails()
@@ -32,7 +32,7 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         }
     }
     
-    required init(viewModel: ArtistDetailViewModel<ArtistDetailCoordinator,ArtistDetailInteractor>) {
+    required init(viewModel: ArtistDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: ArtistDetailViewController.self), bundle: nil)
         hidesBottomBarWhenPushed = true

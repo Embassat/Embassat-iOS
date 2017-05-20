@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransportViewController: EmbassatRootViewController {
+final class TransportViewController: EmbassatRootViewController {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var detailLabel: UILabel!

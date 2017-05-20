@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
+final class ArtistsViewModel: ViewModelCollectionDelegate {
     
     let interactor: ArtistsInteractor
     let coordinator: ArtistsCoordinator

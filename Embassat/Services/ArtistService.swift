@@ -14,7 +14,7 @@ protocol ArtistServiceProtocol {
     func toggleFavorite(forArtist artist: CADEMArtist, completion: (CADEMArtist) -> ())
 }
 
-class ArtistService: ArtistServiceProtocol {
+final class ArtistService: ArtistServiceProtocol {
     
     static let kArtistsEndpoint = "https://scorching-torch-2707.firebaseio.com/artists.json"
     static let kArtistsStoreKey = "/artists.db_2"

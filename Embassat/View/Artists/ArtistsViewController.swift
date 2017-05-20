@@ -8,22 +8,23 @@
 
 import UIKit
 
-class ArtistsViewController: EmbassatRootViewController, UpdateableView {
+final class ArtistsViewController: EmbassatRootViewController, UpdateableView {
     
-    @IBOutlet var artistsCollectionView: UICollectionView!
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var artistsCollectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     fileprivate var dataSource: ArrayDataSource?
     var viewModel: ArtistsViewModel {
         didSet {
+            guard isViewLoaded else { return }
             updateDataSource()
-            activityIndicator?.stopAnimating()
+            activityIndicator.stopAnimating()
         }
     }
     
     required init(viewModel: ArtistsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: ArtistsViewController.self), bundle: nil)
-        self.updateDataSource()
+        self.title = "Artistes"
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,16 +34,14 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Artistes"
-        view.backgroundColor = .secondary
-        artistsCollectionView.register(UINib(nibName: String(describing: ArtistCollectionViewCell.self), bundle: nil),
-                                       forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
+        setupSubviews()
+        updateDataSource()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        artistsCollectionView.deselectAllSelectedItems()
+        artistsCollectionView?.deselectAllSelectedItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,9 +49,19 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
         
         viewModel.shouldRefreshModel()
     }
+    
+    // MARK: - UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
         viewModel.didSelect(at: indexPath.item)
+    }
+    
+    // MARK: - Private
+    
+    fileprivate func setupSubviews() {
+        view.backgroundColor = .secondary
+        artistsCollectionView?.register(UINib(nibName: String(describing: ArtistCollectionViewCell.self), bundle: nil),
+                                        forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
     fileprivate func updateDataSource() {

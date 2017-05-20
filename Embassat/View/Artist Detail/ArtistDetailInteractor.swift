@@ -8,22 +8,27 @@
 
 import Foundation
 
-protocol ArtistDetailInteractorProtocol: Interactor {
-    associatedtype ModelType = CADEMArtist
+protocol ArtistDetailInteractorProtocol {
+    var model: CADEMArtist { get }
     
     init(artists: [CADEMArtist], index: Int, service: ArtistServiceProtocol)
+    
     func toggleFavorite()
     func nextArtist()
     func previousArtist()
 }
 
-class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
+final class ArtistDetailInteractor: ArtistDetailInteractorProtocol, Interactor {
     
     /** The interactor's update handler */
-    var updateHandler: ((CADEMArtist) -> ())?
+    var modelDidUpdate: ((CADEMArtist) -> ())?
     
     /** The interactor's model */
-    fileprivate(set) var model: CADEMArtist
+    fileprivate(set) var model: CADEMArtist {
+        didSet {
+            modelDidUpdate?(model)
+        }
+    }
     
     /** An ArtistServiceProtocol to perform actions on the model. */
     let service: ArtistServiceProtocol
@@ -64,7 +69,6 @@ class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
             
             strongSelf.artists[index] = artist
             strongSelf.model = artist
-            strongSelf.updateHandler?(strongSelf.model)
         }
     }
     
@@ -80,6 +84,5 @@ class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
         }
         
         model = artists[theIndex]
-        updateHandler?(model)
     }
 }

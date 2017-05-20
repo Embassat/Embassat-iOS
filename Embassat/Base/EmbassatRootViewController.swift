@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmbassatRootViewController: RootViewController {
+class EmbassatRootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

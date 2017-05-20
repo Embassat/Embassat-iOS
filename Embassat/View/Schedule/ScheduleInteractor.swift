@@ -35,11 +35,15 @@ enum ScheduleInteractorDay: Int {
     }
 }
 
-class ScheduleInteractor: Interactor {
+final class ScheduleInteractor: Interactor {
     
-    var updateHandler: (([CADEMArtist]) -> ())?
+    var modelDidUpdate: (([CADEMArtist]) -> ())?
     
-    fileprivate(set) var model: [CADEMArtist] = []
+    fileprivate(set) var model: [CADEMArtist] = [] {
+        didSet {
+            modelDidUpdate?(model)
+        }
+    }
     
     fileprivate var artists: [CADEMArtist] = []
     fileprivate let service = ArtistService()
@@ -66,7 +70,6 @@ class ScheduleInteractor: Interactor {
     fileprivate func updateArtists(withArtists artists: [CADEMArtist]) {
         self.artists = artists
         model = artistsBySelectedDay()
-        updateHandler?(model)
     }
     
     fileprivate func artistsBySelectedDay() -> [CADEMArtist] {

@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabInsets = UIEdgeInsetsMake(6, 0, -6, 0)
         
         let mapInteractor = MapInteractor()
-        let mapViewModel = MapViewModel(interactor: mapInteractor)
-        let mapViewController = MapViewController(viewModel: mapViewModel)
-        mapViewController.bind(to: mapInteractor)
+        let mapViewController = MapViewController(binding: mapInteractor) { (interactor, _) in
+            return MapViewModel(interactor: mapInteractor)
+        }
         
         let infoSection = ContainerSection(title: "Info", viewController: InfoViewController())
         let transportSection = ContainerSection(title: "Transport", viewController: TransportViewController())
@@ -41,23 +41,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let artistsInteractor = ArtistsInteractor()
         let artistsCoordinator = ArtistsCoordinator()
-        let artistsViewModel = ArtistsViewModel(interactor: artistsInteractor, coordinator: artistsCoordinator)
-        let artistsViewController = ArtistsViewController(viewModel: artistsViewModel)
+        let artistsViewController = ArtistsViewController(binding: artistsInteractor) { (interactor, _) in
+            return ArtistsViewModel(interactor: interactor, coordinator: artistsCoordinator)
+        }
         let artistsNavigationController = RootNavigationController(rootViewController: artistsViewController)
         artistsNavigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "tabArtists"), selectedImage: UIImage(named: "tabArtistsSelected")?.withRenderingMode(.alwaysOriginal))
         artistsNavigationController.tabBarItem.imageInsets = tabInsets
-        artistsViewController.bind(to: artistsInteractor)
         artistsCoordinator.viewController = artistsViewController
         artistsInteractor.fetchArtists()
         
         let scheduleInteractor = ScheduleInteractor()
         let scheduleCoordinator = ScheduleCoordinator()
-        let scheduleViewModel = ScheduleViewModel(interactor: scheduleInteractor, coordinator: scheduleCoordinator)
-        let scheduleViewController = ScheduleViewController(viewModel: scheduleViewModel)
+        let scheduleViewController = ScheduleViewController(binding: scheduleInteractor) { (interactor, _) in
+            return ScheduleViewModel(interactor: scheduleInteractor, coordinator: scheduleCoordinator)
+        }
         let scheduleNavigationController = RootNavigationController(rootViewController: scheduleViewController)
         scheduleNavigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "tabSchedule"), selectedImage: UIImage(named: "tabScheduleSelected")?.withRenderingMode(.alwaysOriginal))
         scheduleNavigationController.tabBarItem.imageInsets = tabInsets
-        scheduleViewController.bind(to: scheduleInteractor)
         scheduleCoordinator.viewController = scheduleViewController
         scheduleInteractor.fetchArtists()
         

@@ -11,7 +11,12 @@ import UIKit
 
 struct NotificationService {
     
-    let dateFormatter = DateFormatter()
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        return formatter
+    }()
     
     func registerForLocalNotifications() {
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
@@ -19,24 +24,16 @@ struct NotificationService {
     }
     
     fileprivate func scheduleAfterPartyNotification() {
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        
         let localAfterPartyNotif = UILocalNotification()
         
         localAfterPartyNotif.fireDate = dateFormatter.date(from: "2016-06-12T02:30:00")
         localAfterPartyNotif.alertBody = String(format: "Seapoint començarà en 30 minuts al Sala Oui!")
-        localAfterPartyNotif.userInfo = ["artistName" : "seapoint"]
+        localAfterPartyNotif.setArtistName("seapoint")
         localAfterPartyNotif.soundName = UILocalNotificationDefaultSoundName
         
         let existingNotifications = UIApplication.shared.scheduledLocalNotifications!
         
-        if let afterPartyExistingNotification = existingNotifications.filter({ notification -> Bool in
-            if let artistName = notification.userInfo?["artistName"] as? String {
-                return artistName == "seapoint"
-            } else {
-                return false
-            }
-        }).first {
+        if let afterPartyExistingNotification = existingNotifications.first(where: { $0.artistName == "seapoint" }) {
             UIApplication.shared.cancelLocalNotification(afterPartyExistingNotification)
             UIApplication.shared.scheduleLocalNotification(localAfterPartyNotif)
         } else {
@@ -48,24 +45,17 @@ struct NotificationService {
         guard artist.name != "Seapoint" else { return }
         
         let localNotif = UILocalNotification()
-        
         localNotif.fireDate = artist.startDate.dateBySubstracting(minutes: 15) as Date
         localNotif.alertBody = String(format: "%@ començarà en 15 minuts al %@!", artist.name, artist.stage)
-        localNotif.userInfo = ["artistId" : artist.artistId]
+        localNotif.setArtistId(artist.artistId)
         localNotif.soundName = UILocalNotificationDefaultSoundName
         
         let existingNotifications = UIApplication.shared.scheduledLocalNotifications!
         
-        if let existingNotification = existingNotifications.filter({ (notification: UILocalNotification) -> Bool in
-            if let artistId = notification.userInfo?["artistId"] as? Int {
-                return artistId == artist.artistId
-            } else {
-                return false
-            }
-        }).first {
+        if let existingNotification = existingNotifications.first(where: { $0.artistId == artist.artistId }) {
             UIApplication.shared.cancelLocalNotification(existingNotification)
             
-            if favorited == true {
+            if favorited {
                 UIApplication.shared.scheduleLocalNotification(localNotif)
             }
         } else {
@@ -77,13 +67,9 @@ struct NotificationService {
         let existingNotifications = UIApplication.shared.scheduledLocalNotifications!
         
         for notification in existingNotifications {
-            if let artist = artists.filter({ (artist: CADEMArtist) -> Bool in
-                if let artistId = notification.userInfo?["artistId"] as? Int {
-                    return artistId == artist.artistId
-                } else {
-                    return false
-                }
-            }).first {
+            guard let artistId = notification.artistId else { break }
+            
+            if let artist = artists.first(where: { artistId == $0.artistId }) {
                 UIApplication.shared.cancelLocalNotification(notification)
                 notification.fireDate = artist.startDate.dateBySubstracting(minutes: 15) as Date
                 notification.alertBody = String(format: "%@ començarà en 15 minuts al %@!", artist.name, artist.stage)
@@ -91,4 +77,24 @@ struct NotificationService {
             }
         }
     }
+}
+
+private extension UILocalNotification {
+    
+    var artistId: Int? {
+        return userInfo?["artistId"] as? Int
+    }
+    
+    var artistName: String? {
+        return userInfo?["artistName"] as? String
+    }
+    
+    func setArtistId(_ artistId: Int) {
+        userInfo = ["artistId" : artistId]
+    }
+    
+    func setArtistName(_ artistName: String) {
+        userInfo = ["artistName" : artistName]
+    }
+    
 }

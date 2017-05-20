@@ -38,36 +38,16 @@ class FakeArtistDetailInteractor: ArtistDetailInteractorProtocol {
     }
     
     func nextArtist() {
-        guard let index = artists.index(of: model) else { return }
-
-        updateModel(withNexIndex: index + 1)
         nextArtistCalled = true
     }
     
     func previousArtist() {
-        guard let index = artists.index(of: model) else { return }
-        
-        updateModel(withNexIndex: index - 1)
         previousArtistCalled = true
     }
     
     func toggleFavorite() {
         model.favorite = !model.favorite
         toggleFavoriteCalled = true
-    }
-    
-    private func updateModel(withNexIndex index: Int) {
-        var theIndex: Int = index
-        
-        if theIndex > artists.count - 1 {
-            theIndex = artists.count - 1
-        }
-        
-        if theIndex < 0 {
-            theIndex = 0
-        }
-        
-        model = artists[theIndex]
     }
 }
 
@@ -139,31 +119,35 @@ class ArtistDetailViewModelTests: XCTestCase {
         XCTAssertEqual(sut.artistStage, "First Stage")
         XCTAssertEqual(sut.artistVideoId, "123")
         XCTAssertTrue(sut.shouldShowArtistVideo())
-        XCTAssertEqual(sut.favTintColor(), .white)
+        XCTAssertEqual(sut.favTintColor(), .secondary)
         XCTAssertEqual(sut.artistImageURL as URL, URL(string: "www.test.com"))
     }
     
     func testFavoriteTintColor() {
-        let interactor = FakeArtistDetailInteractor(artists: artists, index: 0, service: FakeArtistService())
+        var interactor = FakeArtistDetailInteractor(artists: artists, index: 0, service: FakeArtistService())
         sut = ArtistDetailViewModel(interactor: interactor, coordinator: FakeArtistDetailCoordinator())
-        XCTAssertEqual(sut.favTintColor(), .white)
+        XCTAssertEqual(sut.favTintColor(), .secondary)
         
-        sut.showNext()
-        XCTAssertEqual(sut.favTintColor(), .lightGray)
+        interactor = FakeArtistDetailInteractor(artists: artists, index: 1, service: FakeArtistService())
+        sut = ArtistDetailViewModel(interactor: interactor, coordinator: FakeArtistDetailCoordinator())
+        XCTAssertEqual(sut.favTintColor(), .orange)
         
-        sut.showNext()
-        XCTAssertEqual(sut.favTintColor(), .lightGray)
+        interactor = FakeArtistDetailInteractor(artists: artists, index: 2, service: FakeArtistService())
+        sut = ArtistDetailViewModel(interactor: interactor, coordinator: FakeArtistDetailCoordinator())
+        XCTAssertEqual(sut.favTintColor(), .orange)
     }
     
     func testShowArtistVideo() {
-        let interactor = FakeArtistDetailInteractor(artists: artists, index: 0, service: FakeArtistService())
+        var interactor = FakeArtistDetailInteractor(artists: artists, index: 0, service: FakeArtistService())
         sut = ArtistDetailViewModel(interactor: interactor, coordinator: FakeArtistDetailCoordinator())
         XCTAssertTrue(sut.shouldShowArtistVideo())
         
-        sut.showNext()
+        interactor = FakeArtistDetailInteractor(artists: artists, index: 1, service: FakeArtistService())
+        sut = ArtistDetailViewModel(interactor: interactor, coordinator: FakeArtistDetailCoordinator())
         XCTAssertTrue(sut.shouldShowArtistVideo())
         
-        sut.showNext()
+        interactor = FakeArtistDetailInteractor(artists: artists, index: 2, service: FakeArtistService())
+        sut = ArtistDetailViewModel(interactor: interactor, coordinator: FakeArtistDetailCoordinator())
         XCTAssertFalse(sut.shouldShowArtistVideo())
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleViewController: EmbassatRootViewController, UpdateableView {
+final class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     
     @IBOutlet var daysContainer: UIView!
     @IBOutlet var fridayContainer: UIView!
@@ -23,6 +23,8 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     fileprivate var dataSource: ArrayDataSource?
     var viewModel: ScheduleViewModel {
         didSet {
+            guard isViewLoaded else { return }
+            
             updateDataSource()
             activityIndicator.stopAnimating()
         }
@@ -31,7 +33,7 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     required init(viewModel: ScheduleViewModel) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: ScheduleViewController.self), bundle: nil)
-        updateDataSource()
+        title = "Horaris"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,22 +42,8 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Horaris"
-        
-        fridayLabel?.font = UIFont.detailFont(ofSize: 15.0)
-        saturdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
-        
-        let views = [fridayContainer, saturdayContainer].flatMap { $0 }
-        for (index, view) in  views.enumerated() {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(containerTapped))
-            view.addGestureRecognizer(tapGesture)
-            if index == 0 { containerTapped(tapGesture) }
-        }
-        
-        scheduleCollectionView.backgroundColor = .secondary
-        scheduleCollectionView.register(UINib(nibName: String(describing: ScheduleCollectionViewCell.self), bundle: nil),
-                                        forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
+        setupSubviews()
+        updateDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,6 +94,22 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
         }
         
         viewModel.dayIndex = tag
+    }
+    
+    fileprivate func setupSubviews() {
+        fridayLabel.font = UIFont.detailFont(ofSize: 15.0)
+        saturdayLabel.font = UIFont.detailFont(ofSize: 15.0)
+        
+        let views = [fridayContainer, saturdayContainer].flatMap { $0 }
+        for (index, view) in views.enumerated() {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(containerTapped))
+            view.addGestureRecognizer(tapGesture)
+            if index == 0 { containerTapped(tapGesture) }
+        }
+        
+        scheduleCollectionView.backgroundColor = .secondary
+        scheduleCollectionView.register(UINib(nibName: String(describing: ScheduleCollectionViewCell.self), bundle: nil),
+                                        forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
     fileprivate func updateDataSource() {

@@ -8,17 +8,17 @@
 
 import Foundation
 
-class ArtistsCoordinator: Coordinator {
+final class ArtistsCoordinator: Coordinator {
     weak var viewController: ArtistsViewController?
     
     func presentArtistDetail(_ artists: [CADEMArtist], currentIndex: Int) {
         let interactor = ArtistDetailInteractor(artists: artists, index: currentIndex, service: ArtistService())
         let coordinator = ArtistDetailCoordinator()
-        let viewModel = ArtistDetailViewModel<ArtistDetailCoordinator, ArtistDetailInteractor>(interactor: interactor, coordinator: coordinator)
-        let artistDetailViewController = ArtistDetailViewController(viewModel: viewModel)
-        artistDetailViewController.bind(to: interactor)
-        coordinator.viewController = artistDetailViewController
-        
+        let artistDetailViewController = ArtistDetailViewController(binding: interactor) { (interactor, _) in
+            ArtistDetailViewModel(interactor: interactor, coordinator: coordinator)
+        }
+
+        coordinator.viewController = artistDetailViewController        
         viewController?.navigationController?.pushViewController(artistDetailViewController, animated: true)
     }
 }

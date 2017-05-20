@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailInteractorProtocol>: CoordinatedViewModel where T.ModelType == CADEMArtist {
+final class ArtistDetailViewModel {
     
     private let model: CADEMArtist
     
-    let interactor: T
-    let coordinator: U
+    let interactor: ArtistDetailInteractorProtocol
+    let coordinator: ArtistDetailCoordinatorProtocol
 
     /** The artist name string. */
     var artistName: String {
@@ -60,7 +60,7 @@ class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailI
      - parameter interactor: An interactor conforming to ArtistDetailInteractorProtocol.
      - parameter coordinator: A coordinator conforming to ArtistDetailCoordinatorProtocol.
      */
-    required init(interactor: T, coordinator: U) {
+    required init(interactor: ArtistDetailInteractorProtocol, coordinator: ArtistDetailCoordinatorProtocol) {
         self.interactor = interactor
         self.coordinator = coordinator
         self.model = interactor.model
@@ -73,7 +73,7 @@ class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailI
     
     /** The favorite tint color, currently based on the favorite status of the artist:
      
-     Favorite: .yellow
+     Favorite: .orange
      Non favorite: .secondary
      */
     func favTintColor() -> UIColor {

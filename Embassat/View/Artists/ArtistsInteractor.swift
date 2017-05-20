@@ -8,11 +8,15 @@
 
 import Foundation
 
-class ArtistsInteractor: Interactor {
+final class ArtistsInteractor: Interactor {
     
-    var updateHandler: (([CADEMArtist]) -> ())?
+    var modelDidUpdate: (([CADEMArtist]) -> ())?
     
-    fileprivate(set) var model: [CADEMArtist] = []
+    fileprivate(set) var model: [CADEMArtist] = [] {
+        didSet {
+            modelDidUpdate?(model)
+        }
+    }
     
     fileprivate let service = ArtistService()
     
@@ -31,6 +35,5 @@ class ArtistsInteractor: Interactor {
     
     fileprivate func updateArtists(withArtists artists: [CADEMArtist]) {
         model = artists.sorted{ $0.name < $1.name }
-        updateHandler?(model)
     }
 }

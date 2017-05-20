@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootNavigationController: UINavigationController {
+final class RootNavigationController: UINavigationController {
     override var childViewControllerForStatusBarStyle : UIViewController? {
         return topViewController
     }

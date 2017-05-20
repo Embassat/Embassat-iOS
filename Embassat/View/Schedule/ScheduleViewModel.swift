@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ScheduleViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
+final class ScheduleViewModel: ViewModelCollectionDelegate {
     
     let interactor: ScheduleInteractor
     let coordinator: ScheduleCoordinator

@@ -16,7 +16,7 @@ protocol ArtistDetailCoordinatorProtocol: Coordinator {
     weak var viewController: ArtistDetailViewController? { get set }
 }
 
-class ArtistDetailCoordinator: ArtistDetailCoordinatorProtocol {
+final class ArtistDetailCoordinator: ArtistDetailCoordinatorProtocol {
     weak var viewController: ArtistDetailViewController?
     
     func showShareAction(withURL URL: Foundation.URL, title: String) {

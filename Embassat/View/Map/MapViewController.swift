@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: EmbassatRootViewController, MKMapViewDelegate, UpdateableView {
+final class MapViewController: EmbassatRootViewController, MKMapViewDelegate, UpdateableView {
     
     static fileprivate let kEMMapPinIdentifier = "EMMapPinIdentifier"
     static fileprivate let kDefaultEdgeInset: CGFloat = 30.0

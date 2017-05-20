@@ -8,59 +8,58 @@
 
 import Foundation
 
-protocol Coordinator {
-    
+/// An empty protocol for declaring Coordinators, which are responsible for setting up and present other calçots (e.g. segues, detail)
+public protocol Coordinator: class {
+    /* empty ATM */
 }
 
-protocol Interactor: class {
+/// A protocol for declaring Interactors, which are responsible for managing and updating the `Model` (i.e *CRUD* operations).
+public protocol Interactor: class {
+    /// The associated type of the model
     associatedtype ModelType
     
+    /// The model
     var model: ModelType { get }
-    var updateHandler: ((ModelType) -> ())? { get set }
+    
+    /// A closure which gets executed when the model gets updated
+    var modelDidUpdate: ((ModelType) -> Void)? { get set }
 }
 
-protocol UpdateableView: class {
-    associatedtype ViewModelType: _ViewModel
+/// A protocol for declaring UpdateableViews, which are responsible for displaying data coming from the `ViewModel`and forwarding interactions to them.
+public protocol UpdateableView: class {
+    /// The associated type of the view model
+    associatedtype ViewModelType
     
+    /// The view model
     var viewModel: ViewModelType { get set }
     
+    /// Initializes a new UpdateableView
+    ///
+    /// - parameter viewModel: The view model used by this UpdateableView
+    ///
+    /// - returns: A newly initialized UpdateableView instance
     init(viewModel: ViewModelType)
 }
 
-protocol _ViewModel {
-    associatedtype InteractorType: Interactor
-    
-    var interactor: InteractorType { get }
-}
+// MARK: Binding
 
-protocol ViewModel: _ViewModel {
-    init(interactor: InteractorType)
-}
-
-protocol CoordinatedViewModel: _ViewModel {
-    associatedtype CoordinatorType: Coordinator
+public extension UpdateableView {
     
-    var coordinator: CoordinatorType { get }
-    
-    init(interactor: InteractorType, coordinator: CoordinatorType)
-}
-
-extension UpdateableView where ViewModelType: ViewModel {
-    func bind(to interactor: ViewModelType.InteractorType) {
-        interactor.updateHandler = { [weak self, weak interactor] model in
-            guard let interactor = interactor, let view = self else { return }
+    /// Initializes a new UpdateableView providing an automatic binding
+    ///
+    /// - parameter interactor: The Interactor used by this UpdateableView's view model
+    /// - parameter viewModelFactory: A escaping closure that initializes a new view model with a given Interactor and a model which matches the ModelType of the interactor
+    ///
+    /// - returns: A newly initialized UpdateableView instance
+    init<InteractorType: Interactor>(binding interactor: InteractorType, viewModelFactory: @escaping (InteractorType, InteractorType.ModelType) -> ViewModelType) {
+        self.init(viewModel: viewModelFactory(interactor, interactor.model))
+        
+        interactor.modelDidUpdate = { [weak self, weak interactor] (model) in
+            guard let interactor = interactor, let view = self else {
+                return
+            }
             
-            view.viewModel = ViewModelType(interactor: interactor)
-        }
-    }
-}
-
-extension UpdateableView where ViewModelType: CoordinatedViewModel {
-    func bind(to interactor: ViewModelType.InteractorType) {
-        interactor.updateHandler = { [weak self, weak interactor] model in
-            guard let interactor = interactor, let view = self else { return }
-            
-            view.viewModel = ViewModelType(interactor: interactor, coordinator: view.viewModel.coordinator)
+            view.viewModel = viewModelFactory(interactor, model)
         }
     }
 }

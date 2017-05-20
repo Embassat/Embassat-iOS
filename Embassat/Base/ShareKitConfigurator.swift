@@ -9,7 +9,7 @@
 import Foundation
 import ShareKit
 
-class ShareKitConfigurator: DefaultSHKConfigurator {
+final class ShareKitConfigurator: DefaultSHKConfigurator {
     
     override func facebookAppId() -> String {
         return "388219104649367"
