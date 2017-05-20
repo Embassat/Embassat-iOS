@@ -10,8 +10,8 @@ import UIKit
 
 class ArtistsViewController: EmbassatRootViewController, UpdateableView {
     
-    @IBOutlet weak var artistsCollectionView: UICollectionView?
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
+    @IBOutlet var artistsCollectionView: UICollectionView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     fileprivate var dataSource: ArrayDataSource?
     var viewModel: ArtistsViewModel {
         didSet {
@@ -34,13 +34,15 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
         super.viewDidLoad()
 
         title = "Artistes"
-        artistsCollectionView?.register(UINib(nibName: String(describing: ArtistCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
+        view.backgroundColor = .secondary
+        artistsCollectionView.register(UINib(nibName: String(describing: ArtistCollectionViewCell.self), bundle: nil),
+                                       forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        artistsCollectionView?.deselectAllSelectedItems()
+        artistsCollectionView.deselectAllSelectedItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +69,7 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
                 },
                 configureHeaderBlock: nil
             )
-        artistsCollectionView?.dataSource = dataSource
-        artistsCollectionView?.reloadData()
+        artistsCollectionView.dataSource = dataSource
+        artistsCollectionView.reloadData()
     }
 }

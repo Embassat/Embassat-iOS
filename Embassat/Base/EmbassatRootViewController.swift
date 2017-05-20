@@ -16,12 +16,6 @@ class EmbassatRootViewController: RootViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.isNavigationBarHidden = false
-    }
-    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }

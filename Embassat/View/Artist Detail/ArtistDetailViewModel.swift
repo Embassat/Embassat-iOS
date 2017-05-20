@@ -10,9 +10,7 @@ import UIKit
 
 class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailInteractorProtocol>: CoordinatedViewModel where T.ModelType == CADEMArtist {
     
-    fileprivate var model: CADEMArtist {
-        return interactor.model
-    }
+    private let model: CADEMArtist
     
     let interactor: T
     let coordinator: U
@@ -25,7 +23,7 @@ class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailI
     /** The artist description string, embedded in escaped "". 
      
      
-     For instance, if the description of the artist is `foo`, this string should be -> \"foo\"
+     e.g: normal artist description is `foo`, this should return -> \"foo\"
      */
     var artistDescription: String {
         return "\"\(model.longDescription)\""
@@ -65,6 +63,7 @@ class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailI
     required init(interactor: T, coordinator: U) {
         self.interactor = interactor
         self.coordinator = coordinator
+        self.model = interactor.model
     }
     
     /** Whether the artist video should be shown or not, currently based on the video id. */
@@ -74,11 +73,11 @@ class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailI
     
     /** The favorite tint color, currently based on the favorite status of the artist:
      
-     Favorite: Light Gray
-     Non favorite: White
+     Favorite: .yellow
+     Non favorite: .secondary
      */
     func favTintColor() -> UIColor {
-        return model.favorite ? .lightGray : .white
+        return model.favorite ? .orange : .secondary
     }
     
     /** Forwards the next pressed action to the interactor */

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
+final class ScheduleViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
     
     let interactor: ScheduleInteractor
     let coordinator: ScheduleCoordinator
@@ -66,7 +66,7 @@ class ScheduleViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
         let artist = self.artist(forIndexPath: indexPath)
         let now: Date = Date()
         
-        return now.isLaterThan(artist.startDate) && now.isEarlierThan(artist.endDate) ? UIColor.emScheduleBackgroundSelectedColor() : UIColor.emScheduleBackgroundDeselectedColor()
+        return now.isLaterThan(artist.startDate) && now.isEarlierThan(artist.endDate) ? .primary : .secondary
     }
     
     func didSelect(at index: Int) {

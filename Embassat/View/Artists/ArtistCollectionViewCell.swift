@@ -52,13 +52,13 @@ class ArtistCollectionViewCell: RootCollectionViewCell {
     }
     
     fileprivate func selectElements() {
-        contentView.backgroundColor = .black
-        optionNameLabel?.textColor = .white
+        contentView.backgroundColor = UIColor.primary.withAlphaComponent(0.5)
+        optionNameLabel?.textColor = .primary
     }
     
     fileprivate func deselectElements() {
-        contentView.backgroundColor = .white
-        optionNameLabel?.textColor = .black
+        contentView.backgroundColor = .secondary
+        optionNameLabel?.textColor = .primary
     }
 }
 

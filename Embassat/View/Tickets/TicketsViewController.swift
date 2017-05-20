@@ -10,11 +10,12 @@ import UIKit
 
 class TicketsViewController: EmbassatRootViewController {
     
-    @IBOutlet var titleLabels: [UILabel]?
-    @IBOutlet var bodyLabels: [UILabel]?
-    @IBOutlet weak var seasonContainer: UIView?
-    @IBOutlet weak var dayTicketContainer: UIView?
-    @IBOutlet weak var petitEmTicketContainer: UIView?
+    @IBOutlet var titleLabels: [UILabel]!
+    @IBOutlet var bodyLabels: [UILabel]!
+    @IBOutlet var detailScrollView: UIScrollView!
+    @IBOutlet weak var seasonContainer: UIView!
+    @IBOutlet weak var dayTicketContainer: UIView!
+    @IBOutlet weak var petitEmTicketContainer: UIView!
     
     init() {
         super.init(nibName: String(describing: TicketsViewController.self), bundle: nil)
@@ -29,22 +30,22 @@ class TicketsViewController: EmbassatRootViewController {
         
         title = "Entrades"
         
-        for view in [seasonContainer, dayTicketContainer, petitEmTicketContainer] {
+        view.backgroundColor = .secondary
+        [seasonContainer, dayTicketContainer, petitEmTicketContainer].flatMap { $0 }.forEach {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(linkPressed))
-            view?.addGestureRecognizer(tapGesture)
+            $0.addGestureRecognizer(tapGesture)
         }
         
-        if let labels = titleLabels {
-            for label in labels {
-                label.font = UIFont.detailFont(ofSize: 20.0)
-            }
-        }
+        titleLabels.forEach { $0.font = UIFont.detailFont(ofSize: 20.0); $0.textColor = .primary }
+        bodyLabels.forEach { $0.font = UIFont.detailFont(ofSize: 15.0); $0.textColor = .primary }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-        if let labels = bodyLabels {
-            for label in labels {
-                label.font = UIFont.detailFont(ofSize: 15.0)
-            }
-        }
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: bottomLayoutGuide.length, right: 0)
+        detailScrollView.contentInset = insets
+        detailScrollView.scrollIndicatorInsets = insets
     }
     
     @IBAction func linkPressed(_ sender: UIView) {

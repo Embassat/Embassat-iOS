@@ -10,24 +10,21 @@ import UIKit
 
 class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     
-    @IBOutlet weak var thursdayContainer: UIView?
-    @IBOutlet weak var fridayContainer: UIView?
-    @IBOutlet weak var saturdayContainer: UIView?
-    @IBOutlet weak var sundayContainer: UIView?
-    @IBOutlet weak var thursdayLabel: UILabel?
-    @IBOutlet weak var fridayLabel: UILabel?
-    @IBOutlet weak var saturdayLabel: UILabel?
-    @IBOutlet weak var sundayLabel: UILabel?
+    @IBOutlet var daysContainer: UIView!
+    @IBOutlet var fridayContainer: UIView!
+    @IBOutlet var saturdayContainer: UIView!
+
+    @IBOutlet var fridayLabel: UILabel!
+    @IBOutlet var saturdayLabel: UILabel!
     
-    @IBOutlet weak var scheduleCollectionView: UICollectionView?
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-    
+    @IBOutlet var scheduleCollectionView: UICollectionView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     fileprivate var dataSource: ArrayDataSource?
     var viewModel: ScheduleViewModel {
         didSet {
             updateDataSource()
-            activityIndicator?.stopAnimating()
+            activityIndicator.stopAnimating()
         }
     }
     
@@ -46,25 +43,38 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
         
         title = "Horaris"
         
-        thursdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         fridayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         saturdayLabel?.font = UIFont.detailFont(ofSize: 15.0)
-        sundayLabel?.font = UIFont.detailFont(ofSize: 15.0)
-        thursdayLabel?.textColor = UIColor.emScheduleHeaderSelectedTextColor()
-        thursdayContainer?.backgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
         
-        for view in [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer] {
+        let views = [fridayContainer, saturdayContainer].flatMap { $0 }
+        for (index, view) in  views.enumerated() {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(containerTapped))
-            view?.addGestureRecognizer(tapGesture)
+            view.addGestureRecognizer(tapGesture)
+            if index == 0 { containerTapped(tapGesture) }
         }
         
-        scheduleCollectionView?.register(UINib(nibName: String(describing: ScheduleCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
+        scheduleCollectionView.backgroundColor = .secondary
+        scheduleCollectionView.register(UINib(nibName: String(describing: ScheduleCollectionViewCell.self), bundle: nil),
+                                        forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         viewModel.shouldRefreshModel()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let insets = UIEdgeInsets(top: topLayoutGuide.length + daysContainer.bounds.height,
+                                  left: 0,
+                                  bottom: bottomLayoutGuide.length,
+                                  right: 0)
+        scheduleCollectionView.contentInset = insets
+        scheduleCollectionView.scrollIndicatorInsets = insets
+        
+        daysContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: topLayoutGuide.length).isActive = true
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
@@ -74,16 +84,16 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     @objc fileprivate func containerTapped(_ sender: UITapGestureRecognizer) {
         guard let tag = sender.view?.tag else { return }
         
-        let selectedBackgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
-        let unselectedBackgroundColor = UIColor.emScheduleHeaderDeselectedBackgroundColor()
+        let selectedBackgroundColor = UIColor.secondary
+        let unselectedBackgroundColor = UIColor.primary.withAlphaComponent(0.5)
         
-        let containers = [thursdayContainer, fridayContainer, saturdayContainer, sundayContainer].flatMap { $0 }
+        let containers = [fridayContainer, saturdayContainer].flatMap { $0 }
         
         for selectedView in containers.subviews(withTag: tag) {
             selectedView.backgroundColor = selectedBackgroundColor
             
             if let label = selectedView.subviews.first as? UILabel {
-                label.textColor = UIColor.emScheduleHeaderSelectedTextColor()
+                label.textColor = UIColor.primary
             }
         }
         
@@ -91,7 +101,7 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
             unSelectedView.backgroundColor = unselectedBackgroundColor
             
             if let label = unSelectedView.subviews.first as? UILabel {
-                label.textColor = UIColor.emScheduleHeaderDeselectedTextColor()
+                label.textColor = UIColor.secondary
             }
         }
         
@@ -115,8 +125,8 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
                 },
                 configureHeaderBlock: nil
         )
-        scheduleCollectionView?.dataSource = dataSource
-        scheduleCollectionView?.reloadData()
+        scheduleCollectionView.dataSource = dataSource
+        scheduleCollectionView.reloadData()
     }
 }
 

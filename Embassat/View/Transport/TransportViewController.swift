@@ -10,8 +10,8 @@ import UIKit
 
 class TransportViewController: EmbassatRootViewController {
 
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var detailLabel: UILabel?
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var detailLabel: UILabel!
     
     init() {
         super.init(nibName: String(describing: TransportViewController.self), bundle: nil)
@@ -26,8 +26,11 @@ class TransportViewController: EmbassatRootViewController {
         
         title = "Transport"
         
-        titleLabel?.font = UIFont.detailFont(ofSize: 20)
-        detailLabel?.font = UIFont.detailFont(ofSize: 15)
+        view.backgroundColor = .secondary
+        titleLabel.font = UIFont.detailFont(ofSize: 20)
+        titleLabel.textColor = .primary
+        detailLabel.font = UIFont.detailFont(ofSize: 15)
+        detailLabel.textColor = .primary
     }
     
 }

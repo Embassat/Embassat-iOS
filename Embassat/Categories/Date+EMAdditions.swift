@@ -1,5 +1,5 @@
 //
-//  NSDate+EMAdditions.swift
+//  Date+EMAdditions.swift
 //  Embassa't
 //
 //  Created by Joan Romano on 9/24/15.

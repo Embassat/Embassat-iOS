@@ -8,7 +8,8 @@
 
 import UIKit
 
-extension UIView {    
+extension UIView {
+    
     func findFirstResponder() -> UIView? {
         if (self.isFirstResponder) {
             return self

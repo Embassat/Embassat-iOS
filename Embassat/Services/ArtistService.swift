@@ -84,7 +84,7 @@ class ArtistService: ArtistServiceProtocol {
      */
     func toggleFavorite(forArtist artist: CADEMArtist, completion: (CADEMArtist) -> ()) {
         if var cachedArtists = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
-            if let index = cachedArtists.index(of: artist) {
+            if let index = cachedArtists.index(where: { $0.artistId == artist.artistId }) {
                 cachedArtists[index].favorite = !cachedArtists[index].favorite
                 store.store(cachedArtists as AnyObject, forKey: ArtistService.kArtistsStoreKey)
                 completion(cachedArtists[index])
