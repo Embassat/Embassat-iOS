@@ -9,29 +9,29 @@
 import Foundation
 
 enum ScheduleInteractorDay: Int {
-    case First = 0
-    case Second = 1
-    case Third = 2
-    case Fourth = 3
+    case first = 0
+    case second = 1
+    case third = 2
+    case fourth = 3
     
-    func dateFromDay() -> NSDate {
-        let dateComponents = NSDateComponents()
+    func dateFromDay() -> Date {
+        var dateComponents = DateComponents()
         dateComponents.year = 2016
         dateComponents.month = 6
-        let calendar = NSCalendar.currentCalendar()
+        let calendar = Calendar.current
         
         switch self {
-        case .First:
+        case .first:
             dateComponents.day = 9
-        case .Second:
+        case .second:
             dateComponents.day = 10
-        case .Third:
+        case .third:
             dateComponents.day = 11
-        case .Fourth:
+        case .fourth:
             dateComponents.day = 12
         }
         
-        return calendar.dateFromComponents(dateComponents)!
+        return calendar.date(from: dateComponents)!
     }
 }
 
@@ -39,12 +39,12 @@ class ScheduleInteractor: Interactor {
     
     var updateHandler: (([CADEMArtist]) -> ())?
     
-    private(set) var model: [CADEMArtist] = []
+    fileprivate(set) var model: [CADEMArtist] = []
     
-    private var artists: [CADEMArtist] = []
-    private let service = ArtistService()
+    fileprivate var artists: [CADEMArtist] = []
+    fileprivate let service = ArtistService()
     
-    var day: ScheduleInteractorDay = .First {
+    var day: ScheduleInteractorDay = .first {
         didSet {
             updateArtists(withArtists: artists)
         }
@@ -52,7 +52,7 @@ class ScheduleInteractor: Interactor {
     
     func fetchArtists() {
         service.artists { [weak self] (artists, error) in
-            guard let artists = artists where error == nil else { return }
+            guard let artists = artists, error == nil else { return }
             self?.updateArtists(withArtists: artists)
         }
     }
@@ -63,13 +63,13 @@ class ScheduleInteractor: Interactor {
         }
     }
     
-    private func updateArtists(withArtists artists: [CADEMArtist]) {
+    fileprivate func updateArtists(withArtists artists: [CADEMArtist]) {
         self.artists = artists
         model = artistsBySelectedDay()
         updateHandler?(model)
     }
     
-    private func artistsBySelectedDay() -> [CADEMArtist] {
-        return artists.filter { $0.scheduleDate.day == day.dateFromDay().day }.sort { $0.startDate.isEarlierThan($1.startDate) }
+    fileprivate func artistsBySelectedDay() -> [CADEMArtist] {
+        return artists.filter { $0.scheduleDate.day == day.dateFromDay().day }.sorted { $0.startDate.isEarlierThan($1.startDate) }
     }
 }

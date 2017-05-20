@@ -14,7 +14,7 @@ class PetitEMViewController: EmbassatRootViewController {
     @IBOutlet weak var detailLabel: UILabel?
     
     init() {
-        super.init(nibName: String(PetitEMViewController), bundle: nil)
+        super.init(nibName: String(describing: PetitEMViewController.self), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

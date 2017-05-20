@@ -14,7 +14,7 @@ class TransportViewController: EmbassatRootViewController {
     @IBOutlet weak var detailLabel: UILabel?
     
     init() {
-        super.init(nibName: String(TransportViewController), bundle: nil)
+        super.init(nibName: String(describing: TransportViewController.self), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

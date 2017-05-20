@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailInteractorProtocol where T.ModelType == CADEMArtist>: CoordinatedViewModel {
+class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailInteractorProtocol>: CoordinatedViewModel where T.ModelType == CADEMArtist {
     
-    private let model: CADEMArtist
+    fileprivate var model: CADEMArtist {
+        return interactor.model
+    }
     
     let interactor: T
     let coordinator: U
@@ -50,8 +52,8 @@ class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailI
     }
     
     /** The artist image URL. */
-    var artistImageURL: NSURL {
-        return model.imageURL
+    var artistImageURL: URL {
+        return model.imageURL as URL
     }
     
     /**
@@ -61,7 +63,6 @@ class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailI
      - parameter coordinator: A coordinator conforming to ArtistDetailCoordinatorProtocol.
      */
     required init(interactor: T, coordinator: U) {
-        self.model = interactor.model
         self.interactor = interactor
         self.coordinator = coordinator
     }
@@ -77,7 +78,7 @@ class ArtistDetailViewModel<U: ArtistDetailCoordinatorProtocol, T: ArtistDetailI
      Non favorite: White
      */
     func favTintColor() -> UIColor {
-        return model.favorite ? .lightGrayColor() : .whiteColor()
+        return model.favorite ? .lightGray : .white
     }
     
     /** Forwards the next pressed action to the interactor */

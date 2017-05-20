@@ -18,11 +18,11 @@ class MenuViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
         self.coordinator = coordinator
     }
     
-    func numberOfItemsInSection(section : Int) -> Int {
+    func numberOfItemsInSection(_ section : Int) -> Int {
         return self.interactor.model.count
     }
     
-    func titleAtIndexPath(indexPath: NSIndexPath) -> String {
+    func titleAtIndexPath(_ indexPath: IndexPath) -> String {
         return self.interactor.model[indexPath.row]
     }
     

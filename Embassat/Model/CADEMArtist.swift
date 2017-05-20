@@ -8,22 +8,22 @@
 
 import Foundation
 
-public class CADEMArtist : NSObject, NSCoding {
+open class CADEMArtist : NSObject, NSCoding {
     let artistId: Int
     let name: String
     let longDescription: String
     let stage: String
     let youtubeId: String
-    let artistURL: NSURL
-    let imageURL: NSURL
-    let startDate: NSDate
-    let endDate: NSDate
-    let scheduleDate: NSDate
+    let artistURL: URL
+    let imageURL: URL
+    let startDate: Date
+    let endDate: Date
+    let scheduleDate: Date
     let scheduleDayString: String
     
     var favorite: Bool
     
-    init(artistId: Int, name: String, longDescription: String, artistURL: NSURL, imageURL: NSURL, startDate: NSDate, endDate: NSDate, stage: String, youtubeId: String, favorite: Bool = false) {
+    init(artistId: Int, name: String, longDescription: String, artistURL: URL, imageURL: URL, startDate: Date, endDate: Date, stage: String, youtubeId: String, favorite: Bool = false) {
         self.artistId = artistId
         self.name = name
         self.longDescription = longDescription
@@ -39,32 +39,32 @@ public class CADEMArtist : NSObject, NSCoding {
     }
     
     required convenience public init(coder decoder: NSCoder) {
-        self.init(artistId: decoder.decodeIntegerForKey("artistId"),
-                  name: decoder.decodeObjectForKey("name") as! String,
-                  longDescription: decoder.decodeObjectForKey("longDescription") as! String,
-                  artistURL: decoder.decodeObjectForKey("artistURL") as! NSURL,
-                  imageURL: decoder.decodeObjectForKey("imageURL") as! NSURL,
-                  startDate: decoder.decodeObjectForKey("startDate") as! NSDate,
-                  endDate: decoder.decodeObjectForKey("endDate") as! NSDate,
-                  stage: decoder.decodeObjectForKey("stage") as! String,
-                  youtubeId: decoder.decodeObjectForKey("youtubeId") as! String,
-                  favorite: decoder.decodeBoolForKey("favorite"))
+        self.init(artistId: decoder.decodeInteger(forKey: "artistId"),
+                  name: decoder.decodeObject(forKey: "name") as! String,
+                  longDescription: decoder.decodeObject(forKey: "longDescription") as! String,
+                  artistURL: decoder.decodeObject(forKey: "artistURL") as! URL,
+                  imageURL: decoder.decodeObject(forKey: "imageURL") as! URL,
+                  startDate: decoder.decodeObject(forKey: "startDate") as! Date,
+                  endDate: decoder.decodeObject(forKey: "endDate") as! Date,
+                  stage: decoder.decodeObject(forKey: "stage") as! String,
+                  youtubeId: decoder.decodeObject(forKey: "youtubeId") as! String,
+                  favorite: decoder.decodeBool(forKey: "favorite"))
     }
     
-    public func encodeWithCoder(coder: NSCoder) {
-        coder.encodeInteger(artistId, forKey: "artistId")
-        coder.encodeObject(name, forKey: "name")
-        coder.encodeObject(longDescription, forKey: "longDescription")
-        coder.encodeObject(stage, forKey: "stage")
-        coder.encodeObject(youtubeId, forKey: "youtubeId")
-        coder.encodeObject(artistURL, forKey: "artistURL")
-        coder.encodeObject(imageURL, forKey: "imageURL")
-        coder.encodeObject(startDate, forKey: "startDate")
-        coder.encodeObject(endDate, forKey: "endDate")
-        coder.encodeBool(favorite, forKey: "favorite")
+    open func encode(with coder: NSCoder) {
+        coder.encode(artistId, forKey: "artistId")
+        coder.encode(name, forKey: "name")
+        coder.encode(longDescription, forKey: "longDescription")
+        coder.encode(stage, forKey: "stage")
+        coder.encode(youtubeId, forKey: "youtubeId")
+        coder.encode(artistURL, forKey: "artistURL")
+        coder.encode(imageURL, forKey: "imageURL")
+        coder.encode(startDate, forKey: "startDate")
+        coder.encode(endDate, forKey: "endDate")
+        coder.encode(favorite, forKey: "favorite")
     }
     
-    override public var description: String {
+    override open var description: String {
         return "Artist: \(name), id \(artistId), description\(longDescription), favorited? \(favorite)"
     }
 }

@@ -7,7 +7,7 @@ target 'Embassat' do
     pod 'ShareKit/Facebook',         '~> 5.0'
     pod 'ShareKit/Twitter',          '~> 5.0'
     pod 'youtube-ios-player-helper', '~> 0.1.4'
-    pod 'SwiftyJSON',                '~> 2.3.0'
+    pod 'SwiftyJSON',                '~> 3.1.0'
     pod 'SDWebImage',                '~> 3.7.5'
     pod 'TTTAttributedLabel',        '~> 1.13.3'
 end
@@ -15,8 +15,8 @@ end
 target 'EmbassatTests' do
     pod 'ShareKit/Facebook',         '~> 5.0'
     pod 'ShareKit/Twitter',          '~> 5.0'
-    pod 'Kakapo',                    '~> 0.1.0'
-    pod 'SwiftyJSON',                '~> 2.3.0'
+    pod 'Kakapo',                    '~> 2.1.0'
+    pod 'SwiftyJSON',                '~> 3.1.0'
     pod 'youtube-ios-player-helper', '~> 0.1.4'
     pod 'TTTAttributedLabel',        '~> 1.13.3'
 end

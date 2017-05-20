@@ -23,12 +23,12 @@ class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
     var updateHandler: ((CADEMArtist) -> ())?
     
     /** The interactor's model */
-    private(set) var model: CADEMArtist
+    fileprivate(set) var model: CADEMArtist
     
     /** An ArtistServiceProtocol to perform actions on the model. */
     let service: ArtistServiceProtocol
     
-    private var artists: [CADEMArtist]
+    fileprivate var artists: [CADEMArtist]
     
     /**
      Initializes a new ArtistDetailInteractor.
@@ -45,14 +45,14 @@ class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
     
     /** Fetches the next artist and updates the model, calling the update handler */
     func nextArtist() {
-        guard let index = artists.indexOf(model) else { return }
+        guard let index = artists.index(of: model) else { return }
         
         updateModel(withNexIndex: index + 1)
     }
     
     /** Fetches the previous artist and updates the model, calling the update handler */
     func previousArtist() {
-        guard let index = artists.indexOf(model) else { return }
+        guard let index = artists.index(of: model) else { return }
         
         updateModel(withNexIndex: index - 1)
     }
@@ -60,7 +60,7 @@ class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
     /** Toggles the favorite state of the model/artist */
     func toggleFavorite() {
         service.toggleFavorite(forArtist: model) { [weak self] (artist) in
-            guard let strongSelf = self, index = strongSelf.artists.indexOf(strongSelf.model) else { return }
+            guard let strongSelf = self, let index = strongSelf.artists.index(of: strongSelf.model) else { return }
             
             strongSelf.artists[index] = artist
             strongSelf.model = artist

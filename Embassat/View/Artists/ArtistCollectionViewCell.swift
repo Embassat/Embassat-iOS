@@ -20,13 +20,13 @@ class ArtistCollectionViewCell: RootCollectionViewCell {
     }
     var hidesBottomSeparator: Bool = false {
         didSet {
-            bottomSeparator?.hidden = hidesBottomSeparator
+            bottomSeparator?.isHidden = hidesBottomSeparator
         }
     }
     
-    override var selected: Bool {
+    override var isSelected: Bool {
         didSet {
-            if selected {
+            if isSelected {
                 selectElements()
             } else {
                 deselectElements()
@@ -34,9 +34,9 @@ class ArtistCollectionViewCell: RootCollectionViewCell {
         }
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            if highlighted {
+            if isHighlighted {
                 selectElements()
             } else {
                 deselectElements()
@@ -51,14 +51,14 @@ class ArtistCollectionViewCell: RootCollectionViewCell {
         optionNameLabel?.adjustsFontSizeToFitWidth = true
     }
     
-    private func selectElements() {
-        contentView.backgroundColor = .blackColor()
-        optionNameLabel?.textColor = .whiteColor()
+    fileprivate func selectElements() {
+        contentView.backgroundColor = .black
+        optionNameLabel?.textColor = .white
     }
     
-    private func deselectElements() {
-        contentView.backgroundColor = .whiteColor()
-        optionNameLabel?.textColor = .blackColor()
+    fileprivate func deselectElements() {
+        contentView.backgroundColor = .white
+        optionNameLabel?.textColor = .black
     }
 }
 

@@ -32,7 +32,7 @@ struct Artist: Storable, Serializable {
     let end_date: String
     let id: String
     
-    init(id: String, db: KakapoDB) {
+    init(id: String, store db: Store) {
         self.init(description: randomString(),
                   image_url: "http://www.embassat.com/wp-content/uploads/gullen1.jpg",
                   share_url: "http://www.embassat.com/wp-content/uploads/gullen1.jpg",
@@ -67,9 +67,9 @@ struct Artist: Storable, Serializable {
 
 class ArtistServiceTests: XCTestCase {
     
-    var sut: ArtistService?
-    let db = KakapoDB()
-    var router: Router?
+    var sut: ArtistService!
+    let db = Store()
+    var router: Router!
     
     override func setUp() {
         super.setUp()
@@ -79,7 +79,7 @@ class ArtistServiceTests: XCTestCase {
     }
     
     override func tearDown() {
-        let _ = try? NSFileManager.defaultManager().removeItemAtPath(sut!.store.documentsPath.stringByAppendingString(ArtistService.kArtistsStoreKey))
+        let _ = try? FileManager.default.removeItem(atPath: sut!.store.documentsPath + ArtistService.kArtistsStoreKey)
         sut = nil
         Router.unregister("https://scorching-torch-2707.firebaseio.com")
         
@@ -87,12 +87,12 @@ class ArtistServiceTests: XCTestCase {
     }
     
     func testGet1Artist() {
-        router!.get("/:artists") { request in
-            return self.db.create(Artist)
+        router.get("/:artists") { request in
+            return self.db.create(Artist.self)
         }
-        let expectation = expectationWithDescription("Should properly get 1 artist")
+        let expectation = self.expectation(description: "Should properly get 1 artist")
         
-        sut?.artists { (artists, error) in
+        sut.artists { (artists, error) in
             guard let artists = artists else { return }
             
             let artist = artists.first!
@@ -100,10 +100,10 @@ class ArtistServiceTests: XCTestCase {
             XCTAssertEqual(artists.count, 1)
             XCTAssertEqual(artist.artistId, 0)
             XCTAssertTrue(artist.name.characters.count > 0)
-            XCTAssertTrue(artist.imageURL.absoluteString.characters.count > 0)
+            XCTAssertTrue((artist.imageURL.absoluteString.characters.count) > 0)
             XCTAssertTrue(artist.stage.characters.count > 0)
             XCTAssertTrue(artist.longDescription.characters.count > 0)
-            XCTAssertTrue(artist.artistURL.absoluteString.characters.count > 0)
+            XCTAssertTrue((artist.artistURL.absoluteString.characters.count) > 0)
             XCTAssertTrue(artist.youtubeId.characters.count > 0)
             XCTAssertTrue(artist.scheduleDayString.characters.count > 0)
             XCTAssertFalse(artist.favorite)
@@ -114,16 +114,16 @@ class ArtistServiceTests: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(1) { _ in }
+        waitForExpectations(timeout: 1) { _ in }
     }
     
     func testGet50Artists() {
-        router!.get("/:artists") { request in
+        router.get("/:artists") { request in
             return self.db.create(Artist.self, number: 50)
         }
-        let expectation = expectationWithDescription("Should properly get 50 artists")
+        let expectation = self.expectation(description: "Should properly get 50 artists")
         
-        sut?.artists { (artists, error) in
+        sut.artists { (artists, error) in
             guard let artists = artists else { return }
             
             let artist = artists[30]
@@ -131,10 +131,10 @@ class ArtistServiceTests: XCTestCase {
             XCTAssertEqual(artists.count, 50)
             XCTAssertEqual(artist.artistId, 30)
             XCTAssertTrue(artist.name.characters.count > 0)
-            XCTAssertTrue(artist.imageURL.absoluteString.characters.count > 0)
+            XCTAssertTrue((artist.imageURL.absoluteString.characters.count) > 0)
             XCTAssertTrue(artist.stage.characters.count > 0)
             XCTAssertTrue(artist.longDescription.characters.count > 0)
-            XCTAssertTrue(artist.artistURL.absoluteString.characters.count > 0)
+            XCTAssertTrue((artist.artistURL.absoluteString.characters.count) > 0)
             XCTAssertTrue(artist.youtubeId.characters.count > 0)
             XCTAssertTrue(artist.scheduleDayString.characters.count > 0)
             XCTAssertFalse(artist.favorite)
@@ -145,22 +145,22 @@ class ArtistServiceTests: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(1) { _ in }
+        waitForExpectations(timeout: 1) { _ in }
     }
     
     func testGetArtistError() {
-        router!.get("/:artists") { request in
-            return Response(statusCode: 400, body: Optional.Some("none"))
+        router.get("/:artists") { request in
+            return Response(statusCode: 400, body: Optional.some("none"))
         }
         
-        let expectation = expectationWithDescription("Should error when invalid response")
+        let expectation = self.expectation(description: "Should error when invalid response")
         
-        sut?.artists { (artists, error) in
+        sut.artists { (artists, error) in
             XCTAssertNil(artists)
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(1) { _ in }
+        waitForExpectations(timeout: 1) { _ in }
     }
     
 }

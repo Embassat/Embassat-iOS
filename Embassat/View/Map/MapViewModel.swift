@@ -13,7 +13,7 @@ class MapViewModel: ViewModel {
     let interactor: MapInteractor
     let model: MapFields
     
-    private var didTrackUserLocation = false
+    fileprivate var didTrackUserLocation = false
     
     required init(interactor: MapInteractor) {
         self.model = interactor.model

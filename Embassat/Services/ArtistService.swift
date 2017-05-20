@@ -9,8 +9,8 @@
 import Foundation
 
 protocol ArtistServiceProtocol {
-    func artists(completion: ([CADEMArtist]?, NSError?) -> ())
-    func persistedArtists(completion: ([CADEMArtist]) -> ())
+    func artists(_ completion: @escaping ([CADEMArtist]?, NSError?) -> ())
+    func persistedArtists(_ completion: ([CADEMArtist]) -> ())
     func toggleFavorite(forArtist artist: CADEMArtist, completion: (CADEMArtist) -> ())
 }
 
@@ -23,43 +23,42 @@ class ArtistService: ArtistServiceProtocol {
     let parser: ArtistParser = ArtistParser()
     let notificationService: NotificationService = NotificationService()
     
-    private var lastTask: NSURLSessionDataTask?
+    fileprivate var lastTask: URLSessionDataTask?
     
     /**
      Retrieves the artists from the network, also persisting them in disk.
      
      - parameter completion: A completion which will get called with an optional array of artists and an optional error, if any. Note that both can be nil if there is no error but the response's status code is not 200.
      */
-    func artists(completion: ([CADEMArtist]?, NSError?) -> ()) {
+    func artists(_ completion: @escaping ([CADEMArtist]?, NSError?) -> ()) {
         var cachedArtists: [CADEMArtist] = []
-        let url = NSURL(string: ArtistService.kArtistsEndpoint)!
+        let url = URL(string: ArtistService.kArtistsEndpoint)!
         
         if let cached = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
             cachedArtists = cached
         }
         
-        lastTask = NSURLSession.sharedSession().dataTaskWithURL(url) { [weak self] data, response, error in
+        lastTask = URLSession.shared.dataTask(with: url, completionHandler: { [weak self] data, response, error in
             guard let strongSelf = self else { return }
             
             if let data = data,
-                   json = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                where error == nil {
+                   let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments), error == nil {
                 
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                    let artists = strongSelf.parser.parseArtists(fromJson: json, cached: cachedArtists)
+                DispatchQueue.global().async {
+                    let artists = strongSelf.parser.parseArtists(fromJson: json as AnyObject, cached: cachedArtists)
                     strongSelf.notificationService.updateLocalNotifications(forArtists: artists)
-                    strongSelf.store.store(artists, forKey: ArtistService.kArtistsStoreKey)
+                    strongSelf.store.store(artists as AnyObject, forKey: ArtistService.kArtistsStoreKey)
                     
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         completion(artists, nil)
                     }
-                })
+                }
             } else if let error = error {
-                completion(nil, error)
-            } else if let response = response as? NSHTTPURLResponse where response.statusCode != 200 {
+                completion(nil, error as NSError?)
+            } else if let response = response as? HTTPURLResponse, response.statusCode != 200 {
                 completion(nil, nil)
             }
-        }
+        }) 
         
         lastTask?.resume()
     }
@@ -69,7 +68,7 @@ class ArtistService: ArtistServiceProtocol {
      
      - parameter completion: A completion which will get called with an array of the persisted artists. This can be an empty array if no persisted artists.
      */
-    func persistedArtists(completion: ([CADEMArtist]) -> ()) {
+    func persistedArtists(_ completion: ([CADEMArtist]) -> ()) {
         if let cachedArtists = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
             completion(cachedArtists)
         } else {
@@ -85,9 +84,9 @@ class ArtistService: ArtistServiceProtocol {
      */
     func toggleFavorite(forArtist artist: CADEMArtist, completion: (CADEMArtist) -> ()) {
         if var cachedArtists = store.object(forKey: ArtistService.kArtistsStoreKey) as? [CADEMArtist] {
-            if let index = cachedArtists.indexOf(artist) {
+            if let index = cachedArtists.index(of: artist) {
                 cachedArtists[index].favorite = !cachedArtists[index].favorite
-                store.store(cachedArtists, forKey: ArtistService.kArtistsStoreKey)
+                store.store(cachedArtists as AnyObject, forKey: ArtistService.kArtistsStoreKey)
                 completion(cachedArtists[index])
                 notificationService.toggleLocalNotification(forArtist: artist, favorited: cachedArtists[index].favorite)
             }

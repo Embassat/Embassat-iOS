@@ -12,13 +12,13 @@ class ArtistsInteractor: Interactor {
     
     var updateHandler: (([CADEMArtist]) -> ())?
     
-    private(set) var model: [CADEMArtist] = []
+    fileprivate(set) var model: [CADEMArtist] = []
     
-    private let service = ArtistService()
+    fileprivate let service = ArtistService()
     
     func fetchArtists() {
         service.artists { [weak self] (artists, error) in
-            guard let artists = artists where error == nil else { return }
+            guard let artists = artists, error == nil else { return }
             self?.updateArtists(withArtists: artists)
         }
     }
@@ -29,8 +29,8 @@ class ArtistsInteractor: Interactor {
         }
     }
     
-    private func updateArtists(withArtists artists: [CADEMArtist]) {
-        model = artists.sort{ $0.name < $1.name }
+    fileprivate func updateArtists(withArtists artists: [CADEMArtist]) {
+        model = artists.sorted{ $0.name < $1.name }
         updateHandler?(model)
     }
 }

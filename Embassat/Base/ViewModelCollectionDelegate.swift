@@ -10,7 +10,7 @@ import Foundation
 
 protocol ViewModelCollectionDelegate {
     func numberOfSections() -> Int
-    func numberOfItemsInSection(section: Int) -> Int
+    func numberOfItemsInSection(_ section: Int) -> Int
 }
 
 extension ViewModelCollectionDelegate {

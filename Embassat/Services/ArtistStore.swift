@@ -10,13 +10,13 @@ import Foundation
 
 struct ArtistStore {
     
-    let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask,true)[0]
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask,true)[0]
 
     func object(forKey key: String) -> AnyObject? {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath.stringByAppendingString(key))
+        return NSKeyedUnarchiver.unarchiveObject(withFile: documentsPath + key) as AnyObject?
     }
     
-    func store(object: AnyObject, forKey key: String) {
-        NSKeyedArchiver.archiveRootObject(object, toFile: documentsPath.stringByAppendingString(key))
+    func store(_ object: AnyObject, forKey key: String) {
+        NSKeyedArchiver.archiveRootObject(object, toFile: documentsPath + key)
     }
 }

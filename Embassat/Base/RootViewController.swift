@@ -12,7 +12,7 @@ class RootViewController: UIViewController {
     
     let tapGestureToResign: UITapGestureRecognizer
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundle: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundle: Bundle?) {
         tapGestureToResign = UITapGestureRecognizer()
         tapGestureToResign.cancelsTouchesInView = false
         
@@ -38,7 +38,7 @@ class RootViewController: UIViewController {
         self.view.addGestureRecognizer(tapGestureToResign)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.loadData()
@@ -47,25 +47,25 @@ class RootViewController: UIViewController {
     func loadData() {}
     
     func registerForKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardShowOrHideNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardShowOrHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShowOrHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShowOrHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func keyboardWillBecomeHidden(keyboardHidden: Bool, animationDuration: NSTimeInterval, curve: UIViewAnimationCurve, keyboardHeight: CGFloat) {
+    func keyboardWillBecomeHidden(_ keyboardHidden: Bool, animationDuration: TimeInterval, curve: UIViewAnimationCurve, keyboardHeight: CGFloat) {
         var insets: UIEdgeInsets
         
         if  let firstResponder: UIView = self.view.findFirstResponder(),
             let parentScrollView = firstResponder.findParentScrollView() {
-            insets = UIEdgeInsetsZero
+            insets = UIEdgeInsets.zero
             insets.top = self.topLayoutGuide.length
             insets.bottom = keyboardHidden ? 0.0 : keyboardHeight
-            UIView.animateWithDuration(animationDuration, animations: { () -> Void in
+            UIView.animate(withDuration: animationDuration, animations: { () -> Void in
                 parentScrollView.contentInset = insets
                 parentScrollView.scrollIndicatorInsets = insets
             }, completion: { (finished) -> Void in
                 if !keyboardHidden {
                     if let superView = firstResponder.superview {
-                        parentScrollView.scrollRectToVisible(superView.convertRect(firstResponder.frame, toView: parentScrollView), animated: true)
+                        parentScrollView.scrollRectToVisible(superView.convert(firstResponder.frame, to: parentScrollView), animated: true)
                     }
                 }
             })
@@ -76,18 +76,18 @@ class RootViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func keyboardShowOrHideNotification(notification: NSNotification) {
-        self.keyboardWillBecomeHidden(notification.name == UIKeyboardWillHideNotification, notificationInfo: notification.userInfo!)
+    func keyboardShowOrHideNotification(_ notification: Notification) {
+        self.keyboardWillBecomeHidden(notification.name == NSNotification.Name.UIKeyboardWillHide, notificationInfo: notification.userInfo! as NSDictionary)
     }
     
-    func keyboardWillBecomeHidden(keyboardHidden: Bool, notificationInfo: NSDictionary) {
+    func keyboardWillBecomeHidden(_ keyboardHidden: Bool, notificationInfo: NSDictionary) {
         var animationCurve: UIViewAnimationCurve?
-        notificationInfo[UIKeyboardAnimationCurveUserInfoKey]?.getValue(&animationCurve)
+        (notificationInfo[UIKeyboardAnimationCurveUserInfoKey] as AnyObject).getValue(&animationCurve)
         
         var keyboardFrameAtEndOfAnimation: CGRect?
-        notificationInfo[UIKeyboardFrameEndUserInfoKey]?.getValue(&keyboardFrameAtEndOfAnimation)
-        let keyboardHeight: CGFloat = CGRectGetHeight(keyboardFrameAtEndOfAnimation!)
-        let animationDuration: NSTimeInterval? = notificationInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue
+        (notificationInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).getValue(&keyboardFrameAtEndOfAnimation)
+        let keyboardHeight: CGFloat = keyboardFrameAtEndOfAnimation!.height
+        let animationDuration: TimeInterval? = (notificationInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
         
         self.keyboardWillBecomeHidden(keyboardHidden, animationDuration: animationDuration!, curve: animationCurve!, keyboardHeight: keyboardHeight)
     }

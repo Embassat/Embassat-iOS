@@ -18,7 +18,7 @@ class MapInteractor: Interactor {
     
     var updateHandler: ((MapFields) -> ())?
     
-    private(set) var model = MapFields(latitudes: [41.545738, 41.5417171, 41.5466157, 41.5468636],
+    fileprivate(set) var model = MapFields(latitudes: [41.545738, 41.5417171, 41.5466157, 41.5468636],
                                        longitudes: [2.106824, 2.0969444, 2.1067646, 2.1035644],
                                        titles: ["Mirador Museu del Gas", "Can Marcet", "Pl. Dr. Robert", "Sala Oui!"])
     

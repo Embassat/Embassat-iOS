@@ -12,7 +12,7 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
     
     @IBOutlet weak var artistsCollectionView: UICollectionView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-    private var dataSource: ArrayDataSource?
+    fileprivate var dataSource: ArrayDataSource?
     var viewModel: ArtistsViewModel {
         didSet {
             updateDataSource()
@@ -22,7 +22,7 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
     
     required init(viewModel: ArtistsViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: String(ArtistsViewController), bundle: nil)
+        super.init(nibName: String(describing: ArtistsViewController.self), bundle: nil)
         self.updateDataSource()
     }
 
@@ -34,26 +34,26 @@ class ArtistsViewController: EmbassatRootViewController, UpdateableView {
         super.viewDidLoad()
 
         title = "Artistes"
-        artistsCollectionView?.registerNib(UINib(nibName: String(ArtistCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
+        artistsCollectionView?.register(UINib(nibName: String(describing: ArtistCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         artistsCollectionView?.deselectAllSelectedItems()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         viewModel.shouldRefreshModel()
     }
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
         viewModel.didSelect(at: indexPath.item)
     }
     
-    private func updateDataSource() {
+    fileprivate func updateDataSource() {
         dataSource =
             ArrayDataSource(
                 viewModel: viewModel,

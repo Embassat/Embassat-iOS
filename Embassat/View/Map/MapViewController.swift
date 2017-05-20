@@ -11,8 +11,8 @@ import MapKit
 
 class MapViewController: EmbassatRootViewController, MKMapViewDelegate, UpdateableView {
     
-    static private let kEMMapPinIdentifier = "EMMapPinIdentifier"
-    static private let kDefaultEdgeInset: CGFloat = 30.0
+    static fileprivate let kEMMapPinIdentifier = "EMMapPinIdentifier"
+    static fileprivate let kDefaultEdgeInset: CGFloat = 30.0
     
     @IBOutlet weak var mapView: MKMapView!
 
@@ -28,7 +28,7 @@ class MapViewController: EmbassatRootViewController, MKMapViewDelegate, Updateab
     required init(viewModel: MapViewModel) {
         self.viewModel = viewModel
         
-        super.init(nibName: String(MapViewController), bundle: nil)
+        super.init(nibName: String(describing: MapViewController.self), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,15 +51,15 @@ class MapViewController: EmbassatRootViewController, MKMapViewDelegate, Updateab
         }
     }
     
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         if  viewModel.shouldUpdateVisibleRect() &&
             CLLocationCoordinate2DIsValid(CLLocationCoordinate2DMake((userLocation.location?.coordinate.latitude)!, (userLocation.location?.coordinate.longitude)!)) {
             updateVisibleMapRect()
         }
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation.isKindOfClass(MKUserLocation) {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation.isKind(of: MKUserLocation.self) {
             return nil
         }
         
@@ -69,12 +69,12 @@ class MapViewController: EmbassatRootViewController, MKMapViewDelegate, Updateab
         return annotationView
     }
     
-    private func updateVisibleMapRect() {
+    fileprivate func updateVisibleMapRect() {
         let inset = MapViewController.kDefaultEdgeInset
         mapView.setVisibleMapRect(mapRect(forCoordinates: coordinates, coordCount: coordinates.count), edgePadding: UIEdgeInsetsMake(inset, inset, inset, inset), animated: true)
     }
     
-    private func mapRect(forCoordinates coords: [CLLocation], coordCount: Int) -> MKMapRect {
+    fileprivate func mapRect(forCoordinates coords: [CLLocation], coordCount: Int) -> MKMapRect {
         var rect: MKMapRect = MKMapRectNull
         
         for location in coords

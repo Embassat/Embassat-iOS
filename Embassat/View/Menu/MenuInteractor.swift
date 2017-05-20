@@ -12,5 +12,5 @@ class MenuInteractor: Interactor {
     
     var updateHandler: (([String]) -> ())?
     
-    private(set) var model: [String] = ["Info", "Artistes", "Horaris", "Petit EM'", "Transport", "Mapa", "Entrades", "Playlist"]
+    fileprivate(set) var model: [String] = ["Info", "Artistes", "Horaris", "Petit EM'", "Transport", "Mapa", "Entrades", "Playlist"]
 }

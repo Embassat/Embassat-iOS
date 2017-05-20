@@ -20,7 +20,7 @@ class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
         self.coordinator = coordinator
     }
     
-    func numberOfItemsInSection(section : Int) -> Int {
+    func numberOfItemsInSection(_ section : Int) -> Int {
         return artists.count
     }
     
@@ -28,11 +28,11 @@ class ArtistsViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
         interactor.fetchPersistedArtists()
     }
     
-    func titleAtIndexPath(indexPath: NSIndexPath) -> String {
-        return artists[indexPath.row].name.uppercaseString
+    func titleAtIndexPath(_ indexPath: IndexPath) -> String {
+        return artists[indexPath.row].name.uppercased()
     }
     
-    func shouldHideSeparator(forIndexPath indexPath: NSIndexPath) -> Bool {
+    func shouldHideSeparator(forIndexPath indexPath: IndexPath) -> Bool {
         return indexPath.row == numberOfItemsInSection(0) - 1
     }
     

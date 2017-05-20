@@ -13,7 +13,7 @@ class ScheduleViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
     let interactor: ScheduleInteractor
     let coordinator: ScheduleCoordinator
     let model: [CADEMArtist]
-    let dateFormatter: NSDateFormatter
+    let dateFormatter: DateFormatter
     
     var dayIndex: Int {
         set {
@@ -30,11 +30,11 @@ class ScheduleViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
         self.interactor = interactor
         self.coordinator = coordinator
         
-        dateFormatter = NSDateFormatter()
+        dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
     }
     
-    func numberOfItemsInSection(section : Int) -> Int {
+    func numberOfItemsInSection(_ section : Int) -> Int {
         return model.count
     }
     
@@ -42,29 +42,29 @@ class ScheduleViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
         interactor.fetchCachedArtists()
     }
     
-    func artistName(forIndexPath indexPath : NSIndexPath) -> String {
+    func artistName(forIndexPath indexPath : IndexPath) -> String {
         return artist(forIndexPath: indexPath).name
     }
     
-    func stageName(forIndexPath indexPath : NSIndexPath) -> String {
+    func stageName(forIndexPath indexPath : IndexPath) -> String {
         return artist(forIndexPath: indexPath).stage
     }
     
-    func favoritedStatus(forIndexPath indexPath : NSIndexPath) -> Bool {
+    func favoritedStatus(forIndexPath indexPath : IndexPath) -> Bool {
         return artist(forIndexPath: indexPath).favorite
     }
     
-    func startTimeString(forIndexPath indexPath : NSIndexPath) -> String {
+    func startTimeString(forIndexPath indexPath : IndexPath) -> String {
         return String(format: "%@:%@", startHour(forIndexPath: indexPath), startMinute(forIndexPath: indexPath))
     }
     
-    func endTimeString(forIndexPath indexPath : NSIndexPath) -> String {
+    func endTimeString(forIndexPath indexPath : IndexPath) -> String {
         return String(format: "%@:%@", endHour(forIndexPath: indexPath), endMinute(forIndexPath: indexPath))
     }
     
-    func backgroundColor(forIndexPath indexPath : NSIndexPath) -> UIColor {
+    func backgroundColor(forIndexPath indexPath : IndexPath) -> UIColor {
         let artist = self.artist(forIndexPath: indexPath)
-        let now: NSDate = NSDate()
+        let now: Date = Date()
         
         return now.isLaterThan(artist.startDate) && now.isEarlierThan(artist.endDate) ? UIColor.emScheduleBackgroundSelectedColor() : UIColor.emScheduleBackgroundDeselectedColor()
     }
@@ -73,23 +73,23 @@ class ScheduleViewModel: ViewModelCollectionDelegate, CoordinatedViewModel {
         coordinator.presentArtistDetail(interactor.model, currentIndex: index)
     }
     
-    private func startMinute(forIndexPath indexPath : NSIndexPath) -> String {
+    fileprivate func startMinute(forIndexPath indexPath : IndexPath) -> String {
         return artist(forIndexPath: indexPath).startDate.minuteString
     }
     
-    private func startHour(forIndexPath indexPath : NSIndexPath) -> String {
+    fileprivate func startHour(forIndexPath indexPath : IndexPath) -> String {
         return artist(forIndexPath: indexPath).startDate.hourString
     }
     
-    private func endMinute(forIndexPath indexPath : NSIndexPath) -> String {
+    fileprivate func endMinute(forIndexPath indexPath : IndexPath) -> String {
         return artist(forIndexPath: indexPath).endDate.minuteString
     }
     
-    private func endHour(forIndexPath indexPath : NSIndexPath) -> String {
+    fileprivate func endHour(forIndexPath indexPath : IndexPath) -> String {
         return artist(forIndexPath: indexPath).endDate.hourString
     }
     
-    private func artist(forIndexPath indexPath: NSIndexPath) -> CADEMArtist {
+    fileprivate func artist(forIndexPath indexPath: IndexPath) -> CADEMArtist {
         return model[indexPath.item]
     }
 }

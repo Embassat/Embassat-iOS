@@ -8,68 +8,68 @@
 
 import Foundation
 
-extension NSDate {
+extension Date {
     
-    private static let componentFlags: NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.WeekOfMonth, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Weekday, NSCalendarUnit.WeekdayOrdinal]
+    private static let componentFlags: Set<Calendar.Component> = [.year,
+                                                                      .month,
+                                                                      .day,
+                                                                      .weekOfMonth,
+                                                                      .hour,
+                                                                      .minute,
+                                                                      .second,
+                                                                      .weekday,
+                                                                      .weekdayOrdinal]
     
-    private static var token: dispatch_once_t = 0
-    private static var sharedCalendar: NSCalendar?
-    
-    class func currentCalendar() -> NSCalendar {
-        dispatch_once(&token) { () -> Void in
-            sharedCalendar = NSCalendar.autoupdatingCurrentCalendar()
-        }
-        
-        return sharedCalendar ?? NSCalendar.currentCalendar()
+    private var dateComponents: DateComponents {
+        return Calendar.autoupdatingCurrent.dateComponents(Date.componentFlags, from: self)
     }
     
     var day: Int {
-        let components = NSDate.currentCalendar().components(NSDate.componentFlags, fromDate: self)
-        return components.day
+        return dateComponents.day!
     }
     
     var hour: Int {
-        let components = NSDate.currentCalendar().components(NSDate.componentFlags, fromDate: self)
-        return components.hour
+        return dateComponents.hour!
     }
     
     var minute: Int {
-        let components = NSDate.currentCalendar().components(NSDate.componentFlags, fromDate: self)
-        return components.minute
+        return dateComponents.minute!
     }
     
     var hourString: String {
-        return (self.hour < 10 ? "0" : "") + String(self.hour)
+        return (hour < 10 ? "0" : "") + String(hour)
     }
     
     var minuteString: String {
-        return (self.minute < 10 ? "0" : "") + String(self.minute)
+        return (minute < 10 ? "0" : "") + String(minute)
     }
     
-    func isEarlierThan(date: NSDate) -> Bool {
-        return self.compare(date) == NSComparisonResult.OrderedAscending
+    func isEarlierThan(_ date: Date) -> Bool {
+        return self < date
     }
     
-    func isLaterThan(date: NSDate) -> Bool {
-        return self.compare(date) == NSComparisonResult.OrderedDescending
+    func isLaterThan(_ date: Date) -> Bool {
+        return self > date
     }
     
-    func dateByAdding(minutes minutes: Int) -> NSDate {
-        let timeInterval = self.timeIntervalSinceReferenceDate + Double(60) * Double(minutes)
-        return NSDate(timeIntervalSinceReferenceDate: timeInterval)
+    func dateByAdding(minutes: Int) -> Date {
+        let timeInterval = timeIntervalSinceReferenceDate + Double(60) * Double(minutes)
+        
+        return Date(timeIntervalSinceReferenceDate: timeInterval)
     }
     
-    func dateBySubstracting(minutes minutes: Int) -> NSDate {
-        return self.dateByAdding(minutes: minutes * -1)
+    func dateBySubstracting(minutes: Int) -> Date {
+        return dateByAdding(minutes: minutes * -1)
     }
     
-    func dateByAdding(days days: Int) -> NSDate {
-        let dateComponents = NSDateComponents()
+    func dateByAdding(days: Int) -> Date {
+        var dateComponents = DateComponents()
         dateComponents.day = days
-        return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: self, options: NSCalendarOptions(rawValue: 0)) ?? self
+        
+        return Calendar.autoupdatingCurrent.date(byAdding: dateComponents, to: self) ?? self
     }
     
-    func dateBySubstracting(days days: Int) -> NSDate {
+    func dateBySubstracting(days: Int) -> Date {
         return self.dateByAdding(days: days * -1)
     }
 }

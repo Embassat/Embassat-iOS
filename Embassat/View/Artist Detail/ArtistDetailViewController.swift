@@ -34,7 +34,7 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
     
     required init(viewModel: ArtistDetailViewModel<ArtistDetailCoordinator,ArtistDetailInteractor>) {
         self.viewModel = viewModel
-        super.init(nibName: String(ArtistDetailViewController), bundle: nil)
+        super.init(nibName: String(describing: ArtistDetailViewController.self), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,8 +51,8 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         dayLabel?.font = UIFont.detailFont(ofSize: 15.0)
         timeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         
-        let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(sharePressed))
-        let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(favoritePressed))
+        let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(sharePressed))
+        let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(favoritePressed))
         
         navigationItem.rightBarButtonItems = [favItem, shareItem]
         
@@ -60,13 +60,13 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         updateNavigationItemDetails()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         contentView?.flashScrollIndicators()
     }
     
-    private func updateSubviewDetails() {
+    fileprivate func updateSubviewDetails() {
         artistNameLabel?.text = viewModel.artistName
         descriptionLabel?.text = viewModel.artistDescription
         stageLabel?.text = viewModel.artistStage
@@ -74,33 +74,33 @@ class ArtistDetailViewController: EmbassatRootViewController, UpdateableView {
         timeLabel?.text = viewModel.artistStartTimeString
         
         if viewModel.shouldShowArtistVideo() {
-            imageView?.hidden = true
-            playerView?.hidden = false
-            playerView?.loadWithVideoId(viewModel.artistVideoId)
+            imageView?.isHidden = true
+            playerView?.isHidden = false
+            playerView?.load(withVideoId: viewModel.artistVideoId)
         } else {
-            imageView?.hidden = false
-            playerView?.hidden = true
-            imageView?.sd_setImageWithURL(viewModel.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
+            imageView?.isHidden = false
+            playerView?.isHidden = true
+            imageView?.sd_setImage(with: viewModel.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
         }
     }
     
-    private func updateNavigationItemDetails() {
+    fileprivate func updateNavigationItemDetails() {
         navigationItem.rightBarButtonItems?.first?.tintColor = viewModel.favTintColor()
     }
     
-    @objc private func sharePressed() {
+    @objc fileprivate func sharePressed() {
         viewModel.shareAction()
     }
     
-    @objc private func favoritePressed() {
+    @objc fileprivate func favoritePressed() {
         viewModel.toggleFavorite()
     }
     
-    @IBAction func nextPressed(sender: UIButton) {
+    @IBAction func nextPressed(_ sender: UIButton) {
         viewModel.showNext()
     }
     
-    @IBAction func previousPressed(sender: UIButton) {
+    @IBAction func previousPressed(_ sender: UIButton) {
         viewModel.showPrevious()
     }
 }

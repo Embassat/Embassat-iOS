@@ -17,7 +17,7 @@ class TicketsViewController: EmbassatRootViewController {
     @IBOutlet weak var petitEmTicketContainer: UIView?
     
     init() {
-        super.init(nibName: String(TicketsViewController), bundle: nil)
+        super.init(nibName: String(describing: TicketsViewController.self), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,12 +47,12 @@ class TicketsViewController: EmbassatRootViewController {
         }
     }
     
-    @IBAction func linkPressed(sender: UIView) {
-        openTicket(NSURL(string: "http://entradium.com/sites/MjQ0Mg==")!)
+    @IBAction func linkPressed(_ sender: UIView) {
+        openTicket(URL(string: "http://entradium.com/sites/MjQ0Mg==")!)
     }
     
-    func openTicket(link: NSURL) {
-        UIApplication.sharedApplication().openURL(link)
+    func openTicket(_ link: URL) {
+        UIApplication.shared.openURL(link)
     }
 }
 

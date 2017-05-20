@@ -29,7 +29,7 @@ class MenuViewController: EmbassatRootViewController, UpdateableView {
                             configureHeaderBlock: nil)
         self.viewModel = viewModel
         
-        super.init(nibName: String(MenuViewController), bundle: nil)
+        super.init(nibName: String(describing: MenuViewController.self), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,31 +40,31 @@ class MenuViewController: EmbassatRootViewController, UpdateableView {
         super.viewDidLoad()
 
         menuCollectionView?.dataSource = dataSource
-        menuCollectionView?.registerNib(UINib(nibName: String(MenuCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
+        menuCollectionView?.register(UINib(nibName: String(describing: MenuCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        if let indexPaths = menuCollectionView?.indexPathsForSelectedItems() {
+        if let indexPaths = menuCollectionView?.indexPathsForSelectedItems {
             for indexPath in indexPaths {
-                menuCollectionView?.deselectItemAtIndexPath(indexPath, animated: false)
+                menuCollectionView?.deselectItem(at: indexPath, animated: false)
             }
         }
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
         viewModel.show(nextViewControllerWithIndex: indexPath.row)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return UIEdgeInsetsZero }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return UIEdgeInsets.zero }
         
         return flowLayout.insetsForVerticallyCenteredSectionInScreen(withNumberOfRows: dataSource.viewModel.numberOfItemsInSection(0), andColumns: 1)
     }

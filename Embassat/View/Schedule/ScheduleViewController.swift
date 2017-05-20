@@ -23,7 +23,7 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     
     
-    private var dataSource: ArrayDataSource?
+    fileprivate var dataSource: ArrayDataSource?
     var viewModel: ScheduleViewModel {
         didSet {
             updateDataSource()
@@ -33,7 +33,7 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
     
     required init(viewModel: ScheduleViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: String(ScheduleViewController), bundle: nil)
+        super.init(nibName: String(describing: ScheduleViewController.self), bundle: nil)
         updateDataSource()
     }
     
@@ -58,20 +58,20 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
             view?.addGestureRecognizer(tapGesture)
         }
         
-        scheduleCollectionView?.registerNib(UINib(nibName: String(ScheduleCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
+        scheduleCollectionView?.register(UINib(nibName: String(describing: ScheduleCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         viewModel.shouldRefreshModel()
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
         viewModel.didSelect(at: indexPath.item)
     }
     
-    @objc private func containerTapped(sender: UITapGestureRecognizer) {
+    @objc fileprivate func containerTapped(_ sender: UITapGestureRecognizer) {
         guard let tag = sender.view?.tag else { return }
         
         let selectedBackgroundColor = UIColor.emScheduleHeaderSelectedBackgroundColor()
@@ -98,13 +98,13 @@ class ScheduleViewController: EmbassatRootViewController, UpdateableView {
         viewModel.dayIndex = tag
     }
     
-    private func updateDataSource() {
+    fileprivate func updateDataSource() {
         dataSource =
             ArrayDataSource(
                 viewModel: viewModel,
                 configureCellBlock: { [weak self] (cell, indexPath) in
                     guard let cell = cell as? ScheduleCollectionViewCell,
-                              viewModel = self?.viewModel else { return }
+                              let viewModel = self?.viewModel else { return }
                     
                     cell.startTimeSting = viewModel.startTimeString(forIndexPath: indexPath)
                     cell.endTimeString = viewModel.endTimeString(forIndexPath: indexPath)

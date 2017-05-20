@@ -11,11 +11,11 @@ import UIKit
 extension UIColor {
     
     class func emBarTintColor() -> UIColor {
-        return .blackColor()
+        return .black
     }
     
     class func emScheduleBackgroundSelectedColor() -> UIColor {
-        return .whiteColor()
+        return .white
     }
     
     class func emScheduleBackgroundDeselectedColor() -> UIColor {
@@ -23,18 +23,18 @@ extension UIColor {
     }
     
     class func emScheduleHeaderSelectedBackgroundColor() -> UIColor {
-        return .whiteColor()
+        return .white
     }
     
     class func emScheduleHeaderSelectedTextColor() -> UIColor {
-        return .blackColor()
+        return .black
     }
     
     class func emScheduleHeaderDeselectedBackgroundColor() -> UIColor {
-        return blackColor()
+        return black
     }
     
     class func emScheduleHeaderDeselectedTextColor() -> UIColor {
-        return .whiteColor()
+        return .white
     }
 }

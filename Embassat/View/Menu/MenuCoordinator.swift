@@ -9,14 +9,14 @@
 import UIKit
 
 enum MenuIndex: Int {
-    case Info
-    case Artists
-    case Schedule
-    case PetitEM
-    case Transport
-    case Map
-    case Tickets
-    case Playlist
+    case info
+    case artists
+    case schedule
+    case petitEM
+    case transport
+    case map
+    case tickets
+    case playlist
 }
 
 class MenuCoordinator: Coordinator {
@@ -28,11 +28,11 @@ class MenuCoordinator: Coordinator {
         var nextViewController: UIViewController?
         
         switch index {
-        case .Info:
+        case .info:
             nextViewController = InfoViewController()
             break;
             
-        case .Artists:
+        case .artists:
             let interactor = ArtistsInteractor()
             let coordinator = ArtistsCoordinator()
             let viewModel = ArtistsViewModel(interactor: interactor, coordinator: coordinator)
@@ -43,7 +43,7 @@ class MenuCoordinator: Coordinator {
             nextViewController = viewController
             break;
             
-        case .Schedule:
+        case .schedule:
             let interactor = ScheduleInteractor()
             let coordinator = ScheduleCoordinator()
             let viewModel = ScheduleViewModel(interactor: interactor, coordinator: coordinator)
@@ -54,15 +54,15 @@ class MenuCoordinator: Coordinator {
             nextViewController = viewController
             break;
             
-        case .PetitEM:
+        case .petitEM:
             nextViewController = PetitEMViewController()
             break;
             
-        case .Transport:
+        case .transport:
             nextViewController = TransportViewController()
             break;
             
-        case .Map:
+        case .map:
             let interactor = MapInteractor()
             let viewModel = MapViewModel(interactor: interactor)
             let viewController = MapViewController(viewModel: viewModel)
@@ -70,17 +70,17 @@ class MenuCoordinator: Coordinator {
             nextViewController = viewController
             break;
             
-        case .Tickets:
+        case .tickets:
             nextViewController = TicketsViewController()
             break;
             
-        case .Playlist:
+        case .playlist:
             nextViewController = nil
-            let normalURL = NSURL(string: "http://open.spotify.com/user/embassat/playlist/16SGgn6bS6uQnImxWzZfrc")!
-            let appURL = NSURL(string: "spotify://user:embassat")!
+            let normalURL = URL(string: "http://open.spotify.com/user/embassat/playlist/16SGgn6bS6uQnImxWzZfrc")!
+            let appURL = URL(string: "spotify://user:embassat")!
             //:playlist:16SGgn6bS6uQnImxWzZfrc
-            if UIApplication.sharedApplication().openURL(appURL) == false {
-                UIApplication.sharedApplication().openURL(normalURL)
+            if UIApplication.shared.openURL(appURL) == false {
+                UIApplication.shared.openURL(normalURL)
             }
             
             break;

@@ -10,10 +10,10 @@ import UIKit
 
 extension UICollectionView {
     func deselectAllSelectedItems() {
-        guard let indexPaths = indexPathsForSelectedItems() else { return }
+        guard let indexPaths = indexPathsForSelectedItems else { return }
         
         for indexPath in indexPaths {
-            deselectItemAtIndexPath(indexPath, animated: false)
+            deselectItem(at: indexPath, animated: false)
         }
     }
 }

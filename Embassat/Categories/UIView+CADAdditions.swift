@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {    
     func findFirstResponder() -> UIView? {
-        if (self.isFirstResponder()) {
+        if (self.isFirstResponder) {
             return self
         }
         
@@ -24,7 +24,7 @@ extension UIView {
     }
     
     func findParentScrollView() -> UIScrollView? {
-        if self.isKindOfClass(UIScrollView) {
+        if self.isKind(of: UIScrollView.self) {
             return self as? UIScrollView
         }
         

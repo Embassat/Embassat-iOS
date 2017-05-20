@@ -42,7 +42,7 @@ class ScheduleCollectionViewCell: RootCollectionViewCell {
     
     var shouldShowFavorite: Bool = false {
         didSet {
-            favoriteImageView?.hidden = !shouldShowFavorite
+            favoriteImageView?.isHidden = !shouldShowFavorite
         }
     }
     
