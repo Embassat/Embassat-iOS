@@ -1,5 +1,5 @@
 //
-//  InfoContainerViewController.swift
+//  TabContainerViewController.swift
 //  Embassat
 //
 //  Created by Joan Romano on 20/5/17.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class InfoContainerViewController: UIViewController {
+final class TabContainerViewController: UIViewController {
     
     var selectedIndex: Int
-    let viewModel: InfoContainerViewModel
+    let viewModel: TabContainerViewModel
     
     let tabContainer: UIView = {
         let container = UIView()
@@ -20,11 +20,11 @@ final class InfoContainerViewController: UIViewController {
         return container
     }()
     
-    init(viewModel: InfoContainerViewModel) {
+    init(viewModel: TabContainerViewModel) {
         self.viewModel = viewModel
         self.selectedIndex = viewModel.initialIndex
         super.init(nibName: nil, bundle: nil)
-        title = "Info"
+        title = viewModel.title
     }
     
     required init?(coder aDecoder: NSCoder) {

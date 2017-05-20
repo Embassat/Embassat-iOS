@@ -6,18 +6,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleViewController" customModule="Embassat" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="ft9-bd-ubv" id="EsK-5b-K1b"/>
-                <outlet property="daysContainer" destination="Hje-8Z-bIN" id="qt3-ap-6LY"/>
-                <outlet property="fridayContainer" destination="KlS-3N-n64" id="fDf-Zi-lMb"/>
-                <outlet property="fridayLabel" destination="ddf-kn-kGK" id="fvu-9y-BPr"/>
-                <outlet property="saturdayContainer" destination="5yG-BG-DC3" id="NrG-PI-Yha"/>
-                <outlet property="saturdayLabel" destination="44p-05-mYP" id="nLQ-Gc-WGB"/>
                 <outlet property="scheduleCollectionView" destination="4ZG-M8-6WX" id="b27-zi-ygg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="6Jg-4f-KbZ"/>
             </connections>
@@ -41,56 +35,6 @@
                         <outlet property="delegate" destination="-1" id="jCn-rM-M0k"/>
                     </connections>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hje-8Z-bIN">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlS-3N-n64" userLabel="Friday Container">
-                            <rect key="frame" x="0.0" y="0.0" width="188" height="38"/>
-                            <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divendres" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-kn-kGK" userLabel="Friday Label">
-                                    <rect key="frame" x="57" y="9" width="73" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="centerY" secondItem="ddf-kn-kGK" secondAttribute="centerY" id="3HS-Ca-yq5"/>
-                                <constraint firstAttribute="centerX" secondItem="ddf-kn-kGK" secondAttribute="centerX" id="SFH-JF-H9u"/>
-                            </constraints>
-                        </view>
-                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yG-BG-DC3" userLabel="Saturday Container">
-                            <rect key="frame" x="188" y="0.0" width="187" height="38"/>
-                            <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissabte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44p-05-mYP" userLabel="Saturday Label">
-                                    <rect key="frame" x="61" y="9" width="64" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="centerX" secondItem="44p-05-mYP" secondAttribute="centerX" id="RHX-Ga-KY7"/>
-                                <constraint firstAttribute="centerY" secondItem="44p-05-mYP" secondAttribute="centerY" id="Y28-NE-2C3"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstItem="5yG-BG-DC3" firstAttribute="width" secondItem="Hje-8Z-bIN" secondAttribute="width" multiplier="0.5" id="5Zg-ki-JqH"/>
-                        <constraint firstItem="KlS-3N-n64" firstAttribute="width" secondItem="Hje-8Z-bIN" secondAttribute="width" multiplier="0.5" id="D2H-z4-PEF"/>
-                        <constraint firstAttribute="bottom" secondItem="5yG-BG-DC3" secondAttribute="bottom" id="LxU-0x-UvN"/>
-                        <constraint firstItem="5yG-BG-DC3" firstAttribute="leading" secondItem="KlS-3N-n64" secondAttribute="trailing" id="MSq-8U-mTA"/>
-                        <constraint firstAttribute="bottom" secondItem="KlS-3N-n64" secondAttribute="bottom" id="PlG-Pg-XE3"/>
-                        <constraint firstItem="KlS-3N-n64" firstAttribute="top" secondItem="Hje-8Z-bIN" secondAttribute="top" id="Ptm-hZ-Wfi"/>
-                        <constraint firstAttribute="height" constant="38" id="gwx-54-7vA"/>
-                        <constraint firstAttribute="trailing" secondItem="5yG-BG-DC3" secondAttribute="trailing" id="m0E-fa-n6F"/>
-                        <constraint firstItem="5yG-BG-DC3" firstAttribute="top" secondItem="Hje-8Z-bIN" secondAttribute="top" id="uYU-OV-3TH"/>
-                        <constraint firstItem="KlS-3N-n64" firstAttribute="leading" secondItem="Hje-8Z-bIN" secondAttribute="leading" id="ugv-Y8-SKO"/>
-                    </constraints>
-                </view>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ft9-bd-ubv">
                     <rect key="frame" x="170" y="315" width="37" height="37"/>
                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -100,12 +44,9 @@
             <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="4ZG-M8-6WX" secondAttribute="trailing" id="3aa-uz-Gd4"/>
-                <constraint firstAttribute="trailing" secondItem="Hje-8Z-bIN" secondAttribute="trailing" id="A1A-mZ-pJ9"/>
                 <constraint firstAttribute="bottom" secondItem="4ZG-M8-6WX" secondAttribute="bottom" id="MNs-uU-zqx"/>
-                <constraint firstItem="Hje-8Z-bIN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" placeholder="YES" id="Wqw-mf-bPU"/>
                 <constraint firstAttribute="centerX" secondItem="ft9-bd-ubv" secondAttribute="centerX" constant="-0.5" id="Xv2-mQ-ihK"/>
                 <constraint firstItem="4ZG-M8-6WX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZlV-fh-eay"/>
-                <constraint firstItem="Hje-8Z-bIN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="apk-zJ-pFD"/>
                 <constraint firstAttribute="centerY" secondItem="ft9-bd-ubv" secondAttribute="centerY" constant="0.5" id="mHd-Ms-xzX"/>
                 <constraint firstItem="4ZG-M8-6WX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nAX-1r-Ztv"/>
             </constraints>

@@ -21,14 +21,12 @@ final class ArtistsInteractor: Interactor {
     fileprivate let service = ArtistService()
     
     func fetchArtists() {
-        service.artists { [weak self] (artists, error) in
-            guard let artists = artists, error == nil else { return }
+        service.persistedArtists { [weak self] (artists) in
             self?.updateArtists(withArtists: artists)
         }
-    }
-    
-    func fetchPersistedArtists() {
-        service.persistedArtists { [weak self] (artists) in
+        
+        service.artists { [weak self] (artists, error) in
+            guard let artists = artists, error == nil else { return }
             self?.updateArtists(withArtists: artists)
         }
     }

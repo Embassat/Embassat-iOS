@@ -24,8 +24,8 @@ final class ArtistsViewModel: ViewModelCollectionDelegate {
         return artists.count
     }
     
-    func shouldRefreshModel() {
-        interactor.fetchPersistedArtists()
+    func loadData() {
+        interactor.fetchArtists()
     }
     
     func titleAtIndexPath(_ indexPath: IndexPath) -> String {

@@ -15,16 +15,6 @@ final class ScheduleViewModel: ViewModelCollectionDelegate {
     let model: [CADEMArtist]
     let dateFormatter: DateFormatter
     
-    var dayIndex: Int {
-        set {
-            interactor.day = ScheduleInteractorDay(rawValue: newValue)!
-        }
-        
-        get {
-            return interactor.day.rawValue
-        }
-    }
-    
     required init(interactor: ScheduleInteractor, coordinator: ScheduleCoordinator) {
         self.model = interactor.model
         self.interactor = interactor
@@ -38,8 +28,8 @@ final class ScheduleViewModel: ViewModelCollectionDelegate {
         return model.count
     }
     
-    func shouldRefreshModel() {
-        interactor.fetchCachedArtists()
+    func loadData() {
+        interactor.fetchArtists()
     }
     
     func artistName(forIndexPath indexPath : IndexPath) -> String {

@@ -23,7 +23,16 @@ open class CADEMArtist : NSObject, NSCoding {
     
     var favorite: Bool
     
-    init(artistId: Int, name: String, longDescription: String, artistURL: URL, imageURL: URL, startDate: Date, endDate: Date, stage: String, youtubeId: String, favorite: Bool = false) {
+    init(artistId: Int,
+         name: String,
+         longDescription: String,
+         artistURL: URL,
+         imageURL: URL,
+         startDate: Date,
+         endDate: Date,
+         stage: String,
+         youtubeId: String,
+         favorite: Bool = false) {
         self.artistId = artistId
         self.name = name
         self.longDescription = longDescription

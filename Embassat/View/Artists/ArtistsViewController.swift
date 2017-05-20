@@ -47,7 +47,7 @@ final class ArtistsViewController: EmbassatRootViewController, UpdateableView {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.shouldRefreshModel()
+        viewModel.loadData()
     }
     
     // MARK: - UICollectionViewDelegate

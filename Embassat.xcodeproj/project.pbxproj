@@ -76,10 +76,10 @@
 		8C1FF3461B03F7C400078E15 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF3451B03F7C400078E15 /* ArrayDataSource.swift */; };
 		8C1FF34C1B04CD1D00078E15 /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FF34B1B04CD1D00078E15 /* TicketsViewController.swift */; };
 		8C35AE081B0105C30014331F /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35AE071B0105C30014331F /* ArtistService.swift */; };
-		8C3D9B931ED044100029266E /* InfoContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9B921ED044100029266E /* InfoContainerViewController.swift */; };
-		8C3D9B951ED044B70029266E /* InfoContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9B941ED044B70029266E /* InfoContainerViewModel.swift */; };
 		8C3D9B991ED068370029266E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9B981ED068370029266E /* UIImage.swift */; };
 		8C3D9B9D1ED085830029266E /* UICollectionView+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9B9C1ED085830029266E /* UICollectionView+EMAdditions.swift */; };
+		8C3D9BA31ED08EA40029266E /* TabContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BA11ED08EA40029266E /* TabContainerViewController.swift */; };
+		8C3D9BA41ED08EA40029266E /* TabContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BA21ED08EA40029266E /* TabContainerViewModel.swift */; };
 		8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB381B0A8F80000E019F /* apercu_medium.otf */; };
 		8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */; };
 		8C774F5F192D682B000D5062 /* TicketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F5E192D682B000D5062 /* TicketsViewController.xib */; };
@@ -186,10 +186,10 @@
 		8C1FF3451B03F7C400078E15 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
 		8C1FF34B1B04CD1D00078E15 /* TicketsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicketsViewController.swift; path = Tickets/TicketsViewController.swift; sourceTree = "<group>"; };
 		8C35AE071B0105C30014331F /* ArtistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ArtistService.swift; path = Services/ArtistService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		8C3D9B921ED044100029266E /* InfoContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoContainerViewController.swift; path = Info/InfoContainerViewController.swift; sourceTree = "<group>"; };
-		8C3D9B941ED044B70029266E /* InfoContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoContainerViewModel.swift; path = Info/InfoContainerViewModel.swift; sourceTree = "<group>"; };
 		8C3D9B981ED068370029266E /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		8C3D9B9C1ED085830029266E /* UICollectionView+EMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+EMAdditions.swift"; sourceTree = "<group>"; };
+		8C3D9BA11ED08EA40029266E /* TabContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabContainerViewController.swift; path = TabContainer/TabContainerViewController.swift; sourceTree = "<group>"; };
+		8C3D9BA21ED08EA40029266E /* TabContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabContainerViewModel.swift; path = TabContainer/TabContainerViewModel.swift; sourceTree = "<group>"; };
 		8C6BCB381B0A8F80000E019F /* apercu_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apercu_medium.otf; sourceTree = "<group>"; };
 		8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "noe-display-bold.otf"; sourceTree = "<group>"; };
 		8C774F5E192D682B000D5062 /* TicketsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TicketsViewController.xib; path = Tickets/TicketsViewController.xib; sourceTree = "<group>"; };
@@ -379,6 +379,7 @@
 				8CB6C68F18E8B3B2008D19FE /* Info */,
 				8CCA1B8118FC717000B0C60C /* Map */,
 				8CAEB338192BF77B0017CF29 /* Schedule */,
+				8C3D9BA01ED08E980029266E /* Tab Container */,
 				8C774F5A192D67F0000D5062 /* Tickets */,
 				8BA59AE11CD4B3FF0043BAE3 /* Transport */,
 			);
@@ -445,6 +446,15 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		8C3D9BA01ED08E980029266E /* Tab Container */ = {
+			isa = PBXGroup;
+			children = (
+				8C3D9BA11ED08EA40029266E /* TabContainerViewController.swift */,
+				8C3D9BA21ED08EA40029266E /* TabContainerViewModel.swift */,
+			);
+			name = "Tab Container";
+			sourceTree = "<group>";
+		};
 		8C774F5A192D67F0000D5062 /* Tickets */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,8 +513,6 @@
 		8CB6C68F18E8B3B2008D19FE /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				8C3D9B921ED044100029266E /* InfoContainerViewController.swift */,
-				8C3D9B941ED044B70029266E /* InfoContainerViewModel.swift */,
 				8CC682E91B12613100FD2216 /* InfoViewController.swift */,
 				8CB6C69218E8B3D6008D19FE /* InfoViewController.xib */,
 			);
@@ -854,6 +862,7 @@
 				8BFF38731D4F9D5A00A4A103 /* ArtistDetailCoordinator.swift in Sources */,
 				8BFF386F1D4F7CEA00A4A103 /* ArtistDetailInteractor.swift in Sources */,
 				8CE72FE41B13707100698D4A /* MapViewModel.swift in Sources */,
+				8C3D9BA31ED08EA40029266E /* TabContainerViewController.swift in Sources */,
 				8CE72FE61B1372D800698D4A /* MapViewController.swift in Sources */,
 				8CF193411BB3F24900B7D929 /* UIView+CADAdditions.swift in Sources */,
 				8CE72FF41B138F2700698D4A /* ScheduleViewController.swift in Sources */,
@@ -864,11 +873,10 @@
 				8CE72FEC1B13839500698D4A /* ScheduleCollectionViewCell.swift in Sources */,
 				8BFF385F1D4F661200A4A103 /* ArtistsInteractor.swift in Sources */,
 				8CE72FF91B13C86700698D4A /* RootCollectionViewCell.swift in Sources */,
-				8C3D9B931ED044100029266E /* InfoContainerViewController.swift in Sources */,
 				8C3D9B991ED068370029266E /* UIImage.swift in Sources */,
-				8C3D9B951ED044B70029266E /* InfoContainerViewModel.swift in Sources */,
 				8BFF38781D4FA7EA00A4A103 /* ScheduleInteractor.swift in Sources */,
 				8C8BA6EB1B08C33900896D11 /* ArtistsViewModel.swift in Sources */,
+				8C3D9BA41ED08EA40029266E /* TabContainerViewModel.swift in Sources */,
 				8CE72FF21B138A0100698D4A /* ScheduleViewModel.swift in Sources */,
 				8C8BA6CF1B06758000896D11 /* ArtistParser.swift in Sources */,
 				8C3D9B9D1ED085830029266E /* UICollectionView+EMAdditions.swift in Sources */,

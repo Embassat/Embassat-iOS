@@ -1,5 +1,5 @@
 //
-//  InfoContainerViewModel.swift
+//  TabContainerViewModel.swift
 //  Embassat
 //
 //  Created by Joan Romano on 20/5/17.
@@ -8,17 +8,21 @@
 
 import UIKit
 
-struct ContainerSection {
+struct TabContainerSection {
     let title: String
     let viewController: UIViewController
 }
 
-final class InfoContainerViewModel {
+final class TabContainerViewModel {
     
-    let sections: [ContainerSection]
+    let title: String
+    let sections: [TabContainerSection]
     let initialIndex: Int
 
-    init(sections: [ContainerSection], initialIndex: Int = 0) {
+    init(title: String,
+         sections: [TabContainerSection],
+         initialIndex: Int = 0) {
+        self.title = title
         self.sections = sections
         self.initialIndex = initialIndex
     }
