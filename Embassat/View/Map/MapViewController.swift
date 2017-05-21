@@ -38,7 +38,7 @@ final class MapViewController: RootViewController, MKMapViewDelegate, Updateable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Mapa"
+        title = String.mapTitle
         
         locationManager.requestWhenInUseAuthorization()
         

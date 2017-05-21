@@ -45,7 +45,7 @@ final class ArtistDetailViewController: RootViewController, UpdateableView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Artista"
+        title = String.artistDetailTitle
         view.backgroundColor = .secondary
         bottomView.backgroundColor = UIColor.primary.withAlphaComponent(0.95)
         artistNameLabel.font = UIFont.titleFont(ofSize: 30.0)

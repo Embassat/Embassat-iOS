@@ -23,3 +23,34 @@ extension UIImage {
         return image
     }
 }
+
+extension UIImage {
+    
+    class var tabInfo: UIImage {
+        return UIImage(named: "tabInfo")!
+    }
+    
+    class var tabInfoSelected: UIImage {
+        return UIImage(named: "tabInfoSelected")!.withRenderingMode(.alwaysOriginal)
+    }
+    
+    class var tabArtists: UIImage {
+        return UIImage(named: "tabArtists")!
+    }
+    
+    class var tabArtistsSelected: UIImage {
+        return UIImage(named: "tabArtistsSelected")!.withRenderingMode(.alwaysOriginal)
+    }
+    
+    class var tabSchedule: UIImage {
+        return UIImage(named: "tabSchedule")!
+    }
+    
+    class var tabScheduleSelected: UIImage {
+        return UIImage(named: "tabScheduleSelected")!.withRenderingMode(.alwaysOriginal)
+    }
+    
+    class func tabBackgroundImage(with size: CGSize) -> UIImage {
+        return UIImage.withColor(color: UIColor.primary.withAlphaComponent(0.95), size: size)
+    }
+}

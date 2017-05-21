@@ -24,7 +24,7 @@ final class TransportViewController: RootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Transport"
+        title = String.transportTitle
         
         view.backgroundColor = .secondary
         titleLabel.font = UIFont.detailFont(ofSize: 20)

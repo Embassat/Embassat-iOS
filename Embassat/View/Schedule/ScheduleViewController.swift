@@ -26,7 +26,7 @@ final class ScheduleViewController: RootViewController, UpdateableView {
     required init(viewModel: ScheduleViewModel) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: ScheduleViewController.self), bundle: nil)
-        title = "Horaris"
+        title = String.scheduleTitle
     }
     
     required init?(coder aDecoder: NSCoder) {

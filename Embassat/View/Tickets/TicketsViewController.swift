@@ -28,7 +28,7 @@ final class TicketsViewController: RootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Entrades"
+        title = String.ticketsTitle
         
         view.backgroundColor = .secondary
         [seasonContainer, dayTicketContainer, petitEmTicketContainer].flatMap { $0 }.forEach {

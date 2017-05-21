@@ -26,7 +26,7 @@ final class InfoViewController: RootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Info"
+        title = String.infoTitle
         
         view.backgroundColor = .secondary
         titleLabel.font = UIFont.detailFont(ofSize: 20)

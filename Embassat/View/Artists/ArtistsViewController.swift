@@ -24,7 +24,7 @@ final class ArtistsViewController: RootViewController, UpdateableView {
     required init(viewModel: ArtistsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: ArtistsViewController.self), bundle: nil)
-        self.title = "Artistes"
+        self.title = String.artistsTitle
     }
 
     required init?(coder aDecoder: NSCoder) {
