@@ -36,11 +36,20 @@ PODS:
 DEPENDENCIES:
   - Kakapo (~> 2.1.0)
   - SDWebImage (~> 3.7.5)
-  - ShareKit/Facebook (~> 5.0)
-  - ShareKit/Twitter (~> 5.0)
+  - ShareKit/Facebook (from `https://github.com/joanromano/ShareKit.git`)
+  - ShareKit/Twitter (from `https://github.com/joanromano/ShareKit.git`)
   - SwiftyJSON (~> 3.1.0)
   - TTTAttributedLabel (~> 1.13.3)
   - youtube-ios-player-helper (~> 0.1.4)
+
+EXTERNAL SOURCES:
+  ShareKit:
+    :git: https://github.com/joanromano/ShareKit.git
+
+CHECKOUT OPTIONS:
+  ShareKit:
+    :commit: 851c73bc9510f995b7e6132b65e0a3de129515c7
+    :git: https://github.com/joanromano/ShareKit.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -56,6 +65,6 @@ SPEC CHECKSUMS:
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: d83c8b4379b1e0a5179a596495d6fa142eb89742
+PODFILE CHECKSUM: a2b95d299df404218da6ba3f8fea4da9aae0844f
 
 COCOAPODS: 1.2.1

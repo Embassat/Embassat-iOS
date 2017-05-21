@@ -4,8 +4,8 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Embassat' do
-    pod 'ShareKit/Facebook',         '~> 5.0'
-    pod 'ShareKit/Twitter',          '~> 5.0'
+    pod 'ShareKit/Facebook',         :git => "https://github.com/joanromano/ShareKit.git"
+    pod 'ShareKit/Twitter',          :git => "https://github.com/joanromano/ShareKit.git"
     pod 'youtube-ios-player-helper', '~> 0.1.4'
     pod 'SwiftyJSON',                '~> 3.1.0'
     pod 'SDWebImage',                '~> 3.7.5'
@@ -13,8 +13,8 @@ target 'Embassat' do
 end
 
 target 'EmbassatTests' do
-    pod 'ShareKit/Facebook',         '~> 5.0'
-    pod 'ShareKit/Twitter',          '~> 5.0'
+    pod 'ShareKit/Facebook',         :git => "https://github.com/joanromano/ShareKit.git"
+    pod 'ShareKit/Twitter',          :git => "https://github.com/joanromano/ShareKit.git"
     pod 'Kakapo',                    '~> 2.1.0'
     pod 'SwiftyJSON',                '~> 3.1.0'
     pod 'youtube-ios-player-helper', '~> 0.1.4'
