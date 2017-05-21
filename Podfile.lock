@@ -1,0 +1,61 @@
+PODS:
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - Facebook-iOS-SDK (3.24.4):
+    - Bolts (~> 1.2)
+  - Kakapo (2.1.0)
+  - PKMultipartInputStream (1.3.0)
+  - SAMTextView (0.2.2)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - ShareKit/Core (5.0.0):
+    - PKMultipartInputStream
+    - SAMTextView (~> 0.2.1)
+    - SDWebImage (~> 3.7)
+    - ShareKit/Reachability
+    - SSKeychain (~> 1.2.2)
+    - UIActivityIndicator-for-SDWebImage (~> 1.2)
+  - ShareKit/Facebook (5.0.0):
+    - Facebook-iOS-SDK (~> 3.0)
+    - ShareKit/Core
+  - ShareKit/Reachability (5.0.0)
+  - ShareKit/Twitter (5.0.0):
+    - ShareKit/Core
+  - SSKeychain (1.2.3)
+  - SwiftyJSON (3.1.4)
+  - TTTAttributedLabel (1.13.4)
+  - UIActivityIndicator-for-SDWebImage (1.2):
+    - SDWebImage (~> 3.7)
+  - youtube-ios-player-helper (0.1.6)
+
+DEPENDENCIES:
+  - Kakapo (~> 2.1.0)
+  - SDWebImage (~> 3.7.5)
+  - ShareKit/Facebook (~> 5.0)
+  - ShareKit/Twitter (~> 5.0)
+  - SwiftyJSON (~> 3.1.0)
+  - TTTAttributedLabel (~> 1.13.3)
+  - youtube-ios-player-helper (~> 0.1.4)
+
+SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
+  Kakapo: a30b8f6ce2ce17eec2d441df923a2af0ec5f538f
+  PKMultipartInputStream: 933bc09492f3f8af47abbc4baaf583d49fba1d45
+  SAMTextView: 979c43bb1fa5859ddfbfeb35e9c296a2b0ec55fd
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  ShareKit: da7ef0875def56511cb5a7f82598d4a932ac9c6c
+  SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
+  UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
+
+PODFILE CHECKSUM: d83c8b4379b1e0a5179a596495d6fa142eb89742
+
+COCOAPODS: 1.2.1
