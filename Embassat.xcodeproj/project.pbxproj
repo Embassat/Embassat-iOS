@@ -84,6 +84,8 @@
 		8C3D9BA81ED105CD0029266E /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BA71ED105CD0029266E /* NSLayoutConstraint.swift */; };
 		8C3D9BAB1ED1775D0029266E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BAA1ED1775D0029266E /* MainCoordinator.swift */; };
 		8C3D9BAD1ED17AA60029266E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BAC1ED17AA60029266E /* String.swift */; };
+		8C5BEF331ED468E000A2E3EF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BAC1ED17AA60029266E /* String.swift */; };
+		8C5BEF341ED468F100A2E3EF /* UICollectionView+EMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9B9C1ED085830029266E /* UICollectionView+EMAdditions.swift */; };
 		8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB381B0A8F80000E019F /* apercu_medium.otf */; };
 		8C6BCB3B1B0A8F80000E019F /* noe-display-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */; };
 		8C774F5F192D682B000D5062 /* TicketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C774F5E192D682B000D5062 /* TicketsViewController.xib */; };
@@ -822,12 +824,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5BEF331ED468E000A2E3EF /* String.swift in Sources */,
 				8BFF38651D4F6D4400A4A103 /* ArrayDataSource.swift in Sources */,
 				8B9AAB841D46AF2400CDA2E0 /* ScheduleViewController.swift in Sources */,
 				8BFF38711D4F83BA00A4A103 /* UIColor+EMAdditions.swift in Sources */,
 				8B9AAB8A1D46AF4400CDA2E0 /* TicketsViewController.swift in Sources */,
 				8BFF38661D4F6D6200A4A103 /* ArtistCollectionViewCell.swift in Sources */,
 				8BFF38801D5118BA00A4A103 /* MapInteractor.swift in Sources */,
+				8C5BEF341ED468F100A2E3EF /* UICollectionView+EMAdditions.swift in Sources */,
 				8B8F65771D58C1CE00BFB060 /* ArtistParser.swift in Sources */,
 				8B9AAB791D46A66400CDA2E0 /* Coordinator.swift in Sources */,
 				8BFF386A1D4F758900A4A103 /* UIFont+EMAdditions.swift in Sources */,

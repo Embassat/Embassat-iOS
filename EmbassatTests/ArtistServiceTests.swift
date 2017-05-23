@@ -9,18 +9,6 @@
 import XCTest
 import Kakapo
 
-func randomString() -> String {
-    let charactersString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    let charactersArray : [Character] = Array(charactersString.characters)
-    
-    var string = ""
-    for _ in 0..<20 {
-        string.append(charactersArray[Int(arc4random()) % charactersArray.count])
-    }
-    
-    return string
-}
-
 struct Artist: Storable, Serializable {
     let description: String
     let image_url: String
@@ -33,12 +21,12 @@ struct Artist: Storable, Serializable {
     let id: String
     
     init(id: String, store db: Store) {
-        self.init(description: randomString(),
+        self.init(description: "some_description",
                   image_url: "http://www.embassat.com/wp-content/uploads/gullen1.jpg",
                   share_url: "http://www.embassat.com/wp-content/uploads/gullen1.jpg",
                   youtube_video_id : "ec5PyegiGJg",
-                  name: randomString(),
-                  stage: randomString(),
+                  name: "some_name",
+                  stage: "some_stage",
                   start_date: "2015-06-12T21:15:00",
                   end_date: "2015-06-14T15:15:00",
                   id: id)
