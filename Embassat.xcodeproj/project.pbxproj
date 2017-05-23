@@ -1076,6 +1076,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Pol Solsona (32S972F3NM)";
+				DEVELOPMENT_TEAM = 32S972F3NM;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1085,7 +1086,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cad.Embassa-t";
 				PRODUCT_NAME = Embassat;
-				PROVISIONING_PROFILE = "6d6229da-5f76-4b1b-be67-63fba25bc660";
+				PROVISIONING_PROFILE = "272cd210-da97-4dac-bedc-c10792f5acc4";
+				PROVISIONING_PROFILE_SPECIFIER = "Embassa't Adhoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1099,6 +1101,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Pol Solsona (32S972F3NM)";
+				DEVELOPMENT_TEAM = 32S972F3NM;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1108,7 +1111,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cad.Embassa-t";
 				PRODUCT_NAME = Embassat;
-				PROVISIONING_PROFILE = "0e95ef2c-2d9c-4862-99ca-98d901b9e733";
+				PROVISIONING_PROFILE = "8f171b06-7d6f-48db-ae66-cd3e5c0d56eb";
+				PROVISIONING_PROFILE_SPECIFIER = "Embassat AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "Embassat/Embassat-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
