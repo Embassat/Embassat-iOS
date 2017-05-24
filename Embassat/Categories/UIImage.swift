@@ -6,7 +6,7 @@
 //  Copyright © 2017 Crows And Dogs. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIImage {
     

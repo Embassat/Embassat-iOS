@@ -130,11 +130,11 @@ class ArtistDetailViewModelTests: XCTestCase {
         
         interactor = FakeArtistDetailInteractor(artists: artists, index: 1, service: FakeArtistService())
         sut = ArtistDetailViewModel(interactor: interactor, coordinator: FakeArtistDetailCoordinator())
-        XCTAssertEqual(sut.favTintColor(), .orange)
+        XCTAssertEqual(sut.favTintColor(), .favorite)
         
         interactor = FakeArtistDetailInteractor(artists: artists, index: 2, service: FakeArtistService())
         sut = ArtistDetailViewModel(interactor: interactor, coordinator: FakeArtistDetailCoordinator())
-        XCTAssertEqual(sut.favTintColor(), .orange)
+        XCTAssertEqual(sut.favTintColor(), .favorite)
     }
     
     func testShowArtistVideo() {
