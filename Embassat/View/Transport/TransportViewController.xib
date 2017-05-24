@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,7 +26,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transport.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6qO-bb-RDV">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info2" translatesAutoresizingMaskIntoConstraints="NO" id="6qO-bb-RDV">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="243.5"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Slr-fG-aFq">
@@ -40,7 +40,7 @@
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="4sX-xA-L3L">
                             <rect key="frame" x="22" y="64" width="276" height="183"/>
                             <string key="text">Sigues sostenible i vine a peu, amb bicicleta o transport públic: 
-- Just a 2 minuts de la parada Sabadell Estació S2 FGC.
+- Just a 1 minut de la parada Can Feu , Gràcia FGC.
 - Si vens amb cotxe: Entrada Sabadell Centre de la C-58, hi ha amplia zona de pàrking gratuïta ben a prop del recinte.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -72,6 +72,6 @@
         </view>
     </objects>
     <resources>
-        <image name="transport.jpg" width="1500" height="1000"/>
+        <image name="info2" width="930" height="620"/>
     </resources>
 </document>

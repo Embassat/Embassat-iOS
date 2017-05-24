@@ -73,11 +73,11 @@ final class ArtistDetailViewModel {
     
     /** The favorite tint color, currently based on the favorite status of the artist:
      
-     Favorite: .orange
+     Favorite: .favorite
      Non favorite: .secondary
      */
     func favTintColor() -> UIColor {
-        return model.favorite ? .orange : .secondary
+        return model.favorite ? .favorite : .secondary
     }
     
     /** Forwards the next pressed action to the interactor */

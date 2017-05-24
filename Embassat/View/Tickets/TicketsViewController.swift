@@ -11,6 +11,7 @@ import UIKit
 final class TicketsViewController: RootViewController {
     
     @IBOutlet var titleLabels: [UILabel]!
+    @IBOutlet var titleChevrons: [UIButton]!
     @IBOutlet var bodyLabels: [UILabel]!
     @IBOutlet var detailScrollView: UIScrollView!
     @IBOutlet weak var seasonContainer: UIView!
@@ -37,6 +38,7 @@ final class TicketsViewController: RootViewController {
         }
         
         titleLabels.forEach { $0.font = UIFont.detailFont(ofSize: 20.0); $0.textColor = .primary }
+        titleChevrons.forEach { $0.setImage(UIImage.chevron.withRenderingMode(.alwaysTemplate), for: .normal);  $0.tintColor = .primary }
         bodyLabels.forEach { $0.font = UIFont.detailFont(ofSize: 15.0); $0.textColor = .primary }
     }
     

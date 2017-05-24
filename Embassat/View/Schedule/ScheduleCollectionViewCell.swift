@@ -49,6 +49,8 @@ final class ScheduleCollectionViewCell: RootCollectionViewCell {
     override func setupView() {
         super.setupView()
         
+        favoriteImageView?.image = UIImage.favorite.withRenderingMode(.alwaysTemplate)
+        favoriteImageView?.tintColor = .favorite
         startTimeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         endTimeLabel?.font = UIFont.detailFont(ofSize: 15.0)
         artistNameLabel?.font = UIFont.detailFont(ofSize: 15.0)

@@ -53,4 +53,20 @@ extension UIImage {
     class func tabBackgroundImage(with size: CGSize) -> UIImage {
         return UIImage.withColor(color: UIColor.primary.withAlphaComponent(0.95), size: size)
     }
+    
+    class var loading: UIImage {
+        return UIImage(named: "loading")!
+    }
+    
+    class var favorite: UIImage {
+        return UIImage(named: "fav")!
+    }
+    
+    class var chevron: UIImage {
+        return UIImage(named: "chevron")!
+    }
+    
+    class var share: UIImage {
+        return UIImage(named: "share.png")!
+    }
 }

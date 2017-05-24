@@ -55,11 +55,11 @@ final class ArtistDetailViewController: RootViewController, UpdateableView {
         timeLabel.font = UIFont.detailFont(ofSize: 15.0)
         [artistNameLabel, descriptionLabel, stageLabel, dayLabel, timeLabel].forEach { $0?.textColor = .primary }
         
-        let shareItem = UIBarButtonItem(image: UIImage(named: "share.png"),
+        let shareItem = UIBarButtonItem(image: UIImage.share,
                                         style: .plain,
                                         target: self,
                                         action: #selector(sharePressed))
-        let favItem = UIBarButtonItem(image: UIImage(named: "fav.png"),
+        let favItem = UIBarButtonItem(image: UIImage.favorite,
                                       style: .plain,
                                       target: self,
                                       action: #selector(favoritePressed))
@@ -90,7 +90,7 @@ final class ArtistDetailViewController: RootViewController, UpdateableView {
         } else {
             imageView.isHidden = false
             playerView.isHidden = true
-            imageView.sd_setImage(with: viewModel.artistImageURL, placeholderImage: UIImage(named: "loading.jpg"))
+            imageView.sd_setImage(with: viewModel.artistImageURL, placeholderImage: UIImage.loading)
         }
     }
     
