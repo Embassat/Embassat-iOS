@@ -60,7 +60,6 @@ final class MainCoordinator {
                                                                           size: UIScreen.main.bounds.size),
                                                         for: .default)
         UINavigationBar.appearance().tintColor = .secondary
-        UINavigationBar.appearance().barTintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [
             NSForegroundColorAttributeName : UIColor.secondary,
             NSFontAttributeName : UIFont.titleFont(ofSize: 30)!
