@@ -10,6 +10,7 @@ target 'Embassat' do
     pod 'SwiftyJSON',                '~> 3.1.0'
     pod 'SDWebImage',                '~> 3.7.5'
     pod 'TTTAttributedLabel',        '~> 1.13.3'
+    pod 'Firebase/Core',             '~> 4.0'
 end
 
 target 'EmbassatTests' do

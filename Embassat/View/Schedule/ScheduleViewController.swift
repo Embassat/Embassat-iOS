@@ -85,14 +85,8 @@ final class ScheduleViewController: RootViewController, UpdateableView {
     }
 }
 
-private extension Array where Element: UIView {
+extension ScheduleViewController: Trackeable {
+    var screen: Analytics.Screen { return .schedule }
     
-    func subviews(withTag tag: Int) -> [Element] {
-        return filter { $0.tag == tag }
-    }
-    
-    func subviews(withoutTag tag: Int) -> [Element] {
-        return filter { $0.tag != tag }
-    }
-    
+    var parameters: [String : Any]? { return ["schedule_day" : viewModel.dayTitle] }
 }

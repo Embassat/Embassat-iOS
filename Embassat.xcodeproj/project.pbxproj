@@ -75,6 +75,8 @@
 		8C3D9BA81ED105CD0029266E /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BA71ED105CD0029266E /* NSLayoutConstraint.swift */; };
 		8C3D9BAB1ED1775D0029266E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BAA1ED1775D0029266E /* MainCoordinator.swift */; };
 		8C3D9BAD1ED17AA60029266E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BAC1ED17AA60029266E /* String.swift */; };
+		8C4C3EAE1ED92EBF00D92128 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C3EAD1ED92EBF00D92128 /* GoogleService-Info.plist */; };
+		8C4C3EB01ED9330000D92128 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3EAF1ED9330000D92128 /* Analytics.swift */; };
 		8C5BEF331ED468E000A2E3EF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9BAC1ED17AA60029266E /* String.swift */; };
 		8C5BEF341ED468F100A2E3EF /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9B9C1ED085830029266E /* UICollectionView.swift */; };
 		8C5BEF3F1ED5CE7D00A2E3EF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D9B981ED068370029266E /* UIImage.swift */; };
@@ -169,6 +171,8 @@
 		8C3D9BA71ED105CD0029266E /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		8C3D9BAA1ED1775D0029266E /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = Main/MainCoordinator.swift; sourceTree = "<group>"; };
 		8C3D9BAC1ED17AA60029266E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		8C4C3EAD1ED92EBF00D92128 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C4C3EAF1ED9330000D92128 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		8C6BCB381B0A8F80000E019F /* apercu_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apercu_medium.otf; sourceTree = "<group>"; };
 		8C6BCB391B0A8F80000E019F /* noe-display-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "noe-display-bold.otf"; sourceTree = "<group>"; };
 		8C774F5E192D682B000D5062 /* TicketsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TicketsViewController.xib; path = Tickets/TicketsViewController.xib; sourceTree = "<group>"; };
@@ -312,9 +316,11 @@
 		8C04EF4E18CB8F09008FBC9B /* Embassat */ = {
 			isa = PBXGroup;
 			children = (
+				8C4C3EAF1ED9330000D92128 /* Analytics.swift */,
 				8B4737E41CCB92FC00B1816A /* AppDelegate.swift */,
 				8C04EF7918CB9341008FBC9B /* Base */,
 				8C04EF7D18CB9353008FBC9B /* Categories */,
+				8C4C3EAD1ED92EBF00D92128 /* GoogleService-Info.plist */,
 				8C04EF5A18CB8F09008FBC9B /* Images.xcassets */,
 				8C04EF9418CBCF19008FBC9B /* Model */,
 				8CDBF19518DDB9D9002C6E50 /* Resources */,
@@ -614,6 +620,7 @@
 				8CB6C69418E8B3D6008D19FE /* InfoViewController.xib in Resources */,
 				8C6BCB3A1B0A8F80000E019F /* apercu_medium.otf in Resources */,
 				8CAEB33D192BF7AB0017CF29 /* ScheduleViewController.xib in Resources */,
+				8C4C3EAE1ED92EBF00D92128 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,6 +807,7 @@
 				8C8BA6EB1B08C33900896D11 /* ArtistsViewModel.swift in Sources */,
 				8C3D9BA41ED08EA40029266E /* TabContainerViewModel.swift in Sources */,
 				8CE72FF21B138A0100698D4A /* ScheduleViewModel.swift in Sources */,
+				8C4C3EB01ED9330000D92128 /* Analytics.swift in Sources */,
 				8C8BA6CF1B06758000896D11 /* ArtistParser.swift in Sources */,
 				8C3D9B9D1ED085830029266E /* UICollectionView.swift in Sources */,
 				8CF1933F1BB3EF5400B7D929 /* UIColor.swift in Sources */,

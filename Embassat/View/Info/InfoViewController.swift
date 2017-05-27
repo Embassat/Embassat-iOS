@@ -46,3 +46,7 @@ final class InfoViewController: RootViewController {
         detailScrollView.scrollIndicatorInsets = insets
     }
 }
+
+extension InfoViewController: Trackeable {
+    var screen: Analytics.Screen { return .info }
+}

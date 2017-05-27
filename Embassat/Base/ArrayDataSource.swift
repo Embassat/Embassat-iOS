@@ -10,7 +10,7 @@ import UIKit
 
 typealias ConfigureViewBlock = (AnyObject, IndexPath) -> Void
 
-class ArrayDataSource: NSObject, UICollectionViewDataSource {
+final class ArrayDataSource: NSObject, UICollectionViewDataSource {
     
     static let CADCellIdentifier : String = "CellIdentifier"
     static let CADHeaderIdentifier : String = "HeaderIdentifier"
@@ -19,7 +19,9 @@ class ArrayDataSource: NSObject, UICollectionViewDataSource {
     let configureCellBlock: ConfigureViewBlock
     let configureHeaderBlock: ConfigureViewBlock?
     
-    init(viewModel: ViewModelCollectionDelegate, configureCellBlock: @escaping ConfigureViewBlock, configureHeaderBlock: ConfigureViewBlock?) {
+    init(viewModel: ViewModelCollectionDelegate,
+         configureCellBlock: @escaping ConfigureViewBlock,
+         configureHeaderBlock: ConfigureViewBlock?) {
         self.viewModel = viewModel
         self.configureCellBlock = configureCellBlock
         self.configureHeaderBlock = configureHeaderBlock
@@ -30,22 +32,24 @@ class ArrayDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.numberOfItemsInSection(section)
+        return viewModel.numberOfItemsInSection(section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: AnyObject = collectionView.dequeueReusableCell(withReuseIdentifier: ArrayDataSource.CADCellIdentifier, for: indexPath)
-        self.configureCellBlock(cell, indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArrayDataSource.CADCellIdentifier, for: indexPath)
+        configureCellBlock(cell, indexPath)
         
-        return cell as! UICollectionViewCell
+        return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view: AnyObject = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ArrayDataSource.CADHeaderIdentifier, for: indexPath)
-        if let configureBlock  = self.configureHeaderBlock {
-            configureBlock(view, indexPath)
-        }
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                   withReuseIdentifier: ArrayDataSource.CADHeaderIdentifier,
+                                                                   for: indexPath)
+        configureHeaderBlock?(view, indexPath)
         
-        return view as! UICollectionReusableView
+        return view
     }
 }

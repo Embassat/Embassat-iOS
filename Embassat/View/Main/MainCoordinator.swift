@@ -8,6 +8,7 @@
 
 import Foundation
 import ShareKit
+import FirebaseCore
 
 final class MainCoordinator {
     
@@ -50,6 +51,7 @@ final class MainCoordinator {
     // MARK: - Private
     
     private func registerServices() {
+        FirebaseApp.configure()
         NotificationService().registerForLocalNotifications()
         SHKConfiguration.sharedInstance(with: ShareKitConfigurator())
     }

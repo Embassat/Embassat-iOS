@@ -11,14 +11,14 @@ import Foundation
 extension Date {
     
     private static let componentFlags: Set<Calendar.Component> = [.year,
-                                                                      .month,
-                                                                      .day,
-                                                                      .weekOfMonth,
-                                                                      .hour,
-                                                                      .minute,
-                                                                      .second,
-                                                                      .weekday,
-                                                                      .weekdayOrdinal]
+                                                                  .month,
+                                                                  .day,
+                                                                  .weekOfMonth,
+                                                                  .hour,
+                                                                  .minute,
+                                                                  .second,
+                                                                  .weekday,
+                                                                  .weekdayOrdinal]
     
     private var dateComponents: DateComponents {
         return Calendar.autoupdatingCurrent.dateComponents(Date.componentFlags, from: self)

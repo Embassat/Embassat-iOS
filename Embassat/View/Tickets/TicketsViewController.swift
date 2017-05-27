@@ -59,3 +59,7 @@ final class TicketsViewController: RootViewController {
     }
 }
 
+extension TicketsViewController: Trackeable {
+    var screen: Analytics.Screen { return .tickets }
+}
+

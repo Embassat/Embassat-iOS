@@ -15,6 +15,10 @@ final class ScheduleViewModel: ViewModelCollectionDelegate {
     let model: [CADEMArtist]
     let dateFormatter: DateFormatter
     
+    var dayTitle: String {
+        return interactor.day.title
+    }
+    
     required init(interactor: ScheduleInteractor, coordinator: ScheduleCoordinator) {
         self.model = interactor.model
         self.interactor = interactor

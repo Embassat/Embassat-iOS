@@ -32,5 +32,8 @@ final class TransportViewController: RootViewController {
         detailLabel.font = UIFont.detailFont(ofSize: 15)
         detailLabel.textColor = .primary
     }
-    
+}
+
+extension TransportViewController: Trackeable {
+    var screen: Analytics.Screen { return .transport }
 }

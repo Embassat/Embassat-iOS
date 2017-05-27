@@ -92,6 +92,8 @@ final class ArtistDetailViewController: RootViewController, UpdateableView {
             playerView.isHidden = true
             imageView.sd_setImage(with: viewModel.artistImageURL, placeholderImage: UIImage.loading)
         }
+        
+        viewModel.trackAnalyticsInfo()
     }
     
     fileprivate func updateNavigationItemDetails() {

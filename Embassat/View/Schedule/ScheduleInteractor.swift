@@ -23,7 +23,7 @@ enum ScheduleInteractorDay: Int {
     
     var date: Date {
         var dateComponents = DateComponents()
-        dateComponents.year = 2016
+        dateComponents.year = 2017
         dateComponents.month = 6
         let calendar = Calendar.current
         
@@ -49,7 +49,7 @@ final class ScheduleInteractor: Interactor {
     }
     
     fileprivate let service: ArtistService
-    fileprivate let day: ScheduleInteractorDay
+    let day: ScheduleInteractorDay
     
     init(service: ArtistService = ArtistService(), day: ScheduleInteractorDay) {
         self.service = service

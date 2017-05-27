@@ -86,3 +86,7 @@ final class MapViewController: RootViewController, MKMapViewDelegate, Updateable
         return rect
     }
 }
+
+extension MapViewController: Trackeable {
+    var screen: Analytics.Screen { return .map }
+}

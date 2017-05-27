@@ -90,13 +90,21 @@ final class ArtistDetailViewModel {
         interactor.previousArtist()
     }
     
+    /** Tracks the current artist detail information into analytics */
+    func trackAnalyticsInfo() {
+        Analytics.trackScreenView(.artistDetail, parameters: ["artist_name" : artistName])
+    }
+    
     /** Toggles the favorite state of the currently displayed artist. */
     func toggleFavorite() {
+        Analytics.trackAction(.favourite, parameters: ["artist_name" : artistName,
+                                                       "favorited" : model.favorite ? "false" : "true"])
         interactor.toggleFavorite()
     }
     
     /** Shares the action using the concrete ArtistDetailCoordinatorProtocol share action */
     func shareAction() {
+        Analytics.trackAction(.share, parameters: ["artist_name" : artistName])
         coordinator.showShareAction(withURL: model.artistURL, title: String(format: "%@ @ Embassa't 2016", artistName))
     }
 }

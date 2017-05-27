@@ -82,3 +82,7 @@ final class ArtistsViewController: RootViewController, UpdateableView {
         artistsCollectionView.reloadData()
     }
 }
+
+extension ArtistsViewController: Trackeable {
+    var screen: Analytics.Screen { return .artists }
+}
