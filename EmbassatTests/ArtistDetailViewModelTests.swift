@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import Embassat
+
 extension Date {
     static func date(fromYear year: Int, month: Int, day: Int, hour: Int, minute: Int) -> Date {
         var c = DateComponents()

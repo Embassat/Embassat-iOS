@@ -9,6 +9,8 @@
 import XCTest
 import Kakapo
 
+@testable import Embassat
+
 struct Artist: Storable, Serializable {
     let description: String
     let image_url: String

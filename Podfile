@@ -14,11 +14,6 @@ target 'Embassat' do
 end
 
 target 'EmbassatTests' do
-    pod 'ShareKit/Facebook',         :git => "https://github.com/joanromano/ShareKit.git"
-    pod 'ShareKit/Twitter',          :git => "https://github.com/joanromano/ShareKit.git"
     pod 'Kakapo',                    '~> 2.1.0'
-    pod 'SwiftyJSON',                '~> 3.1.0'
-    pod 'youtube-ios-player-helper', '~> 0.1.4'
-    pod 'TTTAttributedLabel',        '~> 1.13.3'
 end
 

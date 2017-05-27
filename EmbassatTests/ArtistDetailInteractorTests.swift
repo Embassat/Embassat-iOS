@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import Embassat
+
 let artistsArray = [
     CADEMArtist(artistId: 1,
         name: "Joan",
