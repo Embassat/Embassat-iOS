@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let coordinator = MainCoordinator()
-    
+        
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let launchingResult = coordinator.application(application, didFinishLaunchingWithOptions: launchOptions)
         window = launchingResult.window
@@ -30,7 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator.applicationWillTerminate(application)
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return coordinator.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return coordinator.application(app,
+                                       open: url,
+                                       sourceApplication: options[.sourceApplication] as? String)
     }
 }
