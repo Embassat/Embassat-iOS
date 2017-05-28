@@ -3,6 +3,3 @@
 //
 
 #import <TTTAttributedLabel/TTTAttributedLabel.h>
-//#import <SpotifyAuthentication/SpotifyAuthentication.h>
-//#import <Spotify/SpotifyAudioPlayback.h>
-//#import <Spotify/SpotifyAuthentication.h>
