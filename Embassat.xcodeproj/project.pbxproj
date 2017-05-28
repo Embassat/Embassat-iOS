@@ -71,6 +71,7 @@
 		8CD8DD031ED9C09C00721F6A /* SpotifyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8DD021ED9C09C00721F6A /* SpotifyInteractor.swift */; };
 		8CD8DD051ED9C13500721F6A /* SpotifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8DD041ED9C13500721F6A /* SpotifyViewModel.swift */; };
 		8CD8DD071ED9D51B00721F6A /* SpotifyTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8DD061ED9D51B00721F6A /* SpotifyTrackCollectionViewCell.swift */; };
+		8CDEF9AD1EDAA10100E60A11 /* SpotifyProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEF9AC1EDAA10100E60A11 /* SpotifyProgressView.swift */; };
 		8CE72FE41B13707100698D4A /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE31B13707000698D4A /* MapViewModel.swift */; };
 		8CE72FE61B1372D800698D4A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FE51B1372D800698D4A /* MapViewController.swift */; };
 		8CE72FEC1B13839500698D4A /* ScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72FEB1B13839500698D4A /* ScheduleCollectionViewCell.swift */; };
@@ -176,6 +177,7 @@
 		8CD8DD021ED9C09C00721F6A /* SpotifyInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyInteractor.swift; path = Spotify/SpotifyInteractor.swift; sourceTree = "<group>"; };
 		8CD8DD041ED9C13500721F6A /* SpotifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyViewModel.swift; path = Spotify/SpotifyViewModel.swift; sourceTree = "<group>"; };
 		8CD8DD061ED9D51B00721F6A /* SpotifyTrackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyTrackCollectionViewCell.swift; path = Spotify/SpotifyTrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		8CDEF9AC1EDAA10100E60A11 /* SpotifyProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyProgressView.swift; path = Spotify/SpotifyProgressView.swift; sourceTree = "<group>"; };
 		8CE72FE31B13707000698D4A /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = Map/MapViewModel.swift; sourceTree = "<group>"; };
 		8CE72FE51B1372D800698D4A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Map/MapViewController.swift; sourceTree = "<group>"; };
 		8CE72FEB1B13839500698D4A /* ScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleCollectionViewCell.swift; path = Schedule/ScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				8CD8DD021ED9C09C00721F6A /* SpotifyInteractor.swift */,
+				8CDEF9AC1EDAA10100E60A11 /* SpotifyProgressView.swift */,
 				8CD8DD061ED9D51B00721F6A /* SpotifyTrackCollectionViewCell.swift */,
 				8CD8DD001ED9C04700721F6A /* SpotifyViewController.swift */,
 				8CD8DD041ED9C13500721F6A /* SpotifyViewModel.swift */,
@@ -787,6 +790,7 @@
 				8C1FF34C1B04CD1D00078E15 /* TicketsViewController.swift in Sources */,
 				8CC682EA1B12613100FD2216 /* InfoViewController.swift in Sources */,
 				8CC682EC1B126F1F00FD2216 /* ArtistCollectionViewCell.swift in Sources */,
+				8CDEF9AD1EDAA10100E60A11 /* SpotifyProgressView.swift in Sources */,
 				8CC682EE1B128D9200FD2216 /* NotificationService.swift in Sources */,
 				8C35AE081B0105C30014331F /* ArtistService.swift in Sources */,
 			);

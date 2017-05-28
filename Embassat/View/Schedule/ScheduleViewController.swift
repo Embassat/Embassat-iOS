@@ -58,6 +58,7 @@ final class ScheduleViewController: RootViewController, UpdateableView {
     }
     
     fileprivate func setupSubviews() {
+        activityIndicator.color = .primary
         scheduleCollectionView.backgroundColor = .secondary
         scheduleCollectionView.register(UINib(nibName: String(describing: ScheduleCollectionViewCell.self), bundle: nil),
                                         forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)

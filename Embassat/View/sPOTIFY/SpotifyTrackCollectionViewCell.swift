@@ -10,7 +10,7 @@ import UIKit
 
 final class SpotifyTrackCollectionViewCell: RootCollectionViewCell {
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.detailFont(ofSize: 15.0)
@@ -18,6 +18,25 @@ final class SpotifyTrackCollectionViewCell: RootCollectionViewCell {
         
         return label
     }()
+    
+    private let bottomSeparator: UIView = {
+        let view = UIView()
+        view.backgroundColor = .primary
+        
+        return view
+    }()
+    
+    var trackName: String = "" {
+        didSet {
+            titleLabel.text = trackName
+        }
+    }
+    
+    var hidesBottomSeparator: Bool = false {
+        didSet {
+            bottomSeparator.isHidden = hidesBottomSeparator
+        }
+    }
     
     override var isSelected: Bool {
         didSet {
@@ -43,12 +62,17 @@ final class SpotifyTrackCollectionViewCell: RootCollectionViewCell {
         super.setupView()
         
         contentView.addSubview(titleLabel)
+        contentView.addSubview(bottomSeparator)
         
         NSLayoutConstraint.useAndActivate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)]
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            bottomSeparator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            bottomSeparator.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            bottomSeparator.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            bottomSeparator.heightAnchor.constraint(equalToConstant: 2)]
         )
     }
     

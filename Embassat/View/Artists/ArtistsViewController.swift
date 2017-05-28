@@ -60,6 +60,7 @@ final class ArtistsViewController: RootViewController, UpdateableView {
     
     fileprivate func setupSubviews() {
         view.backgroundColor = .secondary
+        activityIndicator.color = .primary
         artistsCollectionView?.register(UINib(nibName: String(describing: ArtistCollectionViewCell.self), bundle: nil),
                                         forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
     }
