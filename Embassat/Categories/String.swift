@@ -31,7 +31,11 @@ extension String {
     }
     
     static var spotifyTitle: String {
-        return "Spotify"
+        return "Playlist"
+    }
+    
+    static var loginWithSpotifyTitle: String {
+        return "LOGIN WITH SPOTIFY"
     }
     
     static var artistsTitle: String {

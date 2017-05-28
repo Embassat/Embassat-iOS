@@ -12,27 +12,7 @@ import Spotify
 
 final class SpotifyViewController: RootViewController, UpdateableView {
     
-    fileprivate var lastDuration: TimeInterval = 0
-    
-    lazy var playButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(togglePlay))
-        
-        return button
-    }()
-    
-    lazy var pauseButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(togglePlay))
-        
-        return button
-    }()
-    
-    lazy var progressView: SpotifyProgressView = {
-        let view = SpotifyProgressView(frame: CGRect(origin: .zero, size: CGSize(width: 45, height: 45)))
-        
-        return view
-    }()
-    
-    lazy var player: SPTAudioStreamingController = {
+    private lazy var player: SPTAudioStreamingController = {
         let player = SPTAudioStreamingController.sharedInstance()!
         player.delegate = self
         player.playbackDelegate = self
@@ -41,7 +21,7 @@ final class SpotifyViewController: RootViewController, UpdateableView {
     }()
     
     fileprivate var dataSource: ArrayDataSource?
-    let activityIndicator: UIActivityIndicatorView = {
+    private lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         indicator.color = .primary
         indicator.hidesWhenStopped = true
@@ -49,23 +29,58 @@ final class SpotifyViewController: RootViewController, UpdateableView {
         return indicator
     }()
     
-    let tracksCollectionView: UICollectionView = {
+    fileprivate lazy var tracksCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 53)
         layout.minimumLineSpacing = 0
         return UICollectionView(frame: .zero, collectionViewLayout: layout)
     }()
     
-    lazy var loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: UIButtonType.custom)
-        button.setTitle("LOGIN WITH SPOTIFY", for: .normal)
-        button.titleLabel?.font = UIFont.detailFont(ofSize: 15.0)
+        button.setTitle(String.loginWithSpotifyTitle, for: .normal)
+        button.titleLabel?.font = .detailFont(ofSize: 15.0)
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.backgroundColor = .spotify
         button.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
         
         return button
     }()
+    
+    // MARK: - Navigation items
+    
+    private lazy var titleButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.titleLabel?.font = UIFont.titleFont(ofSize: 15)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.addTarget(self, action: #selector(titlePressed), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var playButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(togglePlay))
+        
+        return button
+    }()
+    
+    private lazy var pauseButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(togglePlay))
+        
+        return button
+    }()
+    
+    fileprivate var lastDuration: TimeInterval = 0
+    
+    fileprivate lazy var progressView: SpotifyProgressView = {
+        let view = SpotifyProgressView(frame: CGRect(origin: .zero, size: CGSize(width: 45, height: 45)))
+        view.isHidden = true
+        
+        return view
+    }()
+    
+    // MARK: - Public
     
     public init(viewModel: SpotifyViewModel) {
         self.viewModel = viewModel
@@ -76,11 +91,10 @@ final class SpotifyViewController: RootViewController, UpdateableView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
     var viewModel: SpotifyViewModel {
         didSet {
-            guard isViewLoaded, viewModel.model.count > 0 else { return }
+            guard isViewLoaded, viewModel.shouldShowContent else { return }
             
             updateContent()
         }
@@ -127,12 +141,12 @@ final class SpotifyViewController: RootViewController, UpdateableView {
         updateDataSource()
         showContent(true)
         activityIndicator.stopAnimating()
-        playTrack(atPosition: 0)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.progressView)
     }
     
     private func setupView() {
         view.backgroundColor = .secondary
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: progressView)
+        titleButton.setTitle(String.spotifyTitle, for: .normal)
         tracksCollectionView.backgroundColor = .clear
         tracksCollectionView.delegate = self
         tracksCollectionView.register(SpotifyTrackCollectionViewCell.self, forCellWithReuseIdentifier: ArrayDataSource.CADCellIdentifier)
@@ -168,17 +182,19 @@ final class SpotifyViewController: RootViewController, UpdateableView {
         tracksCollectionView.reloadData()
     }
     
-    fileprivate func playTrack(atPosition position: Int, shouldSelect: Bool = true) {
-        guard position < viewModel.model.count else { return }
-        
-        player.playSpotifyURI(viewModel.model[position].playableURI,
+    fileprivate func playTrack(atIndex indexPath: IndexPath, shouldSelect: Bool = true) {
+        navigationItem.titleView = titleButton
+        titleButton.setTitle(viewModel.titleAtIndexPath(indexPath), for: .normal)
+        titleButton.sizeToFit()
+        player.playSpotifyURI(viewModel.playableURIAtIndexPath(indexPath),
                               startingWith: 0,
                               startingWithPosition: 0) { [weak self] (error) in
+            self?.progressView.isHidden = false
             self?.navigationItem.leftBarButtonItem = self?.pauseButton
         }
         
         if shouldSelect {
-            tracksCollectionView.selectItem(at: IndexPath(item: position, section: 0),
+            tracksCollectionView.selectItem(at: indexPath,
                                             animated: true,
                                             scrollPosition: .centeredVertically)
         }
@@ -198,6 +214,12 @@ final class SpotifyViewController: RootViewController, UpdateableView {
             self?.navigationItem.leftBarButtonItem = isPlaying ? self?.pauseButton : self?.playButton
         }
     }
+    
+    @objc private func titlePressed() {
+        guard let selectedIndexPath = tracksCollectionView.indexPathsForSelectedItems?.first else { return }
+        
+        tracksCollectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredVertically)
+    }
 }
 
 extension SpotifyViewController: SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
@@ -214,9 +236,9 @@ extension SpotifyViewController: SPTAudioStreamingDelegate, SPTAudioStreamingPla
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStopPlayingTrack trackUri: String!) {
         guard let indexPath = tracksCollectionView.indexPathsForSelectedItems?.first,
-            indexPath.item + 1 < viewModel.model.count else { return }
+            viewModel.shouldPlayNextSong(forIndexPath: indexPath) else { return }
         
-        playTrack(atPosition: indexPath.item + 1)
+        playTrack(atIndex: IndexPath(item: indexPath.item + 1, section: indexPath.section))
     }
     
     // MARK: - SPTAudioStreamingDelegate
@@ -231,6 +253,6 @@ extension SpotifyViewController: UICollectionViewDelegate {
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        playTrack(atPosition: indexPath.row, shouldSelect: false)
+        playTrack(atIndex: indexPath, shouldSelect: false)
     }
 }

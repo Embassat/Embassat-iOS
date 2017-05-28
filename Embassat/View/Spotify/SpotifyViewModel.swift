@@ -10,8 +10,8 @@ import UIKit
 
 final class SpotifyViewModel: ViewModelCollectionDelegate {
     
-    let interactor: SpotifyInteractor
-    let model: [SpotifyTrack]
+    private let interactor: SpotifyInteractor
+    private let model: [SpotifyTrack]
     
     var clientId: String {
         return interactor.auth.clientID
@@ -27,6 +27,10 @@ final class SpotifyViewModel: ViewModelCollectionDelegate {
         return session.isValid()
     }
     
+    var shouldShowContent: Bool {
+        return model.count > 0
+    }
+    
     var authURL: URL {
         return interactor.auth.spotifyWebAuthenticationURL()
     }
@@ -36,6 +40,10 @@ final class SpotifyViewModel: ViewModelCollectionDelegate {
         self.model = interactor.model
     }
     
+    func playableURIAtIndexPath(_ indexPath: IndexPath) -> String {
+        return model[indexPath.row].playableURI
+    }
+    
     func titleAtIndexPath(_ indexPath: IndexPath) -> String {
         let track = model[indexPath.row]
         return "\(track.name) - \(track.artist)"
@@ -43,6 +51,10 @@ final class SpotifyViewModel: ViewModelCollectionDelegate {
     
     func shouldHideSeparator(forIndexPath indexPath: IndexPath) -> Bool {
         return indexPath.row == numberOfItemsInSection(0) - 1
+    }
+    
+    func shouldPlayNextSong(forIndexPath indexPath: IndexPath) -> Bool {
+        return indexPath.item + 1 < model.count
     }
     
     func fetchTracks() {
