@@ -252,10 +252,16 @@ extension SpotifyViewController: SPTAudioStreamingDelegate, SPTAudioStreamingPla
     }
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStopPlayingTrack trackUri: String!) {
-        guard let indexPath = tracksCollectionView.indexPathsForSelectedItems?.first,
-            viewModel.shouldPlayNextSong(forIndexPath: indexPath) else { return }
+        let nextIndexPath: IndexPath
         
-        playTrack(atIndex: IndexPath(item: indexPath.item + 1, section: indexPath.section))
+        if let indexPath = tracksCollectionView.indexPathsForSelectedItems?.first,
+            viewModel.shouldPlayNextSong(forIndexPath: indexPath) {
+            nextIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
+        } else {
+            nextIndexPath = IndexPath(item: 0, section: 0)
+        }
+        
+        playTrack(atIndex: nextIndexPath)
     }
     
     // MARK: - SPTAudioStreamingDelegate
