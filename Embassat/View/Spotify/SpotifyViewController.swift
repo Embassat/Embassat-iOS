@@ -65,8 +65,17 @@ final class SpotifyViewController: RootViewController, UpdateableView {
         return button
     }()
     
-    private lazy var pauseButton: UIBarButtonItem = {
+    fileprivate lazy var pauseButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(togglePlay))
+        
+        return button
+    }()
+    
+    private lazy var loadingButton: UIBarButtonItem = {
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        indicator.color = .secondary
+        indicator.startAnimating()
+        let button = UIBarButtonItem(customView: indicator)
         
         return button
     }()
@@ -186,13 +195,14 @@ final class SpotifyViewController: RootViewController, UpdateableView {
         guard titleButton.title(for: .normal) != viewModel.titleAtIndexPath(indexPath) else { return }
         
         navigationItem.titleView = titleButton
+        navigationItem.leftBarButtonItem = loadingButton
         titleButton.setTitle(viewModel.titleAtIndexPath(indexPath), for: .normal)
         titleButton.sizeToFit()
-        player.playSpotifyURI(viewModel.playableURIAtIndexPath(indexPath),
-                              startingWith: 0,
-                              startingWithPosition: 0) { [weak self] (error) in
+        player.playSpotifyURI(
+            viewModel.playableURIAtIndexPath(indexPath),
+            startingWith: 0,
+            startingWithPosition: 0) { [weak self] (error) in
             self?.progressView.isHidden = false
-            self?.navigationItem.leftBarButtonItem = self?.pauseButton
         }
         
         if shouldSelect {
@@ -234,6 +244,10 @@ extension SpotifyViewController: SPTAudioStreamingDelegate, SPTAudioStreamingPla
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didChange metadata: SPTPlaybackMetadata!) {
         lastDuration = metadata.currentTrack?.duration ?? 0
+    }
+    
+    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: String!) {
+        navigationItem.leftBarButtonItem = pauseButton
     }
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStopPlayingTrack trackUri: String!) {
