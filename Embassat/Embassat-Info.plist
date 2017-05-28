@@ -47,7 +47,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Utilitzem la teva ubicació per mostrar-te millor els punts de l'Embassa't</string>
+	<string>Utilitzem la teva ubicació per mostrar-te millor els punts de l&apos;Embassa&apos;t</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>apercu_medium.otf</string>
@@ -63,5 +63,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 </dict>
 </plist>

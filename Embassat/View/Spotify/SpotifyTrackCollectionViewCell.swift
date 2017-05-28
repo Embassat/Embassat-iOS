@@ -14,6 +14,8 @@ final class SpotifyTrackCollectionViewCell: RootCollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.detailFont(ofSize: 15.0)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.7
         label.textColor = .primary
         
         return label
@@ -61,8 +63,7 @@ final class SpotifyTrackCollectionViewCell: RootCollectionViewCell {
     override func setupView() {
         super.setupView()
         
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(bottomSeparator)
+        [titleLabel, bottomSeparator].forEach(contentView.addSubview)
         
         NSLayoutConstraint.useAndActivate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),

@@ -183,6 +183,8 @@ final class SpotifyViewController: RootViewController, UpdateableView {
     }
     
     fileprivate func playTrack(atIndex indexPath: IndexPath, shouldSelect: Bool = true) {
+        guard titleButton.title(for: .normal) != viewModel.titleAtIndexPath(indexPath) else { return }
+        
         navigationItem.titleView = titleButton
         titleButton.setTitle(viewModel.titleAtIndexPath(indexPath), for: .normal)
         titleButton.sizeToFit()
