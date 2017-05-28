@@ -51,6 +51,7 @@ final class SpotifyViewController: RootViewController, UpdateableView {
     
     private lazy var titleButton: UIButton = {
         let button = UIButton(type: .custom)
+        button.setTitleColor(.secondary, for: .normal)
         button.titleLabel?.font = UIFont.titleFont(ofSize: 15)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.titleLabel?.minimumScaleFactor = 0.5
