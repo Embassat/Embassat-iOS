@@ -20,25 +20,6 @@ struct NotificationService {
     
     func registerForLocalNotifications() {
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-        scheduleAfterPartyNotification()
-    }
-    
-    fileprivate func scheduleAfterPartyNotification() {
-        let localAfterPartyNotif = UILocalNotification()
-        
-        localAfterPartyNotif.fireDate = dateFormatter.date(from: "2016-06-12T02:30:00")
-        localAfterPartyNotif.alertBody = String(format: "Seapoint començarà en 30 minuts al Sala Oui!")
-        localAfterPartyNotif.setArtistName("seapoint")
-        localAfterPartyNotif.soundName = UILocalNotificationDefaultSoundName
-        
-        let existingNotifications = UIApplication.shared.scheduledLocalNotifications!
-        
-        if let afterPartyExistingNotification = existingNotifications.first(where: { $0.artistName == "seapoint" }) {
-            UIApplication.shared.cancelLocalNotification(afterPartyExistingNotification)
-            UIApplication.shared.scheduleLocalNotification(localAfterPartyNotif)
-        } else {
-            UIApplication.shared.scheduleLocalNotification(localAfterPartyNotif)
-        }
     }
 
     func toggleLocalNotification(forArtist artist: CADEMArtist, favorited: Bool) {

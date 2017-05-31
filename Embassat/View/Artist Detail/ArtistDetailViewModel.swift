@@ -105,6 +105,6 @@ final class ArtistDetailViewModel {
     /** Shares the action using the concrete ArtistDetailCoordinatorProtocol share action */
     func shareAction() {
         Analytics.trackAction(.share, parameters: ["artist_name" : artistName])
-        coordinator.showShareAction(withURL: model.artistURL, title: String(format: "%@ @ Embassa't 2016", artistName))
+        coordinator.showShareAction(withURL: model.artistURL, title: String(format: "%@ @ Embassa't 2017", artistName))
     }
 }
