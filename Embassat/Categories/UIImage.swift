@@ -50,6 +50,14 @@ extension UIImage {
         return UIImage(named: "tabScheduleSelected")!.withRenderingMode(.alwaysOriginal)
     }
     
+    class var tabSpotify: UIImage {
+        return UIImage(named: "tabSpoti")!
+    }
+    
+    class var tabSpotifySelected: UIImage {
+        return UIImage(named: "tabSpotiSelected")!.withRenderingMode(.alwaysOriginal)
+    }
+    
     class func tabBackgroundImage(with size: CGSize) -> UIImage {
         return UIImage.withColor(color: UIColor.primary.withAlphaComponent(0.95), size: size)
     }

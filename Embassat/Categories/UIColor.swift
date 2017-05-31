@@ -21,4 +21,8 @@ extension UIColor {
     class var favorite: UIColor {
         return UIColor(red: 239.0/255.0, green: 61.0/255.0, blue: 38.0/255.0, alpha: 1.0)
     }
+    
+    class var spotify: UIColor {
+        return UIColor(red: 30.0/255.0, green: 215.0/255.0, blue: 96.0/255.0, alpha: 1.0)
+    }
 }

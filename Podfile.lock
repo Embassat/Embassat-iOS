@@ -40,6 +40,13 @@ PODS:
   - ShareKit/Reachability (5.0.0)
   - ShareKit/Twitter (5.0.0):
     - ShareKit/Core
+  - Spotify-iOS-SDK (0.25.0):
+    - Spotify-iOS-SDK/Authentication (= 0.25.0)
+    - Spotify-iOS-SDK/Metadata (= 0.25.0)
+    - Spotify-iOS-SDK/Playback (= 0.25.0)
+  - Spotify-iOS-SDK/Authentication (0.25.0)
+  - Spotify-iOS-SDK/Metadata (0.25.0)
+  - Spotify-iOS-SDK/Playback (0.25.0)
   - SSKeychain (1.2.3)
   - SwiftyJSON (3.1.4)
   - TTTAttributedLabel (1.13.4)
@@ -53,6 +60,7 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7.5)
   - ShareKit/Facebook (from `https://github.com/joanromano/ShareKit.git`)
   - ShareKit/Twitter (from `https://github.com/joanromano/ShareKit.git`)
+  - Spotify-iOS-SDK (~> 0.25.0)
   - SwiftyJSON (~> 3.1.0)
   - TTTAttributedLabel (~> 1.13.3)
   - youtube-ios-player-helper (~> 0.1.4)
@@ -79,12 +87,13 @@ SPEC CHECKSUMS:
   SAMTextView: 979c43bb1fa5859ddfbfeb35e9c296a2b0ec55fd
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   ShareKit: da7ef0875def56511cb5a7f82598d4a932ac9c6c
+  Spotify-iOS-SDK: 58d4092b225578623dd17029f3c7e7042ac3ef6e
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: e3ec7f7342e081bfcfb98f2941eacf0e2aa3c832
+PODFILE CHECKSUM: 6fbd5ed698407d2ecc2031c17658ebdacc396de6
 
 COCOAPODS: 1.2.1

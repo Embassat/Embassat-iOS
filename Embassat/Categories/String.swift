@@ -30,6 +30,14 @@ extension String {
         return "Horaris"
     }
     
+    static var spotifyTitle: String {
+        return "Playlist"
+    }
+    
+    static var loginWithSpotifyTitle: String {
+        return "LOGIN WITH SPOTIFY"
+    }
+    
     static var artistsTitle: String {
         return "Artistes"
     }
