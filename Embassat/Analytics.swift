@@ -25,6 +25,7 @@ enum Analytics {
         case schedule
         case tickets
         case transport
+        case playlist
     }
     
     static func trackAction(_ action: Action, parameters: [String : Any]?) {

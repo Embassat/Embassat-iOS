@@ -279,3 +279,7 @@ extension SpotifyViewController: UICollectionViewDelegate {
         playTrack(atIndex: indexPath, shouldSelect: false)
     }
 }
+
+extension SpotifyViewController: Trackeable {
+    var screen: Analytics.Screen { return .playlist }
+}
