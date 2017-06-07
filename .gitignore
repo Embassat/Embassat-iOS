@@ -16,5 +16,8 @@ DerivedData
 .idea/
 *.hmap
 
+#Fonts
+Font/
+
 #CocoaPods
 Pods
